@@ -3,17 +3,28 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "< 30s", label: "Average Transfer Time" },
-  { value: "2", label: "Countries Connected" },
-  { value: "0", label: "Hidden Fees" },
-  { value: "256-bit", label: "AES Encryption" },
+  { value: "$500M+", label: "Transferred Securely" },
+  { value: "12,000+", label: "Trusted by users" },
+  { value: "★ 4.8", label: "App Store rating" },
 ];
 
 export default function Stats() {
   return (
-    <section className="border-y border-white/5 bg-[#0d0d0d]">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-20">
+      <div className="max-w-5xl mx-auto px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl lg:text-4xl font-bold text-white text-center mb-12"
+        >
+          Our Journey in Numbers: Growth,
+          <br />
+          Trust, and Impact
+        </motion.h2>
+
+        <div className="grid grid-cols-3 divide-x divide-white/10">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -21,11 +32,9 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              className="text-center px-8"
             >
-              <p className="text-3xl lg:text-4xl font-bold text-[#C8FF00]">
-                {stat.value}
-              </p>
+              <p className="text-4xl lg:text-5xl font-bold text-white">{stat.value}</p>
               <p className="text-gray-500 text-sm mt-2">{stat.label}</p>
             </motion.div>
           ))}

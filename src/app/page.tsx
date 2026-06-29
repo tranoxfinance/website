@@ -1,9 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import Features from "@/components/Features";
+import FeaturesBento from "@/components/FeaturesBento";
+import ControlCenter from "@/components/ControlCenter";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
 import DownloadCTA from "@/components/DownloadCTA";
 import Footer from "@/components/Footer";
 
@@ -13,9 +16,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Stats />
-      <Features />
+      <FeaturesBento />
+      <ControlCenter />
       <HowItWorks />
       <Testimonials />
+      <Pricing />
+      <FAQ />
       <DownloadCTA />
       <Footer />
     </main>
