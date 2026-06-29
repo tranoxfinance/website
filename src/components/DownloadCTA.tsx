@@ -1,80 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRightLeft } from "lucide-react";
-
-function CTAPhone() {
-  return (
-    <div className="relative w-full h-[360px] flex items-center justify-end pr-8">
-      <div className="absolute right-20 top-0 w-[180px] h-[340px] bg-[#0d0d0d] rounded-[2.2rem] border border-white/10 shadow-2xl overflow-hidden z-20">
-        <div className="px-4 pt-6">
-          <div className="flex items-center gap-1.5 mb-4">
-            <div className="w-5 h-5 bg-[#C8FF00] rounded-full flex items-center justify-center">
-              <span className="text-black font-black text-[9px]">T</span>
-            </div>
-            <span className="text-white text-sm font-bold">Tranox</span>
-          </div>
-          <p className="text-gray-500 text-[10px]">Current balance</p>
-          <p className="text-white text-xl font-bold mt-0.5">₦150,000</p>
-          <p className="text-gray-600 text-[9px]">Add Balance</p>
-          <div className="flex gap-2 mt-3">
-            <button className="flex-1 bg-[#C8FF00] text-black text-[9px] font-bold py-1.5 rounded-lg">Send</button>
-            <button className="flex-1 border border-white/10 text-white text-[9px] py-1.5 rounded-lg">Received</button>
-          </div>
-          <p className="text-gray-600 text-[8px] text-center mt-1">Fees may apply</p>
-        </div>
-        <div className="px-4 mt-3">
-          <div className="flex justify-between mb-2">
-            <p className="text-white text-[10px] font-semibold">Transactions</p>
-            <p className="text-[#C8FF00] text-[9px]">See All</p>
-          </div>
-          {["Kofi A.", "Amara D.", "Felix O."].map((name, i) => (
-            <div key={name} className="flex justify-between py-1.5 border-b border-white/5">
-              <div className="flex items-center gap-1.5">
-                <div className="w-5 h-5 rounded-full bg-white/10" />
-                <p className="text-white text-[9px]">{name}</p>
-              </div>
-              <p className="text-gray-400 text-[9px]">{i % 2 === 0 ? "-XOF 19K" : "+₦50K"}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="absolute right-4 top-10 w-[160px] h-[300px] bg-[#141414] rounded-[2rem] border border-white/8 shadow-xl overflow-hidden z-10">
-        <div className="px-4 pt-6">
-          <div className="flex items-center gap-1 mb-3">
-            <span className="text-white/50 text-[9px]">←</span>
-            <p className="text-white text-[10px] font-semibold">Send Money</p>
-          </div>
-          <div className="space-y-2">
-            <div className="bg-[#1a1a1a] rounded-lg p-2.5">
-              <p className="text-gray-500 text-[8px]">You Send</p>
-              <div className="flex justify-between mt-0.5">
-                <span className="text-white text-xs font-bold">₦50,000</span>
-                <span className="text-[#C8FF00] text-[8px]">NGN</span>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="w-5 h-5 bg-[#C8FF00] rounded-full flex items-center justify-center">
-                <ArrowRightLeft className="w-2.5 h-2.5 text-black" />
-              </div>
-            </div>
-            <div className="bg-[#1a1a1a] rounded-lg p-2.5">
-              <p className="text-gray-500 text-[8px]">Recipient Gets</p>
-              <div className="flex justify-between mt-0.5">
-                <span className="text-white text-xs font-bold">XOF 38K</span>
-                <span className="text-[#C8FF00] text-[8px]">XOF</span>
-              </div>
-            </div>
-            <button className="w-full bg-[#C8FF00] text-black text-[9px] font-bold py-2 rounded-lg mt-1">
-              Confirm Transfer
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function DownloadCTA() {
   return (
@@ -124,8 +51,16 @@ export default function DownloadCTA() {
             </div>
           </div>
 
-          <div className="relative bg-gradient-to-br from-[#C8FF00]/5 to-transparent overflow-hidden">
-            <CTAPhone />
+          <div className="relative bg-gradient-to-br from-[#C8FF00]/5 to-transparent overflow-hidden flex items-center justify-center min-h-[360px]">
+            <div className="relative w-full h-[360px]">
+              <Image
+                src="/images/phone-cta.jpg"
+                alt="Tranox app"
+                fill
+                className="object-contain"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#111111]/30" />
+            </div>
           </div>
         </motion.div>
       </div>

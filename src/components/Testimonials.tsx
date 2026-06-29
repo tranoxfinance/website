@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
@@ -8,28 +9,28 @@ const testimonials = [
   {
     name: "Amaka O.",
     role: "Lagos, Nigeria",
-    initials: "AO",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
     text: "The transfer screen shows everything clearly. Balance, rate, and recipient details — no confusion. The money arrives on Orange Money before I even put my phone down.",
   },
   {
     name: "Kofi Atta",
     role: "Abidjan, Côte d'Ivoire",
-    initials: "KA",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
     text: "Envoyer de l'argent est super rapide et l'application est très sécurisée. Je l'utilise presque chaque semaine pour recevoir de la famille au Nigeria.",
   },
   {
     name: "Chidi E.",
     role: "Port Harcourt, Nigeria",
-    initials: "CE",
+    avatar: "https://randomuser.me/api/portraits/men/67.jpg",
     rating: 5,
     text: "Finally an app built specifically for NGN to XOF. The design is clean and the rate is always transparent. It doesn't feel complicated like other finance apps.",
   },
   {
     name: "Amara D.",
     role: "Lagos, Nigeria",
-    initials: "AD",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
     rating: 5,
     text: "The home screen shows everything clearly. Balance, transactions, and transfer history — no confusion. Best fintech app I have used for cross-border payments.",
   },
@@ -100,8 +101,8 @@ export default function Testimonials() {
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed flex-1">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#C8FF00]/10 border border-[#C8FF00]/20 flex items-center justify-center">
-                    <span className="text-[#C8FF00] text-sm font-bold">{t.initials}</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0">
+                    <Image src={t.avatar} alt={t.name} width={40} height={40} className="object-cover w-full h-full" />
                   </div>
                   <div>
                     <p className="text-white text-sm font-semibold">{t.name}</p>

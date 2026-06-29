@@ -1,118 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRightLeft, TrendingUp, CheckCircle } from "lucide-react";
-
-function PhoneMockupMain() {
-  return (
-    <div className="w-[220px] h-[440px] bg-[#141414] rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col">
-      <div className="flex justify-between items-center px-5 pt-7 pb-2">
-        <span className="text-white text-[11px] font-medium">9:41</span>
-        <div className="flex gap-1">
-          <div className="w-3 h-1.5 rounded-sm bg-white/50" />
-          <div className="w-3 h-1.5 rounded-sm bg-white/50" />
-          <div className="w-3 h-1.5 rounded-sm bg-[#C8FF00]" />
-        </div>
-      </div>
-      <div className="flex items-center justify-between px-5 py-2">
-        <div className="flex items-center gap-1.5">
-          <div className="w-5 h-5 bg-[#C8FF00] rounded-full flex items-center justify-center">
-            <span className="text-black font-black text-[9px]">T</span>
-          </div>
-          <span className="text-white text-sm font-bold">Tranox</span>
-        </div>
-        <div className="w-7 h-7 rounded-full bg-[#C8FF00]/20 border border-[#C8FF00]/30 flex items-center justify-center">
-          <span className="text-[#C8FF00] text-[10px] font-bold">S</span>
-        </div>
-      </div>
-      <div className="px-5 pt-2 pb-3">
-        <p className="text-gray-500 text-[10px]">Current balance</p>
-        <div className="flex items-center justify-between mt-0.5">
-          <p className="text-white text-2xl font-bold">₦150,000</p>
-          <button className="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center">
-            <span className="text-white/50 text-[10px]">+</span>
-          </button>
-        </div>
-        <p className="text-gray-600 text-[9px] mt-0.5">Add Balance</p>
-      </div>
-      <div className="flex mx-5 gap-2 mb-3">
-        <button className="flex-1 bg-[#C8FF00] text-black text-xs font-bold py-2 rounded-xl">Send</button>
-        <button className="flex-1 border border-white/10 text-white text-xs py-2 rounded-xl">Received</button>
-      </div>
-      <p className="text-gray-600 text-[9px] text-center mb-1">Fees may apply</p>
-      <div className="px-5 mt-1">
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-white text-xs font-semibold">Transactions</p>
-          <p className="text-[#C8FF00] text-[10px]">See All</p>
-        </div>
-        {[
-          { name: "Kofi Atta", amount: "-XOF 19,000", sub: "1 hr ago" },
-          { name: "Amara D.", amount: "-XOF 7,600", sub: "Yesterday" },
-          { name: "Felix O.", amount: "+₦50,000", sub: "2 days ago" },
-        ].map((tx) => (
-          <div key={tx.name} className="flex items-center justify-between py-2 border-b border-white/5">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-[#1a1a1a] border border-white/10" />
-              <div>
-                <p className="text-white text-[10px] font-medium">{tx.name}</p>
-                <p className="text-gray-600 text-[9px]">{tx.sub}</p>
-              </div>
-            </div>
-            <p className="text-white text-[10px] font-medium">{tx.amount}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function PhoneMockupBack() {
-  return (
-    <div className="w-[200px] h-[400px] bg-[#141414] rounded-[2.5rem] border border-white/10 shadow-xl overflow-hidden flex flex-col">
-      <div className="flex justify-between items-center px-5 pt-7 pb-2">
-        <span className="text-white text-[11px] font-medium">9:41</span>
-      </div>
-      <div className="px-5 py-2">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
-            <span className="text-white text-[9px]">←</span>
-          </div>
-          <p className="text-white text-xs font-semibold">Send Money</p>
-        </div>
-      </div>
-      <div className="px-5 space-y-2 mt-2">
-        <div className="bg-[#1a1a1a] rounded-xl p-3">
-          <p className="text-gray-500 text-[9px] mb-1">You Send</p>
-          <div className="flex justify-between">
-            <span className="text-white text-sm font-bold">₦50,000</span>
-            <span className="text-[#C8FF00] text-[9px] bg-[#C8FF00]/10 px-1.5 py-0.5 rounded-full">NGN</span>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="w-6 h-6 bg-[#C8FF00] rounded-full flex items-center justify-center">
-            <ArrowRightLeft className="w-3 h-3 text-black" />
-          </div>
-        </div>
-        <div className="bg-[#1a1a1a] rounded-xl p-3">
-          <p className="text-gray-500 text-[9px] mb-1">Recipient Gets</p>
-          <div className="flex justify-between">
-            <span className="text-white text-sm font-bold">XOF 38,000</span>
-            <span className="text-[#C8FF00] text-[9px] bg-[#C8FF00]/10 px-1.5 py-0.5 rounded-full">XOF</span>
-          </div>
-        </div>
-        <p className="text-gray-600 text-[9px] text-center">Rate: 1 NGN = 0.76 XOF</p>
-        <button className="w-full bg-[#C8FF00] text-black text-xs font-bold py-2.5 rounded-xl mt-1">
-          Confirm Transfer
-        </button>
-      </div>
-    </div>
-  );
-}
+import { TrendingUp, CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 pb-0">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(200,255,0,0.1),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(200,255,0,0.08),transparent)]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-16">
         <motion.h1
@@ -121,7 +16,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="text-5xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight"
         >
-          Send Money Unlock Your{" "}
+          Send Money, Unlock Your{" "}
           <span className="text-[#C8FF00]">Financial</span> Freedom
         </motion.h1>
 
@@ -174,15 +69,16 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.35 }}
         className="relative mt-16 w-full flex justify-center"
       >
-        <div className="relative w-[580px] h-[480px]">
-          <div className="absolute left-12 bottom-0 z-10">
-            <PhoneMockupBack />
-          </div>
-          <div className="absolute right-12 bottom-0 z-20">
-            <PhoneMockupMain />
-          </div>
+        <div className="relative w-[600px] h-[420px]">
+          <Image
+            src="/images/hero-phones.jpg"
+            alt="Tranox app on two smartphones"
+            fill
+            className="object-contain object-bottom"
+            priority
+          />
 
-          <div className="absolute top-8 left-4 z-30 bg-[#141414] border border-white/10 rounded-2xl p-3 flex items-center gap-2 shadow-xl">
+          <div className="absolute top-8 left-0 z-10 bg-[#141414]/90 backdrop-blur-sm border border-white/10 rounded-2xl p-3 flex items-center gap-2 shadow-xl">
             <div className="w-8 h-8 rounded-xl bg-[#C8FF00]/10 flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-[#C8FF00]" />
             </div>
@@ -192,12 +88,14 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="absolute top-6 right-4 z-30 bg-[#141414] border border-white/10 rounded-full p-3 shadow-xl">
+          <div className="absolute top-6 right-0 z-10 bg-[#141414]/90 backdrop-blur-sm border border-white/10 rounded-full p-3 shadow-xl">
             <CheckCircle className="w-5 h-5 text-[#C8FF00]" />
           </div>
 
-          <div className="absolute top-1/2 left-0 z-30 w-3 h-3 rounded-full bg-[#C8FF00]" />
-          <div className="absolute top-16 right-8 z-30 w-2 h-2 rounded-full bg-[#C8FF00]/50" />
+          <div className="absolute top-1/2 left-4 z-10 w-3 h-3 rounded-full bg-[#C8FF00]" />
+          <div className="absolute top-16 right-8 z-10 w-2 h-2 rounded-full bg-[#C8FF00]/50" />
+
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#080808] to-transparent z-10" />
         </div>
       </motion.div>
     </section>
