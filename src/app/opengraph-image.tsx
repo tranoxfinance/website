@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt =
@@ -6,6 +8,10 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
+  const logoSrc = `data:image/png;base64,${readFileSync(
+    join(process.cwd(), "public", "og-logo.png"),
+  ).toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -21,15 +27,8 @@ export default function Image() {
           color: "#ffffff",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-          <svg width="60" height="60" viewBox="0 0 40 40" style={{ display: "flex" }}>
-            <rect width="40" height="40" rx="10" fill="#0d8fd2" />
-            <path d="M 8 14 L 27 14 M 21 8 L 27 14 L 21 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M 32 26 L 13 26 M 19 20 L 13 26 L 19 32" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <div style={{ display: "flex", fontSize: 38, fontWeight: 700 }}>
-            Tranox
-          </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src={logoSrc} width={210} height={52} alt="" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
