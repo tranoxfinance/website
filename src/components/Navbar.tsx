@@ -1,99 +1,171 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { cn } from "@/lib/utils";
 
-export default function Navbar() {
+const NAV_LINKS = [
+  { label: "About us", href: "#about" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "FAQ", href: "#faq" },
+];
+
+export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const hrefFor = (hash: string) => (isHome ? hash : `/${hash}`);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const ids = NAV_LINKS.map((link) => link.href.slice(1));
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      const line = window.scrollY + 120;
+      let current = "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + window.scrollY <= line) {
+          current = id;
+        }
+      }
+      setActiveId(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Contact", href: "#contact" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#080808]/90 backdrop-blur-md border-b border-white/5"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-[#C8FF00] rounded-full flex items-center justify-center">
-            <span className="text-black font-black text-sm">T</span>
-          </div>
-          <span className="text-white font-bold text-lg tracking-tight">Tranox</span>
-        </Link>
+    <header className="sticky top-0 z-50">
+      <div
+        className={cn(
+          "transition-all duration-300",
+          scrolled
+            ? "bg-background border-b border-border shadow-soft"
+            : "border-b border-transparent",
+        )}
+      >
+        <Container>
+          <nav className="flex h-16 items-center justify-between gap-4">
+            <Logo />
 
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+            <div className="hidden items-center gap-2 lg:flex">
+              {NAV_LINKS.map((link) => {
+                const isActive = activeId === link.href.slice(1);
+                return (
+                  <a
+                    key={link.href}
+                    href={hrefFor(link.href)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
+                      isActive ? "text-brand" : "text-ink-soft",
+                    )}
+                  >
+                    {link.label}
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                      )}
+                    />
+                  </a>
+                );
+              })}
+            </div>
 
-        <div className="flex items-center gap-4">
-          <Link
-            href="#download"
-            className="hidden md:inline-flex bg-[#C8FF00] text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#d9ff33] transition-colors"
-          >
-            Download App
-          </Link>
-          <button
-            className="md:hidden text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+            <div className="hidden items-center gap-2 lg:flex">
+              <ThemeToggle />
+              <Button href={hrefFor("#get-started")} size="sm">
+                Download app
+              </Button>
+            </div>
+
+            <div className="flex items-center lg:hidden">
+              <button
+                type="button"
+                aria-label="Open menu"
+                aria-expanded={open}
+                onClick={() => setOpen(true)}
+                className="flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-border transition hover:bg-surface cursor-pointer"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
+          </nav>
+        </Container>
       </div>
 
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-[#080808]/95 backdrop-blur-md border-b border-white/5 px-6 py-4 flex flex-col gap-4"
-        >
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+      <div
+        aria-hidden={!open}
+        className={cn(
+          "fixed inset-0 z-50 flex flex-col bg-background transition-transform duration-300 ease-out lg:hidden",
+          open ? "translate-x-0" : "pointer-events-none translate-x-full",
+        )}
+      >
+        <Container>
+          <div className="flex h-16 items-center justify-between">
+            <Logo onClick={() => setOpen(false)} />
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-border transition hover:bg-surface cursor-pointer"
             >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="#download"
-            onClick={() => setMobileOpen(false)}
-            className="inline-flex w-fit bg-[#C8FF00] text-black text-sm font-semibold px-5 py-2 rounded-full"
-          >
-            Download App
-          </Link>
-        </motion.div>
-      )}
-    </motion.header>
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+        </Container>
+
+        <Container className="flex flex-1 flex-col">
+          <nav className="mt-6 flex flex-col gap-1">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeId === link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={hrefFor(link.href)}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "rounded-xl px-4 py-3.5 text-lg font-semibold transition active:bg-brand-soft",
+                    isActive ? "text-brand" : "text-ink",
+                  )}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
+
+          <div className="mt-auto space-y-3 py-6">
+            <ThemeToggle variant="row" />
+            <Button
+              href={hrefFor("#get-started")}
+              size="lg"
+              className="w-full"
+              onClick={() => setOpen(false)}
+            >
+              Download app
+            </Button>
+          </div>
+        </Container>
+      </div>
+    </header>
   );
 }
