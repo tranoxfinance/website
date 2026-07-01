@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:map": "node scripts/generate-map.mjs"
+    "generate:map": "node scripts/generate-map.mjs",
+    "generate:world-dots": "node scripts/generate-world-dots.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
