@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 
 export type LegalBlock = string | { list: string[] };
 
@@ -9,41 +11,44 @@ export interface LegalSection {
   blocks: LegalBlock[];
 }
 
-interface LegalPageProps {
+interface LegalContent {
   title: string;
   lastUpdated: string;
   intro: string;
   sections: LegalSection[];
 }
 
-export function LegalPage({
-  title,
-  lastUpdated,
-  intro,
-  sections,
-}: LegalPageProps) {
+interface LegalPageProps {
+  lang: Locale;
+  dict: Dictionary;
+  page: LegalContent;
+}
+
+export function LegalPage({ lang, dict, page }: LegalPageProps) {
   return (
     <>
-      <Navbar />
+      <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
         <section className="border-b border-border bg-surface py-16 sm:py-20">
           <Container className="max-w-3xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              Legal
+              {dict.legalPage.tag}
             </span>
             <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              {title}
+              {page.title}
             </h1>
-            <p className="mt-3 text-sm text-muted">Last updated: {lastUpdated}</p>
+            <p className="mt-3 text-sm text-muted">
+              {dict.legalPage.lastUpdated.replace("{date}", page.lastUpdated)}
+            </p>
           </Container>
         </section>
 
         <section className="py-14 sm:py-16">
           <Container className="max-w-3xl">
-            <p className="text-lg leading-relaxed text-ink-soft">{intro}</p>
+            <p className="text-lg leading-relaxed text-ink-soft">{page.intro}</p>
 
             <div className="mt-12 space-y-10">
-              {sections.map((section) => (
+              {page.sections.map((section) => (
                 <div key={section.heading}>
                   <h2 className="text-xl font-bold tracking-tight text-ink">
                     {section.heading}
@@ -78,7 +83,7 @@ export function LegalPage({
           </Container>
         </section>
       </main>
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </>
   );
 }

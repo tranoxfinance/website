@@ -2,8 +2,14 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { StoreBadges } from "@/components/StoreBadges";
 import { TypewriterHeadline } from "@/components/TypewriterHeadline";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-export function Hero() {
+interface HeroProps {
+  dict: Dictionary["hero"];
+  badges: Dictionary["storeBadges"];
+}
+
+export function Hero({ dict, badges }: HeroProps) {
   return (
     <section className="relative -mt-16 overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -15,29 +21,30 @@ export function Hero() {
 
       <Container className="grid items-center gap-12 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-24 lg:pt-36">
         <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both] max-lg:text-center">
-          <TypewriterHeadline className="text-[2.7rem] font-bold leading-[1.03] tracking-tight text-ink sm:text-[3.4rem]" />
+          <TypewriterHeadline
+            segments={dict.headlineSegments}
+            className="text-[2.7rem] font-bold leading-[1.03] tracking-tight text-ink sm:text-[3.4rem]"
+          />
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft max-lg:mx-auto">
-            Tranox moves money both ways between Nigeria (NGN) and Ivory Coast
-            (XOF) in minutes. Transparent rates, low fees, bank-grade security.
-            Fast. Secure. Global.
+            {dict.subtitle}
           </p>
 
           <div className="mt-8">
-            <StoreBadges className="max-lg:justify-center" />
+            <StoreBadges dict={badges} className="max-lg:justify-center" />
           </div>
 
           <p className="mt-6 text-sm font-medium text-ink-soft max-lg:text-center">
-            Cross-border payments built for West Africa
+            {dict.tagline}
           </p>
         </div>
 
         <div className="animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] -mt-6 flex justify-center [animation-delay:120ms] sm:-mt-10 lg:justify-end">
           <Image
-            src="/images/hero-app-preview.png"
-            alt="Tranox app showing a transfer from NGN to XOF"
-            width={831}
-            height={1296}
+            src={dict.image.src}
+            alt={dict.image.alt}
+            width={dict.image.width}
+            height={dict.image.height}
             priority
             className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm"
           />

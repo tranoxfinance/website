@@ -1,0 +1,518 @@
+{
+  "metadata": {
+    "titleDefault": "Tranox — Transferts d'argent instantanés entre le Nigéria et la Côte d'Ivoire",
+    "titleTemplate": "%s · Tranox",
+    "description": "Envoyez de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
+    "keywords": [
+      "transfert Nigéria Côte d'Ivoire",
+      "NGN vers XOF",
+      "XOF vers NGN",
+      "envoyer de l'argent en Côte d'Ivoire",
+      "paiements transfrontaliers Afrique",
+      "Tranox"
+    ],
+    "ogTitle": "Tranox — Transferts transfrontaliers entre le Nigéria et la Côte d'Ivoire",
+    "ogDescription": "Transferts NGN ↔ XOF dans les deux sens en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire.",
+    "twitterTitle": "Tranox — Transferts transfrontaliers NGN ↔ XOF",
+    "twitterDescription": "Envoyez de l'argent dans les deux sens entre le Nigéria et la Côte d'Ivoire en quelques minutes. Rapide. Sûr. Mondial."
+  },
+  "jsonLd": {
+    "description": "Transferts d'argent bidirectionnels entre le Nigéria (NGN) et la Côte d'Ivoire (XOF). Des paiements transfrontaliers rapides, sûrs et transparents.",
+    "areaServed": ["Nigéria", "Côte d'Ivoire"],
+    "slogan": "Rapide. Sûr. Mondial."
+  },
+  "nav": {
+    "links": [
+      { "label": "À propos", "hash": "#about" },
+      { "label": "Comment ça marche", "hash": "#how-it-works" },
+      { "label": "FAQ", "hash": "#faq" }
+    ],
+    "downloadApp": "Télécharger l'appli",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "appearance": "Apparence",
+    "toggleTheme": "Basculer le mode sombre",
+    "homeAria": "Accueil Tranox",
+    "languageAria": "Langue"
+  },
+  "mobileBar": {
+    "quickActions": "Actions rapides",
+    "home": "Accueil",
+    "howItWorks": "Comment ça marche",
+    "faq": "FAQ",
+    "getApp": "L'appli"
+  },
+  "hero": {
+    "headlineSegments": [
+      { "text": "Envoyez de l'" },
+      { "text": "argent", "style": "brand" },
+      { "text": " par-delà les " },
+      { "text": "frontières,", "style": "gradient" },
+      { "text": " au moment où ça compte." }
+    ],
+    "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
+    "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
+    "image": {
+      "src": "/images/hero-app-preview-fr.png",
+      "width": 1024,
+      "height": 1536,
+      "alt": "L'application Tranox affichant un envoi en francs CFA (XOF)"
+    }
+  },
+  "storeBadges": {
+    "development": "En cours de développement",
+    "comingSoon": "Bientôt disponible",
+    "appStoreAria": "Télécharger dans l'App Store",
+    "googlePlayAria": "Disponible sur Google Play"
+  },
+  "features": {
+    "tag": "Sans frontières par conception",
+    "heading": "Conçu pour faire circuler l'argent, dans les deux sens.",
+    "sub": "Une passerelle financière pensée pour le Nigéria et la Côte d'Ivoire, construite autour de la façon dont les Africains envoient et reçoivent réellement de l'argent à travers les frontières.",
+    "items": [
+      {
+        "title": "Des frais fixes et réduits",
+        "body": "Un seul frais transparent et un taux de change équitable, affichés en intégralité avant toute confirmation de transfert."
+      },
+      {
+        "title": "Tous les modes de versement",
+        "body": "Versez vers des comptes bancaires, des portefeuilles mobiles ou en retrait d'espèces, des deux côtés du corridor."
+      },
+      {
+        "title": "Une sécurité inégalée",
+        "body": "Chiffré de bout en bout, surveillé en temps réel et sécurisé auprès de partenaires régulés."
+      }
+    ]
+  },
+  "about": {
+    "tag": "À propos",
+    "heading": "Connecter l'Afrique de l'Ouest, un transfert à la fois",
+    "p1": "Tranox est né d'une frustration simple : envoyer de l'argent entre le Nigéria et la Côte d'Ivoire était lent, coûteux et opaque. Nous avons décidé d'y remédier avec un produit unique et ciblé.",
+    "p2": "Aujourd'hui, nous faisons circuler l'argent sur le corridor NGN–XOF en quelques minutes, à un taux visible avant confirmation. Pas de frais cachés, pas de déductions surprises, pas de jours d'attente pour savoir si l'argent est arrivé. Juste des transferts rapides et équitables sur lesquels familles et entreprises peuvent compter.",
+    "corridorTag": "Le corridor que nous servons",
+    "corridorHeading": "Le Nigéria et la Côte d'Ivoire, reliés en temps réel.",
+    "corridorBody": "Une seule route, maîtrisée de bout en bout, pour que votre argent ne se perde jamais dans un labyrinthe d'intermédiaires.",
+    "payouts": {
+      "bank": "Banque",
+      "wallet": "Portefeuille",
+      "cash": "Espèces"
+    },
+    "values": [
+      {
+        "title": "Conçu pour le corridor",
+        "body": "Nous nous concentrons sur une seule route et l'exécutons exceptionnellement bien : l'argent qui circule entre le Nigéria et la Côte d'Ivoire, dans les deux sens."
+      },
+      {
+        "title": "La confiance par conception",
+        "body": "Des partenaires agréés, des taux verrouillés et un suivi de bout en bout : chaque transfert est sûr, transparent et traçable."
+      },
+      {
+        "title": "L'humain d'abord",
+        "body": "Derrière chaque transfert, il y a une famille, une entreprise, un projet. Nous construisons pour celles et ceux qui comptent sur un argent qui arrive à temps."
+      }
+    ]
+  },
+  "showcase": {
+    "tag": "Corridor en direct",
+    "heading": "Chaque transfert, suivi en temps réel",
+    "sub": "Regardez l'argent circuler entre le Nigéria et la Côte d'Ivoire en direct, puis envoyez, suivez et gérez tout depuis une application claire, conçue pour le corridor.",
+    "points": [
+      {
+        "title": "Suivez chaque transfert en direct",
+        "body": "Suivez chaque paiement, de l'envoi à la réception, avec un statut en temps réel."
+      },
+      {
+        "title": "Bénéficiaires enregistrés",
+        "body": "Payez les mêmes personnes en quelques secondes sans ressaisir leurs coordonnées."
+      },
+      {
+        "title": "Alertes de taux",
+        "body": "Soyez averti dès que le taux évolue en votre faveur."
+      }
+    ],
+    "cta": "Obtenir l'appli",
+    "mapAria": "Transferts en temps réel circulant entre le Nigéria et la Côte d'Ivoire",
+    "nigeria": "Nigéria",
+    "ivoryCoast": "Côte d'Ivoire"
+  },
+  "why": {
+    "tag": "Pourquoi nous",
+    "heading": "Pourquoi les expéditeurs préfèrent Tranox",
+    "sub": "Rapidité, certitude et un taux fiable, à chaque envoi à travers le corridor.",
+    "items": [
+      {
+        "title": "Versement instantané, dans les deux sens",
+        "body": "Envoyez depuis le Nigéria ou la Côte d'Ivoire et votre bénéficiaire est payé en quelques minutes."
+      },
+      {
+        "title": "Des taux verrouillés",
+        "body": "Votre taux est fixé au moment où vous confirmez. Le montant versé ne change jamais après l'envoi."
+      },
+      {
+        "title": "Envoyez et recevez dans les deux sens",
+        "body": "Un seul compte fonctionne dans les deux directions du corridor, sans configuration supplémentaire."
+      },
+      {
+        "title": "Suivi en direct, de bout en bout",
+        "body": "Suivez chaque transfert avec un statut clair, de la confirmation jusqu'à la réception."
+      }
+    ]
+  },
+  "how": {
+    "tag": "Comment ça marche",
+    "heading": "Envoyez à travers les frontières en trois étapes simples.",
+    "stepAria": "Afficher l'étape {step}",
+    "steps": [
+      {
+        "title": "Créez votre compte",
+        "body": "Inscrivez-vous en quelques minutes et vérifiez votre identité une seule fois. Le KYC est intégré et réutilisable pour chaque transfert."
+      },
+      {
+        "title": "Définissez le montant",
+        "body": "Saisissez le montant à envoyer en NGN ou en XOF et consultez le taux exact, les frais et le montant versé avant de confirmer."
+      },
+      {
+        "title": "Le bénéficiaire est payé",
+        "body": "L'argent arrive sur un compte bancaire ou un portefeuille mobile en quelques minutes, avec un suivi en direct du début à la fin."
+      }
+    ]
+  },
+  "trust": {
+    "tag": "Notre mission",
+    "heading": "Rendre l'argent transfrontalier simple",
+    "sub": "Nous construisons Tranox pour faire circuler l'argent entre le Nigéria et la Côte d'Ivoire rapidement, en toute transparence et en toute sécurité, pour tous.",
+    "pillars": [
+      {
+        "title": "La transparence d'abord",
+        "body": "Chaque taux et chaque frais sont affichés en intégralité avant confirmation. Pas de marges cachées, pas de déductions surprises."
+      },
+      {
+        "title": "Sûr et régulé",
+        "body": "Chiffré de bout en bout et opéré avec des partenaires agréés, pour que chaque transfert soit traité avec soin."
+      },
+      {
+        "title": "Conçu pour l'Afrique de l'Ouest",
+        "body": "Pensé autour de la façon dont particuliers et entreprises envoient et reçoivent réellement de l'argent sur le corridor Nigéria–Côte d'Ivoire."
+      }
+    ]
+  },
+  "faq": {
+    "tag": "FAQ",
+    "heading": "Vos questions, nos réponses",
+    "sub": "Tout ce que vous devez savoir avant votre premier transfert.",
+    "stillTitle": "Encore des questions ?",
+    "stillBody": "Notre équipe d'assistance est là pour vous aider, tous les jours de la semaine.",
+    "contact": "Contacter l'assistance",
+    "items": [
+      {
+        "q": "Dans quels sens puis-je envoyer de l'argent ?",
+        "a": "Tranox prend en charge les deux directions du corridor : envoyez des nairas nigérians (NGN) vers des bénéficiaires en Côte d'Ivoire en francs CFA (XOF), et envoyez des XOF depuis la Côte d'Ivoire vers des bénéficiaires au Nigéria en NGN."
+      },
+      {
+        "q": "En combien de temps les transferts arrivent-ils ?",
+        "a": "La grande majorité des transferts sont versés en quelques minutes. Le délai peut varier légèrement selon la banque ou l'opérateur de mobile money du bénéficiaire, et vous pouvez suivre le statut en direct à chaque étape."
+      },
+      {
+        "q": "Comment le taux de change et les frais sont-ils calculés ?",
+        "a": "Vous voyez toujours le taux de change exact et un seul frais transparent avant de confirmer. Le taux est verrouillé au moment de la confirmation, de sorte que le montant reçu par votre bénéficiaire ne change jamais après l'envoi."
+      },
+      {
+        "q": "Comment financer un transfert ?",
+        "a": "Vous pouvez financer vos transferts par virement bancaire, carte de débit ou mobile money, selon votre pays. Les bénéficiaires peuvent être payés sur un compte bancaire, un portefeuille mobile ou en retrait d'espèces."
+      },
+      {
+        "q": "Tranox est-il sécurisé et régulé ?",
+        "a": "Oui. Tranox opère sous supervision réglementaire sur chaque marché, avec des programmes complets de KYC et de lutte contre le blanchiment. Les fonds sont sécurisés auprès de partenaires régulés, et chaque transaction est chiffrée et surveillée contre la fraude."
+      },
+      {
+        "q": "Y a-t-il des limites sur les montants que je peux envoyer ?",
+        "a": "Des limites de transfert s'appliquent par transaction et dépendent de votre niveau de vérification. Des limites plus élevées se débloquent une fois votre compte entièrement vérifié, et vous pouvez contacter l'assistance si vous devez transférer des montants plus importants."
+      }
+    ]
+  },
+  "cta": {
+    "tag": "Essayez maintenant",
+    "heading": "Prêt à envoyer de l'argent au pays ?",
+    "body": "Rejoignez les milliers de personnes qui font circuler leur argent entre le Nigéria et la Côte d'Ivoire avec Tranox. Pas de frais cachés, pas d'attente."
+  },
+  "footer": {
+    "blurb": "Une plateforme fintech de nouvelle génération pour des transferts d'argent fluides entre le Nigéria et l'Afrique de l'Ouest.",
+    "product": "Produit",
+    "howItWorks": "Comment ça marche",
+    "whyTranox": "Pourquoi Tranox",
+    "company": "Entreprise",
+    "about": "À propos",
+    "contact": "Contact",
+    "legal": "Mentions légales",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "compliance": "Conformité",
+    "contacts": "Contacts",
+    "follow": "Suivez-nous",
+    "rights": "© {year} Tranox. Tous droits réservés.",
+    "disclaimer": "Les taux de change affichés sont indicatifs. Tranox fournit des services régulés de transfert d'argent ; des conditions et des limites s'appliquent."
+  },
+  "legalPage": {
+    "tag": "Mentions légales",
+    "lastUpdated": "Dernière mise à jour : {date}"
+  },
+  "privacy": {
+    "metaTitle": "Politique de confidentialité",
+    "metaDescription": "Comment Tranox collecte, utilise, partage et protège vos informations personnelles et financières.",
+    "title": "Politique de confidentialité",
+    "lastUpdated": "7 juin 2026",
+    "intro": "Cette Politique de confidentialité explique quelles informations Tranox collecte, comment nous les utilisons et les partageons, ainsi que les choix et droits dont vous disposez. Elle s'applique à votre utilisation de l'application Tranox, du site web et des services associés, et nous traitons vos informations conformément à la loi nigériane sur la protection des données de 2023 (NDPA) et aux directives émises par la Nigeria Data Protection Commission (NDPC).",
+    "sections": [
+      {
+        "heading": "Les informations que nous collectons",
+        "blocks": [
+          "Nous collectons les informations nécessaires pour fournir un service de transfert d'argent sécurisé et régulé sur le corridor Nigéria–Côte d'Ivoire.",
+          {
+            "list": [
+              "Données d'identité et de vérification : nom complet, date de naissance, nationalité et pièce d'identité officielle utilisées pour les contrôles KYC.",
+              "Coordonnées : adresse e-mail, numéro de téléphone et adresse de résidence.",
+              "Données de transaction : montants, devises, coordonnées des bénéficiaires, taux de change, frais et modes de versement.",
+              "Informations financières : compte bancaire, portefeuille mobile ou coordonnées de carte utilisés pour financer ou recevoir des transferts.",
+              "Données d'appareil et d'utilisation : adresse IP, identifiants d'appareil et interactions avec l'application, utilisés pour sécuriser votre compte."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Comment nous utilisons vos informations",
+        "blocks": [
+          {
+            "list": [
+              "Pour traiter les transferts et verser les fonds à vos bénéficiaires.",
+              "Pour vérifier votre identité et respecter nos obligations légales et réglementaires.",
+              "Pour détecter, prévenir et enquêter sur la fraude et toute autre activité interdite.",
+              "Pour fournir une assistance client et répondre à vos demandes.",
+              "Pour améliorer et sécuriser nos produits et communiquer les mises à jour importantes du service."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Comment nous partageons les informations",
+        "blocks": [
+          "Nous ne vendons pas vos informations personnelles. Nous ne les partageons que dans la mesure nécessaire pour exploiter le service et respecter la loi.",
+          {
+            "list": [
+              "Partenaires bancaires et de versement agréés qui règlent les fonds sur chaque marché.",
+              "Prestataires de paiement et fournisseurs de vérification d'identité agissant pour notre compte.",
+              "Régulateurs, forces de l'ordre et autres autorités lorsque la loi applicable l'exige.",
+              "Conseillers professionnels et prestataires de services tenus par des obligations de confidentialité."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Conservation des données",
+        "blocks": [
+          "Nous conservons vos informations tant que votre compte est actif et pendant la période requise pour respecter les obligations de lutte contre le blanchiment, fiscales et autres obligations légales sur les marchés où nous opérons. Lorsque les données ne sont plus nécessaires, nous les supprimons ou les anonymisons de manière sécurisée."
+        ]
+      },
+      {
+        "heading": "Sécurité",
+        "blocks": [
+          "Vos données sont chiffrées en transit et au repos, l'accès est restreint selon le principe du besoin d'en connaître, et nos systèmes sont surveillés en continu contre toute activité non autorisée. Aucune méthode de transmission ou de stockage n'est totalement sûre, mais nous nous employons à protéger vos informations à l'aide de mesures conformes aux normes du secteur."
+        ]
+      },
+      {
+        "heading": "Vos droits",
+        "blocks": [
+          "Sous réserve de la loi applicable, y compris la loi nigériane sur la protection des données de 2023, vous pouvez avoir le droit de :",
+          {
+            "list": [
+              "Accéder aux informations personnelles que nous détenons à votre sujet.",
+              "Demander la correction d'informations inexactes ou incomplètes.",
+              "Demander la suppression de vos informations lorsque nous ne sommes pas tenus de les conserver.",
+              "Vous opposer à certains traitements de vos informations ou en demander la limitation."
+            ]
+          },
+          "Pour exercer l'un de ces droits, contactez-nous aux coordonnées ci-dessous."
+        ]
+      },
+      {
+        "heading": "Transferts internationaux",
+        "blocks": [
+          "Parce que nous opérons par-delà les frontières, vos informations peuvent être traitées dans des pays autres que le vôtre. Dans ce cas, nous mettons en place des garanties appropriées pour protéger vos informations conformément à cette politique."
+        ]
+      },
+      {
+        "heading": "Modifications de cette politique",
+        "blocks": [
+          "Nous pouvons mettre à jour cette Politique de confidentialité de temps à autre. En cas de modification substantielle, nous mettrons à jour la date ci-dessus et, le cas échéant, vous en informerons via l'application ou par e-mail."
+        ]
+      },
+      {
+        "heading": "Nous contacter",
+        "blocks": [
+          "Si vous avez des questions sur cette politique ou sur la manière dont nous traitons vos informations, contactez notre équipe à support@tranox.com."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "metaTitle": "Conditions d'utilisation",
+    "metaDescription": "Les conditions qui régissent votre utilisation des services de transfert d'argent transfrontalier de Tranox.",
+    "title": "Conditions d'utilisation",
+    "lastUpdated": "7 juin 2026",
+    "intro": "Ces Conditions d'utilisation régissent votre accès aux services de transfert d'argent transfrontalier de Tranox et leur utilisation. Veuillez les lire attentivement avant d'utiliser l'application ou le site web.",
+    "sections": [
+      {
+        "heading": "Acceptation de ces conditions",
+        "blocks": [
+          "En créant un compte ou en utilisant Tranox, vous acceptez ces Conditions d'utilisation. Si vous n'êtes pas d'accord, vous ne devez pas utiliser le service. Ces conditions constituent un accord contraignant entre vous et Tranox."
+        ]
+      },
+      {
+        "heading": "Éligibilité",
+        "blocks": [
+          "Vous devez avoir au moins 18 ans et être juridiquement capable de conclure un contrat pour utiliser Tranox. Vous vous engagez à fournir des informations exactes, à jour et complètes, et à les maintenir à jour."
+        ]
+      },
+      {
+        "heading": "Comptes et vérification",
+        "blocks": [
+          "Vous devez compléter la vérification d'identité (KYC) avant d'envoyer ou de recevoir de l'argent. Vous êtes responsable de la protection de vos identifiants de connexion et de toute activité effectuée depuis votre compte. Informez-nous immédiatement si vous suspectez un accès non autorisé."
+        ]
+      },
+      {
+        "heading": "Transferts et versements",
+        "blocks": [
+          "Tranox facilite les transferts entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) dans les deux sens. Vous êtes responsable de la saisie correcte des coordonnées du bénéficiaire et du versement. Les transferts ne peuvent pas être traités lorsque les informations sont inexactes ou lorsqu'une transaction enfreindrait la loi applicable."
+        ]
+      },
+      {
+        "heading": "Taux de change et frais",
+        "blocks": [
+          "Le taux de change et un seul frais transparent sont affichés avant que vous ne confirmiez un transfert. Le taux est verrouillé au moment de la confirmation, de sorte que le montant reçu par votre bénéficiaire ne change pas après l'envoi. Les taux affichés avant confirmation sont indicatifs et peuvent évoluer jusqu'à la confirmation du transfert."
+        ]
+      },
+      {
+        "heading": "Annulations et remboursements",
+        "blocks": [
+          "Une fois qu'un transfert est confirmé et versé, il ne peut généralement pas être annulé. Si un transfert n'a pas encore été versé, vous pouvez demander une annulation et nous restituerons les fonds sur votre moyen de paiement d'origine dans la mesure du possible. Le délai de remboursement dépend de votre banque ou de votre prestataire de paiement."
+        ]
+      },
+      {
+        "heading": "Utilisations interdites",
+        "blocks": [
+          "Vous vous engagez à ne pas utiliser Tranox pour :",
+          {
+            "list": [
+              "Vous livrer au blanchiment d'argent, au financement du terrorisme, à la fraude ou à toute activité illégale.",
+              "Envoyer des fonds pour le compte d'un tiers non déclaré.",
+              "Fournir des informations fausses, trompeuses ou volées.",
+              "Contourner les limites de transfert, la vérification ou les contrôles de sécurité."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Conformité et limites",
+        "blocks": [
+          "Nous opérons sous supervision réglementaire et maintenons des programmes de lutte contre le blanchiment d'argent et le financement du terrorisme. Nous pouvons appliquer des limites de transfert, demander des informations supplémentaires, ou retarder, refuser ou annuler une transaction afin de respecter nos obligations légales et réglementaires."
+        ]
+      },
+      {
+        "heading": "Disponibilité du service",
+        "blocks": [
+          "Nous nous efforçons de maintenir le service disponible en permanence, sans toutefois garantir un accès ininterrompu. Les transferts peuvent occasionnellement être retardés par des facteurs indépendants de notre volonté, notamment les systèmes des banques, des opérateurs de mobile money et d'autres partenaires."
+        ]
+      },
+      {
+        "heading": "Limitation de responsabilité",
+        "blocks": [
+          "Dans toute la mesure permise par la loi, Tranox n'est pas responsable des pertes indirectes, accessoires ou consécutives découlant de votre utilisation du service. Rien dans ces conditions n'exclut une responsabilité qui ne peut être exclue en vertu de la loi applicable."
+        ]
+      },
+      {
+        "heading": "Modifications de ces conditions",
+        "blocks": [
+          "Nous pouvons mettre à jour ces conditions de temps à autre. En cas de modification substantielle, nous mettrons à jour la date ci-dessus et, le cas échéant, vous en informerons via l'application ou par e-mail. La poursuite de l'utilisation du service après l'entrée en vigueur des modifications vaut acceptation des conditions mises à jour."
+        ]
+      },
+      {
+        "heading": "Nous contacter",
+        "blocks": [
+          "Si vous avez des questions sur ces conditions, contactez notre équipe à support@tranox.com."
+        ]
+      }
+    ]
+  },
+  "compliance": {
+    "metaTitle": "Conformité",
+    "metaDescription": "Comment Tranox respecte ses obligations réglementaires, de lutte contre le blanchiment et de protection des consommateurs sur le corridor Nigéria–Côte d'Ivoire.",
+    "title": "Conformité",
+    "lastUpdated": "7 juin 2026",
+    "intro": "La confiance est le fondement des paiements transfrontaliers. Cette page explique comment Tranox respecte ses obligations réglementaires, de lutte contre le blanchiment et de protection des consommateurs sur le corridor Nigéria–Côte d'Ivoire.",
+    "sections": [
+      {
+        "heading": "Cadre réglementaire",
+        "blocks": [
+          "Tranox opère sous supervision réglementaire sur chaque marché qu'il sert et travaille exclusivement avec des partenaires bancaires et de versement agréés pour régler les fonds. Nous concevons nos produits pour respecter les lois et exigences de supervision applicables aux transferts d'argent transfrontaliers entre le Nigéria et la Côte d'Ivoire, notamment :",
+          {
+            "list": [
+              "Les réglementations de la Banque centrale du Nigéria (CBN), y compris les lignes directrices applicables aux prestataires de services de paiement.",
+              "Les lois de lutte contre le blanchiment d'argent et le financement du terrorisme (LBC/FT).",
+              "La loi nigériane sur la protection des données de 2023 et les directives émises par la Nigeria Data Protection Commission (NDPC).",
+              "Les réglementations de la BCEAO et de l'UEMOA régissant les transactions transfrontalières en franc CFA (XOF)."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Lutte contre le blanchiment d'argent (LBC) et le financement du terrorisme (FT)",
+        "blocks": [
+          "Nous maintenons un programme LBC/FT fondé sur les risques, aligné sur les lois applicables et les normes internationales. Nos contrôles comprennent :",
+          {
+            "list": [
+              "La vigilance client et la vigilance renforcée pour les activités à risque plus élevé.",
+              "La surveillance continue des transactions afin de détecter les schémas inhabituels ou suspects.",
+              "Le filtrage par rapport aux sanctions et listes de surveillance applicables.",
+              "La déclaration des activités suspectes aux autorités compétentes lorsque cela est requis."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Connaissance du client (KYC)",
+        "blocks": [
+          "Chaque client doit compléter la vérification d'identité avant d'envoyer ou de recevoir de l'argent. Nous collectons et vérifions une pièce d'identité officielle ainsi que les autres informations nécessaires pour confirmer votre identité. La vérification est réutilisable pour les transferts futurs, et nous pouvons demander des informations supplémentaires à tout moment pour respecter nos obligations."
+        ]
+      },
+      {
+        "heading": "Filtrage des sanctions",
+        "blocks": [
+          "Nous filtrons les clients, les bénéficiaires et les transactions par rapport aux listes de sanctions applicables. Les transferts impliquant des personnes, entités ou juridictions sous sanctions seront bloqués, et nous pouvons être tenus de déclarer et de geler les fonds concernés."
+        ]
+      },
+      {
+        "heading": "Surveillance des transactions et limites",
+        "blocks": [
+          "Nous surveillons l'activité en continu et appliquons des limites de transfert en fonction de votre niveau de vérification et de votre profil de risque. Nous pouvons retarder, refuser ou annuler une transaction, ou demander des informations complémentaires, lorsque cela est nécessaire pour respecter la loi ou protéger les clients contre la fraude."
+        ]
+      },
+      {
+        "heading": "Protection des fonds",
+        "blocks": [
+          "Les fonds des clients sont traités par des partenaires régulés et sont conservés séparément de nos propres fonds d'exploitation, conformément aux exigences de protection applicables, de sorte que les fonds restent protégés pendant le traitement d'un transfert."
+        ]
+      },
+      {
+        "heading": "Protection des données",
+        "blocks": [
+          "Nous traitons les informations personnelles et financières conformément à notre Politique de confidentialité et aux lois applicables en matière de protection des données, y compris la loi nigériane sur la protection des données de 2023 et les directives de la NDPC, en utilisant le chiffrement et des contrôles d'accès stricts pour sécuriser vos informations."
+        ]
+      },
+      {
+        "heading": "Signaler une préoccupation",
+        "blocks": [
+          "Si vous suspectez une fraude, un délit financier ou tout usage abusif de notre service, contactez notre équipe conformité à support@tranox.com. Nous prenons tous les signalements au sérieux et enquêtons rapidement."
+        ]
+      }
+    ]
+  }
+}

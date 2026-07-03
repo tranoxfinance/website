@@ -8,10 +8,16 @@ interface LogoProps {
   onDark?: boolean;
   className?: string;
   href?: string;
+  ariaLabel?: string;
   onClick?: () => void;
 }
 
-export function Logo({ className, href = "/", onClick }: LogoProps) {
+export function Logo({
+  className,
+  href = "/",
+  ariaLabel = "Tranox",
+  onClick,
+}: LogoProps) {
   const pathname = usePathname();
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -26,7 +32,7 @@ export function Logo({ className, href = "/", onClick }: LogoProps) {
     <Link
       href={href}
       onClick={handleClick}
-      aria-label="Tranox home"
+      aria-label={ariaLabel}
       className={cn(
         "inline-flex items-center rounded-lg outline-none transition focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
         className,

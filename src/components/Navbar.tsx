@@ -7,24 +7,26 @@ import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-  { label: "About us", href: "#about" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "FAQ", href: "#faq" },
-];
+interface NavbarProps {
+  lang: Locale;
+  dict: Dictionary["nav"];
+}
 
-export function Navbar() {
+export function Navbar({ lang, dict }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const hrefFor = (hash: string) => (isHome ? hash : `/${hash}`);
+  const isHome = pathname === `/${lang}`;
+  const hrefFor = (hash: string) => (isHome ? hash : `/${lang}${hash}`);
 
   useEffect(() => {
-    const ids = NAV_LINKS.map((link) => link.href.slice(1));
+    const ids = dict.links.map((link) => link.hash.slice(1));
     const onScroll = () => {
       setScrolled(window.scrollY > 8);
       const line = window.scrollY + 120;
@@ -40,7 +42,7 @@ export function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [dict.links]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -61,15 +63,15 @@ export function Navbar() {
       >
         <Container>
           <nav className="flex h-16 items-center justify-between gap-4">
-            <Logo />
+            <Logo href={`/${lang}`} ariaLabel={dict.homeAria} />
 
             <div className="hidden items-center gap-2 lg:flex">
-              {NAV_LINKS.map((link) => {
-                const isActive = activeId === link.href.slice(1);
+              {dict.links.map((link) => {
+                const isActive = activeId === link.hash.slice(1);
                 return (
                   <a
-                    key={link.href}
-                    href={hrefFor(link.href)}
+                    key={link.hash}
+                    href={hrefFor(link.hash)}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
                       "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
@@ -90,16 +92,17 @@ export function Navbar() {
             </div>
 
             <div className="hidden items-center gap-2 lg:flex">
-              <ThemeToggle />
+              <LocaleSwitcher lang={lang} ariaLabel={dict.languageAria} />
+              <ThemeToggle ariaLabel={dict.toggleTheme} />
               <Button href={hrefFor("#get-started")} size="sm">
-                Download app
+                {dict.downloadApp}
               </Button>
             </div>
 
             <div className="flex items-center lg:hidden">
               <button
                 type="button"
-                aria-label="Open menu"
+                aria-label={dict.openMenu}
                 aria-expanded={open}
                 onClick={() => setOpen(true)}
                 className="flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-border transition hover:bg-surface cursor-pointer"
@@ -120,10 +123,14 @@ export function Navbar() {
       >
         <Container>
           <div className="flex h-16 items-center justify-between">
-            <Logo onClick={() => setOpen(false)} />
+            <Logo
+              href={`/${lang}`}
+              ariaLabel={dict.homeAria}
+              onClick={() => setOpen(false)}
+            />
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label={dict.closeMenu}
               onClick={() => setOpen(false)}
               className="flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-border transition hover:bg-surface cursor-pointer"
             >
@@ -134,12 +141,12 @@ export function Navbar() {
 
         <Container className="flex flex-1 flex-col">
           <nav className="mt-6 flex flex-col gap-1">
-            {NAV_LINKS.map((link) => {
-              const isActive = activeId === link.href.slice(1);
+            {dict.links.map((link) => {
+              const isActive = activeId === link.hash.slice(1);
               return (
                 <a
-                  key={link.href}
-                  href={hrefFor(link.href)}
+                  key={link.hash}
+                  href={hrefFor(link.hash)}
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
@@ -154,14 +161,24 @@ export function Navbar() {
           </nav>
 
           <div className="mt-auto space-y-3 py-6">
-            <ThemeToggle variant="row" />
+            <LocaleSwitcher
+              lang={lang}
+              ariaLabel={dict.languageAria}
+              className="w-fit"
+              onNavigate={() => setOpen(false)}
+            />
+            <ThemeToggle
+              variant="row"
+              label={dict.appearance}
+              ariaLabel={dict.toggleTheme}
+            />
             <Button
               href={hrefFor("#get-started")}
               size="lg"
               className="w-full"
               onClick={() => setOpen(false)}
             >
-              Download app
+              {dict.downloadApp}
             </Button>
           </div>
         </Container>

@@ -1,48 +1,31 @@
 import { Wallet, Layers, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const FEATURES = [
-  {
-    icon: Wallet,
-    title: "Low, flat fees",
-    body: "One transparent fee and a fair exchange rate, shown in full before you ever confirm a transfer.",
-  },
-  {
-    icon: Layers,
-    title: "Every payout method",
-    body: "Pay out to bank accounts, mobile wallets, or cash pickup on both sides of the corridor.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Unmatched security",
-    body: "Encrypted end to end, monitored in real time, and safeguarded with regulated partners.",
-  },
-];
+const ICONS = [Wallet, Layers, ShieldCheck];
 
-export function Features() {
+export function Features({ dict }: { dict: Dictionary["features"] }) {
   return (
     <section id="features" className="relative pb-20 sm:pb-28">
       <Container>
         <Reveal>
           <div className="max-w-3xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              Borderless by design
+              {dict.tag}
             </span>
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
-              Built to move money, both ways.
+              {dict.heading}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              A financial bridge purpose-built for Nigeria and Ivory Coast,
-              engineered around how Africans actually send and receive across
-              borders.
+              {dict.sub}
             </p>
           </div>
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-3">
-          {FEATURES.map((feature, index) => {
-            const Icon = feature.icon;
+          {dict.items.map((feature, index) => {
+            const Icon = ICONS[index];
             return (
               <Reveal key={feature.title} delay={index * 90}>
                 <div className="group h-full rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-soft">

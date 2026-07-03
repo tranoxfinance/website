@@ -2,8 +2,14 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import { StoreBadges } from "@/components/StoreBadges";
 import { WorldDotMap } from "@/components/WorldDotMap";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-export function CtaBanner() {
+interface CtaBannerProps {
+  dict: Dictionary["cta"];
+  badges: Dictionary["storeBadges"];
+}
+
+export function CtaBanner({ dict, badges }: CtaBannerProps) {
   return (
     <section id="get-started" className="pb-20 sm:pb-28">
       <Container>
@@ -19,18 +25,17 @@ export function CtaBanner() {
             <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
               <div className="max-w-xl">
                 <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                  Try it now
+                  {dict.tag}
                 </span>
                 <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Ready to send money home?
+                  {dict.heading}
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-white/65">
-                  Join thousands moving money between Nigeria and Ivory Coast
-                  with Tranox. No hidden fees, no waiting.
+                  {dict.body}
                 </p>
               </div>
 
-              <StoreBadges className="shrink-0" />
+              <StoreBadges dict={badges} className="shrink-0" />
             </div>
           </div>
         </Reveal>

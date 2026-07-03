@@ -5,29 +5,16 @@ import { Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import { WorldDotMap } from "@/components/WorldDotMap";
+import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
 
 const STEP_MS = 4200;
 
-const STEPS = [
-  {
-    title: "Create your account",
-    body: "Sign up in minutes and verify your identity once. KYC is built in and reusable across every transfer.",
-  },
-  {
-    title: "Set the amount",
-    body: "Enter how much to send in NGN or XOF and see the exact rate, fee, and payout before you confirm.",
-  },
-  {
-    title: "Recipient gets paid",
-    body: "Money lands in a bank account or mobile wallet in minutes, with live tracking from start to finish.",
-  },
-];
-
-export function HowItWorks() {
+export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
   const [active, setActive] = useState(0);
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+  const stepCount = dict.steps.length;
 
   useEffect(() => {
     const node = ref.current;
@@ -50,12 +37,12 @@ export function HowItWorks() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
     if (reduced) {
-      const frame = requestAnimationFrame(() => setActive(2));
+      const frame = requestAnimationFrame(() => setActive(stepCount - 1));
       return () => cancelAnimationFrame(frame);
     }
-    const id = setInterval(() => setActive((s) => (s + 1) % STEPS.length), STEP_MS);
+    const id = setInterval(() => setActive((s) => (s + 1) % stepCount), STEP_MS);
     return () => clearInterval(id);
-  }, [inView]);
+  }, [inView, stepCount]);
 
   return (
     <section
@@ -72,10 +59,10 @@ export function HowItWorks() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              How it works
+              {dict.tag}
             </span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Send across borders in three simple steps.
+              {dict.heading}
             </h2>
           </div>
         </Reveal>
@@ -84,7 +71,7 @@ export function HowItWorks() {
           ref={ref}
           className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-10 sm:grid-cols-3"
         >
-          {STEPS.map((step, i) => {
+          {dict.steps.map((step, i) => {
             const isActive = i === active;
             const isDone = i < active;
             return (
@@ -93,7 +80,7 @@ export function HowItWorks() {
                   <button
                     type="button"
                     onClick={() => setActive(i)}
-                    aria-label={`Show step ${i + 1}`}
+                    aria-label={dict.stepAria.replace("{step}", String(i + 1))}
                     className={cn(
                       "flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-sm font-bold transition-colors duration-500",
                       isActive || isDone

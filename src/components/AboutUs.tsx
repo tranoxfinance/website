@@ -2,26 +2,11 @@ import { Globe2, BadgeCheck, HeartHandshake } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import { CorridorHub } from "@/components/CorridorHub";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const VALUES = [
-  {
-    icon: Globe2,
-    title: "Built for the corridor",
-    body: "We focus on one route and do it exceptionally well: money moving between Nigeria and Ivory Coast, in both directions.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Trust by design",
-    body: "Licensed partners, locked-in rates, and end-to-end tracking mean every transfer is safe, transparent, and accountable.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "People first",
-    body: "Behind every transfer is a family, a business, a plan. We build for the people who depend on money arriving on time.",
-  },
-];
+const ICONS = [Globe2, BadgeCheck, HeartHandshake];
 
-export function AboutUs() {
+export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
   return (
     <section id="about" className="py-20 sm:py-28">
       <Container>
@@ -29,21 +14,16 @@ export function AboutUs() {
           <Reveal>
             <div>
               <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                About us
+                {dict.tag}
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                Connecting West Africa, one transfer at a time
+                {dict.heading}
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-                Tranox was born from a simple frustration: sending money between
-                Nigeria and Ivory Coast was slow, expensive, and opaque. We set
-                out to fix it with a single, focused product.
+                {dict.p1}
               </p>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
-                Today we move money across the NGN–XOF corridor in minutes, at a
-                rate you can see before you confirm. No hidden fees, no surprise
-                deductions, no waiting days to know if it arrived. Just fast,
-                fair transfers that families and businesses can rely on.
+                {dict.p2}
               </p>
             </div>
           </Reveal>
@@ -55,25 +35,24 @@ export function AboutUs() {
                 className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 animate-blob rounded-full bg-brand/25 blur-3xl"
               />
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                The corridor we serve
+                {dict.corridorTag}
               </p>
 
-              <CorridorHub />
+              <CorridorHub labels={dict.payouts} />
 
               <p className="mt-7 text-xl font-bold leading-snug">
-                Nigeria and Ivory Coast, linked in real time.
+                {dict.corridorHeading}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-white/65">
-                One route, mastered end to end so your money never gets lost in a
-                maze of intermediaries.
+                {dict.corridorBody}
               </p>
             </div>
           </Reveal>
         </div>
 
         <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
-          {VALUES.map((value, index) => {
-            const Icon = value.icon;
+          {dict.values.map((value, index) => {
+            const Icon = ICONS[index];
             return (
               <Reveal
                 key={value.title}

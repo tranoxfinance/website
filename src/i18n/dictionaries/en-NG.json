@@ -1,0 +1,518 @@
+{
+  "metadata": {
+    "titleDefault": "Tranox — Instant money transfers between Nigeria and Ivory Coast",
+    "titleTemplate": "%s · Tranox",
+    "description": "Send money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
+    "keywords": [
+      "Nigeria to Ivory Coast transfer",
+      "NGN to XOF",
+      "XOF to NGN",
+      "send money to Ivory Coast",
+      "cross-border payments Africa",
+      "Tranox"
+    ],
+    "ogTitle": "Tranox — Cross-border transfers between Nigeria and Ivory Coast",
+    "ogDescription": "Bidirectional NGN ↔ XOF transfers in minutes. Transparent rates, low fees, bank-grade security.",
+    "twitterTitle": "Tranox — NGN ↔ XOF cross-border transfers",
+    "twitterDescription": "Send money both ways between Nigeria and Ivory Coast in minutes. Fast. Secure. Global."
+  },
+  "jsonLd": {
+    "description": "Bidirectional money transfers between Nigeria (NGN) and Ivory Coast (XOF). Fast, secure, transparent cross-border payments.",
+    "areaServed": ["Nigeria", "Ivory Coast"],
+    "slogan": "Fast. Secure. Global."
+  },
+  "nav": {
+    "links": [
+      { "label": "About us", "hash": "#about" },
+      { "label": "How it works", "hash": "#how-it-works" },
+      { "label": "FAQ", "hash": "#faq" }
+    ],
+    "downloadApp": "Download app",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "appearance": "Appearance",
+    "toggleTheme": "Toggle dark mode",
+    "homeAria": "Tranox home",
+    "languageAria": "Language"
+  },
+  "mobileBar": {
+    "quickActions": "Quick actions",
+    "home": "Home",
+    "howItWorks": "How it works",
+    "faq": "FAQ",
+    "getApp": "Get app"
+  },
+  "hero": {
+    "headlineSegments": [
+      { "text": "Send " },
+      { "text": "money", "style": "brand" },
+      { "text": " across " },
+      { "text": "borders,", "style": "gradient" },
+      { "text": " the moment it matters." }
+    ],
+    "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
+    "tagline": "Cross-border payments built for West Africa",
+    "image": {
+      "src": "/images/hero-app-preview.png",
+      "width": 831,
+      "height": 1296,
+      "alt": "Tranox app showing a transfer from NGN to XOF"
+    }
+  },
+  "storeBadges": {
+    "development": "Now in development",
+    "comingSoon": "Coming soon",
+    "appStoreAria": "Download on the App Store",
+    "googlePlayAria": "Get it on Google Play"
+  },
+  "features": {
+    "tag": "Borderless by design",
+    "heading": "Built to move money, both ways.",
+    "sub": "A financial bridge purpose-built for Nigeria and Ivory Coast, engineered around how Africans actually send and receive across borders.",
+    "items": [
+      {
+        "title": "Low, flat fees",
+        "body": "One transparent fee and a fair exchange rate, shown in full before you ever confirm a transfer."
+      },
+      {
+        "title": "Every payout method",
+        "body": "Pay out to bank accounts, mobile wallets, or cash pickup on both sides of the corridor."
+      },
+      {
+        "title": "Unmatched security",
+        "body": "Encrypted end to end, monitored in real time, and safeguarded with regulated partners."
+      }
+    ]
+  },
+  "about": {
+    "tag": "About us",
+    "heading": "Connecting West Africa, one transfer at a time",
+    "p1": "Tranox was born from a simple frustration: sending money between Nigeria and Ivory Coast was slow, expensive, and opaque. We set out to fix it with a single, focused product.",
+    "p2": "Today we move money across the NGN–XOF corridor in minutes, at a rate you can see before you confirm. No hidden fees, no surprise deductions, no waiting days to know if it arrived. Just fast, fair transfers that families and businesses can rely on.",
+    "corridorTag": "The corridor we serve",
+    "corridorHeading": "Nigeria and Ivory Coast, linked in real time.",
+    "corridorBody": "One route, mastered end to end so your money never gets lost in a maze of intermediaries.",
+    "payouts": {
+      "bank": "Bank",
+      "wallet": "Wallet",
+      "cash": "Cash"
+    },
+    "values": [
+      {
+        "title": "Built for the corridor",
+        "body": "We focus on one route and do it exceptionally well: money moving between Nigeria and Ivory Coast, in both directions."
+      },
+      {
+        "title": "Trust by design",
+        "body": "Licensed partners, locked-in rates, and end-to-end tracking mean every transfer is safe, transparent, and accountable."
+      },
+      {
+        "title": "People first",
+        "body": "Behind every transfer is a family, a business, a plan. We build for the people who depend on money arriving on time."
+      }
+    ]
+  },
+  "showcase": {
+    "tag": "Live corridor",
+    "heading": "Every transfer, tracked in real time",
+    "sub": "Watch money move between Nigeria and Ivory Coast as it happens, then send, track, and manage it all from one clean app built for the corridor.",
+    "points": [
+      {
+        "title": "Track every transfer live",
+        "body": "Follow each payment from sent to delivered with real-time status."
+      },
+      {
+        "title": "Saved recipients",
+        "body": "Pay the same people in seconds without re-entering their details."
+      },
+      {
+        "title": "Rate alerts",
+        "body": "Get notified the moment the rate moves in your favour."
+      }
+    ],
+    "cta": "Get the app",
+    "mapAria": "Real-time transfers flowing between Nigeria and Ivory Coast",
+    "nigeria": "Nigeria",
+    "ivoryCoast": "Ivory Coast"
+  },
+  "why": {
+    "tag": "Why us",
+    "heading": "Why senders prefer Tranox",
+    "sub": "Speed, certainty, and a rate you can trust, every time you send across the corridor.",
+    "items": [
+      {
+        "title": "Instant payout, either direction",
+        "body": "Send from Nigeria or Ivory Coast and your recipient is paid in minutes."
+      },
+      {
+        "title": "Locked-in rates",
+        "body": "Your rate is fixed the moment you confirm. The payout never changes after you send."
+      },
+      {
+        "title": "Send and receive both ways",
+        "body": "One account works in both directions across the corridor, with no extra setup."
+      },
+      {
+        "title": "Live tracking, end to end",
+        "body": "Follow every transfer with clear status from the moment you confirm until it lands."
+      }
+    ]
+  },
+  "how": {
+    "tag": "How it works",
+    "heading": "Send across borders in three simple steps.",
+    "stepAria": "Show step {step}",
+    "steps": [
+      {
+        "title": "Create your account",
+        "body": "Sign up in minutes and verify your identity once. KYC is built in and reusable across every transfer."
+      },
+      {
+        "title": "Set the amount",
+        "body": "Enter how much to send in NGN or XOF and see the exact rate, fee, and payout before you confirm."
+      },
+      {
+        "title": "Recipient gets paid",
+        "body": "Money lands in a bank account or mobile wallet in minutes, with live tracking from start to finish."
+      }
+    ]
+  },
+  "trust": {
+    "tag": "Our mission",
+    "heading": "Making cross-border money simple",
+    "sub": "We are building Tranox to move money between Nigeria and Ivory Coast quickly, transparently, and safely, for everyone.",
+    "pillars": [
+      {
+        "title": "Transparency first",
+        "body": "Every rate and fee is shown in full before you confirm. No hidden markups, no surprise deductions."
+      },
+      {
+        "title": "Safe and regulated",
+        "body": "Encrypted end to end and operated with licensed partners, so every transfer is handled with care."
+      },
+      {
+        "title": "Built for West Africa",
+        "body": "Designed around how people and businesses actually send and receive across the Nigeria–Ivory Coast corridor."
+      }
+    ]
+  },
+  "faq": {
+    "tag": "FAQ",
+    "heading": "Questions, answered",
+    "sub": "Everything you need to know before your first transfer.",
+    "stillTitle": "Still have questions?",
+    "stillBody": "Our support team is here to help, every day of the week.",
+    "contact": "Contact support",
+    "items": [
+      {
+        "q": "Which directions can I send money?",
+        "a": "Tranox supports both directions of the corridor: send Nigerian Naira (NGN) to recipients in Ivory Coast as West African CFA francs (XOF), and send XOF from Ivory Coast to recipients in Nigeria as NGN."
+      },
+      {
+        "q": "How fast do transfers arrive?",
+        "a": "The large majority of transfers are paid out within minutes. Timing can vary slightly depending on the recipient's bank or mobile-money provider, and you can track the status live at every step."
+      },
+      {
+        "q": "How are the exchange rate and fees calculated?",
+        "a": "You always see the exact exchange rate and a single transparent fee before you confirm. The rate is locked the moment you confirm, so the amount your recipient receives never changes after you send."
+      },
+      {
+        "q": "How do I fund a transfer?",
+        "a": "You can fund transfers by bank transfer, debit card, or mobile money, depending on your country. Recipients can be paid into a bank account, a mobile wallet, or via cash pickup."
+      },
+      {
+        "q": "Is Tranox secure and regulated?",
+        "a": "Yes. Tranox operates under regulatory oversight in each market with full KYC and AML programs. Funds are safeguarded with regulated partners, and every transaction is encrypted and monitored for fraud."
+      },
+      {
+        "q": "Are there limits on how much I can send?",
+        "a": "Transfer limits apply per transaction and depend on your verification level. Higher limits unlock once your account is fully verified, and you can reach out to support if you need to move larger amounts."
+      }
+    ]
+  },
+  "cta": {
+    "tag": "Try it now",
+    "heading": "Ready to send money home?",
+    "body": "Join thousands moving money between Nigeria and Ivory Coast with Tranox. No hidden fees, no waiting."
+  },
+  "footer": {
+    "blurb": "A next-generation fintech platform for seamless money transfers between Nigeria and West Africa.",
+    "product": "Product",
+    "howItWorks": "How it works",
+    "whyTranox": "Why Tranox",
+    "company": "Company",
+    "about": "About",
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "compliance": "Compliance",
+    "contacts": "Contacts",
+    "follow": "Follow us",
+    "rights": "© {year} Tranox. All rights reserved.",
+    "disclaimer": "Exchange rates displayed are indicative. Tranox provides regulated money-transfer services; terms and limits apply."
+  },
+  "legalPage": {
+    "tag": "Legal",
+    "lastUpdated": "Last updated: {date}"
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "How Tranox collects, uses, shares, and protects your personal and financial information.",
+    "title": "Privacy Policy",
+    "lastUpdated": "June 7, 2026",
+    "intro": "This Privacy Policy explains what information Tranox collects, how we use and share it, and the choices and rights you have. It applies to your use of the Tranox app, website, and related services, and we handle your information in line with the Nigeria Data Protection Act 2023 (NDPA) and directives issued by the Nigeria Data Protection Commission (NDPC).",
+    "sections": [
+      {
+        "heading": "Information we collect",
+        "blocks": [
+          "We collect the information needed to provide a secure, regulated money-transfer service across the Nigeria–Ivory Coast corridor.",
+          {
+            "list": [
+              "Identity and verification data: full name, date of birth, nationality, and government-issued identification used to complete KYC checks.",
+              "Contact details: email address, phone number, and residential address.",
+              "Transaction data: amounts, currencies, recipient details, exchange rates, fees, and payout methods.",
+              "Financial information: bank account, mobile wallet, or card details used to fund or receive transfers.",
+              "Device and usage data: IP address, device identifiers, and app interactions used to keep your account secure."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How we use your information",
+        "blocks": [
+          {
+            "list": [
+              "To process transfers and pay out funds to your recipients.",
+              "To verify your identity and meet our legal and regulatory obligations.",
+              "To detect, prevent, and investigate fraud and other prohibited activity.",
+              "To provide customer support and respond to your requests.",
+              "To improve and secure our products and communicate important service updates."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How we share information",
+        "blocks": [
+          "We do not sell your personal information. We share it only as needed to operate the service and comply with the law.",
+          {
+            "list": [
+              "Licensed banking and payout partners who settle funds in each market.",
+              "Payment processors and identity-verification providers acting on our behalf.",
+              "Regulators, law-enforcement, and other authorities where required by applicable law.",
+              "Professional advisers and service providers bound by confidentiality obligations."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Data retention",
+        "blocks": [
+          "We retain your information for as long as your account is active and for the period required to meet anti-money-laundering, tax, and other legal obligations in the markets we operate in. When data is no longer required, we securely delete or anonymise it."
+        ]
+      },
+      {
+        "heading": "Security",
+        "blocks": [
+          "Your data is encrypted in transit and at rest, access is restricted on a need-to-know basis, and our systems are monitored continuously for unauthorised activity. No method of transmission or storage is completely secure, but we work to protect your information using industry-standard safeguards."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "blocks": [
+          "Subject to applicable law, including the Nigeria Data Protection Act 2023, you may have the right to:",
+          {
+            "list": [
+              "Access the personal information we hold about you.",
+              "Request correction of inaccurate or incomplete information.",
+              "Request deletion of your information where we are not required to retain it.",
+              "Object to or restrict certain processing of your information."
+            ]
+          },
+          "To exercise any of these rights, contact us using the details below."
+        ]
+      },
+      {
+        "heading": "International transfers",
+        "blocks": [
+          "Because we operate across borders, your information may be processed in countries other than your own. Where this happens, we put appropriate safeguards in place to protect your information consistent with this policy."
+        ]
+      },
+      {
+        "heading": "Changes to this policy",
+        "blocks": [
+          "We may update this Privacy Policy from time to time. When we make material changes, we will update the date above and, where appropriate, notify you through the app or by email."
+        ]
+      },
+      {
+        "heading": "Contact us",
+        "blocks": [
+          "If you have questions about this policy or how we handle your information, contact our team at support@tranox.com."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "metaTitle": "Terms of Service",
+    "metaDescription": "The terms that govern your use of Tranox's cross-border money-transfer services.",
+    "title": "Terms of Service",
+    "lastUpdated": "June 7, 2026",
+    "intro": "These Terms of Service govern your access to and use of Tranox's cross-border money-transfer services. Please read them carefully before using the app or website.",
+    "sections": [
+      {
+        "heading": "Acceptance of these terms",
+        "blocks": [
+          "By creating an account or using Tranox, you agree to these Terms of Service. If you do not agree, you should not use the service. These terms form a binding agreement between you and Tranox."
+        ]
+      },
+      {
+        "heading": "Eligibility",
+        "blocks": [
+          "You must be at least 18 years old and legally able to enter into a contract to use Tranox. You agree to provide accurate, current, and complete information and to keep it up to date."
+        ]
+      },
+      {
+        "heading": "Accounts and verification",
+        "blocks": [
+          "You must complete identity verification (KYC) before sending or receiving money. You are responsible for safeguarding your login credentials and for all activity that occurs under your account. Notify us immediately if you suspect unauthorised access."
+        ]
+      },
+      {
+        "heading": "Transfers and payouts",
+        "blocks": [
+          "Tranox facilitates transfers between Nigeria (NGN) and Ivory Coast (XOF) in both directions. You are responsible for entering correct recipient and payout details. Transfers cannot be processed where details are inaccurate or where a transaction would breach applicable law."
+        ]
+      },
+      {
+        "heading": "Exchange rates and fees",
+        "blocks": [
+          "The exchange rate and a single transparent fee are shown before you confirm a transfer. The rate is locked at the moment you confirm, so the amount your recipient receives does not change after you send. Rates shown before confirmation are indicative and may move until a transfer is confirmed."
+        ]
+      },
+      {
+        "heading": "Cancellations and refunds",
+        "blocks": [
+          "Once a transfer is confirmed and paid out it generally cannot be reversed. If a transfer has not yet been paid out, you may request a cancellation and we will return the funds to your original payment method where possible. Refund timing depends on your bank or payment provider."
+        ]
+      },
+      {
+        "heading": "Prohibited use",
+        "blocks": [
+          "You agree not to use Tranox to:",
+          {
+            "list": [
+              "Engage in money laundering, terrorist financing, fraud, or any unlawful activity.",
+              "Send funds on behalf of an undisclosed third party.",
+              "Provide false, misleading, or stolen information.",
+              "Circumvent transfer limits, verification, or security controls."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Compliance and limits",
+        "blocks": [
+          "We operate under regulatory oversight and maintain anti-money-laundering and counter-terrorist-financing programs. We may apply transfer limits, request additional information, or delay, refuse, or reverse a transaction to comply with our legal and regulatory obligations."
+        ]
+      },
+      {
+        "heading": "Service availability",
+        "blocks": [
+          "We aim to keep the service available at all times but do not guarantee uninterrupted access. Transfers may occasionally be delayed by factors outside our control, including the systems of banks, mobile-money providers, and other partners."
+        ]
+      },
+      {
+        "heading": "Limitation of liability",
+        "blocks": [
+          "To the maximum extent permitted by law, Tranox is not liable for indirect, incidental, or consequential losses arising from your use of the service. Nothing in these terms excludes liability that cannot be excluded under applicable law."
+        ]
+      },
+      {
+        "heading": "Changes to these terms",
+        "blocks": [
+          "We may update these terms from time to time. When we make material changes, we will update the date above and, where appropriate, notify you through the app or by email. Continued use of the service after changes take effect constitutes acceptance of the updated terms."
+        ]
+      },
+      {
+        "heading": "Contact us",
+        "blocks": [
+          "If you have questions about these terms, contact our team at support@tranox.com."
+        ]
+      }
+    ]
+  },
+  "compliance": {
+    "metaTitle": "Compliance",
+    "metaDescription": "How Tranox meets its regulatory, anti-money-laundering, and consumer-protection obligations across the Nigeria–Ivory Coast corridor.",
+    "title": "Compliance",
+    "lastUpdated": "June 7, 2026",
+    "intro": "Trust is the foundation of cross-border payments. This page explains how Tranox meets its regulatory, anti-money-laundering, and consumer-protection obligations across the Nigeria–Ivory Coast corridor.",
+    "sections": [
+      {
+        "heading": "Regulatory framework",
+        "blocks": [
+          "Tranox operates under regulatory oversight in each market it serves and works only with licensed banking and payout partners to settle funds. We design our products to comply with the laws and supervisory requirements that apply to cross-border money transfers between Nigeria and Ivory Coast, including:",
+          {
+            "list": [
+              "Central Bank of Nigeria (CBN) regulations, including Payment Service Provider guidelines.",
+              "Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) laws.",
+              "The Nigeria Data Protection Act 2023 and directives issued by the Nigeria Data Protection Commission (NDPC).",
+              "BCEAO and WAEMU regulations governing cross-border CFA franc (XOF) transactions."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Anti-money-laundering (AML) and counter-terrorist financing (CFT)",
+        "blocks": [
+          "We maintain a risk-based AML/CFT program aligned with applicable laws and international standards. Our controls include:",
+          {
+            "list": [
+              "Customer due diligence and enhanced due diligence for higher-risk activity.",
+              "Ongoing transaction monitoring to detect unusual or suspicious patterns.",
+              "Screening against applicable sanctions and watchlists.",
+              "Reporting of suspicious activity to the relevant authorities where required."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Know Your Customer (KYC)",
+        "blocks": [
+          "Every customer must complete identity verification before sending or receiving money. We collect and verify government-issued identification and other information needed to confirm your identity. Verification is reusable across future transfers, and we may request additional information at any time to meet our obligations."
+        ]
+      },
+      {
+        "heading": "Sanctions screening",
+        "blocks": [
+          "We screen customers, recipients, and transactions against applicable sanctions lists. Transfers that involve sanctioned individuals, entities, or jurisdictions will be blocked, and we may be required to report and freeze related funds."
+        ]
+      },
+      {
+        "heading": "Transaction monitoring and limits",
+        "blocks": [
+          "We monitor activity continuously and apply transfer limits based on your verification level and risk profile. We may delay, decline, or reverse a transaction, or request further information, where this is necessary to comply with the law or to protect customers from fraud."
+        ]
+      },
+      {
+        "heading": "Safeguarding of funds",
+        "blocks": [
+          "Customer funds are handled through regulated partners and are kept separate from our own operating funds in line with applicable safeguarding requirements, so that funds remain protected while a transfer is being processed."
+        ]
+      },
+      {
+        "heading": "Data protection",
+        "blocks": [
+          "We handle personal and financial information in line with our Privacy Policy and applicable data-protection laws, including the Nigeria Data Protection Act 2023 and NDPC directives, using encryption and strict access controls to keep your information secure."
+        ]
+      },
+      {
+        "heading": "Reporting concerns",
+        "blocks": [
+          "If you suspect fraud, financial crime, or any misuse of our service, contact our compliance team at support@tranox.com. We take all reports seriously and investigate promptly."
+        ]
+      }
+    ]
+  }
+}
