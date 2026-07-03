@@ -2,12 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Flag } from "@/components/Flag";
 import { locales, localeCookieName, type Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 
-const LABELS: Record<Locale, string> = {
-  "en-NG": "EN",
-  "fr-CI": "FR",
+const FLAGS: Record<Locale, "NG" | "CI"> = {
+  "en-NG": "NG",
+  "fr-CI": "CI",
+};
+
+const NAMES: Record<Locale, string> = {
+  "en-NG": "English (Nigeria)",
+  "fr-CI": "Français (Côte d'Ivoire)",
 };
 
 interface LocaleSwitcherProps {
@@ -40,19 +46,22 @@ export function LocaleSwitcher({
           <Link
             key={locale}
             href={target}
+            aria-label={NAMES[locale]}
             aria-current={isActive ? "true" : undefined}
             onClick={() => {
               document.cookie = `${localeCookieName}=${locale};path=/;max-age=31536000;samesite=lax`;
               onNavigate?.();
             }}
             className={cn(
-              "rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+              "flex h-7 w-7 items-center justify-center rounded-full transition-all",
               isActive
-                ? "bg-brand text-white"
-                : "text-ink-soft hover:text-brand",
+                ? "ring-2 ring-brand"
+                : "opacity-45 grayscale-[35%] hover:opacity-100 hover:grayscale-0",
             )}
           >
-            {LABELS[locale]}
+            <span aria-hidden className="flex h-5 w-5">
+              <Flag country={FLAGS[locale]} className="h-5 w-5" />
+            </span>
           </Link>
         );
       })}
