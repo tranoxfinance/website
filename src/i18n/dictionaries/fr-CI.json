@@ -62,8 +62,18 @@
   "storeBadges": {
     "development": "En cours de développement",
     "comingSoon": "Bientôt disponible",
-    "appStoreAria": "Télécharger dans l'App Store",
-    "googlePlayAria": "Disponible sur Google Play"
+    "appStore": {
+      "src": "/appstore-fr.svg",
+      "label": "Télécharger dans l'App Store",
+      "width": 127,
+      "height": 40
+    },
+    "googlePlay": {
+      "src": "/googleplay-fr.svg",
+      "label": "Disponible sur Google Play",
+      "width": 155,
+      "height": 46
+    }
   },
   "features": {
     "tag": "Sans frontières par conception",

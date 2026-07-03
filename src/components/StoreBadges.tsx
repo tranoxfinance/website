@@ -15,46 +15,28 @@ export function StoreBadges({ dict, className }: StoreBadgesProps) {
         {dict.development}
       </span>
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex flex-col items-center gap-1.5">
-          <a
-            href="#"
-            aria-label={dict.appStoreAria}
-            className="inline-block cursor-not-allowed opacity-60 transition hover:opacity-50"
-          >
-            <Image
-              src="/appstore.svg"
-              alt={dict.appStoreAria}
-              width={120}
-              height={40}
-              unoptimized
-              priority
-              className="h-[46px] w-auto"
-            />
-          </a>
-          <span className="text-[11px] font-medium text-ink-soft">
-            {dict.comingSoon}
-          </span>
-        </div>
-        <div className="flex flex-col items-center gap-1.5">
-          <a
-            href="#"
-            aria-label={dict.googlePlayAria}
-            className="inline-block cursor-not-allowed opacity-60 transition hover:opacity-50"
-          >
-            <Image
-              src="/googleplay.svg"
-              alt={dict.googlePlayAria}
-              width={155}
-              height={46}
-              unoptimized
-              priority
-              className="h-[46px] w-auto"
-            />
-          </a>
-          <span className="text-[11px] font-medium text-ink-soft">
-            {dict.comingSoon}
-          </span>
-        </div>
+        {[dict.appStore, dict.googlePlay].map((badge) => (
+          <div key={badge.src} className="flex flex-col items-center gap-1.5">
+            <a
+              href="#"
+              aria-label={badge.label}
+              className="inline-block cursor-not-allowed opacity-60 transition hover:opacity-50"
+            >
+              <Image
+                src={badge.src}
+                alt={badge.label}
+                width={badge.width}
+                height={badge.height}
+                unoptimized
+                priority
+                className="h-[46px] w-auto"
+              />
+            </a>
+            <span className="text-[11px] font-medium text-ink-soft">
+              {dict.comingSoon}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
