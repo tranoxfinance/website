@@ -63,8 +63,6 @@ export async function generateMetadata({
   };
 }
 
-const themeScript = `(function(){try{var e=document.documentElement;e.classList.add('js');var s=localStorage.getItem('theme');var d=s?s==='dark':true;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){}})();`;
-
 export default async function RootLayout({
   children,
   params,
@@ -79,8 +77,11 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${plexSans.variable} ${plexMono.variable} dark h-full`}
     >
-      <body className="min-h-full flex flex-col bg-background text-ink pb-[4.75rem] lg:pb-0">
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-background text-ink pb-[4.75rem] lg:pb-0"
+      >
+        <script src="/theme-init.js" async />
         <SplashScreen />
         <ScrollToTop />
         {children}
