@@ -63,7 +63,7 @@ export async function generateMetadata({
   };
 }
 
-const themeScript = `(function(){try{var e=document.documentElement;e.classList.add('js');var s=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var d=s?s==='dark':m;if(d)e.classList.add('dark');e.style.colorScheme=d?'dark':'light';}catch(e){}})();`;
+const themeScript = `(function(){try{var e=document.documentElement;e.classList.add('js');var s=localStorage.getItem('theme');var d=s?s==='dark':true;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){}})();`;
 
 export default async function RootLayout({
   children,
@@ -77,7 +77,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${plexSans.variable} ${plexMono.variable} h-full`}
+      className={`${plexSans.variable} ${plexMono.variable} dark h-full`}
     >
       <body className="min-h-full flex flex-col bg-background text-ink pb-[4.75rem] lg:pb-0">
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
