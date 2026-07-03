@@ -1,58 +1,36 @@
 import { Zap, LockKeyhole, ArrowLeftRight, Radar } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const BENEFITS = [
-  {
-    icon: Zap,
-    title: "Instant payout, either direction",
-    body: "Send from Nigeria or Ivory Coast and your recipient is paid in minutes.",
-    pulse: true,
-  },
-  {
-    icon: LockKeyhole,
-    title: "Locked-in rates",
-    body: "Your rate is fixed the moment you confirm. The payout never changes after you send.",
-  },
-  {
-    icon: ArrowLeftRight,
-    title: "Send and receive both ways",
-    body: "One account works in both directions across the corridor, with no extra setup.",
-  },
-  {
-    icon: Radar,
-    title: "Live tracking, end to end",
-    body: "Follow every transfer with clear status from the moment you confirm until it lands.",
-  },
-];
+const ICONS = [Zap, LockKeyhole, ArrowLeftRight, Radar];
 
-export function WhyTranox() {
+export function WhyTranox({ dict }: { dict: Dictionary["why"] }) {
   return (
     <section className="py-20 sm:py-28">
       <Container>
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              Why us
+              {dict.tag}
             </span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Why senders prefer Tranox
+              {dict.heading}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              Speed, certainty, and a rate you can trust, every time you send
-              across the corridor.
+              {dict.sub}
             </p>
           </div>
         </Reveal>
 
         <div className="mx-auto mt-16 grid max-w-3xl gap-x-12 gap-y-12 sm:grid-cols-2">
-          {BENEFITS.map((benefit, index) => {
-            const Icon = benefit.icon;
+          {dict.items.map((benefit, index) => {
+            const Icon = ICONS[index];
             return (
               <Reveal key={benefit.title} delay={index * 80}>
                 <div className="group flex flex-col items-start">
                   <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand transition-transform duration-300 group-hover:-translate-y-1">
-                    {benefit.pulse ? (
+                    {index === 0 ? (
                       <span
                         aria-hidden
                         className="absolute inset-0 rounded-2xl bg-brand/25 animate-pulse-ring"

@@ -3,61 +3,47 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/Button";
 import { CorridorMap } from "@/components/CorridorMap";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const POINTS = [
-  {
-    icon: Radar,
-    title: "Track every transfer live",
-    body: "Follow each payment from sent to delivered with real-time status.",
-  },
-  {
-    icon: ListChecks,
-    title: "Saved recipients",
-    body: "Pay the same people in seconds without re-entering their details.",
-  },
-  {
-    icon: Bell,
-    title: "Rate alerts",
-    body: "Get notified the moment the rate moves in your favour.",
-  },
-];
+const ICONS = [Radar, ListChecks, Bell];
 
-export function AppShowcase() {
+export function AppShowcase({ dict }: { dict: Dictionary["showcase"] }) {
   return (
     <section className="overflow-hidden bg-surface py-20 sm:py-28">
       <Container className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal>
           <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-            Live corridor
+            {dict.tag}
           </span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Every transfer, tracked in real time
+            {dict.heading}
           </h2>
           <p className="mt-4 max-w-lg text-lg leading-relaxed text-ink-soft">
-            Watch money move between Nigeria and Ivory Coast as it happens,
-            then send, track, and manage it all from one clean app built for
-            the corridor.
+            {dict.sub}
           </p>
 
           <ul className="mt-8 space-y-5">
-            {POINTS.map((point) => (
-              <li key={point.title} className="flex gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                  <point.icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <div>
-                  <h3 className="text-base font-bold text-ink">{point.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                    {point.body}
-                  </p>
-                </div>
-              </li>
-            ))}
+            {dict.points.map((point, index) => {
+              const Icon = ICONS[index];
+              return (
+                <li key={point.title} className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold text-ink">{point.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                      {point.body}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
 
           <div className="mt-8">
             <Button href="#get-started" size="lg">
-              Get the app
+              {dict.cta}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -65,7 +51,11 @@ export function AppShowcase() {
 
         <Reveal delay={120}>
           <div className="flex justify-center lg:justify-end">
-            <CorridorMap />
+            <CorridorMap
+              ariaLabel={dict.mapAria}
+              nigeriaLabel={dict.nigeria}
+              ivoryCoastLabel={dict.ivoryCoast}
+            />
           </div>
         </Reveal>
       </Container>

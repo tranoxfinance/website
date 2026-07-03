@@ -1,12 +1,9 @@
 import { Landmark, Wallet, Banknote } from "lucide-react";
 import { Flag } from "@/components/Flag";
 import { TranoxMark } from "@/components/TranoxMark";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const PAYOUTS = [
-  { icon: Landmark, label: "Bank", y: 30 },
-  { icon: Wallet, label: "Wallet", y: 50 },
-  { icon: Banknote, label: "Cash", y: 70 },
-];
+type PayoutLabels = Dictionary["about"]["payouts"];
 
 const HUB = { x: 30, y: 50 };
 const NG = { x: 30, y: 9 };
@@ -18,7 +15,13 @@ function path(from: { x: number; y: number }, to: { x: number; y: number }) {
   return `M ${from.x} ${from.y} C ${mx} ${from.y} ${mx} ${to.y} ${to.x} ${to.y}`;
 }
 
-export function CorridorHub() {
+export function CorridorHub({ labels }: { labels: PayoutLabels }) {
+  const payouts = [
+    { icon: Landmark, label: labels.bank, y: 30 },
+    { icon: Wallet, label: labels.wallet, y: 50 },
+    { icon: Banknote, label: labels.cash, y: 70 },
+  ];
+
   return (
     <div className="relative mx-auto mt-5 aspect-[5/4] w-full max-w-[14rem]">
       <svg
@@ -41,7 +44,7 @@ export function CorridorHub() {
             animation: "draw 1s ease-out forwards",
           }}
         />
-        {PAYOUTS.map((p, i) => (
+        {payouts.map((p, i) => (
           <path
             key={p.label}
             d={path(HUB, { x: LEAF_X, y: p.y })}
@@ -76,7 +79,7 @@ export function CorridorHub() {
         </span>
       </Node>
 
-      {PAYOUTS.map((p) => {
+      {payouts.map((p) => {
         const Icon = p.icon;
         return (
           <Node key={p.label} x={LEAF_X} y={p.y} anchor="left">

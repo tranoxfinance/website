@@ -48,7 +48,19 @@ function pct(x: number, y: number) {
   return { left: `${(x / VB_W) * 100}%`, top: `${(y / VB_H) * 100}%` };
 }
 
-export function CorridorMap({ className }: { className?: string }) {
+interface CorridorMapProps {
+  ariaLabel: string;
+  nigeriaLabel: string;
+  ivoryCoastLabel: string;
+  className?: string;
+}
+
+export function CorridorMap({
+  ariaLabel,
+  nigeriaLabel,
+  ivoryCoastLabel,
+  className,
+}: CorridorMapProps) {
   const [animate, setAnimate] = useState(false);
   const [txs, setTxs] = useState<Tx[]>([]);
   const nextId = useRef(0);
@@ -96,7 +108,7 @@ export function CorridorMap({ className }: { className?: string }) {
         viewBox={`0 0 ${VB_W} ${VB_H}`}
         className="h-full w-full"
         role="img"
-        aria-label="Real-time transfers flowing between Nigeria and Ivory Coast"
+        aria-label={ariaLabel}
       >
         <g className="stroke-background" strokeWidth={0.7}>
           {COUNTRIES.map((c) =>
@@ -159,8 +171,8 @@ export function CorridorMap({ className }: { className?: string }) {
         </div>
       ))}
 
-      <CityTag country="CI" name="Ivory Coast" point={CI_LABEL} side="left" />
-      <CityTag country="NG" name="Nigeria" point={NG_LABEL} side="right" />
+      <CityTag country="CI" name={ivoryCoastLabel} point={CI_LABEL} side="left" />
+      <CityTag country="NG" name={nigeriaLabel} point={NG_LABEL} side="right" />
     </div>
   );
 }

@@ -21,12 +21,14 @@ interface ThemeToggleProps {
   className?: string;
   variant?: "icon" | "row";
   label?: string;
+  ariaLabel?: string;
 }
 
 export function ThemeToggle({
   className,
   variant = "icon",
   label = "Appearance",
+  ariaLabel = "Toggle dark mode",
 }: ThemeToggleProps) {
   const dark = useSyncExternalStore(subscribe, isDark, () => false);
   const mounted = useSyncExternalStore(
@@ -74,7 +76,7 @@ export function ThemeToggle({
       <button
         type="button"
         onClick={toggle}
-        aria-label="Toggle dark mode"
+        aria-label={ariaLabel}
         aria-pressed={dark}
         className={cn(
           "flex w-full items-center justify-between rounded-xl border border-border px-4 py-3 text-ink-soft transition active:bg-surface cursor-pointer",
@@ -93,7 +95,7 @@ export function ThemeToggle({
     <button
       type="button"
       onClick={toggle}
-      aria-label="Toggle dark mode"
+      aria-label={ariaLabel}
       aria-pressed={dark}
       className={cn(
         "relative flex h-10 w-10 items-center justify-center rounded-full text-ink-soft ring-1 ring-border transition hover:text-brand hover:ring-brand/40 cursor-pointer",
