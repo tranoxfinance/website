@@ -41,10 +41,10 @@ export function Hero({ dict, badges }: HeroProps) {
 
         <div className="animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] -mt-6 flex justify-center [animation-delay:120ms] sm:-mt-10 lg:justify-end">
           <Image
-            src="/images/hero-app-preview.png"
-            alt={dict.imageAlt}
-            width={831}
-            height={1296}
+            src={dict.image.src}
+            alt={dict.image.alt}
+            width={dict.image.width}
+            height={dict.image.height}
             priority
             className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm"
           />

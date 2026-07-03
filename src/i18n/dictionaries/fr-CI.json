@@ -52,7 +52,12 @@
     ],
     "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
     "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
-    "imageAlt": "L'application Tranox affichant un transfert de NGN vers XOF"
+    "image": {
+      "src": "/images/hero-app-preview-fr.png",
+      "width": 1024,
+      "height": 1536,
+      "alt": "L'application Tranox affichant un envoi en francs CFA (XOF)"
+    }
   },
   "storeBadges": {
     "development": "En cours de développement",

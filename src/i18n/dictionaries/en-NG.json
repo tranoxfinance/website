@@ -52,7 +52,12 @@
     ],
     "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
     "tagline": "Cross-border payments built for West Africa",
-    "imageAlt": "Tranox app showing a transfer from NGN to XOF"
+    "image": {
+      "src": "/images/hero-app-preview.png",
+      "width": 831,
+      "height": 1296,
+      "alt": "Tranox app showing a transfer from NGN to XOF"
+    }
   },
   "storeBadges": {
     "development": "Now in development",
