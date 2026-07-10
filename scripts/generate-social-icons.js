@@ -4,6 +4,7 @@ const sharp = require('sharp');
 
 const OUT_DIR = path.join(__dirname, '..', 'public', 'social');
 const SIZE = 64;
+const ICON_COLOR = '#0D8FD2';
 
 const glyphIcons = {
   facebook:
@@ -14,7 +15,7 @@ const glyphIcons = {
 };
 
 async function renderGlyph(name, pathMarkup) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${SIZE}" height="${SIZE}"><g fill="#000000">${pathMarkup}</g></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${SIZE}" height="${SIZE}"><g fill="${ICON_COLOR}">${pathMarkup}</g></svg>`;
   await sharp(Buffer.from(svg))
     .resize(SIZE, SIZE)
     .png()
@@ -23,7 +24,7 @@ async function renderGlyph(name, pathMarkup) {
 
 async function renderLinkedin() {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${SIZE}" height="${SIZE}">
-    <rect x="1" y="1" width="22" height="22" rx="4" fill="#000000"/>
+    <rect x="1" y="1" width="22" height="22" rx="4" fill="${ICON_COLOR}"/>
     <text x="12" y="17.5" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">in</text>
   </svg>`;
   await sharp(Buffer.from(svg))
