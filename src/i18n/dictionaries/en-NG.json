@@ -21,6 +21,13 @@
     "areaServed": ["Nigeria", "Ivory Coast"],
     "slogan": "Fast. Secure. Global."
   },
+  "cookieConsent": {
+    "ariaLabel": "Cookie notice",
+    "message": "We use essential cookies to remember your language and cookie choice. With your permission, we'd also like to use analytics cookies to understand how visitors use our site.",
+    "policyLabel": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "nav": {
     "links": [
       { "label": "About us", "hash": "#about" },
@@ -327,6 +334,21 @@
         "heading": "Security",
         "blocks": [
           "Your data is encrypted in transit and at rest, access is restricted on a need-to-know basis, and our systems are monitored continuously for unauthorised activity. No method of transmission or storage is completely secure, but we work to protect your information using industry-standard safeguards."
+        ]
+      },
+      {
+        "heading": "Cookies",
+        "blocks": [
+          "We use a small number of cookies to keep this website working correctly, and, with your permission, to understand how visitors use our site. We do not use cookies for advertising.",
+          {
+            "list": [
+              "Language preference: remembers whether you're viewing the site in English or French. Always active.",
+              "Cookie consent: remembers the choice you made in the cookie banner, so we don't ask again. Always active.",
+              "Google Analytics (_ga, _ga_*): helps us understand aggregate visitor traffic and behaviour on the site. Only set if you accept cookies in the banner, and processed by Google in line with its own privacy policy."
+            ]
+          },
+          "Your appearance preference (light or dark mode) is stored locally in your browser, not in a cookie.",
+          "You can withdraw your consent, or clear or block cookies at any time through your browser settings, though the site may not remember your language preference if you do."
         ]
       },
       {

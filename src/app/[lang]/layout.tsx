@@ -3,6 +3,8 @@ import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SplashScreen } from "@/components/SplashScreen";
+import { CookieConsent } from "@/components/CookieConsent";
+import { Analytics } from "@/components/Analytics";
 import { defaultLocale, hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import "../globals.css";
@@ -97,6 +99,8 @@ export default async function RootLayout({
         <ScrollToTop />
         {children}
         <MobileActionBar lang={locale} dict={dict.mobileBar} />
+        <CookieConsent lang={locale} dict={dict.cookieConsent} />
+        <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );
