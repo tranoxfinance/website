@@ -15,7 +15,7 @@ export async function generateMetadata({
   return {
     title: dict.privacy.metaTitle,
     description: dict.privacy.metaDescription,
-    alternates: localeAlternates("/privacy"),
+    alternates: localeAlternates(lang, "/privacy"),
   };
 }
 

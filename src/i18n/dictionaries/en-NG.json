@@ -21,6 +21,13 @@
     "areaServed": ["Nigeria", "Ivory Coast"],
     "slogan": "Fast. Secure. Global."
   },
+  "cookieConsent": {
+    "ariaLabel": "Cookie notice",
+    "message": "We use essential cookies to remember your language and cookie choice. With your permission, we'd also like to use analytics cookies to understand how visitors use our site.",
+    "policyLabel": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "nav": {
     "links": [
       { "label": "About us", "hash": "#about" },
@@ -53,9 +60,10 @@
     "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
     "tagline": "Cross-border payments built for West Africa",
     "image": {
-      "src": "/images/hero-app-preview.png",
-      "width": 831,
-      "height": 1296,
+      "src": "/images/hero-app-preview.webp",
+      "darkSrc": "/images/hero-app-preview-dark.webp",
+      "width": 900,
+      "height": 1606,
       "alt": "Tranox app showing a transfer from NGN to XOF"
     }
   },
@@ -329,6 +337,21 @@
         ]
       },
       {
+        "heading": "Cookies",
+        "blocks": [
+          "We use a small number of cookies to keep this website working correctly, and, with your permission, to understand how visitors use our site. We do not use cookies for advertising.",
+          {
+            "list": [
+              "Language preference: remembers whether you're viewing the site in English or French. Always active.",
+              "Cookie consent: remembers the choice you made in the cookie banner, so we don't ask again. Always active.",
+              "Google Analytics (_ga, _ga_*): helps us understand aggregate visitor traffic and behaviour on the site. Only set if you accept cookies in the banner, and processed by Google in line with its own privacy policy."
+            ]
+          },
+          "Your appearance preference (light or dark mode) is stored locally in your browser, not in a cookie.",
+          "You can withdraw your consent, or clear or block cookies at any time through your browser settings, though the site may not remember your language preference if you do."
+        ]
+      },
+      {
         "heading": "Your rights",
         "blocks": [
           "Subject to applicable law, including the Nigeria Data Protection Act 2023, you may have the right to:",
@@ -358,7 +381,7 @@
       {
         "heading": "Contact us",
         "blocks": [
-          "If you have questions about this policy or how we handle your information, contact our team at support@tranox.com."
+          "If you have questions about this policy or how we handle your information, contact our team at hello@tranoxfinance.com."
         ]
       }
     ]
@@ -447,7 +470,7 @@
       {
         "heading": "Contact us",
         "blocks": [
-          "If you have questions about these terms, contact our team at support@tranox.com."
+          "If you have questions about these terms, contact our team at hello@tranoxfinance.com."
         ]
       }
     ]
@@ -520,7 +543,7 @@
       {
         "heading": "Reporting concerns",
         "blocks": [
-          "If you suspect fraud, financial crime, or any misuse of our service, contact our compliance team at support@tranox.com. We take all reports seriously and investigate promptly."
+          "If you suspect fraud, financial crime, or any misuse of our service, contact our compliance team at hello@tranoxfinance.com. We take all reports seriously and investigate promptly."
         ]
       }
     ]

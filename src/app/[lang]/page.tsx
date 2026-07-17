@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   return {
-    alternates: localeAlternates("/"),
+    alternates: localeAlternates(lang, "/"),
   };
 }
 
@@ -36,11 +36,24 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     "@type": "FinancialService",
     name: "Tranox",
     description: dict.jsonLd.description,
-    url: `https://tranox.com/${lang}`,
+    url: `https://tranoxfinance.com/${lang}`,
     inLanguage: lang,
     areaServed: [...dict.jsonLd.areaServed],
     currenciesAccepted: "NGN, XOF",
     slogan: dict.jsonLd.slogan,
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: dict.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
   };
 
   return (
@@ -48,6 +61,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">

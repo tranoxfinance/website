@@ -3,6 +3,8 @@ import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SplashScreen } from "@/components/SplashScreen";
+import { CookieConsent } from "@/components/CookieConsent";
+import { Analytics } from "@/components/Analytics";
 import { defaultLocale, hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import "../globals.css";
@@ -21,7 +23,7 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://tranox.com";
+const siteUrl = "https://tranoxfinance.com";
 
 const ogLocales = { "en-NG": "en_NG", "fr-CI": "fr_CI" } as const;
 
@@ -47,6 +49,17 @@ export async function generateMetadata({
     },
     description: meta.description,
     keywords: [...meta.keywords],
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       type: "website",
       url: `${siteUrl}/${locale}`,
@@ -86,6 +99,8 @@ export default async function RootLayout({
         <ScrollToTop />
         {children}
         <MobileActionBar lang={locale} dict={dict.mobileBar} />
+        <CookieConsent lang={locale} dict={dict.cookieConsent} />
+        <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

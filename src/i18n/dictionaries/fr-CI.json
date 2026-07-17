@@ -21,6 +21,13 @@
     "areaServed": ["Nigéria", "Côte d'Ivoire"],
     "slogan": "Rapide. Sûr. Mondial."
   },
+  "cookieConsent": {
+    "ariaLabel": "Avis relatif aux cookies",
+    "message": "Nous utilisons des cookies essentiels pour mémoriser votre langue et votre choix concernant les cookies. Avec votre permission, nous aimerions aussi utiliser des cookies d'analyse pour comprendre comment les visiteurs utilisent notre site.",
+    "policyLabel": "En savoir plus",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
   "nav": {
     "links": [
       { "label": "À propos", "hash": "#about" },
@@ -53,9 +60,10 @@
     "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
     "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
     "image": {
-      "src": "/images/hero-app-preview-fr.png",
-      "width": 1024,
-      "height": 1536,
+      "src": "/images/hero-app-preview-fr.webp",
+      "darkSrc": "/images/hero-app-preview-fr-dark.webp",
+      "width": 900,
+      "height": 1606,
       "alt": "L'application Tranox affichant un envoi en francs CFA (XOF)"
     }
   },
@@ -329,6 +337,21 @@
         ]
       },
       {
+        "heading": "Cookies",
+        "blocks": [
+          "Nous utilisons un petit nombre de cookies pour assurer le bon fonctionnement de ce site et, avec votre permission, pour comprendre comment les visiteurs l'utilisent. Nous n'utilisons pas de cookies à des fins publicitaires.",
+          {
+            "list": [
+              "Préférence de langue : mémorise si vous consultez le site en anglais ou en français. Toujours actif.",
+              "Consentement aux cookies : mémorise le choix que vous avez fait dans la bannière de cookies, afin de ne pas vous le redemander. Toujours actif.",
+              "Google Analytics (_ga, _ga_*) : nous aide à comprendre le trafic et le comportement global des visiteurs sur le site. Défini uniquement si vous acceptez les cookies dans la bannière, et traité par Google conformément à sa propre politique de confidentialité."
+            ]
+          },
+          "Votre préférence d'apparence (mode clair ou sombre) est enregistrée localement dans votre navigateur, et non dans un cookie.",
+          "Vous pouvez retirer votre consentement, ou effacer ou bloquer les cookies à tout moment via les paramètres de votre navigateur, bien que le site puisse alors ne pas mémoriser votre préférence de langue."
+        ]
+      },
+      {
         "heading": "Vos droits",
         "blocks": [
           "Sous réserve de la loi applicable, y compris la loi nigériane sur la protection des données de 2023, vous pouvez avoir le droit de :",
@@ -358,7 +381,7 @@
       {
         "heading": "Nous contacter",
         "blocks": [
-          "Si vous avez des questions sur cette politique ou sur la manière dont nous traitons vos informations, contactez notre équipe à support@tranox.com."
+          "Si vous avez des questions sur cette politique ou sur la manière dont nous traitons vos informations, contactez notre équipe à hello@tranoxfinance.com."
         ]
       }
     ]
@@ -447,7 +470,7 @@
       {
         "heading": "Nous contacter",
         "blocks": [
-          "Si vous avez des questions sur ces conditions, contactez notre équipe à support@tranox.com."
+          "Si vous avez des questions sur ces conditions, contactez notre équipe à hello@tranoxfinance.com."
         ]
       }
     ]
@@ -520,7 +543,7 @@
       {
         "heading": "Signaler une préoccupation",
         "blocks": [
-          "Si vous suspectez une fraude, un délit financier ou tout usage abusif de notre service, contactez notre équipe conformité à support@tranox.com. Nous prenons tous les signalements au sérieux et enquêtons rapidement."
+          "Si vous suspectez une fraude, un délit financier ou tout usage abusif de notre service, contactez notre équipe conformité à hello@tranoxfinance.com. Nous prenons tous les signalements au sérieux et enquêtons rapidement."
         ]
       }
     ]

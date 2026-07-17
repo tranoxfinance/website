@@ -1,13 +1,51 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
 
-export const alt =
-  "Tranox — Instant money transfers between Nigeria and Ivory Coast";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+const copy: Record<
+  Locale,
+  { alt: string; tag: string; headline: string; slogan: string }
+> = {
+  "en-NG": {
+    alt: "Tranox — Instant money transfers between Nigeria and Ivory Coast",
+    tag: "CROSS-BORDER TRANSFERS",
+    headline: "Send money between Nigeria and Ivory Coast in minutes",
+    slogan: "Fast. Secure. Global.",
+  },
+  "fr-CI": {
+    alt: "Tranox — Transferts d'argent instantanés entre le Nigéria et la Côte d'Ivoire",
+    tag: "TRANSFERTS TRANSFRONTALIERS",
+    headline:
+      "Envoyez de l'argent entre le Nigéria et la Côte d'Ivoire en quelques minutes",
+    slogan: "Rapide. Sûr. Mondial.",
+  },
+};
+
+export function generateImageMetadata({
+  params,
+}: {
+  params: { lang: string };
+}) {
+  const locale = hasLocale(params.lang) ? params.lang : defaultLocale;
+  return [
+    {
+      id: locale,
+      alt: copy[locale].alt,
+      size,
+      contentType,
+    },
+  ];
+}
+
+export default async function Image({ id }: { id: Promise<string | number> }) {
+  const rawId = String(await id);
+  const locale = hasLocale(rawId) ? rawId : defaultLocale;
+  const t = copy[locale];
+
   const logoSrc = `data:image/png;base64,${readFileSync(
     join(process.cwd(), "public", "og-logo.png"),
   ).toString("base64")}`;
@@ -42,7 +80,7 @@ export default function Image() {
               letterSpacing: "0.12em",
             }}
           >
-            CROSS-BORDER TRANSFERS
+            {t.tag}
           </div>
           <div
             style={{
@@ -54,7 +92,7 @@ export default function Image() {
               maxWidth: 940,
             }}
           >
-            Send money between Nigeria and Ivory Coast in minutes
+            {t.headline}
           </div>
           <div
             style={{
@@ -113,7 +151,7 @@ export default function Image() {
             color: "rgba(255,255,255,0.6)",
           }}
         >
-          <div style={{ display: "flex" }}>Fast. Secure. Global.</div>
+          <div style={{ display: "flex" }}>{t.slogan}</div>
         </div>
       </div>
     ),
