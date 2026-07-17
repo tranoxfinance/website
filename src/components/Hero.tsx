@@ -46,7 +46,15 @@ export function Hero({ dict, badges }: HeroProps) {
             width={dict.image.width}
             height={dict.image.height}
             priority
-            className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm"
+            className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:hidden"
+          />
+          <Image
+            src={dict.image.darkSrc}
+            alt={dict.image.alt}
+            width={dict.image.width}
+            height={dict.image.height}
+            priority
+            className="hidden h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:block"
           />
         </div>
       </Container>
