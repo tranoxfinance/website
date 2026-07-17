@@ -68,7 +68,7 @@ export async function LiveRates({ lang, dict }: LiveRatesProps) {
                 <p className="text-sm font-medium text-ink-soft">
                   {dict.pairLabel}
                 </p>
-                <p className="mt-1 text-4xl font-bold tracking-tight text-ink">
+                <p className="mt-1 text-2xl font-bold tracking-tight text-ink sm:text-4xl">
                   1,000 NGN ≈ {numberFormat.format(current * 1000)} XOF
                 </p>
                 <p className="mt-2 text-sm text-ink-soft">

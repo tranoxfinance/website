@@ -46,7 +46,7 @@ export function buildRateTicks(
     locale,
     options ?? { hour: "2-digit", minute: "2-digit" },
   );
-  const tickCount = 6;
+  const tickCount = 4;
   const lastIndex = times.length - 1;
   if (lastIndex < 1) return times.map((time) => formatter.format(new Date(time)));
 

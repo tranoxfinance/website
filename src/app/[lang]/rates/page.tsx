@@ -73,7 +73,7 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
 
   return (
     <div className="overflow-hidden rounded-3xl border border-border bg-card p-7 sm:p-9">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <div>
           <p className="text-sm font-medium text-ink-soft">{label}</p>
           <p className="mt-1 text-3xl font-bold tracking-tight text-ink">
@@ -82,7 +82,7 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
         </div>
         <div
           className={cn(
-            "flex shrink-0 items-center gap-1.5 rounded-full bg-surface px-3 py-1.5 text-sm font-semibold",
+            "flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-surface px-3 py-1.5 text-sm font-semibold",
             trendClass,
           )}
         >
