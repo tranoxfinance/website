@@ -10,10 +10,10 @@ export function hasLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
-export function localeAlternates(path: string) {
+export function localeAlternates(locale: Locale, path: string) {
   const suffix = path === "/" ? "" : path;
   return {
-    canonical: `/${defaultLocale}${suffix}`,
+    canonical: `/${locale}${suffix}`,
     languages: {
       "en-NG": `/en-NG${suffix}`,
       "fr-CI": `/fr-CI${suffix}`,

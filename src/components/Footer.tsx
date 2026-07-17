@@ -99,11 +99,11 @@ export function Footer({ lang, dict }: FooterProps) {
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="mailto:support@tranox.com"
+                  href="mailto:hello@tranoxfinance.com"
                   className="flex items-center gap-2.5 text-sm text-ink-soft transition hover:text-brand"
                 >
                   <Mail className="h-4 w-4 shrink-0 text-brand" strokeWidth={1.75} />
-                  support@tranox.com
+                  hello@tranoxfinance.com
                 </a>
               </li>
               <li>

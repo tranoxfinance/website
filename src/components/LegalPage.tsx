@@ -24,6 +24,15 @@ interface LegalPageProps {
   page: LegalContent;
 }
 
+function slugify(heading: string) {
+  return heading
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export function LegalPage({ lang, dict, page }: LegalPageProps) {
   return (
     <>
@@ -49,7 +58,7 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
 
             <div className="mt-12 space-y-10">
               {page.sections.map((section) => (
-                <div key={section.heading}>
+                <div key={section.heading} id={slugify(section.heading)}>
                   <h2 className="text-xl font-bold tracking-tight text-ink">
                     {section.heading}
                   </h2>

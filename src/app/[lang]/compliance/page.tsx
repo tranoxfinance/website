@@ -15,7 +15,7 @@ export async function generateMetadata({
   return {
     title: dict.compliance.metaTitle,
     description: dict.compliance.metaDescription,
-    alternates: localeAlternates("/compliance"),
+    alternates: localeAlternates(lang, "/compliance"),
   };
 }
 

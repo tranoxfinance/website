@@ -21,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://tranox.com";
+const siteUrl = "https://tranoxfinance.com";
 
 const ogLocales = { "en-NG": "en_NG", "fr-CI": "fr_CI" } as const;
 
@@ -47,6 +47,17 @@ export async function generateMetadata({
     },
     description: meta.description,
     keywords: [...meta.keywords],
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       type: "website",
       url: `${siteUrl}/${locale}`,
