@@ -34,6 +34,7 @@
       { "label": "How it works", "hash": "#how-it-works" },
       { "label": "FAQ", "hash": "#faq" }
     ],
+    "liveRates": "Live rates",
     "downloadApp": "Download app",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -102,11 +103,65 @@
       }
     ]
   },
+  "liveRates": {
+    "tag": "Live rates",
+    "heading": "See the real rate, right now",
+    "sub": "No guesswork. This is the same indicative NGN–XOF rate you'd see in the app, updated continuously.",
+    "pairLabel": "Indicative rate",
+    "rangeLabel": "24h",
+    "chartAria": "NGN to XOF exchange rate over the last 24 hours",
+    "disclaimer": "Indicative rate for reference only. The exact rate you receive is shown and locked the moment you confirm a transfer in the app.",
+    "moreLink": "See full rate history"
+  },
+  "ratesPage": {
+    "metaTitle": "Live NGN to XOF Exchange Rate",
+    "metaDescription": "Track the live, indicative Nigerian Naira to West African CFA franc exchange rate, both ways, with historical charts from 24 hours to 1 year.",
+    "tag": "Live rates",
+    "heading": "NGN ↔ XOF exchange rate",
+    "sub": "Indicative rates for the Nigeria–Ivory Coast corridor, updated continuously from the same source that powers transfers in the app.",
+    "ngnToXofLabel": "1,000 NGN in XOF",
+    "xofToNgnLabel": "1,000 XOF in NGN",
+    "rangeLabels": {
+      "1d": "24H",
+      "1w": "7D",
+      "1m": "1M",
+      "3m": "3M",
+      "1y": "1Y"
+    },
+    "chartAriaNgn": "NGN to XOF exchange rate trend",
+    "chartAriaXof": "XOF to NGN exchange rate trend",
+    "disclaimer": "Indicative rates for reference only. The exact rate you receive is shown and locked the moment you confirm a transfer in the app.",
+    "unavailable": "Rates are temporarily unavailable. Please check back shortly.",
+    "cta": "Get the app"
+  },
+  "whoFor": {
+    "tag": "Who it's for",
+    "heading": "Built for the people who move money across this corridor",
+    "sub": "Whatever's bringing you to the NGN–XOF corridor, Tranox is built to get it there fast.",
+    "items": [
+      {
+        "title": "Families sending money home",
+        "body": "Cover school fees, rent, and everyday costs for family in Nigeria or Ivory Coast without losing money to hidden fees."
+      },
+      {
+        "title": "Small businesses and traders",
+        "body": "Pay suppliers or get paid by customers on either side of the corridor without waiting days for a bank transfer to clear."
+      },
+      {
+        "title": "Freelancers and remote workers",
+        "body": "Get paid by clients across the corridor and keep more of what you earn with one transparent fee."
+      },
+      {
+        "title": "Students studying abroad",
+        "body": "Receive support from family back home on a schedule you can both rely on."
+      }
+    ]
+  },
   "about": {
     "tag": "About us",
     "heading": "Connecting West Africa, one transfer at a time",
-    "p1": "Tranox was born from a simple frustration: sending money between Nigeria and Ivory Coast was slow, expensive, and opaque. We set out to fix it with a single, focused product.",
-    "p2": "Today we move money across the NGN–XOF corridor in minutes, at a rate you can see before you confirm. No hidden fees, no surprise deductions, no waiting days to know if it arrived. Just fast, fair transfers that families and businesses can rely on.",
+    "p1": "Sending money between Nigeria and Ivory Coast used to mean picking a rate you couldn't verify, paying fees that showed up after the fact, and waiting to find out if the transfer even arrived. Tranox exists to remove all three.",
+    "p2": "Today we move money across the NGN–XOF corridor in minutes, at a rate you see and lock in before you confirm. One flat fee, shown upfront. No surprise deductions, no wondering if it's arrived — just fast, fair transfers that families and businesses can rely on.",
     "corridorTag": "The corridor we serve",
     "corridorHeading": "Nigeria and Ivory Coast, linked in real time.",
     "corridorBody": "One route, mastered end to end so your money never gets lost in a maze of intermediaries.",

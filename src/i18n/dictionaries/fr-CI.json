@@ -34,6 +34,7 @@
       { "label": "Comment ça marche", "hash": "#how-it-works" },
       { "label": "FAQ", "hash": "#faq" }
     ],
+    "liveRates": "Taux en direct",
     "downloadApp": "Télécharger l'appli",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
@@ -102,11 +103,65 @@
       }
     ]
   },
+  "liveRates": {
+    "tag": "Taux en direct",
+    "heading": "Voyez le taux réel, en ce moment",
+    "sub": "Pas de suppositions. C'est le même taux indicatif NGN–XOF que celui affiché dans l'application, mis à jour en continu.",
+    "pairLabel": "Taux indicatif",
+    "rangeLabel": "24h",
+    "chartAria": "Taux de change NGN vers XOF sur les dernières 24 heures",
+    "disclaimer": "Taux indicatif fourni à titre de référence uniquement. Le taux exact que vous recevez est affiché et verrouillé au moment où vous confirmez un transfert dans l'application.",
+    "moreLink": "Voir tout l'historique des taux"
+  },
+  "ratesPage": {
+    "metaTitle": "Taux de change NGN vers XOF en direct",
+    "metaDescription": "Suivez le taux de change indicatif entre le Naira nigérian et le franc CFA d'Afrique de l'Ouest, dans les deux sens, avec des graphiques historiques de 24 heures à 1 an.",
+    "tag": "Taux en direct",
+    "heading": "Taux de change NGN ↔ XOF",
+    "sub": "Taux indicatifs pour le corridor Nigéria–Côte d'Ivoire, mis à jour en continu à partir de la même source qui alimente les transferts dans l'application.",
+    "ngnToXofLabel": "1 000 NGN en XOF",
+    "xofToNgnLabel": "1 000 XOF en NGN",
+    "rangeLabels": {
+      "1d": "24H",
+      "1w": "7J",
+      "1m": "1M",
+      "3m": "3M",
+      "1y": "1A"
+    },
+    "chartAriaNgn": "Tendance du taux de change NGN vers XOF",
+    "chartAriaXof": "Tendance du taux de change XOF vers NGN",
+    "disclaimer": "Taux indicatifs fournis à titre de référence uniquement. Le taux exact que vous recevez est affiché et verrouillé au moment où vous confirmez un transfert dans l'application.",
+    "unavailable": "Les taux sont temporairement indisponibles. Merci de réessayer sous peu.",
+    "cta": "Obtenir l'appli"
+  },
+  "whoFor": {
+    "tag": "Pour qui",
+    "heading": "Conçu pour celles et ceux qui font circuler l'argent sur ce corridor",
+    "sub": "Quelle que soit la raison qui vous amène sur le corridor NGN–XOF, Tranox est conçu pour que votre argent arrive vite.",
+    "items": [
+      {
+        "title": "Familles qui envoient de l'argent chez elles",
+        "body": "Couvrez les frais de scolarité, le loyer et les dépenses courantes de votre famille au Nigéria ou en Côte d'Ivoire, sans perdre d'argent en frais cachés."
+      },
+      {
+        "title": "Petites entreprises et commerçants",
+        "body": "Payez vos fournisseurs ou recevez vos clients des deux côtés du corridor sans attendre des jours qu'un virement bancaire soit validé."
+      },
+      {
+        "title": "Freelances et travailleurs à distance",
+        "body": "Soyez payé par vos clients à travers le corridor et gardez plus de ce que vous gagnez grâce à un frais unique et transparent."
+      },
+      {
+        "title": "Étudiants à l'étranger",
+        "body": "Recevez le soutien de votre famille restée au pays, selon un rythme sur lequel vous pouvez tous les deux compter."
+      }
+    ]
+  },
   "about": {
     "tag": "À propos",
     "heading": "Connecter l'Afrique de l'Ouest, un transfert à la fois",
-    "p1": "Tranox est né d'une frustration simple : envoyer de l'argent entre le Nigéria et la Côte d'Ivoire était lent, coûteux et opaque. Nous avons décidé d'y remédier avec un produit unique et ciblé.",
-    "p2": "Aujourd'hui, nous faisons circuler l'argent sur le corridor NGN–XOF en quelques minutes, à un taux visible avant confirmation. Pas de frais cachés, pas de déductions surprises, pas de jours d'attente pour savoir si l'argent est arrivé. Juste des transferts rapides et équitables sur lesquels familles et entreprises peuvent compter.",
+    "p1": "Envoyer de l'argent entre le Nigéria et la Côte d'Ivoire, c'était accepter un taux qu'on ne pouvait pas vérifier, payer des frais qui apparaissaient après coup, et attendre pour savoir si le transfert était bien arrivé. Tranox existe pour supprimer ces trois problèmes.",
+    "p2": "Aujourd'hui, nous faisons circuler l'argent sur le corridor NGN–XOF en quelques minutes, à un taux que vous voyez et verrouillez avant de confirmer. Un frais unique, affiché à l'avance. Pas de déductions surprises, pas d'incertitude sur l'arrivée — juste des transferts rapides et équitables sur lesquels familles et entreprises peuvent compter.",
     "corridorTag": "Le corridor que nous servons",
     "corridorHeading": "Le Nigéria et la Côte d'Ivoire, reliés en temps réel.",
     "corridorBody": "Une seule route, maîtrisée de bout en bout, pour que votre argent ne se perde jamais dans un labyrinthe d'intermédiaires.",
