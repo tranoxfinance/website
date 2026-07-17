@@ -1,6 +1,7 @@
 interface AreaChartProps {
   data: number[];
   labels: string[];
+  ariaLabel: string;
 }
 
 const W = 560;
@@ -37,7 +38,7 @@ function smoothPath(points: { x: number; y: number }[]) {
   return d;
 }
 
-export function AreaChart({ data, labels }: AreaChartProps) {
+export function AreaChart({ data, labels, ariaLabel }: AreaChartProps) {
   const points = buildPoints(data);
   const line = smoothPath(points);
   const baseline = H - PAD_BOTTOM;
@@ -49,7 +50,7 @@ export function AreaChart({ data, labels }: AreaChartProps) {
       viewBox={`0 0 ${W} ${H}`}
       className="h-full w-full"
       role="img"
-      aria-label="Monthly transfer volume trending upward"
+      aria-label={ariaLabel}
       preserveAspectRatio="none"
     >
       <defs>
@@ -85,17 +86,19 @@ export function AreaChart({ data, labels }: AreaChartProps) {
       <circle cx={last.x} cy={last.y} r={5.5} className="fill-brand" />
       <circle cx={last.x} cy={last.y} r={10} className="fill-brand/20" />
 
-      {labels.map((label, i) => (
-        <text
-          key={label}
-          x={points[i].x}
-          y={H - 10}
-          textAnchor="middle"
-          className="fill-muted text-[11px]"
-        >
-          {label}
-        </text>
-      ))}
+      {labels.map((label, i) =>
+        label ? (
+          <text
+            key={i}
+            x={points[i].x}
+            y={H - 10}
+            textAnchor="middle"
+            className="fill-muted text-[11px]"
+          >
+            {label}
+          </text>
+        ) : null,
+      )}
     </svg>
   );
 }
