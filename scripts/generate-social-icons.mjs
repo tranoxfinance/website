@@ -1,6 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
+import fs from "node:fs";
+import path from "node:path";
+import sharp from "sharp";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const OUT_DIR = path.join(__dirname, '..', 'public', 'social');
 const SIZE = 64;

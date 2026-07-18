@@ -1,25 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { getConsent, setConsent } from "@/lib/cookie-consent";
+import { getConsent, setConsent, subscribeToConsent } from "@/lib/cookie-consent";
 
 interface CookieConsentProps {
   lang: Locale;
   dict: Dictionary["cookieConsent"];
 }
 
-export function CookieConsent({ lang, dict }: CookieConsentProps) {
-  const [visible, setVisible] = useState(false);
+function isUndecided() {
+  return getConsent() === undefined;
+}
 
-  useEffect(() => {
-    if (!getConsent()) setVisible(true);
-  }, []);
+export function CookieConsent({ lang, dict }: CookieConsentProps) {
+  const visible = useSyncExternalStore(subscribeToConsent, isUndecided, () => false);
 
   function handleChoice(value: "accepted" | "declined") {
     setConsent(value);
-    setVisible(false);
   }
 
   if (!visible) return null;
