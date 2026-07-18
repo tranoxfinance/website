@@ -5,7 +5,6 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { AppShowcase } from "@/components/AppShowcase";
 import { AboutUs } from "@/components/AboutUs";
-import { LiveRates } from "@/components/LiveRates";
 import { WhoItsFor } from "@/components/WhoItsFor";
 import { WhyTranox } from "@/components/WhyTranox";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -73,7 +72,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <Hero dict={dict.hero} badges={dict.storeBadges} />
         <Features dict={dict.features} />
         <AboutUs dict={dict.about} />
-        <LiveRates lang={lang} dict={dict.liveRates} />
         <WhoItsFor dict={dict.whoFor} />
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />
