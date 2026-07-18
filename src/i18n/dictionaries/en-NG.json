@@ -103,16 +103,6 @@
       }
     ]
   },
-  "liveRates": {
-    "tag": "Live rates",
-    "heading": "See the real rate, right now",
-    "sub": "No guesswork. This is the same indicative NGN–XOF rate you'd see in the app, updated continuously.",
-    "pairLabel": "Indicative rate",
-    "rangeLabel": "24h",
-    "chartAria": "NGN to XOF exchange rate over the last 24 hours",
-    "disclaimer": "Indicative rate for reference only. The exact rate you receive is shown and locked the moment you confirm a transfer in the app.",
-    "moreLink": "See full rate history"
-  },
   "ratesPage": {
     "metaTitle": "Live NGN to XOF Exchange Rate",
     "metaDescription": "Track the live, indicative Nigerian Naira to West African CFA franc exchange rate, both ways, with historical charts from 24 hours to 1 year.",

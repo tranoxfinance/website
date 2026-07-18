@@ -103,16 +103,6 @@
       }
     ]
   },
-  "liveRates": {
-    "tag": "Taux en direct",
-    "heading": "Voyez le taux réel, en ce moment",
-    "sub": "Pas de suppositions. C'est le même taux indicatif NGN–XOF que celui affiché dans l'application, mis à jour en continu.",
-    "pairLabel": "Taux indicatif",
-    "rangeLabel": "24h",
-    "chartAria": "Taux de change NGN vers XOF sur les dernières 24 heures",
-    "disclaimer": "Taux indicatif fourni à titre de référence uniquement. Le taux exact que vous recevez est affiché et verrouillé au moment où vous confirmez un transfert dans l'application.",
-    "moreLink": "Voir tout l'historique des taux"
-  },
   "ratesPage": {
     "metaTitle": "Taux de change NGN vers XOF en direct",
     "metaDescription": "Suivez le taux de change indicatif entre le Naira nigérian et le franc CFA d'Afrique de l'Ouest, dans les deux sens, avec des graphiques historiques de 24 heures à 1 an.",
