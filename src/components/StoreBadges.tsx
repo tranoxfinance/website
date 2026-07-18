@@ -29,7 +29,7 @@ export function StoreBadges({ dict, className }: StoreBadgesProps) {
                 height={badge.height}
                 unoptimized
                 priority
-                className="h-[44px] w-[150px] object-contain"
+                className="h-auto w-[150px] object-contain"
               />
             </a>
             <span className="text-[11px] font-medium text-ink-soft">
