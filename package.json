@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "generate:map": "node scripts/generate-map.mjs",
-    "generate:world-dots": "node scripts/generate-world-dots.mjs"
+    "generate:world-dots": "node scripts/generate-world-dots.mjs",
+    "compress:images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.10",
@@ -27,6 +28,7 @@
     "d3-geo": "^3.1.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "topojson-client": "^3.1.0",
     "typescript": "^5",

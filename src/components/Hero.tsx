@@ -45,6 +45,7 @@ export function Hero({ dict, badges }: HeroProps) {
             alt={dict.image.alt}
             width={dict.image.width}
             height={dict.image.height}
+            sizes="(min-width: 640px) 384px, 304px"
             priority
             className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:hidden"
           />
@@ -53,6 +54,7 @@ export function Hero({ dict, badges }: HeroProps) {
             alt={dict.image.alt}
             width={dict.image.width}
             height={dict.image.height}
+            sizes="(min-width: 640px) 384px, 304px"
             priority
             className="hidden h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:block"
           />
