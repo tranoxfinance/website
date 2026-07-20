@@ -1,7 +1,7 @@
 import { Globe2, BadgeCheck, HeartHandshake } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
-import { CorridorHub } from "@/components/CorridorHub";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const ICONS = [Globe2, BadgeCheck, HeartHandshake];
@@ -29,23 +29,21 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="relative overflow-hidden rounded-3xl bg-navy p-8 text-white sm:p-10">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 animate-blob rounded-full bg-brand/25 blur-3xl"
+            <div className="-mt-14 flex justify-center sm:-mt-20 lg:justify-end">
+              <Image
+                src={dict.corridorImage.src}
+                alt={dict.corridorImage.alt}
+                width={dict.corridorImage.width}
+                height={dict.corridorImage.height}
+                sizes="(min-width: 384px) 384px, 100vw"
+                className="h-auto w-full max-w-sm drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)]"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 55%, transparent 97%)",
+                  maskImage:
+                    "linear-gradient(to bottom, black 55%, transparent 97%)",
+                }}
               />
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                {dict.corridorTag}
-              </p>
-
-              <CorridorHub labels={dict.payouts} />
-
-              <p className="mt-7 text-xl font-bold leading-snug">
-                {dict.corridorHeading}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/65">
-                {dict.corridorBody}
-              </p>
             </div>
           </Reveal>
         </div>

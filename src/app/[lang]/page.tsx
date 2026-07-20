@@ -8,7 +8,6 @@ import { AboutUs } from "@/components/AboutUs";
 import { WhoItsFor } from "@/components/WhoItsFor";
 import { WhyTranox } from "@/components/WhyTranox";
 import { HowItWorks } from "@/components/HowItWorks";
-import { TrustBar } from "@/components/TrustBar";
 import { Faq } from "@/components/Faq";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Footer } from "@/components/Footer";
@@ -76,7 +75,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />
         <HowItWorks dict={dict.how} />
-        <TrustBar dict={dict.trust} />
         <Faq dict={dict.faq} />
         <CtaBanner dict={dict.cta} badges={dict.storeBadges} />
       </main>

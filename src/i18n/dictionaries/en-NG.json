@@ -87,19 +87,25 @@
   "features": {
     "tag": "Borderless by design",
     "heading": "Built to move money, both ways.",
-    "sub": "A financial bridge purpose-built for Nigeria and Ivory Coast, engineered around how Africans actually send and receive across borders.",
+    "sub": "A financial bridge for Nigeria and Ivory Coast, built around how people actually send and receive.",
+    "image": {
+      "src": "/images/features-hero.webp",
+      "alt": "A Tranox customer smiling and pointing at the Tranox app open on her phone",
+      "width": 1100,
+      "height": 733
+    },
     "items": [
       {
         "title": "Low, flat fees",
-        "body": "One transparent fee and a fair exchange rate, shown in full before you ever confirm a transfer."
+        "body": "One fee, one fair rate, shown before you confirm."
       },
       {
         "title": "Every payout method",
-        "body": "Pay out to bank accounts, mobile wallets, or cash pickup on both sides of the corridor."
+        "body": "Bank, mobile wallet, or cash, on both sides of the corridor."
       },
       {
         "title": "Unmatched security",
-        "body": "Encrypted end to end, monitored in real time, and safeguarded with regulated partners."
+        "body": "Encrypted, monitored, and backed by regulated partners."
       }
     ]
   },
@@ -131,19 +137,35 @@
     "items": [
       {
         "title": "Families sending money home",
-        "body": "Cover school fees, rent, and everyday costs for family in Nigeria or Ivory Coast without losing money to hidden fees."
+        "body": "Cover school fees, rent, and everyday costs for family in Nigeria or Ivory Coast without losing money to hidden fees.",
+        "image": {
+          "src": "/images/persona-family.webp",
+          "alt": "A family video calling relatives together on a tablet"
+        }
       },
       {
         "title": "Small businesses and traders",
-        "body": "Pay suppliers or get paid by customers on either side of the corridor without waiting days for a bank transfer to clear."
+        "body": "Pay suppliers or get paid by customers on either side of the corridor without waiting days for a bank transfer to clear.",
+        "image": {
+          "src": "/images/persona-trader.webp",
+          "alt": "A market trader checking her NGN balance on her phone"
+        }
       },
       {
         "title": "Freelancers and remote workers",
-        "body": "Get paid by clients across the corridor and keep more of what you earn with one transparent fee."
+        "body": "Get paid by clients across the corridor and keep more of what you earn with one transparent fee.",
+        "image": {
+          "src": "/images/persona-freelancer.webp",
+          "alt": "A freelancer checking his NGN balance on his phone while working on a laptop"
+        }
       },
       {
         "title": "Students studying abroad",
-        "body": "Receive support from family back home on a schedule you can both rely on."
+        "body": "Receive support from family back home on a schedule you can both rely on.",
+        "image": {
+          "src": "/images/persona-student.webp",
+          "alt": "A student checking his XOF balance on his phone"
+        }
       }
     ]
   },
@@ -152,13 +174,11 @@
     "heading": "Connecting West Africa, one transfer at a time",
     "p1": "Sending money between Nigeria and Ivory Coast used to mean picking a rate you couldn't verify, paying fees that showed up after the fact, and waiting to find out if the transfer even arrived. Tranox exists to remove all three.",
     "p2": "Today we move money across the NGN–XOF corridor in minutes, at a rate you see and lock in before you confirm. One flat fee, shown upfront. No surprise deductions, no wondering if it's arrived — just fast, fair transfers that families and businesses can rely on.",
-    "corridorTag": "The corridor we serve",
-    "corridorHeading": "Nigeria and Ivory Coast, linked in real time.",
-    "corridorBody": "One route, mastered end to end so your money never gets lost in a maze of intermediaries.",
-    "payouts": {
-      "bank": "Bank",
-      "wallet": "Wallet",
-      "cash": "Cash"
+    "corridorImage": {
+      "src": "/images/corridor-model.webp",
+      "alt": "Diagram of the Tranox corridor linking Nigeria and Ivory Coast through bank, wallet, and cash payouts",
+      "width": 900,
+      "height": 1199
     },
     "values": [
       {
@@ -200,24 +220,24 @@
   },
   "why": {
     "tag": "Why us",
-    "heading": "Why senders prefer Tranox",
-    "sub": "Speed, certainty, and a rate you can trust, every time you send across the corridor.",
+    "heading": "Why senders trust Tranox",
+    "sub": "We're building Tranox to move money between Nigeria and Ivory Coast quickly, transparently, and safely, every time you send.",
     "items": [
       {
-        "title": "Instant payout, either direction",
-        "body": "Send from Nigeria or Ivory Coast and your recipient is paid in minutes."
+        "title": "Instant, either direction",
+        "body": "Send from Nigeria or Ivory Coast and your recipient is paid in minutes, with one account that works both ways."
       },
       {
-        "title": "Locked-in rates",
-        "body": "Your rate is fixed the moment you confirm. The payout never changes after you send."
+        "title": "Locked-in, transparent rates",
+        "body": "Every rate and fee is shown in full and fixed the moment you confirm. No hidden markups, no surprise deductions."
       },
       {
-        "title": "Send and receive both ways",
-        "body": "One account works in both directions across the corridor, with no extra setup."
+        "title": "Safe and tracked end to end",
+        "body": "Encrypted end to end and operated with licensed partners, with live status from confirmation until it lands."
       },
       {
-        "title": "Live tracking, end to end",
-        "body": "Follow every transfer with clear status from the moment you confirm until it lands."
+        "title": "Built for the NGN–XOF corridor",
+        "body": "Designed around how people and businesses in Nigeria and Ivory Coast actually send and receive."
       }
     ]
   },
@@ -237,25 +257,6 @@
       {
         "title": "Recipient gets paid",
         "body": "Money lands in a bank account or mobile wallet in minutes, with live tracking from start to finish."
-      }
-    ]
-  },
-  "trust": {
-    "tag": "Our mission",
-    "heading": "Making cross-border money simple",
-    "sub": "We are building Tranox to move money between Nigeria and Ivory Coast quickly, transparently, and safely, for everyone.",
-    "pillars": [
-      {
-        "title": "Transparency first",
-        "body": "Every rate and fee is shown in full before you confirm. No hidden markups, no surprise deductions."
-      },
-      {
-        "title": "Safe and regulated",
-        "body": "Encrypted end to end and operated with licensed partners, so every transfer is handled with care."
-      },
-      {
-        "title": "Built for West Africa",
-        "body": "Designed around how people and businesses actually send and receive across the Nigeria–Ivory Coast corridor."
       }
     ]
   },

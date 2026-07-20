@@ -1,9 +1,7 @@
-import { Users, Store, Laptop, GraduationCap } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const ICONS = [Users, Store, Laptop, GraduationCap];
 
 export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
   return (
@@ -24,24 +22,28 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
         </Reveal>
 
         <div className="mx-auto mt-16 grid max-w-5xl gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {dict.items.map((persona, index) => {
-            const Icon = ICONS[index];
-            return (
-              <Reveal key={persona.title} delay={index * 80}>
-                <div className="flex flex-col items-start">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
-                    <Icon className="h-5 w-5" strokeWidth={1.75} />
-                  </span>
-                  <h3 className="mt-5 text-lg font-bold text-ink">
-                    {persona.title}
-                  </h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
-                    {persona.body}
-                  </p>
+          {dict.items.map((persona, index) => (
+            <Reveal key={persona.title} delay={index * 80}>
+              <div className="flex flex-col items-start">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={persona.image.src}
+                    alt={persona.image.alt}
+                    width={400}
+                    height={300}
+                    sizes="(min-width: 1024px) 240px, (min-width: 640px) 300px, 90vw"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
-              </Reveal>
-            );
-          })}
+                <h3 className="mt-5 text-lg font-bold text-ink">
+                  {persona.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                  {persona.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

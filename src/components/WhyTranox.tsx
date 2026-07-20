@@ -1,9 +1,9 @@
-import { Zap, LockKeyhole, ArrowLeftRight, Radar } from "lucide-react";
+import { Zap, LockKeyhole, ShieldCheck, Globe2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-const ICONS = [Zap, LockKeyhole, ArrowLeftRight, Radar];
+const ICONS = [Zap, LockKeyhole, ShieldCheck, Globe2];
 
 export function WhyTranox({ dict }: { dict: Dictionary["why"] }) {
   return (

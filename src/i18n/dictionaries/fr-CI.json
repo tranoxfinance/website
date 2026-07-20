@@ -87,19 +87,25 @@
   "features": {
     "tag": "Sans frontières par conception",
     "heading": "Conçu pour faire circuler l'argent, dans les deux sens.",
-    "sub": "Une passerelle financière pensée pour le Nigéria et la Côte d'Ivoire, construite autour de la façon dont les Africains envoient et reçoivent réellement de l'argent à travers les frontières.",
+    "sub": "Une passerelle financière pour le Nigéria et la Côte d'Ivoire, pensée pour la façon dont les gens envoient et reçoivent réellement de l'argent.",
+    "image": {
+      "src": "/images/features-hero-fr.webp",
+      "alt": "Une cliente Tranox souriante montrant du doigt l'application Tranox ouverte sur son téléphone",
+      "width": 1100,
+      "height": 733
+    },
     "items": [
       {
         "title": "Des frais fixes et réduits",
-        "body": "Un seul frais transparent et un taux de change équitable, affichés en intégralité avant toute confirmation de transfert."
+        "body": "Un frais, un taux équitable, affichés avant confirmation."
       },
       {
         "title": "Tous les modes de versement",
-        "body": "Versez vers des comptes bancaires, des portefeuilles mobiles ou en retrait d'espèces, des deux côtés du corridor."
+        "body": "Banque, portefeuille mobile ou espèces, des deux côtés du corridor."
       },
       {
         "title": "Une sécurité inégalée",
-        "body": "Chiffré de bout en bout, surveillé en temps réel et sécurisé auprès de partenaires régulés."
+        "body": "Chiffré, surveillé, et soutenu par des partenaires régulés."
       }
     ]
   },
@@ -131,19 +137,35 @@
     "items": [
       {
         "title": "Familles qui envoient de l'argent chez elles",
-        "body": "Couvrez les frais de scolarité, le loyer et les dépenses courantes de votre famille au Nigéria ou en Côte d'Ivoire, sans perdre d'argent en frais cachés."
+        "body": "Couvrez les frais de scolarité, le loyer et les dépenses courantes de votre famille au Nigéria ou en Côte d'Ivoire, sans perdre d'argent en frais cachés.",
+        "image": {
+          "src": "/images/persona-family.webp",
+          "alt": "Une famille en appel vidéo avec des proches sur une tablette"
+        }
       },
       {
         "title": "Petites entreprises et commerçants",
-        "body": "Payez vos fournisseurs ou recevez vos clients des deux côtés du corridor sans attendre des jours qu'un virement bancaire soit validé."
+        "body": "Payez vos fournisseurs ou recevez vos clients des deux côtés du corridor sans attendre des jours qu'un virement bancaire soit validé.",
+        "image": {
+          "src": "/images/persona-trader.webp",
+          "alt": "Une commerçante consultant son solde NGN sur son téléphone"
+        }
       },
       {
         "title": "Freelances et travailleurs à distance",
-        "body": "Soyez payé par vos clients à travers le corridor et gardez plus de ce que vous gagnez grâce à un frais unique et transparent."
+        "body": "Soyez payé par vos clients à travers le corridor et gardez plus de ce que vous gagnez grâce à un frais unique et transparent.",
+        "image": {
+          "src": "/images/persona-freelancer.webp",
+          "alt": "Un freelance consultant son solde NGN sur son téléphone en travaillant sur son ordinateur portable"
+        }
       },
       {
         "title": "Étudiants à l'étranger",
-        "body": "Recevez le soutien de votre famille restée au pays, selon un rythme sur lequel vous pouvez tous les deux compter."
+        "body": "Recevez le soutien de votre famille restée au pays, selon un rythme sur lequel vous pouvez tous les deux compter.",
+        "image": {
+          "src": "/images/persona-student.webp",
+          "alt": "Un étudiant consultant son solde XOF sur son téléphone"
+        }
       }
     ]
   },
@@ -152,13 +174,11 @@
     "heading": "Connecter l'Afrique de l'Ouest, un transfert à la fois",
     "p1": "Envoyer de l'argent entre le Nigéria et la Côte d'Ivoire, c'était accepter un taux qu'on ne pouvait pas vérifier, payer des frais qui apparaissaient après coup, et attendre pour savoir si le transfert était bien arrivé. Tranox existe pour supprimer ces trois problèmes.",
     "p2": "Aujourd'hui, nous faisons circuler l'argent sur le corridor NGN–XOF en quelques minutes, à un taux que vous voyez et verrouillez avant de confirmer. Un frais unique, affiché à l'avance. Pas de déductions surprises, pas d'incertitude sur l'arrivée — juste des transferts rapides et équitables sur lesquels familles et entreprises peuvent compter.",
-    "corridorTag": "Le corridor que nous servons",
-    "corridorHeading": "Le Nigéria et la Côte d'Ivoire, reliés en temps réel.",
-    "corridorBody": "Une seule route, maîtrisée de bout en bout, pour que votre argent ne se perde jamais dans un labyrinthe d'intermédiaires.",
-    "payouts": {
-      "bank": "Banque",
-      "wallet": "Portefeuille",
-      "cash": "Espèces"
+    "corridorImage": {
+      "src": "/images/corridor-model-fr.webp",
+      "alt": "Schéma du corridor Tranox reliant le Nigéria et la Côte d'Ivoire via des paiements par banque, portefeuille et espèces",
+      "width": 900,
+      "height": 1199
     },
     "values": [
       {
@@ -200,24 +220,24 @@
   },
   "why": {
     "tag": "Pourquoi nous",
-    "heading": "Pourquoi les expéditeurs préfèrent Tranox",
-    "sub": "Rapidité, certitude et un taux fiable, à chaque envoi à travers le corridor.",
+    "heading": "Pourquoi les expéditeurs font confiance à Tranox",
+    "sub": "Nous construisons Tranox pour faire circuler l'argent entre le Nigéria et la Côte d'Ivoire rapidement, en toute transparence et en toute sécurité, à chaque envoi.",
     "items": [
       {
-        "title": "Versement instantané, dans les deux sens",
-        "body": "Envoyez depuis le Nigéria ou la Côte d'Ivoire et votre bénéficiaire est payé en quelques minutes."
+        "title": "Instantané, dans les deux sens",
+        "body": "Envoyez depuis le Nigéria ou la Côte d'Ivoire et votre bénéficiaire est payé en quelques minutes, avec un seul compte qui fonctionne dans les deux sens."
       },
       {
-        "title": "Des taux verrouillés",
-        "body": "Votre taux est fixé au moment où vous confirmez. Le montant versé ne change jamais après l'envoi."
+        "title": "Des taux verrouillés et transparents",
+        "body": "Chaque taux et chaque frais sont affichés en intégralité et fixés au moment où vous confirmez. Pas de marges cachées, pas de déductions surprises."
       },
       {
-        "title": "Envoyez et recevez dans les deux sens",
-        "body": "Un seul compte fonctionne dans les deux directions du corridor, sans configuration supplémentaire."
+        "title": "Sûr et suivi de bout en bout",
+        "body": "Chiffré de bout en bout et opéré avec des partenaires agréés, avec un statut en direct de la confirmation jusqu'à la réception."
       },
       {
-        "title": "Suivi en direct, de bout en bout",
-        "body": "Suivez chaque transfert avec un statut clair, de la confirmation jusqu'à la réception."
+        "title": "Conçu pour le corridor NGN–XOF",
+        "body": "Pensé autour de la façon dont particuliers et entreprises au Nigéria et en Côte d'Ivoire envoient et reçoivent réellement de l'argent."
       }
     ]
   },
@@ -237,25 +257,6 @@
       {
         "title": "Le bénéficiaire est payé",
         "body": "L'argent arrive sur un compte bancaire ou un portefeuille mobile en quelques minutes, avec un suivi en direct du début à la fin."
-      }
-    ]
-  },
-  "trust": {
-    "tag": "Notre mission",
-    "heading": "Rendre l'argent transfrontalier simple",
-    "sub": "Nous construisons Tranox pour faire circuler l'argent entre le Nigéria et la Côte d'Ivoire rapidement, en toute transparence et en toute sécurité, pour tous.",
-    "pillars": [
-      {
-        "title": "La transparence d'abord",
-        "body": "Chaque taux et chaque frais sont affichés en intégralité avant confirmation. Pas de marges cachées, pas de déductions surprises."
-      },
-      {
-        "title": "Sûr et régulé",
-        "body": "Chiffré de bout en bout et opéré avec des partenaires agréés, pour que chaque transfert soit traité avec soin."
-      },
-      {
-        "title": "Conçu pour l'Afrique de l'Ouest",
-        "body": "Pensé autour de la façon dont particuliers et entreprises envoient et reçoivent réellement de l'argent sur le corridor Nigéria–Côte d'Ivoire."
       }
     ]
   },
