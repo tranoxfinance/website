@@ -1,5 +1,6 @@
 import sharp from "sharp";
 import path from "node:path";
+import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -14,10 +15,20 @@ const jobs = [
   { file: "corridor-model-fr.png", maxWidth: 900, quality: 82 },
   { file: "features-hero.png", maxWidth: 1100, quality: 82 },
   { file: "features-hero-fr.png", maxWidth: 1100, quality: 82 },
+  { file: "how-create-en.png", maxWidth: 700, quality: 88 },
+  { file: "how-amount-en.png", maxWidth: 700, quality: 88 },
+  { file: "how-paid-en.png", maxWidth: 700, quality: 88 },
+  { file: "how-create-fr.png", maxWidth: 700, quality: 88 },
+  { file: "how-amount-fr.png", maxWidth: 700, quality: 88 },
+  { file: "how-paid-fr.png", maxWidth: 700, quality: 88 },
 ];
 
 for (const job of jobs) {
   const inputPath = path.join(imagesDir, job.file);
+  if (!existsSync(inputPath)) {
+    console.warn(`Skipping ${job.file} (source not found)`);
+    continue;
+  }
   const outputPath = path.join(
     imagesDir,
     job.file.replace(/\.png$/, ".webp"),
