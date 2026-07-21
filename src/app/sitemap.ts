@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/i18n/config";
+import { defaultLocale, locales } from "@/i18n/config";
 
 const siteUrl = "https://tranoxfinance.com";
 
-const routes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
+const routes: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" }[] = [
   { path: "", priority: 1, changeFrequency: "weekly" },
+  { path: "/rates", priority: 0.7, changeFrequency: "daily" },
   { path: "/compliance", priority: 0.5, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.5, changeFrequency: "monthly" },
   { path: "/terms", priority: 0.5, changeFrequency: "monthly" },
@@ -18,9 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${siteUrl}/${l}${path}`]),
-        ),
+        languages: {
+          ...Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}${path}`])),
+          "x-default": `${siteUrl}/${defaultLocale}${path}`,
+        },
       },
     })),
   );

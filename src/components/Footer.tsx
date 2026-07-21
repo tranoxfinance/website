@@ -64,7 +64,7 @@ export function Footer({ lang, dict }: FooterProps) {
       title: f.company,
       links: [
         { label: f.about, href: `/${lang}#about` },
-        { label: f.contact, href: "#" },
+        { label: f.contact, href: `/${lang}#contacts` },
       ],
     },
     {
