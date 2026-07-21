@@ -244,19 +244,36 @@
   "how": {
     "tag": "Comment ça marche",
     "heading": "Envoyez à travers les frontières en trois étapes simples.",
-    "stepAria": "Afficher l'étape {step}",
     "steps": [
       {
         "title": "Créez votre compte",
-        "body": "Inscrivez-vous en quelques minutes et vérifiez votre identité une seule fois. Le KYC est intégré et réutilisable pour chaque transfert."
+        "body": "Inscrivez-vous et vérifiez votre identité une seule fois — réutilisable pour chaque transfert.",
+        "image": {
+          "src": "/images/how-create-fr.webp",
+          "alt": "Écran d'inscription Tranox demandant un numéro de téléphone pour envoyer un code de vérification",
+          "width": 579,
+          "height": 503
+        }
       },
       {
         "title": "Définissez le montant",
-        "body": "Saisissez le montant à envoyer en NGN ou en XOF et consultez le taux exact, les frais et le montant versé avant de confirmer."
+        "body": "Saisissez un montant et consultez le taux, les frais et le montant versé à l'avance.",
+        "image": {
+          "src": "/images/how-amount-fr.webp",
+          "alt": "Écran d'envoi d'argent montrant un taux de change XOF vers NGN et le montant que le bénéficiaire recevra",
+          "width": 589,
+          "height": 493
+        }
       },
       {
         "title": "Le bénéficiaire est payé",
-        "body": "L'argent arrive sur un compte bancaire ou un portefeuille mobile en quelques minutes, avec un suivi en direct du début à la fin."
+        "body": "L'argent arrive en quelques minutes, suivi en direct jusqu'au bout.",
+        "image": {
+          "src": "/images/how-paid-fr.webp",
+          "alt": "Écran de confirmation montrant qu'un transfert Tranox a été soumis et est en cours de traitement",
+          "width": 590,
+          "height": 493
+        }
       }
     ]
   },

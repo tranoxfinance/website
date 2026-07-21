@@ -244,19 +244,36 @@
   "how": {
     "tag": "How it works",
     "heading": "Send across borders in three simple steps.",
-    "stepAria": "Show step {step}",
     "steps": [
       {
         "title": "Create your account",
-        "body": "Sign up in minutes and verify your identity once. KYC is built in and reusable across every transfer."
+        "body": "Sign up and verify your identity once — reusable for every transfer.",
+        "image": {
+          "src": "/images/how-create-en.webp",
+          "alt": "Tranox sign-up screen asking for a phone number to send a verification code",
+          "width": 579,
+          "height": 484
+        }
       },
       {
         "title": "Set the amount",
-        "body": "Enter how much to send in NGN or XOF and see the exact rate, fee, and payout before you confirm."
+        "body": "Enter an amount and see the rate, fee, and payout upfront.",
+        "image": {
+          "src": "/images/how-amount-en.webp",
+          "alt": "Send money screen showing an NGN to XOF exchange rate and the amount the recipient will get",
+          "width": 589,
+          "height": 493
+        }
       },
       {
         "title": "Recipient gets paid",
-        "body": "Money lands in a bank account or mobile wallet in minutes, with live tracking from start to finish."
+        "body": "Money lands in minutes, tracked live the whole way.",
+        "image": {
+          "src": "/images/how-paid-en.webp",
+          "alt": "Confirmation screen showing a Tranox transfer has been submitted and is being processed",
+          "width": 590,
+          "height": 493
+        }
       }
     ]
   },
