@@ -15,12 +15,12 @@ const jobs = [
   { file: "corridor-model-fr.png", maxWidth: 900, quality: 82 },
   { file: "features-hero.png", maxWidth: 1100, quality: 82 },
   { file: "features-hero-fr.png", maxWidth: 1100, quality: 82 },
-  { file: "how-create-en.png", maxWidth: 700, quality: 88 },
-  { file: "how-amount-en.png", maxWidth: 700, quality: 88 },
-  { file: "how-paid-en.png", maxWidth: 700, quality: 88 },
-  { file: "how-create-fr.png", maxWidth: 700, quality: 88 },
-  { file: "how-amount-fr.png", maxWidth: 700, quality: 88 },
-  { file: "how-paid-fr.png", maxWidth: 700, quality: 88 },
+  { file: "how-create-en.png", maxWidth: 640, quality: 75 },
+  { file: "how-amount-en.png", maxWidth: 640, quality: 75 },
+  { file: "how-paid-en.png", maxWidth: 640, quality: 75 },
+  { file: "how-create-fr.png", maxWidth: 640, quality: 75 },
+  { file: "how-amount-fr.png", maxWidth: 640, quality: 75 },
+  { file: "how-paid-fr.png", maxWidth: 640, quality: 75 },
 ];
 
 for (const job of jobs) {
