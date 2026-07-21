@@ -20,7 +20,7 @@ export function StoreBadges({ dict, className }: StoreBadgesProps) {
             <a
               href="#"
               aria-label={badge.label}
-              className="flex h-12 w-[150px] cursor-not-allowed items-center justify-center opacity-60 transition hover:opacity-50"
+              className="inline-block cursor-not-allowed opacity-60 transition hover:opacity-50"
             >
               <Image
                 src={badge.src}
@@ -29,7 +29,7 @@ export function StoreBadges({ dict, className }: StoreBadgesProps) {
                 height={badge.height}
                 unoptimized
                 priority
-                className="h-full w-full object-contain"
+                className="h-auto w-[150px] object-contain"
               />
             </a>
             <span className="text-[11px] font-medium text-ink-soft">
