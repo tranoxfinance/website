@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getArticleBySlug } from "@/lib/articles";
+import { cn } from "@/lib/utils";
 
 export const revalidate = 60;
 
@@ -37,13 +38,6 @@ function formatDate(value: string | null, lang: Locale): string {
     month: "long",
     year: "numeric",
   }).format(new Date(value));
-}
-
-function toParagraphs(text: string): string[] {
-  return text
-    .split(/\r?\n\s*\r?\n/)
-    .map((block) => block.trim())
-    .filter(Boolean);
 }
 
 export default async function ArticlePage({
@@ -98,11 +92,16 @@ export default async function ArticlePage({
               />
             ) : null}
 
-            <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-ink-soft">
-              {toParagraphs(article.body).map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
+            <div
+              className={cn(
+                "mt-8 text-[15px] leading-relaxed text-ink-soft",
+                "[&_h1]:mb-3 [&_h1]:mt-8 [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:first:mt-0",
+                "[&_h2]:mb-3 [&_h2]:mt-6 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink [&_h2]:first:mt-0",
+                "[&_p]:mb-4 [&_p]:last:mb-0",
+                "[&_strong]:font-semibold [&_strong]:text-ink",
+              )}
+              dangerouslySetInnerHTML={{ __html: article.body }}
+            />
 
             {article.media.length > 0 ? (
               <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
