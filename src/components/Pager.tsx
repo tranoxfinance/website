@@ -34,36 +34,46 @@ export function Pager({
     .replace("{pageCount}", String(pageCount));
 
   const pillClass =
-    "flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition";
+    "flex items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition sm:px-4";
   const activeClass = "bg-surface text-ink-soft hover:text-ink";
   const disabledClass = "cursor-not-allowed bg-surface/50 text-muted";
 
   return (
     <nav
       aria-label="Pagination"
-      className="mt-10 flex items-center justify-center gap-3"
+      className="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
     >
       {hasPrevious ? (
-        <Link href={pageHref(basePath, page - 1)} className={cn(pillClass, activeClass)}>
-          <ChevronLeft className="h-4 w-4" />
-          {labelPrevious}
+        <Link
+          href={pageHref(basePath, page - 1)}
+          aria-label={labelPrevious}
+          className={cn(pillClass, activeClass)}
+        >
+          <ChevronLeft className="h-4 w-4 shrink-0" />
+          <span className="hidden sm:inline">{labelPrevious}</span>
         </Link>
       ) : (
-        <span className={cn(pillClass, disabledClass)}>
-          <ChevronLeft className="h-4 w-4" />
-          {labelPrevious}
+        <span aria-label={labelPrevious} className={cn(pillClass, disabledClass)}>
+          <ChevronLeft className="h-4 w-4 shrink-0" />
+          <span className="hidden sm:inline">{labelPrevious}</span>
         </span>
       )}
-      <span className="text-sm font-medium text-ink-soft">{labelPage}</span>
+      <span className="whitespace-nowrap text-sm font-medium text-ink-soft">
+        {labelPage}
+      </span>
       {hasNext ? (
-        <Link href={pageHref(basePath, page + 1)} className={cn(pillClass, activeClass)}>
-          {labelNext}
-          <ChevronRight className="h-4 w-4" />
+        <Link
+          href={pageHref(basePath, page + 1)}
+          aria-label={labelNext}
+          className={cn(pillClass, activeClass)}
+        >
+          <span className="hidden sm:inline">{labelNext}</span>
+          <ChevronRight className="h-4 w-4 shrink-0" />
         </Link>
       ) : (
-        <span className={cn(pillClass, disabledClass)}>
-          {labelNext}
-          <ChevronRight className="h-4 w-4" />
+        <span aria-label={labelNext} className={cn(pillClass, disabledClass)}>
+          <span className="hidden sm:inline">{labelNext}</span>
+          <ChevronRight className="h-4 w-4 shrink-0" />
         </span>
       )}
     </nav>
