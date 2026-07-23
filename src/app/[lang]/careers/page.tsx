@@ -5,9 +5,12 @@ import { ArrowRight, Briefcase, MapPin } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { Pager } from "@/components/Pager";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getOpenJobs } from "@/lib/careers";
+
+const PAGE_SIZE = 9;
 
 export const revalidate = 60;
 
@@ -28,14 +31,19 @@ export async function generateMetadata({
 
 export default async function CareersPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const t = dict.careersPage;
-  const jobs = await getOpenJobs();
+  const { page: pageParam } = await searchParams;
+  const page = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
+  const { items: jobs, total } = await getOpenJobs(page, PAGE_SIZE);
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   return (
     <>
@@ -94,6 +102,14 @@ export default async function CareersPage({
                 ))}
               </ul>
             )}
+            <Pager
+              page={page}
+              pageCount={pageCount}
+              basePath={`/${lang}/careers`}
+              labelPrevious={t.pagerPrevious}
+              labelNext={t.pagerNext}
+              labelPageTemplate={t.pagerPage}
+            />
           </Container>
         </section>
       </main>

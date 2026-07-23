@@ -5,9 +5,12 @@ import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { Pager } from "@/components/Pager";
 import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedArticles } from "@/lib/articles";
+
+const PAGE_SIZE = 9;
 
 export const revalidate = 60;
 
@@ -37,14 +40,19 @@ function formatDate(value: string | null, lang: Locale): string {
 
 export default async function NewsPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const t = dict.newsPage;
-  const articles = await getPublishedArticles();
+  const { page: pageParam } = await searchParams;
+  const page = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
+  const { items: articles, total } = await getPublishedArticles(page, PAGE_SIZE);
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   return (
     <>
@@ -112,6 +120,14 @@ export default async function NewsPage({
                 ))}
               </div>
             )}
+            <Pager
+              page={page}
+              pageCount={pageCount}
+              basePath={`/${lang}/news`}
+              labelPrevious={t.pagerPrevious}
+              labelNext={t.pagerNext}
+              labelPageTemplate={t.pagerPage}
+            />
           </Container>
         </section>
       </main>

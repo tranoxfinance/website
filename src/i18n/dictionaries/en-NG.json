@@ -676,7 +676,10 @@
     "errorCvInvalid": "Your CV must be a PDF or Word document under 5 MB.",
     "errorClosed": "This role is no longer accepting applications.",
     "notFoundTitle": "This role is no longer available",
-    "notFoundBody": "The opening you are looking for was filled or closed."
+    "notFoundBody": "The opening you are looking for was filled or closed.",
+    "pagerPrevious": "Previous",
+    "pagerNext": "Next",
+    "pagerPage": "Page {page} of {pageCount}"
   },
   "newsPage": {
     "metaTitle": "News & Stories from Tranox",
@@ -692,6 +695,9 @@
       "press": "Press",
       "product": "Product",
       "community": "Community"
-    }
+    },
+    "pagerPrevious": "Previous",
+    "pagerNext": "Next",
+    "pagerPage": "Page {page} of {pageCount}"
   }
 }

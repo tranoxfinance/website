@@ -22,16 +22,28 @@ export interface PublicJobDetail extends PublicJob {
   requirements: string;
 }
 
-export async function getOpenJobs(): Promise<PublicJob[]> {
-  if (!API_URL) return [];
+export interface PaginatedResult<T> {
+  items: T[];
+  total: number;
+  page: number;
+}
+
+const EMPTY_PAGE = { items: [], total: 0, page: 1 };
+
+export async function getOpenJobs(
+  page = 1,
+  limit = 9,
+): Promise<PaginatedResult<PublicJob>> {
+  if (!API_URL) return EMPTY_PAGE;
   try {
-    const res = await fetch(`${API_URL}/public/careers`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return [];
-    return (await res.json()) as PublicJob[];
+    const res = await fetch(
+      `${API_URL}/public/careers?page=${page}&limit=${limit}`,
+      { next: { revalidate: 60 } },
+    );
+    if (!res.ok) return EMPTY_PAGE;
+    return (await res.json()) as PaginatedResult<PublicJob>;
   } catch {
-    return [];
+    return EMPTY_PAGE;
   }
 }
 

@@ -676,7 +676,10 @@
     "errorCvInvalid": "Votre CV doit être un document PDF ou Word de moins de 5 Mo.",
     "errorClosed": "Ce poste n'accepte plus de candidatures.",
     "notFoundTitle": "Ce poste n'est plus disponible",
-    "notFoundBody": "L'offre que vous cherchez a été pourvue ou fermée."
+    "notFoundBody": "L'offre que vous cherchez a été pourvue ou fermée.",
+    "pagerPrevious": "Précédent",
+    "pagerNext": "Suivant",
+    "pagerPage": "Page {page} sur {pageCount}"
   },
   "newsPage": {
     "metaTitle": "Actualités et histoires de Tranox",
@@ -692,6 +695,9 @@
       "press": "Presse",
       "product": "Produit",
       "community": "Communauté"
-    }
+    },
+    "pagerPrevious": "Précédent",
+    "pagerNext": "Suivant",
+    "pagerPage": "Page {page} sur {pageCount}"
   }
 }
