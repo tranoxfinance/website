@@ -18,7 +18,10 @@
   },
   "jsonLd": {
     "description": "Transferts d'argent bidirectionnels entre le Nigéria (NGN) et la Côte d'Ivoire (XOF). Des paiements transfrontaliers rapides, sûrs et transparents.",
-    "areaServed": ["Nigéria", "Côte d'Ivoire"],
+    "areaServed": [
+      "Nigéria",
+      "Côte d'Ivoire"
+    ],
     "slogan": "Rapide. Sûr. Mondial."
   },
   "cookieConsent": {
@@ -30,9 +33,18 @@
   },
   "nav": {
     "links": [
-      { "label": "À propos", "hash": "#about" },
-      { "label": "Comment ça marche", "hash": "#how-it-works" },
-      { "label": "FAQ", "hash": "#faq" }
+      {
+        "label": "À propos",
+        "hash": "#about"
+      },
+      {
+        "label": "Comment ça marche",
+        "hash": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "hash": "#faq"
+      }
     ],
     "liveRates": "Taux en direct",
     "downloadApp": "Télécharger l'appli",
@@ -41,7 +53,9 @@
     "appearance": "Apparence",
     "toggleTheme": "Basculer le mode sombre",
     "homeAria": "Accueil Tranox",
-    "languageAria": "Langue"
+    "languageAria": "Langue",
+    "careers": "Carrières",
+    "news": "Actualités"
   },
   "mobileBar": {
     "quickActions": "Actions rapides",
@@ -52,11 +66,23 @@
   },
   "hero": {
     "headlineSegments": [
-      { "text": "Envoyez de l'" },
-      { "text": "argent", "style": "brand" },
-      { "text": " par-delà les " },
-      { "text": "frontières,", "style": "gradient" },
-      { "text": " au moment où ça compte." }
+      {
+        "text": "Envoyez de l'"
+      },
+      {
+        "text": "argent",
+        "style": "brand"
+      },
+      {
+        "text": " par-delà les "
+      },
+      {
+        "text": "frontières,",
+        "style": "gradient"
+      },
+      {
+        "text": " au moment où ça compte."
+      }
     ],
     "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
     "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
@@ -331,7 +357,9 @@
     "contacts": "Contacts",
     "follow": "Suivez-nous",
     "rights": "© {year} Tranox. Tous droits réservés.",
-    "disclaimer": "Les taux de change affichés sont indicatifs. Tranox fournit des services régulés de transfert d'argent ; des conditions et des limites s'appliquent."
+    "disclaimer": "Les taux de change affichés sont indicatifs. Tranox fournit des services régulés de transfert d'argent ; des conditions et des limites s'appliquent.",
+    "careers": "Carrières",
+    "news": "Actualités"
   },
   "legalPage": {
     "tag": "Mentions légales",
@@ -610,5 +638,66 @@
         ]
       }
     ]
+  },
+  "careersPage": {
+    "metaTitle": "Carrières chez Tranox",
+    "metaDescription": "Rejoignez l'équipe qui construit des transferts d'argent rapides et justes entre le Nigeria et la Côte d'Ivoire. Découvrez nos postes ouverts et postulez en ligne.",
+    "tag": "Carrières",
+    "heading": "Construisez l'avenir des transferts transfrontaliers avec nous",
+    "sub": "Nous sommes une petite équipe avec une grande mission : des transferts rapides et justes entre le Nigeria et la Côte d'Ivoire. Trouvez votre poste ci-dessous.",
+    "empty": "Aucun poste ouvert pour le moment. Revenez bientôt ou suivez-nous sur les réseaux sociaux.",
+    "viewRole": "Voir le poste",
+    "employmentTypes": {
+      "full_time": "Temps plein",
+      "part_time": "Temps partiel",
+      "contract": "Contrat",
+      "internship": "Stage"
+    },
+    "backToCareers": "Tous les postes ouverts",
+    "aboutRole": "À propos du poste",
+    "requirements": "Ce que nous recherchons",
+    "applyHeading": "Postuler pour ce poste",
+    "applySub": "Renseignez vos coordonnées et joignez votre CV. Nous répondons à chaque candidature par email.",
+    "fullName": "Nom complet",
+    "email": "Adresse email",
+    "phone": "Numéro de téléphone (facultatif)",
+    "linkedin": "Profil LinkedIn (facultatif)",
+    "coverLetter": "Lettre de motivation (facultatif)",
+    "coverLetterHint": "Dites-nous pourquoi vous êtes la bonne personne.",
+    "cv": "CV",
+    "cvHint": "Document PDF ou Word, 5 Mo maximum.",
+    "submit": "Envoyer ma candidature",
+    "submitting": "Envoi…",
+    "successTitle": "Candidature reçue",
+    "successBody": "Merci pour votre candidature. Nous vous avons envoyé un email de confirmation avec votre référence.",
+    "successReference": "Votre référence",
+    "errorGeneric": "Une erreur est survenue lors de l'envoi de votre candidature. Veuillez réessayer.",
+    "errorAlreadyApplied": "Vous avez déjà postulé pour ce poste avec cette adresse email.",
+    "errorCvInvalid": "Votre CV doit être un document PDF ou Word de moins de 5 Mo.",
+    "errorClosed": "Ce poste n'accepte plus de candidatures.",
+    "notFoundTitle": "Ce poste n'est plus disponible",
+    "notFoundBody": "L'offre que vous cherchez a été pourvue ou fermée.",
+    "pagerPrevious": "Précédent",
+    "pagerNext": "Suivant",
+    "pagerPage": "Page {page} sur {pageCount}"
+  },
+  "newsPage": {
+    "metaTitle": "Actualités et histoires de Tranox",
+    "metaDescription": "Nouveautés produit, annonces et histoires de l'équipe Tranox.",
+    "tag": "Actualités et médias",
+    "heading": "Actualités et histoires de Tranox",
+    "sub": "Nouveautés produit, annonces de l'entreprise et histoires du corridor.",
+    "empty": "Aucun article publié pour le moment. Revenez bientôt.",
+    "readMore": "Lire l'article",
+    "backToNews": "Tous les articles",
+    "categories": {
+      "news": "Actualités",
+      "press": "Presse",
+      "product": "Produit",
+      "community": "Communauté"
+    },
+    "pagerPrevious": "Précédent",
+    "pagerNext": "Suivant",
+    "pagerPage": "Page {page} sur {pageCount}"
   }
 }
