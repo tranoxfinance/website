@@ -32,20 +32,6 @@
     "decline": "Decline"
   },
   "nav": {
-    "links": [
-      {
-        "label": "About us",
-        "hash": "#about"
-      },
-      {
-        "label": "How it works",
-        "hash": "#how-it-works"
-      },
-      {
-        "label": "FAQ",
-        "hash": "#faq"
-      }
-    ],
     "liveRates": "Live rates",
     "downloadApp": "Download app",
     "openMenu": "Open menu",
@@ -54,6 +40,7 @@
     "toggleTheme": "Toggle dark mode",
     "homeAria": "Tranox home",
     "languageAria": "Language",
+    "about": "About us",
     "careers": "Careers",
     "news": "News"
   },
@@ -196,6 +183,8 @@
     ]
   },
   "about": {
+    "metaTitle": "About us",
+    "metaDescription": "Learn about Tranox's mission to make cross-border money transfers between Nigeria and Ivory Coast fast, fair, and transparent.",
     "tag": "About us",
     "heading": "Connecting West Africa, one transfer at a time",
     "p1": "Sending money between Nigeria and Ivory Coast used to mean picking a rate you couldn't verify, paying fees that showed up after the fact, and waiting to find out if the transfer even arrived. Tranox exists to remove all three.",

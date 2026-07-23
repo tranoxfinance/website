@@ -4,7 +4,6 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { AppShowcase } from "@/components/AppShowcase";
-import { AboutUs } from "@/components/AboutUs";
 import { WhoItsFor } from "@/components/WhoItsFor";
 import { WhyTranox } from "@/components/WhyTranox";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -70,7 +69,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <main className="flex-1">
         <Hero dict={dict.hero} badges={dict.storeBadges} />
         <Features dict={dict.features} />
-        <AboutUs dict={dict.about} />
         <WhoItsFor dict={dict.whoFor} />
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />

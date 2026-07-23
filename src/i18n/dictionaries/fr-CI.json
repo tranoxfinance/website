@@ -32,20 +32,6 @@
     "decline": "Refuser"
   },
   "nav": {
-    "links": [
-      {
-        "label": "À propos",
-        "hash": "#about"
-      },
-      {
-        "label": "Comment ça marche",
-        "hash": "#how-it-works"
-      },
-      {
-        "label": "FAQ",
-        "hash": "#faq"
-      }
-    ],
     "liveRates": "Taux en direct",
     "downloadApp": "Télécharger l'appli",
     "openMenu": "Ouvrir le menu",
@@ -54,6 +40,7 @@
     "toggleTheme": "Basculer le mode sombre",
     "homeAria": "Accueil Tranox",
     "languageAria": "Langue",
+    "about": "À propos",
     "careers": "Carrières",
     "news": "Actualités"
   },
@@ -196,6 +183,8 @@
     ]
   },
   "about": {
+    "metaTitle": "À propos",
+    "metaDescription": "Découvrez la mission de Tranox : rendre les transferts d'argent transfrontaliers entre le Nigéria et la Côte d'Ivoire rapides, équitables et transparents.",
     "tag": "À propos",
     "heading": "Connecter l'Afrique de l'Ouest, un transfert à la fois",
     "p1": "Envoyer de l'argent entre le Nigéria et la Côte d'Ivoire, c'était accepter un taux qu'on ne pouvait pas vérifier, payer des frais qui apparaissaient après coup, et attendre pour savoir si le transfert était bien arrivé. Tranox existe pour supprimer ces trois problèmes.",

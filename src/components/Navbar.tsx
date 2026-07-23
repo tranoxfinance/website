@@ -21,11 +21,11 @@ interface NavbarProps {
 export function Navbar({ lang, dict }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState("");
   const pathname = usePathname();
   const isHome = pathname === `/${lang}`;
   const hrefFor = (hash: string) => (isHome ? hash : `/${lang}${hash}`);
   const pageLinks = [
+    { href: `/${lang}/about`, label: dict.about },
     { href: `/${lang}/rates`, label: dict.liveRates },
     { href: `/${lang}/careers`, label: dict.careers },
     { href: `/${lang}/news`, label: dict.news },
@@ -34,23 +34,11 @@ export function Navbar({ lang, dict }: NavbarProps) {
     pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
-    const ids = dict.links.map((link) => link.hash.slice(1));
-    const onScroll = () => {
-      setScrolled(window.scrollY > 8);
-      const line = window.scrollY + 120;
-      let current = "";
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top + window.scrollY <= line) {
-          current = id;
-        }
-      }
-      setActiveId(current);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [dict.links]);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -74,29 +62,6 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <Logo href={`/${lang}`} ariaLabel={dict.homeAria} />
 
             <div className="hidden items-center gap-2 lg:flex">
-              {dict.links.map((link) => {
-                const isActive = activeId === link.hash.slice(1);
-                return (
-                  <a
-                    key={link.hash}
-                    href={hrefFor(link.hash)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={cn(
-                      "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
-                      isActive ? "text-brand" : "text-ink-soft",
-                    )}
-                  >
-                    {link.label}
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
-                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
-                      )}
-                    />
-                  </a>
-                );
-              })}
               {pageLinks.map((page) => {
                 const isActive = isActivePage(page.href);
                 return (
@@ -172,23 +137,6 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
         <Container className="flex flex-1 flex-col">
           <nav className="mt-6 flex flex-col gap-1">
-            {dict.links.map((link) => {
-              const isActive = activeId === link.hash.slice(1);
-              return (
-                <a
-                  key={link.hash}
-                  href={hrefFor(link.hash)}
-                  onClick={() => setOpen(false)}
-                  aria-current={isActive ? "page" : undefined}
-                  className={cn(
-                    "rounded-xl px-4 py-3.5 text-lg font-semibold transition active:bg-brand-soft",
-                    isActive ? "text-brand" : "text-ink",
-                  )}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
             {pageLinks.map((page) => {
               const isActive = isActivePage(page.href);
               return (
