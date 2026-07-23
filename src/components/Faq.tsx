@@ -7,7 +7,18 @@ import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
 
-export function Faq({ dict }: { dict: Dictionary["faq"] }) {
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+export function Faq({
+  dict,
+  items,
+}: {
+  dict: Dictionary["faq"];
+  items: FaqItem[];
+}) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -43,7 +54,7 @@ export function Faq({ dict }: { dict: Dictionary["faq"] }) {
           </Reveal>
 
           <div className="space-y-3 lg:col-span-3">
-            {dict.items.map((item, index) => {
+            {items.map((item, index) => {
               const isOpen = open === index;
               return (
                 <Reveal key={item.q} delay={index * 60}>

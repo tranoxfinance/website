@@ -12,6 +12,7 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { getPublishedFaqs } from "@/lib/faqs";
 
 export async function generateMetadata({
   params,
@@ -29,6 +30,11 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
+  const publishedFaqs = await getPublishedFaqs();
+  const faqItems =
+    publishedFaqs.length > 0
+      ? publishedFaqs.map((item) => ({ q: item.question, a: item.answer }))
+      : dict.faq.items;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -45,7 +51,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: dict.faq.items.map((item) => ({
+    mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: item.q,
       acceptedAnswer: {
@@ -73,7 +79,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />
         <HowItWorks dict={dict.how} />
-        <Faq dict={dict.faq} />
+        <Faq dict={dict.faq} items={faqItems} />
         <CtaBanner dict={dict.cta} badges={dict.storeBadges} />
       </main>
       <Footer lang={lang} dict={dict} />
