@@ -5,6 +5,7 @@ const siteUrl = "https://tranoxfinance.com";
 
 const routes: { path: string; priority: number; changeFrequency: "daily" | "weekly" | "monthly" }[] = [
   { path: "", priority: 1, changeFrequency: "weekly" },
+  { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/rates", priority: 0.7, changeFrequency: "daily" },
   { path: "/careers", priority: 0.6, changeFrequency: "weekly" },
   { path: "/news", priority: 0.6, changeFrequency: "daily" },

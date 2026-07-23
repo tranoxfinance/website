@@ -8,7 +8,7 @@ const ICONS = [Globe2, BadgeCheck, HeartHandshake];
 
 export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
   return (
-    <section id="about" className="py-20 sm:py-28">
+    <section className="py-20 sm:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>
