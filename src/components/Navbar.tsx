@@ -24,8 +24,14 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const [activeId, setActiveId] = useState("");
   const pathname = usePathname();
   const isHome = pathname === `/${lang}`;
-  const isRatesPage = pathname === `/${lang}/rates`;
   const hrefFor = (hash: string) => (isHome ? hash : `/${lang}${hash}`);
+  const pageLinks = [
+    { href: `/${lang}/rates`, label: dict.liveRates },
+    { href: `/${lang}/careers`, label: dict.careers },
+    { href: `/${lang}/news`, label: dict.news },
+  ];
+  const isActivePage = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const ids = dict.links.map((link) => link.hash.slice(1));
@@ -91,23 +97,29 @@ export function Navbar({ lang, dict }: NavbarProps) {
                   </a>
                 );
               })}
-              <Link
-                href={`/${lang}/rates`}
-                aria-current={isRatesPage ? "page" : undefined}
-                className={cn(
-                  "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
-                  isRatesPage ? "text-brand" : "text-ink-soft",
-                )}
-              >
-                {dict.liveRates}
-                <span
-                  aria-hidden
-                  className={cn(
-                    "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
-                    isRatesPage ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
-                  )}
-                />
-              </Link>
+              {pageLinks.map((page) => {
+                const isActive = isActivePage(page.href);
+                return (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
+                      isActive ? "text-brand" : "text-ink-soft",
+                    )}
+                  >
+                    {page.label}
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                      )}
+                    />
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden items-center gap-2 lg:flex">
@@ -177,17 +189,23 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 </a>
               );
             })}
-            <Link
-              href={`/${lang}/rates`}
-              onClick={() => setOpen(false)}
-              aria-current={isRatesPage ? "page" : undefined}
-              className={cn(
-                "rounded-xl px-4 py-3.5 text-lg font-semibold transition active:bg-brand-soft",
-                isRatesPage ? "text-brand" : "text-ink",
-              )}
-            >
-              {dict.liveRates}
-            </Link>
+            {pageLinks.map((page) => {
+              const isActive = isActivePage(page.href);
+              return (
+                <Link
+                  key={page.href}
+                  href={page.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "rounded-xl px-4 py-3.5 text-lg font-semibold transition active:bg-brand-soft",
+                    isActive ? "text-brand" : "text-ink",
+                  )}
+                >
+                  {page.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="mt-auto space-y-3 py-6">

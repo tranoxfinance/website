@@ -18,7 +18,10 @@
   },
   "jsonLd": {
     "description": "Bidirectional money transfers between Nigeria (NGN) and Ivory Coast (XOF). Fast, secure, transparent cross-border payments.",
-    "areaServed": ["Nigeria", "Ivory Coast"],
+    "areaServed": [
+      "Nigeria",
+      "Ivory Coast"
+    ],
     "slogan": "Fast. Secure. Global."
   },
   "cookieConsent": {
@@ -30,9 +33,18 @@
   },
   "nav": {
     "links": [
-      { "label": "About us", "hash": "#about" },
-      { "label": "How it works", "hash": "#how-it-works" },
-      { "label": "FAQ", "hash": "#faq" }
+      {
+        "label": "About us",
+        "hash": "#about"
+      },
+      {
+        "label": "How it works",
+        "hash": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "hash": "#faq"
+      }
     ],
     "liveRates": "Live rates",
     "downloadApp": "Download app",
@@ -41,7 +53,9 @@
     "appearance": "Appearance",
     "toggleTheme": "Toggle dark mode",
     "homeAria": "Tranox home",
-    "languageAria": "Language"
+    "languageAria": "Language",
+    "careers": "Careers",
+    "news": "News"
   },
   "mobileBar": {
     "quickActions": "Quick actions",
@@ -52,11 +66,23 @@
   },
   "hero": {
     "headlineSegments": [
-      { "text": "Send " },
-      { "text": "money", "style": "brand" },
-      { "text": " across " },
-      { "text": "borders,", "style": "gradient" },
-      { "text": " the moment it matters." }
+      {
+        "text": "Send "
+      },
+      {
+        "text": "money",
+        "style": "brand"
+      },
+      {
+        "text": " across "
+      },
+      {
+        "text": "borders,",
+        "style": "gradient"
+      },
+      {
+        "text": " the moment it matters."
+      }
     ],
     "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
     "tagline": "Cross-border payments built for West Africa",
@@ -331,7 +357,9 @@
     "contacts": "Contacts",
     "follow": "Follow us",
     "rights": "© {year} Tranox. All rights reserved.",
-    "disclaimer": "Exchange rates displayed are indicative. Tranox provides regulated money-transfer services; terms and limits apply."
+    "disclaimer": "Exchange rates displayed are indicative. Tranox provides regulated money-transfer services; terms and limits apply.",
+    "careers": "Careers",
+    "news": "News"
   },
   "legalPage": {
     "tag": "Legal",
@@ -610,5 +638,60 @@
         ]
       }
     ]
+  },
+  "careersPage": {
+    "metaTitle": "Careers at Tranox",
+    "metaDescription": "Join the team building fast, fair money transfers between Nigeria and Ivory Coast. See open roles and apply online.",
+    "tag": "Careers",
+    "heading": "Build the future of cross-border money with us",
+    "sub": "We are a small team with a big mission: fast, fair transfers between Nigeria and Ivory Coast. Find your role below.",
+    "empty": "There are no open roles right now. Check back soon or follow us on social media for updates.",
+    "viewRole": "View role",
+    "employmentTypes": {
+      "full_time": "Full-time",
+      "part_time": "Part-time",
+      "contract": "Contract",
+      "internship": "Internship"
+    },
+    "backToCareers": "All open roles",
+    "aboutRole": "About the role",
+    "requirements": "What we are looking for",
+    "applyHeading": "Apply for this role",
+    "applySub": "Fill in your details and attach your CV. We reply to every application by email.",
+    "fullName": "Full name",
+    "email": "Email address",
+    "phone": "Phone number (optional)",
+    "linkedin": "LinkedIn profile (optional)",
+    "coverLetter": "Cover letter (optional)",
+    "coverLetterHint": "Tell us why you are a great fit.",
+    "cv": "CV / Resume",
+    "cvHint": "PDF or Word document, max 5 MB.",
+    "submit": "Submit application",
+    "submitting": "Submitting…",
+    "successTitle": "Application received",
+    "successBody": "Thank you for applying. We have emailed you a confirmation with your application reference.",
+    "successReference": "Your reference",
+    "errorGeneric": "Something went wrong while submitting your application. Please try again.",
+    "errorAlreadyApplied": "You have already applied for this role with this email address.",
+    "errorCvInvalid": "Your CV must be a PDF or Word document under 5 MB.",
+    "errorClosed": "This role is no longer accepting applications.",
+    "notFoundTitle": "This role is no longer available",
+    "notFoundBody": "The opening you are looking for was filled or closed."
+  },
+  "newsPage": {
+    "metaTitle": "News & Stories from Tranox",
+    "metaDescription": "Product updates, company news, and stories from the Tranox team.",
+    "tag": "News & Media",
+    "heading": "News and stories from Tranox",
+    "sub": "Product updates, company announcements, and stories from the corridor.",
+    "empty": "No articles published yet. Check back soon.",
+    "readMore": "Read more",
+    "backToNews": "All articles",
+    "categories": {
+      "news": "News",
+      "press": "Press",
+      "product": "Product",
+      "community": "Community"
+    }
   }
 }
