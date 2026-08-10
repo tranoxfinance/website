@@ -29,7 +29,21 @@
     "message": "Nous utilisons des cookies essentiels pour mémoriser votre langue et votre choix concernant les cookies. Avec votre permission, nous aimerions aussi utiliser des cookies d'analyse pour comprendre comment les visiteurs utilisent notre site.",
     "policyLabel": "En savoir plus",
     "accept": "Accepter",
-    "decline": "Refuser"
+    "decline": "Refuser",
+    "customize": "Personnaliser",
+    "manage": {
+      "heading": "Gérer les préférences de cookies",
+      "back": "Retour",
+      "save": "Enregistrer les préférences",
+      "essential": {
+        "title": "Essentiels",
+        "description": "Mémorisent votre langue et votre choix de cookies. Toujours actifs."
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Google Analytics nous aide à comprendre le trafic global des visiteurs. Utilisé uniquement si activé ici."
+      }
+    }
   },
   "nav": {
     "liveRates": "Taux en direct",
