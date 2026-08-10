@@ -29,7 +29,21 @@
     "message": "We use essential cookies to remember your language and cookie choice. With your permission, we'd also like to use analytics cookies to understand how visitors use our site.",
     "policyLabel": "Learn more",
     "accept": "Accept",
-    "decline": "Decline"
+    "decline": "Decline",
+    "customize": "Customize",
+    "manage": {
+      "heading": "Manage cookie preferences",
+      "back": "Back",
+      "save": "Save preferences",
+      "essential": {
+        "title": "Essential",
+        "description": "Remembers your language and cookie choice. Always active."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Google Analytics helps us understand aggregate visitor traffic. Only set if enabled here."
+      }
+    }
   },
   "nav": {
     "liveRates": "Live rates",
