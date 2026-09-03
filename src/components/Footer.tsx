@@ -29,12 +29,12 @@ const SOCIALS = [
   {
     path: LINKEDIN_PATH,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/tranox-finance-459265423/?skipRedirect=true",
+    href: "https://www.linkedin.com/company/tranoxfinance/",
   },
   {
     path: FACEBOOK_PATH,
     label: "Facebook",
-    href: "https://web.facebook.com/profile.php?id=61591687215714",
+    href: "https://web.facebook.com/profile.php?id=61594026117952",
   },
   {
     path: INSTAGRAM_PATH,
