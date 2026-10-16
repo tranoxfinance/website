@@ -373,7 +373,7 @@
     "metaTitle": "Politique de confidentialité",
     "metaDescription": "Comment Tranox collecte, utilise, partage et protège vos informations personnelles et financières.",
     "title": "Politique de confidentialité",
-    "lastUpdated": "7 juin 2026",
+    "lastUpdated": "16 octobre 2026",
     "intro": "Cette Politique de confidentialité explique quelles informations Tranox collecte, comment nous les utilisons et les partageons, ainsi que les choix et droits dont vous disposez. Elle s'applique à votre utilisation de l'application Tranox, du site web et des services associés, et nous traitons vos informations conformément à la loi nigériane sur la protection des données de 2023 (NDPA) et aux directives émises par la Nigeria Data Protection Commission (NDPC).",
     "sections": [
       {
@@ -422,7 +422,7 @@
       {
         "heading": "Conservation des données",
         "blocks": [
-          "Nous conservons vos informations tant que votre compte est actif et pendant la période requise pour respecter les obligations de lutte contre le blanchiment, fiscales et autres obligations légales sur les marchés où nous opérons. Lorsque les données ne sont plus nécessaires, nous les supprimons ou les anonymisons de manière sécurisée."
+          "Nous conservons vos informations tant que votre compte est actif. Après la fermeture de votre compte, nous les conservons pendant la durée exigée par les lois de lutte contre le blanchiment : 10 ans pour les comptes ouverts en Côte d’Ivoire et 5 ans pour les comptes ouverts au Nigeria. À la fin de cette période, nous supprimons ou anonymisons définitivement vos données personnelles, y compris les pièces d’identité détenues par notre prestataire de vérification. Les codes à usage unique sont supprimés peu après leur expiration."
         ]
       },
       {
@@ -604,8 +604,8 @@
             "list": [
               "Vous êtes déconnecté de tous vos appareils et ne pouvez plus vous connecter.",
               "Les notifications push s’arrêtent et l’enregistrement de votre appareil est supprimé.",
-              "Les données de votre compte sont conservées 5 ans à compter de la fermeture, comme l’exigent les lois sur la lutte contre le blanchiment et la conservation des registres financiers.",
-              "Au bout de 5 ans, nous supprimons définitivement votre nom, votre adresse e-mail et votre photo de profil. Les relevés de transactions ne sont conservés que lorsque la loi l’exige."
+              "Nous conservons les données de votre compte 10 ans à compter de la fermeture si vous vous êtes inscrit en Côte d’Ivoire, ou 5 ans si vous vous êtes inscrit au Nigeria, comme l’exigent les lois de lutte contre le blanchiment de chaque pays.",
+              "À la fin de cette période, nous supprimons définitivement vos données personnelles : nom, numéro de téléphone, e-mail, date de naissance, pièces d’identité et selfies, numéros d’identification, bénéficiaires enregistrés, coordonnées bancaires ou mobile money, messages au support et informations sur vos appareils. Seuls des enregistrements anonymes des montants et des dates sont conservés pour la comptabilité."
             ]
           }
         ]
