@@ -75,6 +75,7 @@ export function Footer({ lang, dict }: FooterProps) {
         { label: f.terms, href: `/${lang}/terms` },
         { label: f.privacy, href: `/${lang}/privacy` },
         { label: f.compliance, href: `/${lang}/compliance` },
+        { label: f.deleteAccount, href: `/${lang}/delete-account` },
       ],
     },
   ];
