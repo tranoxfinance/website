@@ -373,7 +373,7 @@
     "metaTitle": "Privacy Policy",
     "metaDescription": "How Tranox collects, uses, shares, and protects your personal and financial information.",
     "title": "Privacy Policy",
-    "lastUpdated": "June 7, 2026",
+    "lastUpdated": "October 16, 2026",
     "intro": "This Privacy Policy explains what information Tranox collects, how we use and share it, and the choices and rights you have. It applies to your use of the Tranox app, website, and related services, and we handle your information in line with the Nigeria Data Protection Act 2023 (NDPA) and directives issued by the Nigeria Data Protection Commission (NDPC).",
     "sections": [
       {
@@ -422,7 +422,7 @@
       {
         "heading": "Data retention",
         "blocks": [
-          "We retain your information for as long as your account is active and for the period required to meet anti-money-laundering, tax, and other legal obligations in the markets we operate in. When data is no longer required, we securely delete or anonymise it."
+          "We retain your information for as long as your account is active. After you close your account, we keep it for the period anti-money-laundering laws require: 5 years for accounts registered in Nigeria and 10 years for accounts registered in Côte d’Ivoire. When that period ends, we permanently delete or anonymise your personal data, including identity documents held by our verification provider. One-time passcodes are deleted shortly after they expire."
         ]
       },
       {
@@ -604,8 +604,8 @@
             "list": [
               "You are signed out on every device and can no longer sign in.",
               "Push notifications stop and your device registration is removed.",
-              "Your account data is kept for 5 years from the date of closure, as anti-money-laundering and financial record-keeping laws require.",
-              "After 5 years, we permanently delete your name, email address and profile photo. Transaction records are kept only where the law requires it."
+              "We keep your account records for 5 years from closure if you registered in Nigeria, or 10 years if you registered in Côte d’Ivoire, as anti-money-laundering record-keeping laws in each country require.",
+              "When that period ends, we permanently delete your personal data: name, phone number, email, date of birth, identity documents and selfies, ID numbers, saved recipients and bank or mobile money details, support messages and device information. Only anonymous records of amounts and dates remain for accounting."
             ]
           }
         ]
