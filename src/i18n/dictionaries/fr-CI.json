@@ -362,7 +362,8 @@
     "rights": "© {year} Tranox. Tous droits réservés.",
     "disclaimer": "Les taux de change affichés sont indicatifs. Tranox fournit des services régulés de transfert d'argent ; des conditions et des limites s'appliquent.",
     "careers": "Carrières",
-    "news": "Actualités"
+    "news": "Actualités",
+    "deleteAccount": "Supprimer le compte"
   },
   "legalPage": {
     "tag": "Mentions légales",
@@ -565,6 +566,54 @@
         "heading": "Nous contacter",
         "blocks": [
           "Si vous avez des questions sur ces conditions, contactez notre équipe à hello@tranoxfinance.com."
+        ]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "metaTitle": "Supprimer votre compte",
+    "metaDescription": "Comment fermer votre compte Tranox et ce qu’il advient de vos données.",
+    "title": "Supprimer votre compte Tranox",
+    "lastUpdated": "16 octobre 2026",
+    "intro": "Vous pouvez fermer votre compte Tranox à tout moment depuis l’application Tranox. Cette page explique comment procéder et ce qu’il advient ensuite de vos données.",
+    "sections": [
+      {
+        "heading": "Supprimer votre compte dans l’application",
+        "blocks": [
+          {
+            "list": [
+              "Ouvrez l’application Tranox et connectez-vous.",
+              "Allez dans Profil.",
+              "Appuyez sur Supprimer le compte.",
+              "Saisissez votre code PIN pour confirmer."
+            ]
+          },
+          "Vos portefeuilles doivent être vides avant la fermeture du compte. Retirez ou envoyez d’abord tout solde restant."
+        ]
+      },
+      {
+        "heading": "Demander la suppression par e-mail",
+        "blocks": [
+          "Si vous ne pouvez plus utiliser l’application, écrivez à hello@tranoxfinance.com avec l’objet « Supprimer mon compte ». Envoyez-le depuis l’adresse e-mail de votre compte, ou indiquez le numéro de téléphone utilisé lors de l’inscription. Nous vérifierons que la demande vient bien de vous et vous informerons dès que votre compte sera fermé."
+        ]
+      },
+      {
+        "heading": "Ce qui se passe à la fermeture de votre compte",
+        "blocks": [
+          {
+            "list": [
+              "Vous êtes déconnecté de tous vos appareils et ne pouvez plus vous connecter.",
+              "Les notifications push s’arrêtent et l’enregistrement de votre appareil est supprimé.",
+              "Les données de votre compte sont conservées 5 ans à compter de la fermeture, comme l’exigent les lois sur la lutte contre le blanchiment et la conservation des registres financiers.",
+              "Au bout de 5 ans, nous supprimons définitivement votre nom, votre adresse e-mail et votre photo de profil. Les relevés de transactions ne sont conservés que lorsque la loi l’exige."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Nous contacter",
+        "blocks": [
+          "Des questions sur la suppression de votre compte ou de vos données ? Écrivez à hello@tranoxfinance.com."
         ]
       }
     ]
