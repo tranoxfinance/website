@@ -362,7 +362,8 @@
     "rights": "© {year} Tranox. All rights reserved.",
     "disclaimer": "Exchange rates displayed are indicative. Tranox provides regulated money-transfer services; terms and limits apply.",
     "careers": "Careers",
-    "news": "News"
+    "news": "News",
+    "deleteAccount": "Delete account"
   },
   "legalPage": {
     "tag": "Legal",
@@ -565,6 +566,54 @@
         "heading": "Contact us",
         "blocks": [
           "If you have questions about these terms, contact our team at hello@tranoxfinance.com."
+        ]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "metaTitle": "Delete your account",
+    "metaDescription": "How to close your Tranox account and what happens to your data.",
+    "title": "Delete your Tranox account",
+    "lastUpdated": "October 16, 2026",
+    "intro": "You can close your Tranox account at any time from the Tranox app. This page explains how to do it and what happens to your data afterwards.",
+    "sections": [
+      {
+        "heading": "Delete your account in the app",
+        "blocks": [
+          {
+            "list": [
+              "Open the Tranox app and sign in.",
+              "Go to Profile.",
+              "Tap Delete account.",
+              "Enter your PIN to confirm."
+            ]
+          },
+          "Your wallets must be empty before you can close your account. Withdraw or send any remaining balance first."
+        ]
+      },
+      {
+        "heading": "Request deletion by email",
+        "blocks": [
+          "If you can no longer use the app, email hello@tranoxfinance.com with the subject \"Delete my account\". Send it from the email address on your account, or include the phone number you registered with. We will confirm that the request comes from you and let you know once your account is closed."
+        ]
+      },
+      {
+        "heading": "What happens when your account is closed",
+        "blocks": [
+          {
+            "list": [
+              "You are signed out on every device and can no longer sign in.",
+              "Push notifications stop and your device registration is removed.",
+              "Your account data is kept for 5 years from the date of closure, as anti-money-laundering and financial record-keeping laws require.",
+              "After 5 years, we permanently delete your name, email address and profile photo. Transaction records are kept only where the law requires it."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Contact us",
+        "blocks": [
+          "Questions about deleting your account or your data? Email hello@tranoxfinance.com."
         ]
       }
     ]
