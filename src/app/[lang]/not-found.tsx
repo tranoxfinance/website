@@ -39,7 +39,7 @@ export default function NotFound() {
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
           {t.heading}
         </h1>
-        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
+        <p className="mt-3 max-w-md text-md leading-relaxed text-ink-soft">
           {t.message}
         </p>
         <Link

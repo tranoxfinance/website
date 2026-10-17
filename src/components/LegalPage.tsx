@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export type LegalBlock = string | { list: string[] };
 
@@ -40,12 +41,11 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
       <main className="flex-1">
         <section className="border-b border-border bg-surface py-16 sm:py-20">
           <Container className="max-w-3xl">
-            <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              {dict.legalPage.tag}
-            </span>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              {page.title}
-            </h1>
+            <SectionHeading
+              eyebrow={dict.legalPage.tag}
+              title={page.title}
+              as="h1"
+            />
             <p className="mt-3 text-sm text-muted">
               {dict.legalPage.lastUpdated.replace("{date}", page.lastUpdated)}
             </p>
@@ -67,14 +67,14 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
                       typeof block === "string" ? (
                         <p
                           key={index}
-                          className="text-[15px] leading-relaxed text-ink-soft"
+                          className="text-md leading-relaxed text-ink-soft"
                         >
                           {block}
                         </p>
                       ) : (
                         <ul
                           key={index}
-                          className="space-y-2 pl-1 text-[15px] leading-relaxed text-ink-soft"
+                          className="space-y-2 pl-1 text-md leading-relaxed text-ink-soft"
                         >
                           {block.list.map((item) => (
                             <li key={item} className="flex gap-3">

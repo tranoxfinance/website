@@ -3,6 +3,7 @@ import { Wallet, Layers, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const ICONS = [Wallet, Layers, ShieldCheck];
 
@@ -13,15 +14,11 @@ export function Features({ dict }: { dict: Dictionary["features"] }) {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>
             <div>
-              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                {dict.tag}
-              </span>
-              <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
-                {dict.heading}
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-                {dict.sub}
-              </p>
+              <SectionHeading
+                eyebrow={dict.tag}
+                title={dict.heading}
+                description={dict.sub}
+              />
 
               <div className="mt-10 space-y-7">
                 {dict.items.map((feature, index) => {

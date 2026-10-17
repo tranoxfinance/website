@@ -32,7 +32,7 @@ export function StoreBadges({ dict, className }: StoreBadgesProps) {
                 className="h-11 w-[150px] object-fill"
               />
             </a>
-            <span className="text-[11px] font-medium text-ink-soft">
+            <span className="text-2xs font-medium text-ink-soft">
               {dict.comingSoon}
             </span>
           </div>

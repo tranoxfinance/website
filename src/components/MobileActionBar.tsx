@@ -78,7 +78,7 @@ export function MobileActionBar({ lang, dict }: MobileActionBarProps) {
               onClick={handleClick}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex flex-1 flex-col items-center gap-1 rounded-xl py-1.5 text-[11px] font-medium transition-colors active:bg-surface",
+                "flex flex-1 flex-col items-center gap-1 rounded-xl py-1.5 text-2xs font-medium transition-colors active:bg-surface",
                 isActive ? "text-brand" : "text-ink-soft",
               )}
             >

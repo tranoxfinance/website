@@ -3,6 +3,7 @@ import { Reveal } from "@/components/Reveal";
 import { StoreBadges } from "@/components/StoreBadges";
 import { WorldDotMap } from "@/components/WorldDotMap";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 interface CtaBannerProps {
   dict: Dictionary["cta"];
@@ -26,15 +27,12 @@ export function CtaBanner({ dict, badges }: CtaBannerProps) {
 
             <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
               <div className="max-w-xl">
-                <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                  {dict.tag}
-                </span>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  {dict.heading}
-                </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/65">
-                  {dict.body}
-                </p>
+                <SectionHeading
+                  eyebrow={dict.tag}
+                  title={dict.heading}
+                  invert
+                  description={dict.body}
+                />
               </div>
 
               <StoreBadges dict={badges} className="shrink-0" />

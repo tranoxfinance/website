@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import { WorldDotMap } from "@/components/WorldDotMap";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
   return (
@@ -21,12 +22,11 @@ export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
           <div className="relative">
             <Reveal>
               <div className="mx-auto max-w-2xl text-center">
-                <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                  {dict.tag}
-                </span>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                  {dict.heading}
-                </h2>
+                <SectionHeading
+                  eyebrow={dict.tag}
+                  title={dict.heading}
+                  invert
+                />
               </div>
             </Reveal>
 

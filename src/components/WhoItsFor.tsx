@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
   return (
@@ -9,15 +10,11 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
       <Container>
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              {dict.tag}
-            </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              {dict.heading}
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              {dict.sub}
-            </p>
+            <SectionHeading
+              eyebrow={dict.tag}
+              title={dict.heading}
+              description={dict.sub}
+            />
           </div>
         </Reveal>
 
@@ -38,7 +35,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
                 <h3 className="mt-5 text-lg font-bold text-ink">
                   {persona.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                <p className="mt-2 text-md leading-relaxed text-ink-soft">
                   {persona.body}
                 </p>
               </div>
