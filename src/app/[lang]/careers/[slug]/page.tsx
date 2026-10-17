@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { ApplyForm } from "./ApplyForm";
 
 const richTextClass = cn(
-  "text-[15px] leading-relaxed text-ink-soft",
+  "text-md leading-relaxed text-ink-soft",
   "[&_h1]:mb-3 [&_h1]:mt-6 [&_h1]:text-xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:first:mt-0",
   "[&_h2]:mb-3 [&_h2]:mt-5 [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-ink [&_h2]:first:mt-0",
   "[&_p]:mb-4 [&_p]:last:mb-0",

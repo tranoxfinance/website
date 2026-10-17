@@ -3,8 +3,13 @@
 import { useState, useSyncExternalStore } from "react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { getConsent, setConsent, subscribeToConsent } from "@/lib/cookie-consent";
+import {
+  getConsent,
+  setConsent,
+  subscribeToConsent,
+} from "@/lib/cookie-consent";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
 
 interface CookieConsentProps {
   lang: Locale;
@@ -16,7 +21,11 @@ function isUndecided() {
 }
 
 export function CookieConsent({ lang, dict }: CookieConsentProps) {
-  const visible = useSyncExternalStore(subscribeToConsent, isUndecided, () => false);
+  const visible = useSyncExternalStore(
+    subscribeToConsent,
+    isUndecided,
+    () => false,
+  );
   const [managing, setManaging] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
@@ -40,11 +49,15 @@ export function CookieConsent({ lang, dict }: CookieConsentProps) {
       <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-surface/95 p-5 shadow-soft backdrop-blur-lg">
         {managing ? (
           <div className="flex flex-col gap-4">
-            <h2 className="text-sm font-bold text-ink">{dict.manage.heading}</h2>
+            <h2 className="text-sm font-bold text-ink">
+              {dict.manage.heading}
+            </h2>
 
             <div className="flex items-center justify-between gap-4 rounded-xl border border-border px-4 py-3">
               <div>
-                <p className="text-sm font-medium text-ink">{dict.manage.essential.title}</p>
+                <p className="text-sm font-medium text-ink">
+                  {dict.manage.essential.title}
+                </p>
                 <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">
                   {dict.manage.essential.description}
                 </p>
@@ -65,7 +78,9 @@ export function CookieConsent({ lang, dict }: CookieConsentProps) {
               className="flex items-center justify-between gap-4 rounded-xl border border-border px-4 py-3 text-left transition hover:border-brand/40 cursor-pointer"
             >
               <div>
-                <p className="text-sm font-medium text-ink">{dict.manage.analytics.title}</p>
+                <p className="text-sm font-medium text-ink">
+                  {dict.manage.analytics.title}
+                </p>
                 <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">
                   {dict.manage.analytics.description}
                 </p>
@@ -86,20 +101,17 @@ export function CookieConsent({ lang, dict }: CookieConsentProps) {
             </button>
 
             <div className="flex items-center justify-end gap-2">
-              <button
+              <Button
                 type="button"
+                variant="ghost"
+                size="sm"
                 onClick={() => setManaging(false)}
-                className="rounded-xl px-4 py-2 text-sm font-medium text-ink-soft transition hover:text-ink cursor-pointer"
               >
                 {dict.manage.back}
-              </button>
-              <button
-                type="button"
-                onClick={handleSavePreferences}
-                className="rounded-xl bg-brand px-4 py-2 text-sm font-bold text-white shadow-soft transition active:translate-y-px cursor-pointer"
-              >
+              </Button>
+              <Button type="button" size="sm" onClick={handleSavePreferences}>
                 {dict.manage.save}
-              </button>
+              </Button>
             </div>
           </div>
         ) : (
@@ -114,27 +126,29 @@ export function CookieConsent({ lang, dict }: CookieConsentProps) {
               </a>
             </p>
             <div className="flex shrink-0 flex-wrap items-center gap-2">
-              <button
+              <Button
                 type="button"
+                variant="ghost"
+                size="sm"
                 onClick={() => setManaging(true)}
-                className="rounded-xl px-4 py-2 text-sm font-medium text-ink-soft transition hover:text-ink cursor-pointer"
               >
                 {dict.customize}
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
+                variant="ghost"
+                size="sm"
                 onClick={() => handleChoice("declined")}
-                className="rounded-xl px-4 py-2 text-sm font-medium text-ink-soft transition hover:text-ink cursor-pointer"
               >
                 {dict.decline}
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
+                size="sm"
                 onClick={() => handleChoice("accepted")}
-                className="rounded-xl bg-brand px-4 py-2 text-sm font-bold text-white shadow-soft transition active:translate-y-px cursor-pointer"
               >
                 {dict.accept}
-              </button>
+              </Button>
             </div>
           </div>
         )}

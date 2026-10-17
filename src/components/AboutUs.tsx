@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const ICONS = [Globe2, BadgeCheck, HeartHandshake];
 
@@ -13,16 +14,12 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>
             <div>
-              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                {dict.tag}
-              </span>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                {dict.heading}
-              </h2>
-              <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-                {dict.p1}
-              </p>
-              <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
+              <SectionHeading
+                eyebrow={dict.tag}
+                title={dict.heading}
+                description={dict.p1}
+              />
+              <p className="mt-4 text-md leading-relaxed text-ink-soft">
                 {dict.p2}
               </p>
             </div>

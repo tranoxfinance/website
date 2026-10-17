@@ -16,6 +16,7 @@ import {
   type RateRange,
 } from "@/lib/fx-rates";
 import { cn } from "@/lib/utils";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const RANGES: RateRange[] = ["1d", "1w", "1m", "3m", "1y"];
 
@@ -129,15 +130,12 @@ export default async function RatesPage({
       <main className="flex-1">
         <section className="border-b border-border bg-surface py-16 sm:py-20">
           <Container className="max-w-3xl">
-            <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              {dict.ratesPage.tag}
-            </span>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              {dict.ratesPage.heading}
-            </h1>
-            <p className="mt-3 text-lg leading-relaxed text-ink-soft">
-              {dict.ratesPage.sub}
-            </p>
+            <SectionHeading
+              eyebrow={dict.ratesPage.tag}
+              title={dict.ratesPage.heading}
+              as="h1"
+              description={dict.ratesPage.sub}
+            />
           </Container>
         </section>
 

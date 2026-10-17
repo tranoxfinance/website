@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/Button";
 import { CorridorMap } from "@/components/CorridorMap";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const ICONS = [Radar, ListChecks, Bell];
 
@@ -12,15 +13,12 @@ export function AppShowcase({ dict }: { dict: Dictionary["showcase"] }) {
     <section className="overflow-hidden bg-surface py-20 sm:py-28">
       <Container className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal>
-          <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-            {dict.tag}
-          </span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            {dict.heading}
-          </h2>
-          <p className="mt-4 max-w-lg text-lg leading-relaxed text-ink-soft">
-            {dict.sub}
-          </p>
+          <SectionHeading
+            eyebrow={dict.tag}
+            title={dict.heading}
+            description={dict.sub}
+            descriptionClassName="max-w-lg"
+          />
 
           <ul className="mt-8 space-y-5">
             {dict.points.map((point, index) => {

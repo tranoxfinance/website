@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 interface FaqItem {
   q: string;
@@ -27,15 +28,11 @@ export function Faq({
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="lg:col-span-2">
             <div className="lg:sticky lg:top-28">
-              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                {dict.tag}
-              </span>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                {dict.heading}
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-                {dict.sub}
-              </p>
+              <SectionHeading
+                eyebrow={dict.tag}
+                title={dict.heading}
+                description={dict.sub}
+              />
 
               <div className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-soft">
                 <p className="text-sm font-bold text-ink">{dict.stillTitle}</p>
@@ -74,7 +71,7 @@ export function Faq({
                     >
                       <span
                         className={cn(
-                          "text-[15px] font-semibold transition-colors duration-300 sm:text-base",
+                          "text-md font-semibold transition-colors duration-300 sm:text-base",
                           isOpen ? "text-brand" : "text-ink",
                         )}
                       >
@@ -102,7 +99,7 @@ export function Faq({
                       <div className="overflow-hidden">
                         <p
                           className={cn(
-                            "px-5 pb-5 text-[15px] leading-relaxed text-ink-soft transition-transform duration-300 ease-out sm:px-6",
+                            "px-5 pb-5 text-md leading-relaxed text-ink-soft transition-transform duration-300 ease-out sm:px-6",
                             isOpen ? "translate-y-0" : "-translate-y-1",
                           )}
                         >

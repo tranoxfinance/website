@@ -156,7 +156,7 @@ export function CorridorMap({
             style={pct(t.from[0], t.from[1] - 28)}
           >
             <div
-              className="flex items-center gap-1 rounded-full border border-border bg-card px-2 py-0.5 text-[9px] font-semibold text-ink shadow-lift sm:gap-1.5 sm:px-2.5 sm:py-1 sm:text-[11px]"
+              className="flex items-center gap-1 rounded-full border border-border bg-card px-2 py-0.5 text-3xs font-semibold text-ink shadow-lift sm:gap-1.5 sm:px-2.5 sm:py-1 sm:text-2xs"
               style={{ animation: "tx-card 2.4s ease-out both" }}
             >
               <span className="tabular">{t.ci}</span>
@@ -216,7 +216,7 @@ function CityTag({
       style={{ left: `${(point.x / VB_W) * 100}%`, top: `${(point.y / VB_H) * 100}%` }}
     >
       <Flag country={country} className="h-4 w-4 sm:h-6 sm:w-6" />
-      <span className="text-[10px] font-bold text-ink sm:text-xs">{name}</span>
+      <span className="text-2xs font-bold text-ink sm:text-xs">{name}</span>
     </div>
   );
 }

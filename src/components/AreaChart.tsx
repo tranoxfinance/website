@@ -93,7 +93,7 @@ export function AreaChart({ data, labels, ariaLabel }: AreaChartProps) {
             x={points[i].x}
             y={H - 10}
             textAnchor="middle"
-            className="fill-muted text-[11px]"
+            className="fill-muted text-2xs"
           >
             {label}
           </text>
