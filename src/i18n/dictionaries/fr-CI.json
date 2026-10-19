@@ -311,32 +311,32 @@
     "heading": "Vos questions, nos réponses",
     "sub": "Tout ce que vous devez savoir avant votre premier transfert.",
     "stillTitle": "Encore des questions ?",
-    "stillBody": "Notre équipe d'assistance est là pour vous aider, tous les jours de la semaine.",
+    "stillBody": "Notre équipe répond généralement en quelques heures, du lundi au samedi.",
     "contact": "Contacter l'assistance",
     "items": [
       {
         "q": "Dans quels sens puis-je envoyer de l'argent ?",
-        "a": "Tranox prend en charge les deux directions du corridor : envoyez des nairas nigérians (NGN) vers des bénéficiaires en Côte d'Ivoire en francs CFA (XOF), et envoyez des XOF depuis la Côte d'Ivoire vers des bénéficiaires au Nigéria en NGN."
+        "a": "Tranox fonctionne dans les deux sens entre le Nigeria et la Côte d'Ivoire. Envoyez des nairas (NGN) vers la Côte d'Ivoire et votre bénéficiaire reçoit des francs CFA (XOF), ou envoyez des XOF vers le Nigeria et il reçoit des NGN."
       },
       {
-        "q": "En combien de temps les transferts arrivent-ils ?",
-        "a": "La grande majorité des transferts sont versés en quelques minutes. Le délai peut varier légèrement selon la banque ou l'opérateur de mobile money du bénéficiaire, et vous pouvez suivre le statut en direct à chaque étape."
+        "q": "Combien de temps prend un transfert ?",
+        "a": "La plupart des transferts arrivent en quelques minutes. Le délai peut dépendre de la banque ou de l'opérateur mobile money du bénéficiaire. Vous suivez chaque étape dans Transactions et nous vous prévenons dès que l'argent est livré."
       },
       {
         "q": "Comment le taux de change et les frais sont-ils calculés ?",
-        "a": "Vous voyez toujours le taux de change exact et un seul frais transparent avant de confirmer. Le taux est verrouillé au moment de la confirmation, de sorte que le montant reçu par votre bénéficiaire ne change jamais après l'envoi."
+        "a": "Avant de confirmer, l'écran de vérification affiche le taux de change, les frais (1,5 % du montant envoyé) et le montant exact que reçoit votre bénéficiaire. Le taux est garanti 30 secondes pendant la vérification. Une fois confirmé, le montant reçu ne change plus."
       },
       {
-        "q": "Comment financer un transfert ?",
-        "a": "Vous pouvez financer vos transferts par virement bancaire, carte de débit ou mobile money, selon votre pays. Les bénéficiaires peuvent être payés sur un compte bancaire, un portefeuille mobile ou en retrait d'espèces."
+        "q": "Comment ajouter de l'argent à mon portefeuille ?",
+        "a": "Touchez Recharger sur l'accueil. Le portefeuille en nairas s'alimente par virement bancaire ou par carte. Le portefeuille en CFA s'alimente avec Orange Money, MTN MoMo, Moov Money ou Wave. Le montant minimum est de 1 000 ₦ ou 500 CFA."
       },
       {
-        "q": "Tranox est-il sécurisé et régulé ?",
-        "a": "Oui. Tranox opère sous supervision réglementaire sur chaque marché, avec des programmes complets de KYC et de lutte contre le blanchiment. Les fonds sont sécurisés auprès de partenaires régulés, et chaque transaction est chiffrée et surveillée contre la fraude."
+        "q": "Combien puis-je envoyer ?",
+        "a": "Vos plafonds dépendent de votre niveau de vérification. Vous voyez votre niveau et vos plafonds dans Profil, rubrique Plafonds du compte. Compléter l'étape de vérification suivante les augmente."
       },
       {
-        "q": "Y a-t-il des limites sur les montants que je peux envoyer ?",
-        "a": "Des limites de transfert s'appliquent par transaction et dépendent de votre niveau de vérification. Des limites plus élevées se débloquent une fois votre compte entièrement vérifié, et vous pouvez contacter l'assistance si vous devez transférer des montants plus importants."
+        "q": "Comment sécuriser mon compte ?",
+        "a": "Utilisez un code PIN de transaction que vous seul connaissez et activez l'empreinte ou la reconnaissance faciale dans Profil. Vérifiez Gérer les appareils pour repérer un téléphone inconnu. Tranox ne vous demandera jamais votre PIN, mot de passe ou code de vérification par e-mail, téléphone ou message."
       }
     ]
   },

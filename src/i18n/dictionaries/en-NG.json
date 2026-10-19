@@ -311,32 +311,32 @@
     "heading": "Questions, answered",
     "sub": "Everything you need to know before your first transfer.",
     "stillTitle": "Still have questions?",
-    "stillBody": "Our support team is here to help, every day of the week.",
+    "stillBody": "Our support team usually replies within a few hours, Monday to Saturday.",
     "contact": "Contact support",
     "items": [
       {
         "q": "Which directions can I send money?",
-        "a": "Tranox supports both directions of the corridor: send Nigerian Naira (NGN) to recipients in Ivory Coast as West African CFA francs (XOF), and send XOF from Ivory Coast to recipients in Nigeria as NGN."
+        "a": "Tranox works both ways between Nigeria and Côte d'Ivoire. Send naira (NGN) to someone in Côte d'Ivoire and they receive West African CFA francs (XOF), or send XOF to someone in Nigeria and they receive NGN."
       },
       {
-        "q": "How fast do transfers arrive?",
-        "a": "The large majority of transfers are paid out within minutes. Timing can vary slightly depending on the recipient's bank or mobile-money provider, and you can track the status live at every step."
+        "q": "How long does a transfer take?",
+        "a": "Most transfers arrive within minutes. Timing can depend on the recipient's bank or mobile money provider. You can follow every step in Transactions, and we send you a notification when the money is delivered."
       },
       {
-        "q": "How are the exchange rate and fees calculated?",
-        "a": "You always see the exact exchange rate and a single transparent fee before you confirm. The rate is locked the moment you confirm, so the amount your recipient receives never changes after you send."
+        "q": "How are the exchange rate and fee worked out?",
+        "a": "Before you confirm, the review screen shows the exchange rate, the fee (1.5% of the amount you send) and exactly how much your recipient gets. The rate is held for 30 seconds while you review. Once you confirm, the amount your recipient receives does not change."
       },
       {
-        "q": "How do I fund a transfer?",
-        "a": "You can fund transfers by bank transfer, debit card, or mobile money, depending on your country. Recipients can be paid into a bank account, a mobile wallet, or via cash pickup."
+        "q": "How do I add money to my wallet?",
+        "a": "Tap Add on the home screen. Naira wallets can be funded by bank transfer or card. CFA wallets can be funded with Orange Money, MTN MoMo, Moov Money or Wave. The minimum top-up is ₦1,000 or CFA 500."
       },
       {
-        "q": "Is Tranox secure and regulated?",
-        "a": "Yes. Tranox operates under regulatory oversight in each market with full KYC and AML programs. Funds are safeguarded with regulated partners, and every transaction is encrypted and monitored for fraud."
+        "q": "How much can I send?",
+        "a": "Your limits depend on your verification level. You can see your current level and limits in Profile, under Account limits. Completing the next verification step raises them."
       },
       {
-        "q": "Are there limits on how much I can send?",
-        "a": "Transfer limits apply per transaction and depend on your verification level. Higher limits unlock once your account is fully verified, and you can reach out to support if you need to move larger amounts."
+        "q": "How do I keep my account secure?",
+        "a": "Use a transaction PIN that only you know and turn on fingerprint or face unlock in Profile. Check Manage devices for phones you don't recognise. Tranox will never ask for your PIN, password or verification code by email, phone or message."
       }
     ]
   },

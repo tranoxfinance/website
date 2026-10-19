@@ -5,10 +5,12 @@ export interface PublicFaqItem {
   answer: string;
 }
 
-export async function getPublishedFaqs(): Promise<PublicFaqItem[]> {
+export async function getPublishedFaqs(
+  language: "en" | "fr",
+): Promise<PublicFaqItem[]> {
   if (!API_URL) return [];
   try {
-    const res = await fetch(`${API_URL}/public/faqs`, {
+    const res = await fetch(`${API_URL}/public/faqs?lang=${language}`, {
       next: { revalidate: 60 },
     });
     if (!res.ok) return [];

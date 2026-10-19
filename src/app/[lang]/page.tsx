@@ -30,7 +30,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const publishedFaqs = await getPublishedFaqs();
+  const publishedFaqs = await getPublishedFaqs(
+    lang.startsWith("fr") ? "fr" : "en",
+  );
   const faqItems =
     publishedFaqs.length > 0
       ? publishedFaqs.map((item) => ({ q: item.question, a: item.answer }))
