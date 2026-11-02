@@ -49,6 +49,11 @@ export async function generateMetadata({
     },
     description: meta.description,
     keywords: [...meta.keywords],
+    verification: {
+      other: {
+        "facebook-domain-verification": "zmnp31dtpwhojjnsd65b1zvtd08nml",
+      },
+    },
     robots: {
       index: true,
       follow: true,
