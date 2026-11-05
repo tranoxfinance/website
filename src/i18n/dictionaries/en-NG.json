@@ -46,6 +46,8 @@
     }
   },
   "nav": {
+    "howItWorks": "How it works",
+    "faq": "FAQ",
     "liveRates": "Live rates",
     "downloadApp": "Download app",
     "openMenu": "Open menu",
@@ -61,7 +63,7 @@
   "mobileBar": {
     "quickActions": "Quick actions",
     "home": "Home",
-    "howItWorks": "How it works",
+    "howItWorks": "Steps",
     "faq": "FAQ",
     "getApp": "Get app"
   },
