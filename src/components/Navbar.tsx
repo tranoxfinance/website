@@ -72,7 +72,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               className="shrink-0"
             />
 
-            <div className="hidden items-center xl:flex">
+            <div className="hidden items-center nav:flex">
               {pageLinks.map((page) => {
                 const isActive = isActivePage(page.href);
                 return (
@@ -110,7 +110,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               </Button>
             </div>
 
-            <div className="flex items-center xl:hidden">
+            <div className="flex items-center nav:hidden">
               <button
                 type="button"
                 aria-label={dict.openMenu}
@@ -128,7 +128,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
       <div
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background pt-2 transition-transform duration-300 ease-out xl:hidden",
+          "fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background pt-2 transition-transform duration-300 ease-out nav:hidden",
           open ? "translate-x-0" : "pointer-events-none translate-x-full",
         )}
       >

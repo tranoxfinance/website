@@ -59,6 +59,7 @@
   --animate-draw: draw 0.6s ease-out forwards;
 
   --breakpoint-xs: 22rem;
+  --breakpoint-nav: 68.75rem;
 }
 
 :root {
