@@ -25,10 +25,12 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const isHome = pathname === `/${lang}`;
   const hrefFor = (hash: string) => (isHome ? hash : `/${lang}${hash}`);
   const pageLinks = [
-    { href: `/${lang}/about`, label: dict.about },
+    { href: hrefFor("#how-it-works"), label: dict.howItWorks },
     { href: `/${lang}/rates`, label: dict.liveRates },
+    { href: `/${lang}/about`, label: dict.about },
     { href: `/${lang}/careers`, label: dict.careers },
     { href: `/${lang}/news`, label: dict.news },
+    { href: hrefFor("#faq"), label: dict.faq },
   ];
   const isActivePage = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
@@ -48,20 +50,22 @@ export function Navbar({ lang, dict }: NavbarProps) {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50">
-      <div
-        className={cn(
-          "transition-all duration-300",
-          scrolled
-            ? "bg-background border-b border-border shadow-soft"
-            : "border-b border-transparent",
-        )}
-      >
-        <Container>
-          <nav className="flex h-16 items-center justify-between gap-4">
-            <Logo href={`/${lang}`} ariaLabel={dict.homeAria} />
+    <header className="sticky top-0 z-50 pt-2">
+      <Container>
+        <div
+          className={cn(
+            "rounded-2xl bg-background p-2 ring-1 ring-border transition-shadow duration-300 lg:bg-background/80 lg:backdrop-blur-lg",
+            scrolled && "shadow-soft",
+          )}
+        >
+          <nav className="flex h-12 items-center justify-between gap-2 pl-2">
+            <Logo
+              href={`/${lang}`}
+              ariaLabel={dict.homeAria}
+              className="shrink-0"
+            />
 
-            <div className="hidden items-center gap-2 lg:flex">
+            <div className="hidden items-center xl:flex">
               {pageLinks.map((page) => {
                 const isActive = isActivePage(page.href);
                 return (
@@ -70,7 +74,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                     href={page.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
+                      "group relative whitespace-nowrap px-2.5 py-2 text-sm font-medium transition-colors hover:text-brand",
                       isActive ? "text-brand" : "text-ink-soft",
                     )}
                   >
@@ -78,7 +82,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                     <span
                       aria-hidden
                       className={cn(
-                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
+                        "absolute inset-x-2.5 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
                         isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                       )}
                     />
@@ -90,12 +94,16 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <div className="hidden items-center gap-2 lg:flex">
               <LocaleSwitcher lang={lang} ariaLabel={dict.languageAria} />
               <ThemeToggle ariaLabel={dict.toggleTheme} />
-              <Button href={hrefFor("#get-started")} size="sm">
+              <Button
+                href={hrefFor("#get-started")}
+                size="sm"
+                className="whitespace-nowrap"
+              >
                 {dict.downloadApp}
               </Button>
             </div>
 
-            <div className="flex items-center lg:hidden">
+            <div className="flex items-center xl:hidden">
               <button
                 type="button"
                 aria-label={dict.openMenu}
@@ -107,13 +115,13 @@ export function Navbar({ lang, dict }: NavbarProps) {
               </button>
             </div>
           </nav>
-        </Container>
-      </div>
+        </div>
+      </Container>
 
       <div
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-50 flex flex-col bg-background transition-transform duration-300 ease-out lg:hidden",
+          "fixed inset-0 z-50 flex flex-col bg-background transition-transform duration-300 ease-out xl:hidden",
           open ? "translate-x-0" : "pointer-events-none translate-x-full",
         )}
       >

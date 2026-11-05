@@ -11,7 +11,7 @@ interface HeroProps {
 
 export function Hero({ dict, badges }: HeroProps) {
   return (
-    <section className="relative -mt-16 overflow-hidden">
+    <section className="relative -mt-18 overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-soft/70 via-background to-background" />
         <div className="absolute inset-0 grid-bg mask-fade-y opacity-50" />

@@ -46,6 +46,8 @@
     }
   },
   "nav": {
+    "howItWorks": "Comment ça marche",
+    "faq": "FAQ",
     "liveRates": "Taux en direct",
     "downloadApp": "Télécharger l'appli",
     "openMenu": "Ouvrir le menu",
