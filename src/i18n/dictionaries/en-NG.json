@@ -138,13 +138,7 @@
     ],
     "payout": {
       "title": "Pay out to",
-      "methods": [
-        "Wave",
-        "Orange Money",
-        "MTN MoMo",
-        "Moov Money",
-        "Any Nigerian bank"
-      ]
+      "bank": "Any Nigerian bank"
     }
   },
   "ratesPage": {

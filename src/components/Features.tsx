@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Stamp } from "@/components/ui/Stamp";
 import { Reveal } from "@/components/Reveal";
+import { PayoutLogos } from "@/components/PayoutLogos";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const STAGGER_MS = 80;
@@ -70,16 +71,7 @@ export function Features({ dict }: FeaturesProps) {
             <Point index={2} title={third.title} body={third.body} delay={STAGGER_MS * 2} />
             <Reveal as="li" delay={STAGGER_MS * 3} className="list-none rounded-3xl bg-navy p-7 text-white">
               <p className="font-display text-3xl uppercase leading-none">{dict.payout.title}</p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {dict.payout.methods.map((method) => (
-                  <li
-                    key={method}
-                    className="rounded-full border border-white/30 px-3.5 py-1.5 text-sm font-semibold"
-                  >
-                    {method}
-                  </li>
-                ))}
-              </ul>
+              <PayoutLogos bankLabel={dict.payout.bank} className="mt-5" />
             </Reveal>
           </ol>
         </div>

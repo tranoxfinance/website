@@ -138,13 +138,7 @@
     ],
     "payout": {
       "title": "Versez vers",
-      "methods": [
-        "Wave",
-        "Orange Money",
-        "MTN MoMo",
-        "Moov Money",
-        "Toutes les banques du Nigéria"
-      ]
+      "bank": "Toutes les banques du Nigéria"
     }
   },
   "ratesPage": {
