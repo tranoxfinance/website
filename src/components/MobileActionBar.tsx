@@ -78,7 +78,7 @@ export function MobileActionBar({ lang, dict }: MobileActionBarProps) {
               onClick={handleClick}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex flex-1 flex-col items-center gap-1 rounded-xl py-1.5 text-2xs font-medium transition-colors active:bg-surface",
+                "flex flex-1 flex-col items-center gap-1 whitespace-nowrap rounded-xl py-1.5 text-2xs font-medium transition-colors active:bg-surface",
                 isActive ? "text-brand" : "text-ink-soft",
               )}
             >
@@ -90,7 +90,7 @@ export function MobileActionBar({ lang, dict }: MobileActionBarProps) {
 
         <Link
           href={isHome ? "#get-started" : `/${lang}#get-started`}
-          className="ml-1 flex items-center gap-1.5 rounded-xl bg-brand px-4 py-2.5 text-sm font-bold text-white shadow-soft transition active:translate-y-px"
+          className="ml-1 flex items-center gap-1.5 whitespace-nowrap rounded-xl bg-brand px-3 py-2.5 text-sm font-bold text-white shadow-soft transition active:translate-y-px"
         >
           <Download className="h-4 w-4" strokeWidth={2} />
           {dict.getApp}

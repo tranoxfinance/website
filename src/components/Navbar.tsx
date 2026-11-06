@@ -113,7 +113,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
       <div
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-50 flex flex-col bg-background transition-transform duration-300 ease-out lg:hidden",
+          "fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background transition-transform duration-300 ease-out lg:hidden",
           open ? "translate-x-0" : "pointer-events-none translate-x-full",
         )}
       >
@@ -156,7 +156,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             })}
           </nav>
 
-          <div className="mt-auto space-y-3 py-6">
+          <div className="mt-auto space-y-3 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
             <LocaleSwitcher
               lang={lang}
               ariaLabel={dict.languageAria}
