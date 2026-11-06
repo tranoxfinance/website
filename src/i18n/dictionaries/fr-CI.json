@@ -88,13 +88,27 @@
     ],
     "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
     "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
-    "image": {
-      "src": "/images/hero-app-preview-fr.webp",
-      "darkSrc": "/images/hero-app-preview-fr-dark.webp",
-      "width": 900,
-      "height": 1606,
-      "alt": "L'application Tranox affichant un envoi en francs CFA (XOF)"
-    }
+    "cities": [
+      {
+        "city": "Lagos",
+        "detail": "Nigéria · NGN",
+        "src": "/images/city-lagos.webp",
+        "alt": "Les gratte-ciel de Lagos et le pont Lekki-Ikoyi au coucher du soleil",
+        "width": 2400,
+        "height": 1340
+      },
+      {
+        "city": "Abidjan",
+        "detail": "Côte d'Ivoire · XOF",
+        "src": "/images/city-abidjan.webp",
+        "video": "/videos/abidjan-lagoon.mp4",
+        "alt": "Le Plateau d'Abidjan vu de la lagune Ébrié au coucher du soleil, avec un pêcheur dans une pirogue",
+        "width": 2400,
+        "height": 1340
+      }
+    ],
+    "rateLabel": "Aujourd'hui",
+    "rateCta": "Voir les taux"
   },
   "storeBadges": {
     "development": "En cours de développement",
@@ -116,12 +130,6 @@
     "tag": "Sans frontières par conception",
     "heading": "Conçu pour faire circuler l'argent, dans les deux sens.",
     "sub": "Une passerelle financière pour le Nigéria et la Côte d'Ivoire, pensée pour la façon dont les gens envoient et reçoivent réellement de l'argent.",
-    "image": {
-      "src": "/images/features-hero-fr.webp",
-      "alt": "Une cliente Tranox souriante montrant du doigt l'application Tranox ouverte sur son téléphone",
-      "width": 1100,
-      "height": 733
-    },
     "items": [
       {
         "title": "Des frais fixes et réduits",
@@ -134,6 +142,32 @@
       {
         "title": "Une sécurité inégalée",
         "body": "Chiffré, surveillé, et soutenu par des partenaires régulés."
+      }
+    ]
+  },
+  "trust": {
+    "tag": "Pourquoi nous faire confiance",
+    "heading": "Une société enregistrée, sur des circuits de paiement agréés.",
+    "items": [
+      {
+        "label": "Société enregistrée",
+        "value": "TRANOX SARL, Abidjan, Côte d'Ivoire",
+        "detail": "RCCM CI-ABJ-03-2026-B12-05647"
+      },
+      {
+        "label": "Paiements",
+        "value": "Des circuits de paiement agréés",
+        "detail": "Les transferts sont traités par des prestataires de paiement agréés."
+      },
+      {
+        "label": "Identités vérifiées",
+        "value": "Chaque compte est vérifié",
+        "detail": "Avant le premier transfert, avec une photo en direct."
+      },
+      {
+        "label": "Votre accord",
+        "value": "Code PIN ou empreinte à chaque transfert",
+        "detail": "Rien ne quitte votre compte sans cela."
       }
     ]
   },

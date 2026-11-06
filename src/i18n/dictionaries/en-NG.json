@@ -88,13 +88,27 @@
     ],
     "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
     "tagline": "Cross-border payments built for West Africa",
-    "image": {
-      "src": "/images/hero-app-preview.webp",
-      "darkSrc": "/images/hero-app-preview-dark.webp",
-      "width": 900,
-      "height": 1606,
-      "alt": "Tranox app showing a transfer from NGN to XOF"
-    }
+    "cities": [
+      {
+        "city": "Lagos",
+        "detail": "Nigeria · NGN",
+        "src": "/images/city-lagos.webp",
+        "alt": "Lagos skyline and the Lekki-Ikoyi Link Bridge at sunset",
+        "width": 2400,
+        "height": 1340
+      },
+      {
+        "city": "Abidjan",
+        "detail": "Ivory Coast · XOF",
+        "src": "/images/city-abidjan.webp",
+        "video": "/videos/abidjan-lagoon.mp4",
+        "alt": "Abidjan Plateau skyline across the Ebrié lagoon at sunset, with a fisherman in a pirogue",
+        "width": 2400,
+        "height": 1340
+      }
+    ],
+    "rateLabel": "Today",
+    "rateCta": "See live rates"
   },
   "storeBadges": {
     "development": "Now in development",
@@ -116,12 +130,6 @@
     "tag": "Borderless by design",
     "heading": "Built to move money, both ways.",
     "sub": "A financial bridge for Nigeria and Ivory Coast, built around how people actually send and receive.",
-    "image": {
-      "src": "/images/features-hero.webp",
-      "alt": "A Tranox customer smiling and pointing at the Tranox app open on her phone",
-      "width": 1100,
-      "height": 733
-    },
     "items": [
       {
         "title": "Low, flat fees",
@@ -134,6 +142,32 @@
       {
         "title": "Unmatched security",
         "body": "Encrypted, monitored, and backed by regulated partners."
+      }
+    ]
+  },
+  "trust": {
+    "tag": "Why you can trust us",
+    "heading": "A registered company, running on licensed payment rails.",
+    "items": [
+      {
+        "label": "Registered company",
+        "value": "TRANOX SARL, Abidjan, Ivory Coast",
+        "detail": "RCCM CI-ABJ-03-2026-B12-05647"
+      },
+      {
+        "label": "Payments",
+        "value": "Licensed payment rails",
+        "detail": "Transfers are processed by licensed payment providers."
+      },
+      {
+        "label": "Verified identities",
+        "value": "Every account is ID-checked",
+        "detail": "Before the first transfer, with a live photo match."
+      },
+      {
+        "label": "Your approval",
+        "value": "PIN or fingerprint on every transfer",
+        "detail": "Nothing leaves your account without it."
       }
     ]
   },

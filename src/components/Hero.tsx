@@ -1,63 +1,97 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { StoreBadges } from "@/components/StoreBadges";
-import { TypewriterHeadline } from "@/components/TypewriterHeadline";
+import { AmbientVideo } from "@/components/AmbientVideo";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { RateHistory } from "@/lib/fx-rates";
+
+const RATE_DECIMALS = 4;
 
 interface HeroProps {
+  lang: Locale;
   dict: Dictionary["hero"];
   badges: Dictionary["storeBadges"];
+  rate: RateHistory | null;
 }
 
-export function Hero({ dict, badges }: HeroProps) {
+export function Hero({ lang, dict, badges, rate }: HeroProps) {
+  const headline = dict.headlineSegments.map((segment) => segment.text).join("");
+  const rateValue = rate
+    ? new Intl.NumberFormat(lang, {
+        minimumFractionDigits: RATE_DECIMALS,
+        maximumFractionDigits: RATE_DECIMALS,
+      }).format(Number(rate.current))
+    : null;
+
   return (
-    <section className="relative -mt-16 overflow-hidden">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-soft/70 via-background to-background" />
-        <div className="absolute inset-0 grid-bg mask-fade-y opacity-50" />
-        <div className="absolute -right-20 top-0 hidden h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,var(--color-brand)_0%,transparent_60%)] opacity-[0.12] blur-2xl sm:block" />
-        <div className="absolute -left-32 top-40 hidden h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,var(--color-gold)_0%,transparent_60%)] opacity-[0.10] blur-2xl sm:block" />
-      </div>
+    <section className="relative pb-16 pt-28 sm:pb-20 lg:pt-36">
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-end lg:gap-16">
+          <h1 className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both] text-[2.6rem] font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+            {headline}
+          </h1>
 
-      <Container className="grid items-center gap-12 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-24 lg:pt-36">
-        <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both] max-lg:text-center">
-          <TypewriterHeadline
-            segments={dict.headlineSegments}
-            className="text-[2.7rem] font-bold leading-[1.03] tracking-tight text-ink sm:text-[3.4rem]"
-          />
-
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft max-lg:mx-auto">
-            {dict.subtitle}
-          </p>
-
-          <div className="mt-8">
-            <StoreBadges dict={badges} className="max-lg:justify-center" />
+          <div className="animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:120ms]">
+            <p className="text-lg leading-relaxed text-ink-soft">{dict.subtitle}</p>
+            <div className="mt-7">
+              <StoreBadges dict={badges} />
+            </div>
           </div>
-
-          <p className="mt-6 text-sm font-medium text-ink-soft max-lg:text-center">
-            {dict.tagline}
-          </p>
         </div>
 
-        <div className="animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] -mt-6 flex justify-center [animation-delay:120ms] sm:-mt-10 lg:justify-end">
-          <Image
-            src={dict.image.src}
-            alt={dict.image.alt}
-            width={dict.image.width}
-            height={dict.image.height}
-            sizes="(min-width: 640px) 384px, 304px"
-            priority
-            className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:hidden"
-          />
-          <Image
-            src={dict.image.darkSrc}
-            alt={dict.image.alt}
-            width={dict.image.width}
-            height={dict.image.height}
-            sizes="(min-width: 640px) 384px, 304px"
-            priority
-            className="hidden h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:block"
-          />
+        <div className="mt-12 grid gap-3 sm:mt-16 sm:grid-cols-2">
+          {dict.cities.map((city, index) => (
+            <figure
+              key={city.city}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-surface-strong lg:aspect-[16/11]"
+            >
+              <Image
+                src={city.src}
+                alt={city.alt}
+                fill
+                priority={index === 0}
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+              {"video" in city && city.video && (
+                <AmbientVideo
+                  src={city.video}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              )}
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-5 pt-16 text-white sm:p-6 sm:pt-20">
+                <span className="block text-2xl font-bold tracking-tight sm:text-3xl">
+                  {city.city}
+                </span>
+                <span className="mt-1 block text-sm font-medium text-white/80">
+                  {city.detail}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-border pb-5">
+          {rateValue ? (
+            <p className="tabular text-ink">
+              <span className="text-sm font-medium text-muted">{dict.rateLabel}</span>
+              <span className="ml-3 text-xl font-semibold sm:text-2xl">
+                1 NGN = {rateValue} XOF
+              </span>
+            </p>
+          ) : (
+            <p className="text-sm font-medium text-ink-soft">{dict.tagline}</p>
+          )}
+          <Link
+            href={`/${lang}/rates`}
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand"
+          >
+            {dict.rateCta}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </Container>
     </section>

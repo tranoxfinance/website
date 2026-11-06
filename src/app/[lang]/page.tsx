@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Trust } from "@/components/Trust";
 import { AppShowcase } from "@/components/AppShowcase";
 import { WhoItsFor } from "@/components/WhoItsFor";
 import { WhyTranox } from "@/components/WhyTranox";
@@ -13,6 +14,7 @@ import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedFaqs } from "@/lib/faqs";
+import { getPublicRateHistory } from "@/lib/fx-rates";
 
 export async function generateMetadata({
   params,
@@ -30,9 +32,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const publishedFaqs = await getPublishedFaqs(
-    lang.startsWith("fr") ? "fr" : "en",
-  );
+  const [publishedFaqs, rate] = await Promise.all([
+    getPublishedFaqs(lang.startsWith("fr") ? "fr" : "en"),
+    getPublicRateHistory("NGN", "XOF", "1d"),
+  ]);
   const faqItems =
     publishedFaqs.length > 0
       ? publishedFaqs.map((item) => ({ q: item.question, a: item.answer }))
@@ -75,8 +78,14 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       />
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <Hero dict={dict.hero} badges={dict.storeBadges} />
+        <Hero
+          lang={lang}
+          dict={dict.hero}
+          badges={dict.storeBadges}
+          rate={rate}
+        />
         <Features dict={dict.features} />
+        <Trust dict={dict.trust} />
         <WhoItsFor dict={dict.whoFor} />
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />

@@ -1,66 +1,45 @@
-import Image from "next/image";
-import { Wallet, Layers, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
-import type { Dictionary } from "@/i18n/dictionaries";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import type { Dictionary } from "@/i18n/dictionaries";
 
-const ICONS = [Wallet, Layers, ShieldCheck];
+const ITEM_STAGGER_MS = 60;
 
 export function Features({ dict }: { dict: Dictionary["features"] }) {
   return (
-    <section id="features" className="relative py-16 sm:py-20">
+    <section id="features" className="relative py-16 sm:py-24">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
           <Reveal>
-            <div>
-              <SectionHeading
-                eyebrow={dict.tag}
-                title={dict.heading}
-                description={dict.sub}
-              />
-
-              <div className="mt-10 space-y-7">
-                {dict.items.map((feature, index) => {
-                  const Icon = ICONS[index];
-                  return (
-                    <div key={feature.title} className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                        <Icon className="h-5 w-5" strokeWidth={1.75} />
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-bold text-ink">
-                          {feature.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                          {feature.body}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <SectionHeading
+              eyebrow={dict.tag}
+              title={dict.heading}
+              description={dict.sub}
+            />
           </Reveal>
 
-          <Reveal delay={120}>
-            <div className="flex justify-center lg:justify-end">
-              <Image
-                src={dict.image.src}
-                alt={dict.image.alt}
-                width={dict.image.width}
-                height={dict.image.height}
-                sizes="(min-width: 512px) 512px, 100vw"
-                className="h-auto w-full max-w-lg drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)]"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                  maskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                }}
-              />
-            </div>
-          </Reveal>
+          <ol className="border-b border-border">
+            {dict.items.map((feature, index) => (
+              <Reveal
+                as="li"
+                key={feature.title}
+                delay={index * ITEM_STAGGER_MS}
+                className="grid grid-cols-[3rem_1fr] gap-x-4 border-t border-border py-7 sm:grid-cols-[4rem_1fr]"
+              >
+                <span className="tabular pt-1 text-sm font-semibold text-brand">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-2 max-w-md leading-relaxed text-ink-soft">
+                    {feature.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </Container>
     </section>
