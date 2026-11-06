@@ -46,8 +46,6 @@
     }
   },
   "nav": {
-    "howItWorks": "Comment ça marche",
-    "faq": "FAQ",
     "liveRates": "Taux en direct",
     "downloadApp": "Télécharger l'appli",
     "openMenu": "Ouvrir le menu",
@@ -63,7 +61,7 @@
   "mobileBar": {
     "quickActions": "Actions rapides",
     "home": "Accueil",
-    "howItWorks": "Étapes",
+    "howItWorks": "Comment ça marche",
     "faq": "FAQ",
     "getApp": "L'appli"
   },
