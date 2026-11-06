@@ -156,7 +156,31 @@
     "chartAriaXof": "Tendance du taux de change XOF vers NGN",
     "disclaimer": "Taux indicatifs fournis à titre de référence uniquement. Le taux exact que vous recevez est affiché et verrouillé au moment où vous confirmez un transfert dans l'application.",
     "unavailable": "Les taux sont temporairement indisponibles. Merci de réessayer sous peu.",
-    "cta": "Obtenir l'appli"
+    "cta": "Obtenir l'appli",
+    "facts": [
+      {
+        "value": "30 s",
+        "title": "Taux bloqué",
+        "body": "Le taux reste fixe pendant que vous vérifiez et confirmez un transfert."
+      },
+      {
+        "value": "1",
+        "title": "Frais affiché d'abord",
+        "body": "Le frais s'affiche avant de payer. Rien n'est retiré ensuite."
+      },
+      {
+        "value": "24/7",
+        "title": "Taux en direct",
+        "body": "Le même taux que l'appli utilise pour les vrais transferts, jour et nuit."
+      }
+    ],
+    "photo": {
+      "src": "/images/people-freelancer.webp",
+      "width": 1200,
+      "height": 1490,
+      "alt": "Un freelance dans un café de Lagos souriant à son téléphone à côté de son ordinateur"
+    },
+    "liveLabel": "En ce moment"
   },
   "whoFor": {
     "tag": "Pour qui",
@@ -204,12 +228,6 @@
     "heading": "Connecter l'Afrique de l'Ouest, un transfert à la fois",
     "p1": "Envoyer de l'argent entre le Nigéria et la Côte d'Ivoire, c'était accepter un taux qu'on ne pouvait pas vérifier, payer des frais qui apparaissaient après coup, et attendre pour savoir si le transfert était bien arrivé. Tranox existe pour supprimer ces trois problèmes.",
     "p2": "Aujourd'hui, nous faisons circuler l'argent sur le corridor NGN–XOF en quelques minutes, à un taux que vous voyez et verrouillez avant de confirmer. Un frais unique, affiché à l'avance. Pas de déductions surprises, pas d'incertitude sur l'arrivée — juste des transferts rapides et équitables sur lesquels familles et entreprises peuvent compter.",
-    "corridorImage": {
-      "src": "/images/corridor-model-fr.webp",
-      "alt": "Schéma du corridor Tranox reliant le Nigéria et la Côte d'Ivoire via des paiements par banque, portefeuille et espèces",
-      "width": 900,
-      "height": 1199
-    },
     "values": [
       {
         "title": "Conçu pour le corridor",
@@ -223,7 +241,54 @@
         "title": "L'humain d'abord",
         "body": "Derrière chaque transfert, il y a une famille, une entreprise, un projet. Nous construisons pour celles et ceux qui comptent sur un argent qui arrive à temps."
       }
-    ]
+    ],
+    "storyTag": "Notre histoire",
+    "valuesTag": "Nos engagements",
+    "photo": {
+      "src": "/images/people-market.webp",
+      "width": 1200,
+      "height": 1490,
+      "alt": "Une vendeuse de pagnes dans un marché d'Abidjan souriant à son téléphone à son étal"
+    },
+    "facts": [
+      {
+        "value": "2",
+        "label": "sens, NGN vers XOF et XOF vers NGN"
+      },
+      {
+        "value": "4",
+        "label": "réseaux de mobile money en Côte d'Ivoire"
+      },
+      {
+        "value": "30 s",
+        "label": "de taux bloqué pendant la confirmation"
+      },
+      {
+        "value": "1",
+        "label": "seul frais, affiché avant de payer"
+      }
+    ],
+    "registry": {
+      "tag": "Confiance",
+      "heading": "Une vraie société, avec de vrais documents.",
+      "sub": "Les transferts sont traités par des prestataires de paiement agréés. Chaque compte est vérifié avec une photo en direct, et chaque transfert demande votre code PIN ou votre empreinte.",
+      "cardTitle": "Immatriculation de la société",
+      "rows": [
+        {
+          "label": "Nom",
+          "value": "TRANOX SARL"
+        },
+        {
+          "label": "Ville",
+          "value": "Abidjan, Côte d'Ivoire"
+        },
+        {
+          "label": "RCCM",
+          "value": "CI-ABJ-03-2026-B12-05647"
+        }
+      ],
+      "status": "Immatriculée"
+    }
   },
   "showcase": {
     "tag": "Corridor en direct",
@@ -346,6 +411,17 @@
     "heading": "Prêt à envoyer de l'argent au pays ?",
     "body": "Rejoignez les milliers de personnes qui font circuler leur argent entre le Nigéria et la Côte d'Ivoire avec Tranox. Pas de frais cachés, pas d'attente."
   },
+  "pageCta": {
+    "heading": "Votre argent, chez vous en quelques minutes.",
+    "sub": "Tranox est en cours de développement. Téléchargez l'appli sur iOS et Android dès son lancement.",
+    "button": "Obtenir l'appli",
+    "photo": {
+      "src": "/images/people-student.webp",
+      "width": 2000,
+      "height": 1342,
+      "alt": "Une étudiante à Abidjan souriant à son téléphone sur les marches du campus"
+    }
+  },
   "footer": {
     "blurb": "Une plateforme fintech de nouvelle génération pour des transferts d'argent fluides entre le Nigéria et l'Afrique de l'Ouest.",
     "product": "Produit",
@@ -368,7 +444,8 @@
   },
   "legalPage": {
     "tag": "Mentions légales",
-    "lastUpdated": "Dernière mise à jour : {date}"
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "onThisPage": "Sur cette page"
   },
   "privacy": {
     "metaTitle": "Politique de confidentialité",
@@ -732,7 +809,25 @@
     "notFoundBody": "L'offre que vous cherchez a été pourvue ou fermée.",
     "pagerPrevious": "Précédent",
     "pagerNext": "Suivant",
-    "pagerPage": "Page {page} sur {pageCount}"
+    "pagerPage": "Page {page} sur {pageCount}",
+    "openRoles": "Postes ouverts",
+    "applyNow": "Postuler",
+    "roleDetails": "Détails du poste",
+    "department": "Département",
+    "type": "Type",
+    "location": "Lieu",
+    "openApplication": {
+      "heading": "Vous ne trouvez pas votre poste ?",
+      "body": "Envoyez votre CV à hello@tranoxfinance.com et dites-nous comment vous pourriez aider.",
+      "email": "hello@tranoxfinance.com"
+    },
+    "photo": {
+      "src": "/images/people-team.webp",
+      "width": 1800,
+      "height": 1208,
+      "alt": "Une petite équipe riant ensemble autour d'un ordinateur dans un bureau lumineux à Lagos"
+    },
+    "openRolesCount": "postes ouverts"
   },
   "newsPage": {
     "metaTitle": "Actualités et histoires de Tranox",
@@ -751,6 +846,7 @@
     },
     "pagerPrevious": "Précédent",
     "pagerNext": "Suivant",
-    "pagerPage": "Page {page} sur {pageCount}"
+    "pagerPage": "Page {page} sur {pageCount}",
+    "latest": "À la une"
   }
 }

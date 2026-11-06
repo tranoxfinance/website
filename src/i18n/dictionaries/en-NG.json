@@ -156,7 +156,31 @@
     "chartAriaXof": "XOF to NGN exchange rate trend",
     "disclaimer": "Indicative rates for reference only. The exact rate you receive is shown and locked the moment you confirm a transfer in the app.",
     "unavailable": "Rates are temporarily unavailable. Please check back shortly.",
-    "cta": "Get the app"
+    "cta": "Get the app",
+    "facts": [
+      {
+        "value": "30s",
+        "title": "Rate lock",
+        "body": "The rate holds while you check and confirm a transfer."
+      },
+      {
+        "value": "1",
+        "title": "Fee, shown first",
+        "body": "The fee is on the screen before you pay. Nothing is taken off later."
+      },
+      {
+        "value": "24/7",
+        "title": "Live rate",
+        "body": "The same rate the app uses for real transfers, day and night."
+      }
+    ],
+    "photo": {
+      "src": "/images/people-freelancer.webp",
+      "width": 1200,
+      "height": 1490,
+      "alt": "A freelancer in a Lagos cafe smiling at his phone next to his laptop"
+    },
+    "liveLabel": "Right now"
   },
   "whoFor": {
     "tag": "Who it's for",
@@ -204,12 +228,6 @@
     "heading": "Connecting West Africa, one transfer at a time",
     "p1": "Sending money between Nigeria and Ivory Coast used to mean picking a rate you couldn't verify, paying fees that showed up after the fact, and waiting to find out if the transfer even arrived. Tranox exists to remove all three.",
     "p2": "Today we move money across the NGN–XOF corridor in minutes, at a rate you see and lock in before you confirm. One flat fee, shown upfront. No surprise deductions, no wondering if it's arrived — just fast, fair transfers that families and businesses can rely on.",
-    "corridorImage": {
-      "src": "/images/corridor-model.webp",
-      "alt": "Diagram of the Tranox corridor linking Nigeria and Ivory Coast through bank, wallet, and cash payouts",
-      "width": 900,
-      "height": 1199
-    },
     "values": [
       {
         "title": "Built for the corridor",
@@ -223,7 +241,54 @@
         "title": "People first",
         "body": "Behind every transfer is a family, a business, a plan. We build for the people who depend on money arriving on time."
       }
-    ]
+    ],
+    "storyTag": "Our story",
+    "valuesTag": "What we stand for",
+    "photo": {
+      "src": "/images/people-market.webp",
+      "width": 1200,
+      "height": 1490,
+      "alt": "A fabric seller in an Abidjan market smiling at her phone at her stall"
+    },
+    "facts": [
+      {
+        "value": "2",
+        "label": "directions, NGN to XOF and XOF to NGN"
+      },
+      {
+        "value": "4",
+        "label": "mobile money networks in Ivory Coast"
+      },
+      {
+        "value": "30s",
+        "label": "rate lock while you confirm"
+      },
+      {
+        "value": "1",
+        "label": "fee, shown before you pay"
+      }
+    ],
+    "registry": {
+      "tag": "Trust",
+      "heading": "A real company, with real paperwork.",
+      "sub": "Transfers are processed by licensed payment providers. Every account is ID-checked with a live photo, and every transfer needs your PIN or fingerprint.",
+      "cardTitle": "Company registration",
+      "rows": [
+        {
+          "label": "Name",
+          "value": "TRANOX SARL"
+        },
+        {
+          "label": "City",
+          "value": "Abidjan, Ivory Coast"
+        },
+        {
+          "label": "RCCM",
+          "value": "CI-ABJ-03-2026-B12-05647"
+        }
+      ],
+      "status": "Registered"
+    }
   },
   "showcase": {
     "tag": "Live corridor",
@@ -346,6 +411,17 @@
     "heading": "Ready to send money home?",
     "body": "Join thousands moving money between Nigeria and Ivory Coast with Tranox. No hidden fees, no waiting."
   },
+  "pageCta": {
+    "heading": "Your money, home in minutes.",
+    "sub": "Tranox is in development. Get the app on iOS and Android as soon as it launches.",
+    "button": "Get the app",
+    "photo": {
+      "src": "/images/people-student.webp",
+      "width": 2000,
+      "height": 1342,
+      "alt": "A university student in Abidjan smiling at her phone on the campus steps"
+    }
+  },
   "footer": {
     "blurb": "A next-generation fintech platform for seamless money transfers between Nigeria and West Africa.",
     "product": "Product",
@@ -368,7 +444,8 @@
   },
   "legalPage": {
     "tag": "Legal",
-    "lastUpdated": "Last updated: {date}"
+    "lastUpdated": "Last updated: {date}",
+    "onThisPage": "On this page"
   },
   "privacy": {
     "metaTitle": "Privacy Policy",
@@ -732,7 +809,25 @@
     "notFoundBody": "The opening you are looking for was filled or closed.",
     "pagerPrevious": "Previous",
     "pagerNext": "Next",
-    "pagerPage": "Page {page} of {pageCount}"
+    "pagerPage": "Page {page} of {pageCount}",
+    "openRoles": "Open roles",
+    "applyNow": "Apply now",
+    "roleDetails": "Role details",
+    "department": "Department",
+    "type": "Type",
+    "location": "Location",
+    "openApplication": {
+      "heading": "Don't see your role?",
+      "body": "Send your CV to hello@tranoxfinance.com and tell us how you would help.",
+      "email": "hello@tranoxfinance.com"
+    },
+    "photo": {
+      "src": "/images/people-team.webp",
+      "width": 1800,
+      "height": 1208,
+      "alt": "A small team laughing together around a laptop in a bright Lagos office"
+    },
+    "openRolesCount": "open roles"
   },
   "newsPage": {
     "metaTitle": "News & Stories from Tranox",
@@ -751,6 +846,7 @@
     },
     "pagerPrevious": "Previous",
     "pagerNext": "Next",
-    "pagerPage": "Page {page} of {pageCount}"
+    "pagerPage": "Page {page} of {pageCount}",
+    "latest": "Latest"
   }
 }
