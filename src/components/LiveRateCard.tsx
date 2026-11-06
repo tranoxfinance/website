@@ -20,7 +20,7 @@ export function LiveRateCard({ label, rate, locale, size = "lg", className }: Li
 
   return (
     <div className={cn("inline-block rotate-1 bg-card text-ink shadow-lift", size === "lg" ? "p-6 sm:p-7" : "p-5", className)}>
-      <p className="text-sm font-bold uppercase tracking-label text-ink-soft">{label}</p>
+      <p className="text-sm font-bold text-ink-soft">{label}</p>
       <p
         className={cn(
           "tabular mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display leading-none text-navy",

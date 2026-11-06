@@ -55,9 +55,9 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
             <aside className="hidden lg:block">
               <nav
                 aria-label={dict.legalPage.onThisPage}
-                className="sticky top-24 rounded-3xl bg-surface p-6"
+                className="sticky top-24 rounded-panel bg-surface p-6"
               >
-                <p className="text-xs font-medium uppercase tracking-label text-ink-soft">
+                <p className="text-xs font-medium text-ink-soft">
                   {dict.legalPage.onThisPage}
                 </p>
                 <ol className="mt-4 space-y-2.5">
@@ -78,10 +78,10 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
             <div className="min-w-0 max-w-3xl">
               <p className="text-xl leading-relaxed text-ink">{page.intro}</p>
 
-              <div className="mt-12 divide-y divide-border">
+              <div className="mt-12 space-y-2">
                 {sections.map((section) => (
                   <div key={section.id} id={section.id} className="py-10 first:pt-0">
-                    <h2 className="text-2xl font-bold tracking-tight text-ink">
+                    <h2 className="text-2xl font-bold text-ink">
                       {section.heading}
                     </h2>
                     <div className="mt-4 space-y-4">

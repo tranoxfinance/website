@@ -61,7 +61,7 @@ export default async function CareersPage({
             <BigNumber size="xl" tone="green">
               {total}
             </BigNumber>
-            <span className="bg-navy px-2 py-1 font-display text-2xl uppercase text-white sm:text-3xl">
+            <span className="bg-navy px-2 py-1 font-display text-2xl text-white sm:text-3xl">
               {t.openRolesCount}
             </span>
           </p>
@@ -74,14 +74,14 @@ export default async function CareersPage({
               <DisplayHeading title={t.openRoles} />
             </Reveal>
             {jobs.length === 0 ? (
-              <p className="mt-10 rounded-3xl bg-surface p-10 text-center text-lg text-ink-soft">
+              <p className="mt-10 rounded-panel bg-surface p-10 text-center text-lg text-ink-soft">
                 {t.empty}
               </p>
             ) : (
               <div className="mt-10">
                 <div
                   aria-hidden
-                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 border-b border-ink pb-3 text-xs font-bold uppercase tracking-label text-ink-soft lg:grid"
+                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 pb-3 text-sm font-semibold text-muted lg:grid"
                 >
                   <span>{t.columnRole}</span>
                   <span>{t.department}</span>
@@ -89,23 +89,23 @@ export default async function CareersPage({
                   <span>{t.location}</span>
                   <span />
                 </div>
-                <ul className="border-t border-ink lg:border-t-0">
+                <ul>
                   {jobs.map((job) => (
-                    <li key={job.id} className="border-b border-border-strong">
+                    <li key={job.id} className="border-b border-border">
                       <Link
                         href={`/${lang}/careers/${job.slug}`}
-                        className="group -mx-4 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-4 rounded-2xl px-4 py-6 transition-colors duration-300 hover:bg-navy sm:-mx-6 sm:px-6 lg:grid-cols-[1fr_11rem_9rem_13rem_3.5rem] lg:py-7"
+                        className="group -mx-4 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-4 rounded-panel px-4 py-6 transition-colors duration-300 hover:bg-navy sm:-mx-6 sm:px-6 lg:grid-cols-[1fr_11rem_9rem_13rem_3.5rem] lg:py-7"
                       >
                         <div className="min-w-0">
-                          <h3 className="text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-white sm:text-2xl">
+                          <h3 className="text-xl font-bold text-ink transition-colors group-hover:text-white sm:text-2xl">
                             {job.title}
                           </h3>
-                          <p className="mt-1.5 text-sm text-muted transition-colors group-hover:text-white/70">
+                          <p className="mt-1.5 text-sm text-muted transition-colors group-hover:text-on-dark-muted">
                             {t.postedOn.replace("{date}", formatLongDate(job.publishedAt, lang))}
                             {job.closesAt ? (
                               <>
                                 {" · "}
-                                <span className="font-semibold text-ink-soft group-hover:text-white/85">
+                                <span className="font-semibold text-ink-soft group-hover:text-on-dark">
                                   {t.closesOn.replace("{date}", formatLongDate(job.closesAt, lang))}
                                 </span>
                               </>
@@ -118,7 +118,7 @@ export default async function CareersPage({
                         >
                           <ArrowUpRight className="h-5 w-5" strokeWidth={2.25} />
                         </span>
-                        <ul className="col-span-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft transition-colors group-hover:text-white/85 lg:contents">
+                        <ul className="col-span-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft transition-colors group-hover:text-on-dark lg:contents">
                           <li className="flex items-center gap-1.5 lg:col-start-2 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
                             <Users className="h-4 w-4 lg:hidden" />
                             {job.department}
@@ -153,7 +153,6 @@ export default async function CareersPage({
           <Container>
             <Reveal className="grid gap-10 overflow-hidden rounded-panel bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
               <DisplayHeading
-                tag={t.openApplication.tag}
                 title={t.openApplication.heading}
                 sub={t.openApplication.body}
                 size="xl"
@@ -169,7 +168,7 @@ export default async function CareersPage({
                 >
                   {t.openApplication.button}
                 </ArrowLink>
-                <p className="w-full text-center text-sm text-white/70 sm:w-80">
+                <p className="w-full text-center text-sm text-on-dark-muted sm:w-80">
                   {t.openApplication.email}
                 </p>
               </div>

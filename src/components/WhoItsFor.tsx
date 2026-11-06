@@ -10,7 +10,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
     <section className="bg-surface py-20 sm:py-28">
       <Container>
         <Reveal>
-          <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} />
+          <DisplayHeading title={dict.heading} sub={dict.sub} />
         </Reveal>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -18,7 +18,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
             <Reveal
               key={persona.title}
               delay={index * STAGGER_MS}
-              className="group relative isolate flex min-h-[30rem] flex-col justify-end overflow-hidden rounded-3xl bg-navy p-6"
+              className="group relative isolate flex min-h-[30rem] flex-col justify-end overflow-hidden rounded-panel bg-navy p-6"
             >
               <Image
                 src={persona.image.src}
@@ -29,10 +29,10 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/50 via-50% to-transparent"
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/65 via-50% to-transparent"
               />
               <DisplayHeading as="h3" title={persona.title} size="sm" invert />
-              <p className="mt-3 text-sm leading-relaxed text-white/85">{persona.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-on-dark">{persona.body}</p>
             </Reveal>
           ))}
         </div>

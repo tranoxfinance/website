@@ -6,7 +6,6 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
-import { Pill } from "@/components/ui/Pill";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getArticleBySlug } from "@/lib/articles";
@@ -62,10 +61,10 @@ export default async function ArticlePage({
               {t.backToNews}
             </Link>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Pill>{t.categories[article.category]}</Pill>
+              <span className="text-sm font-bold text-brand">{t.categories[article.category]}</span>
               <span className="text-sm text-ink-soft">{formatLongDate(article.publishedAt, lang)}</span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold leading-headline tracking-tight text-ink sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-bold leading-headline text-ink sm:text-5xl">
               {article.title}
             </h1>
             {article.excerpt ? (
@@ -79,7 +78,7 @@ export default async function ArticlePage({
               <img
                 src={article.coverImageUrl}
                 alt=""
-                className="aspect-[16/9] w-full rounded-3xl object-cover"
+                className="aspect-[16/9] w-full rounded-panel object-cover"
               />
             </Container>
           ) : null}
@@ -88,8 +87,8 @@ export default async function ArticlePage({
             <div
               className={cn(
                 "mt-10 text-lg leading-relaxed text-ink-soft",
-                "[&_h1]:mb-4 [&_h1]:mt-10 [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:tracking-tight [&_h1]:text-ink [&_h1]:first:mt-0",
-                "[&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-ink [&_h2]:first:mt-0",
+                "[&_h1]:mb-4 [&_h1]:mt-10 [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:first:mt-0",
+                "[&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ink [&_h2]:first:mt-0",
                 "[&_p]:mb-5 [&_p]:last:mb-0",
                 "[&_ul]:mb-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5",
                 "[&_strong]:font-semibold [&_strong]:text-ink",
@@ -106,7 +105,7 @@ export default async function ArticlePage({
                       key={item.id}
                       src={item.url}
                       controls
-                      className="w-full rounded-2xl bg-surface"
+                      className="w-full rounded-panel bg-surface"
                     />
                   ) : (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -114,7 +113,7 @@ export default async function ArticlePage({
                       key={item.id}
                       src={item.url}
                       alt=""
-                      className="w-full rounded-2xl bg-surface object-cover"
+                      className="w-full rounded-panel bg-surface object-cover"
                     />
                   ),
                 )}

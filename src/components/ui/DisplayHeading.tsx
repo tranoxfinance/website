@@ -36,7 +36,7 @@ export function DisplayHeading({
       {tag ? <Stamp className="mb-6">{tag}</Stamp> : null}
       <Heading
         className={cn(
-          "font-display uppercase leading-display",
+          "font-display leading-display",
           sizes[size],
           invert ? "text-white" : "text-ink",
         )}
@@ -48,7 +48,7 @@ export function DisplayHeading({
           className={cn(
             "mt-6 max-w-2xl text-lg leading-relaxed",
             align === "center" && "mx-auto",
-            invert ? "text-white/80" : "text-ink-soft",
+            invert ? "text-on-dark" : "text-ink-soft",
           )}
         >
           {sub}

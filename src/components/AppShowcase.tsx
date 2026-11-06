@@ -13,16 +13,16 @@ export function AppShowcase({ dict }: { dict: Dictionary["showcase"] }) {
     <section className="overflow-hidden bg-surface py-20 sm:py-28">
       <Container className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal>
-          <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} />
+          <DisplayHeading title={dict.heading} sub={dict.sub} />
 
-          <ul className="mt-10 border-t border-ink">
+          <ul className="mt-10 space-y-7">
             {dict.points.map((point, index) => {
               const Icon = ICONS[index];
               return (
-                <li key={point.title} className="flex gap-5 border-b border-border-strong py-5">
+                <li key={point.title} className="flex gap-5">
                   <Icon className="mt-1 h-7 w-7 shrink-0 text-brand" strokeWidth={1.75} />
                   <div>
-                    <h3 className="text-xl font-bold tracking-tight text-ink">{point.title}</h3>
+                    <h3 className="text-xl font-bold text-ink">{point.title}</h3>
                     <p className="mt-1 leading-relaxed text-ink-soft">
                       {point.body}
                     </p>

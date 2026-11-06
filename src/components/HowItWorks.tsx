@@ -11,7 +11,7 @@ export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
     <section id="how-it-works" className="py-20 sm:py-28">
       <Container>
         <Reveal>
-          <DisplayHeading tag={dict.tag} title={dict.heading} />
+          <DisplayHeading title={dict.heading} />
         </Reveal>
 
         <ol className="mt-14 grid gap-4 lg:grid-cols-3">
@@ -20,7 +20,7 @@ export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
               as="li"
               key={step.title}
               delay={index * STAGGER_MS}
-              className="flex flex-col overflow-hidden rounded-3xl bg-surface"
+              className="flex flex-col overflow-hidden rounded-panel bg-surface"
             >
               <div className="relative aspect-[590/493] w-full bg-brand-soft">
                 <Image
@@ -34,7 +34,7 @@ export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
               <div className="flex items-start gap-5 p-7 sm:p-8">
                 <BigNumber>{index + 1}</BigNumber>
                 <div>
-                  <h3 className="text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                  <h3 className="text-xl font-bold text-ink sm:text-2xl">
                     {step.title}
                   </h3>
                   <p className="mt-2 leading-relaxed text-ink-soft">{step.body}</p>

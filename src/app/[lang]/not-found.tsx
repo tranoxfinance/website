@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
-import { Pill } from "@/components/ui/Pill";
 import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
 
 const copy: Record<Locale, { heading: string; message: string; cta: string }> = {
@@ -30,8 +29,8 @@ export default function NotFound() {
 
       <div className="flex flex-col items-center px-5 text-center">
         <Logo href={`/${locale}`} />
-        <Pill className="mt-10">404</Pill>
-        <h1 className="mt-6 text-4xl font-bold tracking-tight text-ink sm:text-6xl">
+        <p className="mt-10 font-display text-6xl leading-none text-brand">404</p>
+        <h1 className="mt-6 text-4xl font-bold text-ink sm:text-6xl">
           {t.heading}
         </h1>
         <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">

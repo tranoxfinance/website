@@ -80,7 +80,7 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
   );
 
   return (
-    <div className="overflow-hidden rounded-3xl bg-surface p-7 sm:p-10">
+    <div className="overflow-hidden rounded-panel bg-surface p-7 sm:p-10">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5">
@@ -194,7 +194,7 @@ export default async function RatesPage({
                 />
               </div>
             ) : (
-              <p className="mt-10 rounded-3xl bg-surface p-10 text-center text-lg text-ink-soft">
+              <p className="mt-10 rounded-panel bg-surface p-10 text-center text-lg text-ink-soft">
                 {t.unavailable}
               </p>
             )}
@@ -210,11 +210,11 @@ export default async function RatesPage({
                   as="li"
                   key={fact.title}
                   delay={index * STAGGER_MS}
-                  className="flex flex-col gap-16 rounded-3xl bg-surface p-8 sm:gap-24 sm:p-10"
+                  className="flex flex-col gap-16 rounded-panel bg-surface p-8 sm:gap-24 sm:p-10"
                 >
                   <BigNumber size="xl">{fact.value}</BigNumber>
                   <div>
-                    <h3 className="text-2xl font-bold tracking-tight text-ink">{fact.title}</h3>
+                    <h3 className="text-2xl font-bold text-ink">{fact.title}</h3>
                     <p className="mt-2 text-md leading-relaxed text-ink-soft">{fact.body}</p>
                   </div>
                 </Reveal>

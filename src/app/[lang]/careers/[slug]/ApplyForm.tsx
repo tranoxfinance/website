@@ -45,7 +45,7 @@ export function ApplyForm({
           {dict.successBody}
         </p>
         {state.reference ? (
-          <p className="mx-auto mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-surface px-5 py-3 text-sm text-ink-soft">
+          <p className="mx-auto mt-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-panel bg-surface px-5 py-3 text-sm text-ink-soft">
             {dict.successReference}
             <span className="font-mono text-md font-semibold text-ink">{state.reference}</span>
           </p>
@@ -117,7 +117,7 @@ export function ApplyForm({
         <GroupTitle index={2}>{dict.formCv}</GroupTitle>
         <div
           className={cn(
-            "relative flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed px-6 py-10 text-center transition focus-within:border-brand focus-within:ring-4 focus-within:ring-brand/10 hover:border-brand",
+            "relative flex flex-col items-center justify-center gap-3 rounded-panel border-2 border-dashed px-6 py-10 text-center transition focus-within:border-brand focus-within:ring-4 focus-within:ring-brand/10 hover:border-brand",
             fileName ? "border-success bg-green-soft" : "border-border-strong bg-surface",
           )}
         >

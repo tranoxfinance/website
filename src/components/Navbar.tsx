@@ -79,7 +79,7 @@ export function Navbar({ lang, dict, overlay = false }: NavbarProps) {
                       onDark
                         ? isActive
                           ? "text-white"
-                          : "text-white/80 hover:text-white"
+                          : "text-on-dark hover:text-white"
                         : isActive
                           ? "text-brand hover:text-brand"
                           : "text-ink-soft hover:text-brand",
@@ -103,11 +103,11 @@ export function Navbar({ lang, dict, overlay = false }: NavbarProps) {
               <LocaleSwitcher
                 lang={lang}
                 ariaLabel={dict.languageAria}
-                className={cn(onDark && "ring-white/30")}
+                className={cn(onDark && "ring-on-dark-line")}
               />
               <ThemeToggle
                 ariaLabel={dict.toggleTheme}
-                className={cn(onDark && "text-white ring-white/30 hover:text-white hover:ring-white/60")}
+                className={cn(onDark && "text-white ring-on-dark-line hover:text-white hover:ring-on-dark")}
               />
               <Button href={hrefFor("#get-started")} size="sm">
                 {dict.downloadApp}
@@ -123,7 +123,7 @@ export function Navbar({ lang, dict, overlay = false }: NavbarProps) {
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-full ring-1 transition cursor-pointer",
                   onDark
-                    ? "text-white ring-white/30 hover:bg-white/10"
+                    ? "text-white ring-on-dark-line hover:bg-on-dark-fill"
                     : "text-ink ring-border hover:bg-surface",
                 )}
               >

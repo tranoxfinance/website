@@ -11,7 +11,6 @@ export function CtaBanner({ dict, badges }: CtaBannerProps) {
   return (
     <PhotoBanner
       id="get-started"
-      tag={dict.tag}
       title={dict.heading}
       sub={dict.body}
       photo={dict.photo}

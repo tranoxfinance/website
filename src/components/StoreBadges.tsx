@@ -11,7 +11,7 @@ interface StoreBadgesProps {
 export function StoreBadges({ dict, className, invert = false }: StoreBadgesProps) {
   return (
     <div className={cn("flex flex-col gap-3", className)}>
-      <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-semibold text-gold">
+      <span className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-gold">
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
         {dict.development}
       </span>
@@ -33,7 +33,7 @@ export function StoreBadges({ dict, className, invert = false }: StoreBadgesProp
                 className="h-11 w-[150px] object-fill"
               />
             </a>
-            <span className={cn("text-2xs font-medium", invert ? "text-white/75" : "text-ink-soft")}>
+            <span className={cn("text-2xs font-medium", invert ? "text-on-dark-muted" : "text-ink-soft")}>
               {dict.comingSoon}
             </span>
           </div>

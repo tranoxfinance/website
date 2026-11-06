@@ -34,7 +34,7 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
               ),
             )}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-on-dark sm:text-xl">
             {dict.subtitle}
           </p>
           <StoreBadges dict={badges} invert className="mt-8" />

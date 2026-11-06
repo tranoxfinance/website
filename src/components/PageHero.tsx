@@ -36,7 +36,7 @@ export function PageHero({ tag, title, sub, photo, back, children }: PageHeroPro
           {back ? (
             <Link
               href={back.href}
-              className="mb-8 flex w-fit items-center gap-1.5 bg-navy/70 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-navy"
+              className="mb-8 flex w-fit items-center gap-1.5 bg-navy px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-navy"
             >
               <ArrowLeft className="h-4 w-4" />
               {back.label}
@@ -47,7 +47,7 @@ export function PageHero({ tag, title, sub, photo, back, children }: PageHeroPro
             <span className="box-decoration-clone bg-navy px-3 sm:px-5">{title}</span>
           </h1>
           {sub ? (
-            <p className="mt-6 max-w-xl bg-navy/85 p-4 text-lg font-semibold leading-relaxed text-white sm:p-5 sm:text-xl">
+            <p className="mt-6 max-w-xl bg-navy p-4 text-lg font-semibold leading-relaxed text-white sm:p-5 sm:text-xl">
               {sub}
             </p>
           ) : null}

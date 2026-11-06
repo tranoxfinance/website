@@ -82,17 +82,18 @@ export default async function JobPage({
           photo={t.photo}
           back={{ href: `/${lang}/careers`, label: t.backToCareers }}
         >
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {[t.employmentTypes[job.employmentType], job.location].map((meta) => (
-              <li
-                key={meta}
-                className="rounded-full border border-white/30 px-4 py-1.5 text-sm font-semibold text-white"
-              >
-                {meta}
-              </li>
-            ))}
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-lg font-semibold text-on-dark">
+            <li className="flex items-center gap-2">
+              <Clock className="h-5 w-5" strokeWidth={2} />
+              {t.employmentTypes[job.employmentType]}
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="h-5 w-5" strokeWidth={2} />
+              {job.location}
+            </li>
             {job.closesAt ? (
-              <li className="rounded-full bg-gold px-4 py-1.5 text-sm font-bold text-navy">
+              <li className="flex items-center gap-2 text-gold">
+                <CalendarDays className="h-5 w-5" strokeWidth={2} />
                 {t.closesOn.replace("{date}", formatLongDate(job.closesAt, lang))}
               </li>
             ) : null}
@@ -119,8 +120,8 @@ export default async function JobPage({
             </div>
 
             <aside className="order-first lg:order-none">
-              <div className="overflow-hidden rounded-3xl bg-surface lg:sticky lg:top-24">
-                <h2 className="bg-navy px-6 py-4 text-xs font-bold uppercase tracking-label text-white">
+              <div className="overflow-hidden rounded-panel bg-surface lg:sticky lg:top-24">
+                <h2 className="bg-navy px-6 py-4 text-xs font-bold text-white">
                   {t.roleDetails}
                 </h2>
                 <dl className="divide-y divide-border px-6">
@@ -150,7 +151,7 @@ export default async function JobPage({
         <section id="apply" className="scroll-mt-20 bg-surface py-16 sm:py-24">
           <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
             <Reveal>
-              <DisplayHeading tag={job.title} title={t.applyHeading} />
+              <DisplayHeading title={t.applyHeading} />
               <ol className="mt-10 space-y-5">
                 {t.applySteps.map((step, index) => (
                   <li key={step} className="flex items-center gap-4">
@@ -162,7 +163,7 @@ export default async function JobPage({
               <p className="mt-8 max-w-sm leading-relaxed text-ink-soft">{t.applySub}</p>
             </Reveal>
 
-            <div className="min-w-0 rounded-3xl bg-card p-6 shadow-lift sm:p-10">
+            <div className="min-w-0 rounded-panel bg-card p-6 shadow-lift sm:p-10">
               <ApplyForm jobId={job.id} dict={t} />
             </div>
           </Container>

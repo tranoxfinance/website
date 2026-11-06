@@ -11,7 +11,6 @@ import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedArticles } from "@/lib/articles";
 import { PageHero } from "@/components/PageHero";
-import { Pill } from "@/components/ui/Pill";
 
 const PAGE_SIZE = 9;
 
@@ -60,13 +59,13 @@ export default async function NewsPage({
         <section className="pb-16 pt-12 sm:pb-24 sm:pt-16">
           <Container>
             {articles.length === 0 ? (
-              <p className="rounded-3xl bg-surface p-10 text-center text-ink-soft">{t.empty}</p>
+              <p className="rounded-panel bg-surface p-10 text-center text-ink-soft">{t.empty}</p>
             ) : (
               <>
                 {featured ? (
                   <Link
                     href={`/${lang}/news/${featured.slug}`}
-                    className="group grid overflow-hidden rounded-3xl bg-surface lg:grid-cols-[1.25fr_1fr]"
+                    className="group grid overflow-hidden rounded-panel bg-surface lg:grid-cols-[1.25fr_1fr]"
                   >
                     <div className="aspect-[16/9] self-center overflow-hidden bg-surface-strong">
                       {featured.coverImageUrl ? (
@@ -80,12 +79,11 @@ export default async function NewsPage({
                     </div>
                     <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                       <div className="flex flex-wrap items-center gap-3">
-                        <Pill>{t.latest}</Pill>
                         <span className="text-sm text-ink-soft">
                           {t.categories[featured.category]} · {formatLongDate(featured.publishedAt, lang)}
                         </span>
                       </div>
-                      <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
+                      <h2 className="mt-5 text-3xl font-bold leading-tight text-ink sm:text-4xl">
                         {featured.title}
                       </h2>
                       {featured.excerpt ? (
@@ -109,7 +107,7 @@ export default async function NewsPage({
                         href={`/${lang}/news/${article.slug}`}
                         className="group flex flex-col"
                       >
-                        <div className="aspect-[16/10] overflow-hidden rounded-3xl bg-surface">
+                        <div className="aspect-[16/10] overflow-hidden rounded-panel bg-surface">
                           {article.coverImageUrl ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img
@@ -122,7 +120,7 @@ export default async function NewsPage({
                         <span className="mt-5 text-sm text-ink-soft">
                           {t.categories[article.category]} · {formatLongDate(article.publishedAt, lang)}
                         </span>
-                        <h2 className="mt-2 text-xl font-bold leading-snug tracking-tight text-ink group-hover:underline">
+                        <h2 className="mt-2 text-xl font-bold leading-snug text-ink group-hover:underline">
                           {article.title}
                         </h2>
                         {article.excerpt ? (
