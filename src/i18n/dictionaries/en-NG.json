@@ -317,8 +317,8 @@
         "body": "Pay the same people in seconds without re-entering their details."
       },
       {
-        "title": "Rate alerts",
-        "body": "Get notified the moment the rate moves in your favour."
+        "title": "Mobile money payouts",
+        "body": "Pay out to Wave, Orange, MTN or Moov wallets in Ivory Coast."
       }
     ],
     "cta": "Get the app",
@@ -420,9 +420,15 @@
     ]
   },
   "cta": {
-    "tag": "Try it now",
-    "heading": "Ready to send money home?",
-    "body": "Join thousands moving money between Nigeria and Ivory Coast with Tranox. No hidden fees, no waiting."
+    "tag": "Coming soon",
+    "heading": "Send money home in minutes.",
+    "body": "Tranox is in development. Get it on iOS and Android as soon as it launches.",
+    "photo": {
+      "src": "/images/people-family.webp",
+      "width": 2000,
+      "height": 1342,
+      "alt": "A mother and her teenage daughter at home in Abidjan smiling together at a phone"
+    }
   },
   "pageCta": {
     "heading": "Your money, home in minutes.",

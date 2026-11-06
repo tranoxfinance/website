@@ -69,10 +69,10 @@
   "hero": {
     "headlineSegments": [
       {
-        "text": "Envoyez de l'"
+        "text": "Envoyez de "
       },
       {
-        "text": "argent",
+        "text": "l'argent",
         "style": "brand"
       },
       {
@@ -317,8 +317,8 @@
         "body": "Payez les mêmes personnes en quelques secondes sans ressaisir leurs coordonnées."
       },
       {
-        "title": "Alertes de taux",
-        "body": "Soyez averti dès que le taux évolue en votre faveur."
+        "title": "Versements mobile money",
+        "body": "Versez sur un portefeuille Wave, Orange, MTN ou Moov en Côte d'Ivoire."
       }
     ],
     "cta": "Obtenir l'appli",
@@ -420,9 +420,15 @@
     ]
   },
   "cta": {
-    "tag": "Essayez maintenant",
-    "heading": "Prêt à envoyer de l'argent au pays ?",
-    "body": "Rejoignez les milliers de personnes qui font circuler leur argent entre le Nigéria et la Côte d'Ivoire avec Tranox. Pas de frais cachés, pas d'attente."
+    "tag": "Bientôt disponible",
+    "heading": "Envoyez de l'argent en quelques minutes.",
+    "body": "Tranox est en cours de développement. Téléchargez l'appli sur iOS et Android dès son lancement.",
+    "photo": {
+      "src": "/images/people-family.webp",
+      "width": 2000,
+      "height": 1342,
+      "alt": "Une mère et sa fille adolescente chez elles à Abidjan souriant ensemble devant un téléphone"
+    }
   },
   "pageCta": {
     "heading": "Votre argent, chez vous en quelques minutes.",
