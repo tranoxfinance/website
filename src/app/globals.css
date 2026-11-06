@@ -44,6 +44,14 @@
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
   --radius-3xl: 2.25rem;
+  --radius-panel: 2rem;
+
+  --text-display-xs: 3.4rem;
+  --leading-display: 0.95;
+  --leading-headline: 1.06;
+  --leading-boxed: 1.14;
+  --tracking-label: 0.1em;
+  --drop-shadow-phone: 0 40px 60px rgba(0, 0, 0, 0.45);
 
   --shadow-soft: var(--sh-soft);
   --shadow-lift: var(--sh-lift);
