@@ -24,14 +24,17 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const pathname = usePathname();
   const isHome = pathname === `/${lang}`;
   const hrefFor = (hash: string) => (isHome ? hash : `/${lang}${hash}`);
+  const homeHref = `/${lang}`;
   const pageLinks = [
+    { href: homeHref, label: dict.home },
     { href: `/${lang}/about`, label: dict.about },
     { href: `/${lang}/rates`, label: dict.liveRates },
     { href: `/${lang}/careers`, label: dict.careers },
     { href: `/${lang}/news`, label: dict.news },
   ];
   const isActivePage = (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+    pathname === href ||
+    (href !== homeHref && pathname.startsWith(`${href}/`));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

@@ -46,6 +46,7 @@
     }
   },
   "nav": {
+    "home": "Home",
     "liveRates": "Live rates",
     "downloadApp": "Download app",
     "openMenu": "Open menu",
