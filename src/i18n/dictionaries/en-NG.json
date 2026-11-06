@@ -830,7 +830,21 @@
       "height": 1208,
       "alt": "A small team laughing together around a laptop in a bright Lagos office"
     },
-    "openRolesCount": "open roles"
+    "openRolesCount": "open roles",
+    "postedOn": "Posted {date}",
+    "closesOn": "Closes {date}",
+    "columnRole": "Role",
+    "formDetails": "Your details",
+    "formCv": "Your CV",
+    "cvChoose": "Choose a file",
+    "cvDrop": "or drag it here",
+    "cvSelected": "Selected file",
+    "applySteps": [
+      "Fill in your details",
+      "Attach your CV",
+      "We reply to you by email"
+    ],
+    "posted": "Posted"
   },
   "newsPage": {
     "metaTitle": "News & Stories from Tranox",
