@@ -1,4 +1,7 @@
+import Image from "next/image";
 import { Flag } from "@/components/Flag";
+import { PAYOUT_NETWORKS } from "@/components/PayoutLogos";
+import { cn } from "@/lib/utils";
 
 interface FactBandProps {
   items: string[];
@@ -21,6 +24,31 @@ export function FactBand({ items, label }: FactBandProps) {
                   <Flag country="NG" className="h-9 w-9 ring-2 ring-navy sm:h-12 sm:w-12" />
                   NGN ⇄ XOF
                   <Flag country="CI" className="h-9 w-9 ring-2 ring-navy sm:h-12 sm:w-12" />
+                </span>
+                <span aria-hidden className="text-navy/40">
+                  ●
+                </span>
+              </li>
+              <li className="flex items-center">
+                <span className="flex items-center gap-2 px-6 sm:gap-3 sm:px-10">
+                  {PAYOUT_NETWORKS.map((network) => (
+                    <span
+                      key={network.name}
+                      className={cn(
+                        "flex h-11 items-center rounded-lg px-3 sm:h-14 sm:px-4",
+                        network.tile,
+                      )}
+                    >
+                      <Image
+                        src={network.src}
+                        alt={copy === 0 ? network.name : ""}
+                        width={network.width}
+                        height={network.height}
+                        unoptimized
+                        className="h-6 w-auto sm:h-8"
+                      />
+                    </span>
+                  ))}
                 </span>
                 <span aria-hidden className="text-navy/40">
                   ●

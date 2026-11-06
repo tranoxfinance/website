@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Landmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NETWORKS = [
+export const PAYOUT_NETWORKS = [
   { name: "Wave", src: "/images/payout/wave.png", width: 230, height: 101, tile: "bg-white" },
   { name: "Orange Money", src: "/images/payout/orange-money.svg", width: 431, height: 115, tile: "bg-white" },
   { name: "MTN MoMo", src: "/images/payout/mtn.svg", width: 1280, height: 640, tile: "bg-partner-mtn" },
@@ -17,7 +17,7 @@ interface PayoutLogosProps {
 export function PayoutLogos({ bankLabel, className }: PayoutLogosProps) {
   return (
     <ul className={cn("grid grid-cols-2 gap-2", className)}>
-      {NETWORKS.map((network) => (
+      {PAYOUT_NETWORKS.map((network) => (
         <li
           key={network.name}
           className={cn("flex h-16 items-center justify-center rounded-xl px-4", network.tile)}
