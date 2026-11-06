@@ -196,7 +196,9 @@
         "body": "Cover school fees, rent, and everyday costs for family in Nigeria or Ivory Coast without losing money to hidden fees.",
         "image": {
           "src": "/images/persona-family.webp",
-          "alt": "A family video calling relatives together on a tablet"
+          "alt": "A family video calling relatives together on a tablet",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -204,7 +206,9 @@
         "body": "Pay suppliers or get paid by customers on either side of the corridor without waiting days for a bank transfer to clear.",
         "image": {
           "src": "/images/persona-trader.webp",
-          "alt": "A market trader checking her NGN balance on her phone"
+          "alt": "A market trader checking her NGN balance on her phone",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -212,7 +216,9 @@
         "body": "Get paid by clients across the corridor and keep more of what you earn with one transparent fee.",
         "image": {
           "src": "/images/persona-freelancer.webp",
-          "alt": "A freelancer checking his NGN balance on his phone while working on a laptop"
+          "alt": "A freelancer checking his NGN balance on his phone while working on a laptop",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -220,7 +226,9 @@
         "body": "Receive support from family back home on a schedule you can both rely on.",
         "image": {
           "src": "/images/persona-student.webp",
-          "alt": "A student checking his XOF balance on his phone"
+          "alt": "A student checking his XOF balance on his phone",
+          "width": 1500,
+          "height": 1000
         }
       }
     ]
@@ -301,8 +309,8 @@
       ],
       "photo": {
         "src": "/images/office-desk.webp",
-        "width": 1200,
-        "height": 1490,
+        "width": 1024,
+        "height": 1271,
         "alt": "A desk in an Abidjan office with a document folder, a pen and a company stamp, office towers in the window"
       }
     }
@@ -429,8 +437,8 @@
     "body": "Tranox is in development. Get it on iOS and Android as soon as it launches.",
     "photo": {
       "src": "/images/people-family.webp",
-      "width": 2000,
-      "height": 1342,
+      "width": 1600,
+      "height": 1073,
       "alt": "A mother and her teenage daughter at home in Abidjan smiling together at a phone"
     }
   },
@@ -440,8 +448,8 @@
     "button": "Get the app",
     "photo": {
       "src": "/images/people-student.webp",
-      "width": 2000,
-      "height": 1342,
+      "width": 1600,
+      "height": 1073,
       "alt": "A university student in Abidjan smiling at her phone on the campus steps"
     }
   },
@@ -849,8 +857,8 @@
     },
     "photo": {
       "src": "/images/people-team.webp",
-      "width": 1800,
-      "height": 1208,
+      "width": 1600,
+      "height": 1073,
       "alt": "A small team laughing together around a laptop in a bright Lagos office"
     },
     "openRolesCount": "open roles",

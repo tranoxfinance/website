@@ -196,7 +196,9 @@
         "body": "Couvrez les frais de scolarité, le loyer et les dépenses courantes de votre famille au Nigéria ou en Côte d'Ivoire, sans perdre d'argent en frais cachés.",
         "image": {
           "src": "/images/persona-family.webp",
-          "alt": "Une famille en appel vidéo avec des proches sur une tablette"
+          "alt": "Une famille en appel vidéo avec des proches sur une tablette",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -204,7 +206,9 @@
         "body": "Payez vos fournisseurs ou recevez vos clients des deux côtés du corridor sans attendre des jours qu'un virement bancaire soit validé.",
         "image": {
           "src": "/images/persona-trader.webp",
-          "alt": "Une commerçante consultant son solde NGN sur son téléphone"
+          "alt": "Une commerçante consultant son solde NGN sur son téléphone",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -212,7 +216,9 @@
         "body": "Soyez payé par vos clients à travers le corridor et gardez plus de ce que vous gagnez grâce à un frais unique et transparent.",
         "image": {
           "src": "/images/persona-freelancer.webp",
-          "alt": "Un freelance consultant son solde NGN sur son téléphone en travaillant sur son ordinateur portable"
+          "alt": "Un freelance consultant son solde NGN sur son téléphone en travaillant sur son ordinateur portable",
+          "width": 1500,
+          "height": 1000
         }
       },
       {
@@ -220,7 +226,9 @@
         "body": "Recevez le soutien de votre famille restée au pays, selon un rythme sur lequel vous pouvez tous les deux compter.",
         "image": {
           "src": "/images/persona-student.webp",
-          "alt": "Un étudiant consultant son solde XOF sur son téléphone"
+          "alt": "Un étudiant consultant son solde XOF sur son téléphone",
+          "width": 1500,
+          "height": 1000
         }
       }
     ]
@@ -301,8 +309,8 @@
       ],
       "photo": {
         "src": "/images/office-desk.webp",
-        "width": 1200,
-        "height": 1490,
+        "width": 1024,
+        "height": 1271,
         "alt": "Un bureau à Abidjan avec une chemise de documents, un stylo et un tampon, des tours de bureaux par la fenêtre"
       }
     }
@@ -429,8 +437,8 @@
     "body": "Tranox est en cours de développement. Téléchargez l'appli sur iOS et Android dès son lancement.",
     "photo": {
       "src": "/images/people-family.webp",
-      "width": 2000,
-      "height": 1342,
+      "width": 1600,
+      "height": 1073,
       "alt": "Une mère et sa fille adolescente chez elles à Abidjan souriant ensemble devant un téléphone"
     }
   },
@@ -440,8 +448,8 @@
     "button": "Obtenir l'appli",
     "photo": {
       "src": "/images/people-student.webp",
-      "width": 2000,
-      "height": 1342,
+      "width": 1600,
+      "height": 1073,
       "alt": "Une étudiante à Abidjan souriant à son téléphone sur les marches du campus"
     }
   },
@@ -849,8 +857,8 @@
     },
     "photo": {
       "src": "/images/people-team.webp",
-      "width": 1800,
-      "height": 1208,
+      "width": 1600,
+      "height": 1073,
       "alt": "Une petite équipe riant ensemble autour d'un ordinateur dans un bureau lumineux à Lagos"
     },
     "openRolesCount": "postes ouverts",
