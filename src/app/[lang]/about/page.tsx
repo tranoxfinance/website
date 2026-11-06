@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { AboutUs } from "@/components/AboutUs";
+import { PageHero } from "@/components/PageHero";
+import { PageCta } from "@/components/PageCta";
 import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -34,7 +36,14 @@ export default async function AboutPage({
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
+        <PageHero
+          tag={dict.about.tag}
+          title={dict.about.heading}
+          sub={dict.about.p1}
+          photo={dict.about.photo}
+        />
         <AboutUs dict={dict.about} />
+        <PageCta lang={lang} dict={dict.pageCta} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>
