@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
@@ -14,12 +16,13 @@ interface PageHeroProps {
   title: string;
   sub?: string;
   photo?: PageHeroPhoto;
+  back?: { href: string; label: string };
   children?: React.ReactNode;
 }
 
-export function PageHero({ tag, title, sub, photo, children }: PageHeroProps) {
+export function PageHero({ tag, title, sub, photo, back, children }: PageHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden bg-navy">
+    <section className="relative isolate -mt-16 overflow-hidden bg-navy">
       {photo ? (
         <>
           <div className="absolute inset-0 -z-20 lg:left-[36%]">
@@ -36,16 +39,29 @@ export function PageHero({ tag, title, sub, photo, children }: PageHeroProps) {
             aria-hidden
             className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/60 to-navy/5 lg:bg-gradient-to-r lg:from-navy lg:from-36% lg:via-navy/30 lg:via-46% lg:to-transparent lg:to-60%"
           />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-navy/80 to-transparent"
+          />
         </>
       ) : null}
 
       <Container
         className={cn(
           "flex flex-col justify-end pb-24 sm:pb-28",
-          photo ? "min-h-[40rem] pt-56 sm:min-h-[46rem] lg:pt-24" : "pt-20 sm:pt-28",
+          photo ? "min-h-[44rem] pt-72 sm:min-h-[50rem] lg:pt-40" : "pt-36 sm:pt-44",
         )}
       >
         <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both]">
+          {back ? (
+            <Link
+              href={back.href}
+              className="mb-8 flex w-fit items-center gap-1.5 bg-navy/70 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-navy"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {back.label}
+            </Link>
+          ) : null}
           <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
             {tag}
           </span>

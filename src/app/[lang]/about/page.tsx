@@ -35,7 +35,7 @@ export default async function AboutPage({
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
         <PageHero
           tag={dict.about.tag}

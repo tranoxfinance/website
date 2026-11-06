@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowDown, ArrowLeft, CalendarDays, Clock, MapPin, Users } from "lucide-react";
+import { ArrowDown, CalendarDays, Clock, MapPin, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
@@ -72,19 +71,14 @@ export default async function JobPage({
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
-        <Container className="py-4">
-          <Link
-            href={`/${lang}/careers`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft transition hover:text-ink"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {t.backToCareers}
-          </Link>
-        </Container>
-
-        <PageHero tag={job.department} title={job.title} photo={t.photo}>
+        <PageHero
+          tag={job.department}
+          title={job.title}
+          photo={t.photo}
+          back={{ href: `/${lang}/careers`, label: t.backToCareers }}
+        >
           <ul className="mt-8 flex flex-wrap gap-2">
             {[t.employmentTypes[job.employmentType], job.location].map((meta) => (
               <li

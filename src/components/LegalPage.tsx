@@ -42,7 +42,7 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
         <PageHero
           tag={dict.legalPage.tag}

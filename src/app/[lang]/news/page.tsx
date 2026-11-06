@@ -60,7 +60,7 @@ export default async function NewsPage({
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
         <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo} />
 
