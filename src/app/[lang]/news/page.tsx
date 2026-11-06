@@ -9,7 +9,9 @@ import { Pager } from "@/components/Pager";
 import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedArticles } from "@/lib/articles";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import { PageCta } from "@/components/PageCta";
+import { Pill } from "@/components/ui/Pill";
 
 const PAGE_SIZE = 9;
 
@@ -54,69 +56,93 @@ export default async function NewsPage({
   const page = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
   const { items: articles, total } = await getPublishedArticles(page, PAGE_SIZE);
   const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const featured = page === 1 ? articles[0] : undefined;
+  const rest = featured ? articles.slice(1) : articles;
 
   return (
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-16 sm:py-20">
-          <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow={t.tag}
-              title={t.heading}
-              as="h1"
-              description={t.sub}
-            />
-          </Container>
-        </section>
+        <PageHero tag={t.tag} title={t.heading} sub={t.sub} />
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-5xl">
+        <section className="pb-16 pt-12 sm:pb-24 sm:pt-16">
+          <Container>
             {articles.length === 0 ? (
-              <p className="rounded-3xl border border-border bg-card p-9 text-center text-ink-soft">
-                {t.empty}
-              </p>
+              <p className="rounded-3xl bg-surface p-10 text-center text-ink-soft">{t.empty}</p>
             ) : (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {articles.map((article) => (
+              <>
+                {featured ? (
                   <Link
-                    key={article.slug}
-                    href={`/${lang}/news/${article.slug}`}
-                    className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card transition hover:border-brand"
+                    href={`/${lang}/news/${featured.slug}`}
+                    className="group grid overflow-hidden rounded-3xl bg-surface lg:grid-cols-[1.25fr_1fr]"
                   >
-                    {article.coverImageUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={article.coverImageUrl}
-                        alt=""
-                        className="aspect-[16/9] w-full object-cover"
-                      />
-                    ) : (
-                      <div className="aspect-[16/9] w-full bg-surface" />
-                    )}
-                    <div className="flex flex-1 flex-col p-6">
-                      <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-brand">
-                        <span>{t.categories[article.category]}</span>
-                        <span className="font-normal normal-case tracking-normal text-muted">
-                          {formatDate(article.publishedAt, lang)}
+                    <div className="aspect-[16/9] self-center overflow-hidden bg-surface-strong">
+                      {featured.coverImageUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={featured.coverImageUrl}
+                          alt=""
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                        />
+                      ) : null}
+                    </div>
+                    <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Pill>{t.latest}</Pill>
+                        <span className="text-sm text-ink-soft">
+                          {t.categories[featured.category]} · {formatDate(featured.publishedAt, lang)}
                         </span>
                       </div>
-                      <h2 className="mt-2 text-lg font-bold text-ink group-hover:text-brand">
-                        {article.title}
+                      <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
+                        {featured.title}
                       </h2>
-                      {article.excerpt ? (
-                        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-soft">
-                          {article.excerpt}
+                      {featured.excerpt ? (
+                        <p className="mt-4 line-clamp-3 text-lg leading-relaxed text-ink-soft">
+                          {featured.excerpt}
                         </p>
                       ) : null}
-                      <span className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand">
+                      <span className="mt-6 inline-flex items-center gap-1.5 font-semibold text-ink">
                         {t.readMore}
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                       </span>
                     </div>
                   </Link>
-                ))}
-              </div>
+                ) : null}
+
+                {rest.length > 0 ? (
+                  <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                    {rest.map((article) => (
+                      <Link
+                        key={article.slug}
+                        href={`/${lang}/news/${article.slug}`}
+                        className="group flex flex-col"
+                      >
+                        <div className="aspect-[16/10] overflow-hidden rounded-3xl bg-surface">
+                          {article.coverImageUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={article.coverImageUrl}
+                              alt=""
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                            />
+                          ) : null}
+                        </div>
+                        <span className="mt-5 text-sm text-ink-soft">
+                          {t.categories[article.category]} · {formatDate(article.publishedAt, lang)}
+                        </span>
+                        <h2 className="mt-2 text-xl font-bold leading-snug tracking-tight text-ink group-hover:underline">
+                          {article.title}
+                        </h2>
+                        {article.excerpt ? (
+                          <p className="mt-2 line-clamp-2 leading-relaxed text-ink-soft">
+                            {article.excerpt}
+                          </p>
+                        ) : null}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </>
             )}
             <Pager
               page={page}
@@ -128,6 +154,8 @@ export default async function NewsPage({
             />
           </Container>
         </section>
+
+        <PageCta lang={lang} dict={dict.pageCta} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>
