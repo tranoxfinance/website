@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
@@ -120,21 +120,35 @@ export default async function CareersPage({
 
         <section className="pb-16 sm:pb-24">
           <Container>
-            <Reveal className="grid gap-8 rounded-[2rem] bg-brand p-8 text-white sm:p-12 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:p-16">
+            <Reveal className="grid gap-10 overflow-hidden rounded-[2rem] bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
               <div>
-                <h2 className="font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
+                <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
+                  {t.openApplication.tag}
+                </span>
+                <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
                   {t.openApplication.heading}
                 </h2>
-                <p className="mt-6 max-w-lg text-xl font-bold leading-relaxed">
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-white/85 sm:text-xl">
                   {t.openApplication.body}
                 </p>
               </div>
-              <a
-                href={`mailto:${t.openApplication.email}`}
-                className="inline-flex h-14 items-center justify-center rounded-full bg-card px-7 text-lg font-bold text-ink transition hover:bg-surface lg:justify-self-end"
-              >
-                {t.openApplication.email}
-              </a>
+              <div className="flex flex-col gap-4 lg:items-end">
+                <a
+                  href={`mailto:${t.openApplication.email}?subject=${encodeURIComponent(t.openApplication.subject)}`}
+                  className="group inline-flex h-16 w-full items-center justify-between gap-4 whitespace-nowrap rounded-full bg-green pl-6 pr-2 text-lg font-bold text-navy transition hover:brightness-105 sm:w-80 sm:pl-7"
+                >
+                  <span className="flex items-center gap-3">
+                    <Mail className="h-5 w-5" strokeWidth={2.25} />
+                    {t.openApplication.button}
+                  </span>
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white transition-transform duration-300 group-hover:rotate-45">
+                    <ArrowUpRight className="h-5 w-5" strokeWidth={2.25} />
+                  </span>
+                </a>
+                <p className="w-full text-center text-sm text-white/70 sm:w-80">
+                  {t.openApplication.email}
+                </p>
+              </div>
             </Reveal>
           </Container>
         </section>

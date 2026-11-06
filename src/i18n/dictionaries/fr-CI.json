@@ -817,8 +817,11 @@
     "type": "Type",
     "location": "Lieu",
     "openApplication": {
+      "tag": "Candidature spontanée",
       "heading": "Vous ne trouvez pas votre poste ?",
-      "body": "Envoyez votre CV à hello@tranoxfinance.com et dites-nous comment vous pourriez aider.",
+      "body": "Envoyez-nous votre CV et dites-nous comment vous aideriez Tranox à grandir.",
+      "button": "Envoyer mon CV",
+      "subject": "Candidature spontanée",
       "email": "hello@tranoxfinance.com"
     },
     "photo": {

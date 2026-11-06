@@ -817,8 +817,11 @@
     "type": "Type",
     "location": "Location",
     "openApplication": {
+      "tag": "Open application",
       "heading": "Don't see your role?",
-      "body": "Send your CV to hello@tranoxfinance.com and tell us how you would help.",
+      "body": "Send us your CV and tell us how you would help Tranox grow.",
+      "button": "Send your CV",
+      "subject": "Open application",
       "email": "hello@tranoxfinance.com"
     },
     "photo": {
