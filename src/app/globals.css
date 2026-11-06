@@ -57,6 +57,9 @@
   --animate-gradient: gradient-pan 8s ease infinite;
   --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
   --animate-draw: draw 0.6s ease-out forwards;
+  --animate-notify-in: notify-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-draw-slow: draw 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-travel: travel 2.6s ease-in-out infinite;
 
   --breakpoint-xs: 22rem;
 }
@@ -301,6 +304,32 @@ body {
   }
   100% {
     transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes notify-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes travel {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
     opacity: 0;
   }
 }
