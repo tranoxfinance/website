@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Users } from "lucide-react";
+import { formatLongDate } from "@/lib/dates";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
@@ -74,38 +75,65 @@ export default async function CareersPage({
                 {t.empty}
               </p>
             ) : (
-              <ul className="mt-10 border-t border-ink">
-                {jobs.map((job) => (
-                  <li key={job.id} className="border-b border-border-strong">
-                    <Link
-                      href={`/${lang}/careers/${job.slug}`}
-                      className="group -mx-4 flex items-center justify-between gap-6 rounded-3xl px-4 py-8 transition-colors duration-300 hover:bg-navy sm:-mx-8 sm:px-8"
-                    >
-                      <div className="min-w-0">
-                        <h3 className="text-2xl font-bold tracking-tight text-ink transition-colors group-hover:text-white sm:text-4xl">
-                          {job.title}
-                        </h3>
-                        <ul className="mt-4 flex flex-wrap gap-2">
-                          {[job.department, t.employmentTypes[job.employmentType], job.location].map((meta) => (
-                            <li
-                              key={meta}
-                              className="rounded-full border border-border-strong px-3 py-1 text-sm font-medium text-ink-soft transition-colors group-hover:border-white/30 group-hover:text-white/85"
-                            >
-                              {meta}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <span
-                        aria-label={t.viewRole}
-                        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-300 group-hover:rotate-45 sm:h-16 sm:w-16"
+              <div className="mt-10">
+                <div
+                  aria-hidden
+                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 border-b border-ink pb-3 text-xs font-bold uppercase tracking-[0.1em] text-ink-soft lg:grid"
+                >
+                  <span>{t.columnRole}</span>
+                  <span>{t.department}</span>
+                  <span>{t.type}</span>
+                  <span>{t.location}</span>
+                  <span />
+                </div>
+                <ul className="border-t border-ink lg:border-t-0">
+                  {jobs.map((job) => (
+                    <li key={job.id} className="border-b border-border-strong">
+                      <Link
+                        href={`/${lang}/careers/${job.slug}`}
+                        className="group -mx-4 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-4 rounded-2xl px-4 py-6 transition-colors duration-300 hover:bg-navy sm:-mx-6 sm:px-6 lg:grid-cols-[1fr_11rem_9rem_13rem_3.5rem] lg:py-7"
                       >
-                        <ArrowUpRight className="h-6 w-6" strokeWidth={2.25} />
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                        <div className="min-w-0">
+                          <h3 className="text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-white sm:text-2xl">
+                            {job.title}
+                          </h3>
+                          <p className="mt-1.5 text-sm text-muted transition-colors group-hover:text-white/70">
+                            {t.postedOn.replace("{date}", formatLongDate(job.publishedAt, lang))}
+                            {job.closesAt ? (
+                              <>
+                                {" · "}
+                                <span className="font-semibold text-ink-soft group-hover:text-white/85">
+                                  {t.closesOn.replace("{date}", formatLongDate(job.closesAt, lang))}
+                                </span>
+                              </>
+                            ) : null}
+                          </p>
+                        </div>
+                        <span
+                          aria-label={t.viewRole}
+                          className="col-start-2 row-start-1 flex h-12 w-12 items-center justify-center justify-self-end rounded-full bg-brand text-white transition-transform duration-300 group-hover:rotate-45 lg:col-start-5"
+                        >
+                          <ArrowUpRight className="h-5 w-5" strokeWidth={2.25} />
+                        </span>
+                        <ul className="col-span-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft transition-colors group-hover:text-white/85 lg:contents">
+                          <li className="flex items-center gap-1.5 lg:col-start-2 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <Users className="h-4 w-4 lg:hidden" />
+                            {job.department}
+                          </li>
+                          <li className="flex items-center gap-1.5 lg:col-start-3 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <Clock className="h-4 w-4 lg:hidden" />
+                            {t.employmentTypes[job.employmentType]}
+                          </li>
+                          <li className="flex items-center gap-1.5 lg:col-start-4 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <MapPin className="h-4 w-4 shrink-0" />
+                            {job.location}
+                          </li>
+                        </ul>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
             <Pager
               page={page}
