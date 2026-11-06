@@ -1,4 +1,6 @@
-import { BadgeCheck } from "lucide-react";
+import Image from "next/image";
+import { BadgeCheck, Check } from "lucide-react";
+import { Flag } from "@/components/Flag";
 import { Container } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
 import { Reveal } from "@/components/Reveal";
@@ -70,38 +72,65 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
         </Container>
       </section>
 
-      <section className="bg-surface py-20 sm:py-28">
-        <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <Pill>{registry.tag}</Pill>
-            <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] text-ink sm:text-7xl">
+      <section className="overflow-hidden bg-navy py-20 text-white sm:py-28">
+        <Container className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+          <Reveal className="min-w-0">
+            <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
+              {registry.tag}
+            </span>
+            <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
               {registry.heading}
             </h2>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft">{registry.sub}</p>
+            <ul className="mt-10 divide-y divide-white/15 border-y border-white/15">
+              {registry.points.map((point) => (
+                <li key={point} className="flex items-center gap-4 py-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green text-navy">
+                    <Check className="h-5 w-5" strokeWidth={3} />
+                  </span>
+                  <span className="text-lg font-semibold leading-snug sm:text-xl">{point}</span>
+                </li>
+              ))}
+            </ul>
           </Reveal>
 
           <Reveal delay={STAGGER_MS * 2} className="min-w-0">
-            <figure className="mx-auto max-w-md -rotate-2 rounded-3xl border border-border-strong bg-card p-7 shadow-lift transition-transform duration-500 hover:rotate-0 sm:p-9">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <TranoxMark className="h-11 w-11" />
-                  <figcaption className="text-sm font-semibold uppercase tracking-[0.08em] text-ink-soft">
+            <figure className="relative isolate mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-3xl lg:mr-0">
+              <Image
+                src={registry.photo.src}
+                alt={registry.photo.alt}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="-z-20 object-cover"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-30% via-navy/70 via-55% to-transparent to-80%"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-9">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-white/80">
+                    <TranoxMark className="h-9 w-9" />
                     {registry.cardTitle}
-                  </figcaption>
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-green px-3 py-1.5 text-xs font-bold text-navy">
+                    <BadgeCheck className="h-4 w-4" strokeWidth={2.25} />
+                    {registry.status}
+                  </span>
                 </div>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-green-soft px-3 py-1.5 text-xs font-bold text-ink">
-                  <BadgeCheck className="h-4 w-4 text-success" strokeWidth={2.25} />
-                  {registry.status}
-                </span>
-              </div>
-              <dl className="mt-8 divide-y divide-dashed divide-border-strong">
-                {registry.rows.map((row) => (
-                  <div key={row.label} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4">
-                    <dt className="text-sm text-muted">{row.label}</dt>
-                    <dd className="break-all font-mono text-lg font-semibold text-ink">{row.value}</dd>
-                  </div>
-                ))}
-              </dl>
+                <dl className="mt-6 space-y-4">
+                  {registry.rows.map((row) => (
+                    <div key={row.label}>
+                      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
+                        {row.label}
+                      </dt>
+                      <dd className="mt-1 flex items-center gap-2 break-all font-display text-2xl uppercase leading-tight text-white sm:text-3xl">
+                        {row.flag ? <Flag country="CI" className="h-6 w-6 shrink-0" /> : null}
+                        {row.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </figcaption>
             </figure>
           </Reveal>
         </Container>

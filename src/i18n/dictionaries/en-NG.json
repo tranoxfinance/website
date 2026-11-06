@@ -271,23 +271,36 @@
     "registry": {
       "tag": "Trust",
       "heading": "A real company, with real paperwork.",
-      "sub": "Transfers are processed by licensed payment providers. Every account is ID-checked with a live photo, and every transfer needs your PIN or fingerprint.",
       "cardTitle": "Company registration",
       "rows": [
         {
           "label": "Name",
-          "value": "TRANOX SARL"
+          "value": "TRANOX SARL",
+          "flag": null
         },
         {
           "label": "City",
-          "value": "Abidjan, Ivory Coast"
+          "value": "Abidjan, Ivory Coast",
+          "flag": "CI"
         },
         {
           "label": "RCCM",
-          "value": "CI-ABJ-03-2026-B12-05647"
+          "value": "CI-ABJ-03-2026-B12-05647",
+          "flag": null
         }
       ],
-      "status": "Registered"
+      "status": "Registered",
+      "points": [
+        "Transfers processed by licensed payment providers",
+        "Every account ID-checked with a live photo",
+        "Every transfer approved with your PIN or fingerprint"
+      ],
+      "photo": {
+        "src": "/images/office-desk.webp",
+        "width": 1200,
+        "height": 1490,
+        "alt": "A desk in an Abidjan office with a document folder, a pen and a company stamp, office towers in the window"
+      }
     }
   },
   "showcase": {

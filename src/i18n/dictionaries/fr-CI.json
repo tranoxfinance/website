@@ -271,23 +271,36 @@
     "registry": {
       "tag": "Confiance",
       "heading": "Une vraie société, avec de vrais documents.",
-      "sub": "Les transferts sont traités par des prestataires de paiement agréés. Chaque compte est vérifié avec une photo en direct, et chaque transfert demande votre code PIN ou votre empreinte.",
       "cardTitle": "Immatriculation de la société",
       "rows": [
         {
           "label": "Nom",
-          "value": "TRANOX SARL"
+          "value": "TRANOX SARL",
+          "flag": null
         },
         {
           "label": "Ville",
-          "value": "Abidjan, Côte d'Ivoire"
+          "value": "Abidjan, Côte d'Ivoire",
+          "flag": "CI"
         },
         {
           "label": "RCCM",
-          "value": "CI-ABJ-03-2026-B12-05647"
+          "value": "CI-ABJ-03-2026-B12-05647",
+          "flag": null
         }
       ],
-      "status": "Immatriculée"
+      "status": "Immatriculée",
+      "points": [
+        "Transferts traités par des prestataires de paiement agréés",
+        "Chaque compte vérifié avec une photo en direct",
+        "Chaque transfert validé par votre code PIN ou votre empreinte"
+      ],
+      "photo": {
+        "src": "/images/office-desk.webp",
+        "width": 1200,
+        "height": 1490,
+        "alt": "Un bureau à Abidjan avec une chemise de documents, un stylo et un tampon, des tours de bureaux par la fenêtre"
+      }
     }
   },
   "showcase": {
