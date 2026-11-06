@@ -141,7 +141,7 @@
     "metaTitle": "Live NGN to XOF Exchange Rate",
     "metaDescription": "Track the live, indicative Nigerian Naira to West African CFA franc exchange rate, both ways, with historical charts from 24 hours to 1 year.",
     "tag": "Live rates",
-    "heading": "NGN ↔ XOF exchange rate",
+    "heading": "NGN to XOF exchange rate",
     "sub": "Indicative rates for the Nigeria–Ivory Coast corridor, updated continuously from the same source that powers transfers in the app.",
     "ngnToXofLabel": "1,000 NGN in XOF",
     "xofToNgnLabel": "1,000 XOF in NGN",
@@ -848,5 +848,13 @@
     "pagerNext": "Next",
     "pagerPage": "Page {page} of {pageCount}",
     "latest": "Latest"
-  }
+  },
+  "factBand": [
+    "NGN ⇄ XOF",
+    "Wave · Orange · MTN · Moov",
+    "30-second rate lock",
+    "One fee, shown first",
+    "Registered in Abidjan",
+    "Any Nigerian bank"
+  ]
 }

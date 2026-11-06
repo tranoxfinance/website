@@ -141,7 +141,7 @@
     "metaTitle": "Taux de change NGN vers XOF en direct",
     "metaDescription": "Suivez le taux de change indicatif entre le Naira nigérian et le franc CFA d'Afrique de l'Ouest, dans les deux sens, avec des graphiques historiques de 24 heures à 1 an.",
     "tag": "Taux en direct",
-    "heading": "Taux de change NGN ↔ XOF",
+    "heading": "Taux de change NGN vers XOF",
     "sub": "Taux indicatifs pour le corridor Nigéria–Côte d'Ivoire, mis à jour en continu à partir de la même source qui alimente les transferts dans l'application.",
     "ngnToXofLabel": "1 000 NGN en XOF",
     "xofToNgnLabel": "1 000 XOF en NGN",
@@ -848,5 +848,13 @@
     "pagerNext": "Suivant",
     "pagerPage": "Page {page} sur {pageCount}",
     "latest": "À la une"
-  }
+  },
+  "factBand": [
+    "NGN ⇄ XOF",
+    "Wave · Orange · MTN · Moov",
+    "Taux bloqué 30 secondes",
+    "Un seul frais, affiché d'abord",
+    "Immatriculée à Abidjan",
+    "Toutes les banques du Nigéria"
+  ]
 }
