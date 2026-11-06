@@ -13,6 +13,7 @@ import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedFaqs } from "@/lib/faqs";
+import { getPublicRateHistory } from "@/lib/fx-rates";
 
 export async function generateMetadata({
   params,
@@ -30,9 +31,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const publishedFaqs = await getPublishedFaqs(
-    lang.startsWith("fr") ? "fr" : "en",
-  );
+  const [publishedFaqs, rate] = await Promise.all([
+    getPublishedFaqs(lang.startsWith("fr") ? "fr" : "en"),
+    getPublicRateHistory("NGN", "XOF", "1w"),
+  ]);
   const faqItems =
     publishedFaqs.length > 0
       ? publishedFaqs.map((item) => ({ q: item.question, a: item.answer }))
@@ -76,7 +78,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
         <Hero dict={dict.hero} badges={dict.storeBadges} />
-        <Features dict={dict.features} />
+        <Features lang={lang} dict={dict.features} rate={rate} />
         <WhoItsFor dict={dict.whoFor} />
         <AppShowcase dict={dict.showcase} />
         <WhyTranox dict={dict.why} />

@@ -94,7 +94,24 @@
       "width": 900,
       "height": 1606,
       "alt": "Tranox app showing a transfer from NGN to XOF"
-    }
+    },
+    "activity": [
+      {
+        "title": "Transfer sent",
+        "meta": "Lagos, 2 min ago",
+        "amount": "-₦250,000"
+      },
+      {
+        "title": "Money received",
+        "meta": "Abidjan, just now",
+        "amount": "+108,340 XOF"
+      },
+      {
+        "title": "Rate locked",
+        "meta": "When you confirm",
+        "amount": "1 NGN = 0.43 XOF"
+      }
+    ]
   },
   "storeBadges": {
     "development": "Now in development",
@@ -116,26 +133,49 @@
     "tag": "Borderless by design",
     "heading": "Built to move money, both ways.",
     "sub": "A financial bridge for Nigeria and Ivory Coast, built around how people actually send and receive.",
-    "image": {
-      "src": "/images/features-hero.webp",
-      "alt": "A Tranox customer smiling and pointing at the Tranox app open on her phone",
-      "width": 1100,
-      "height": 733
-    },
-    "items": [
-      {
+    "cards": {
+      "corridor": {
+        "title": "Both ways, one account",
+        "body": "Send from Nigeria to Ivory Coast, or from Ivory Coast to Nigeria. Your recipient is paid in minutes."
+      },
+      "rates": {
+        "title": "Live rates",
+        "body": "Check today's NGN to XOF rate before you send.",
+        "cta": "See live rates",
+        "pair": "1 NGN in XOF"
+      },
+      "fees": {
         "title": "Low, flat fees",
-        "body": "One fee, one fair rate, shown before you confirm."
+        "body": "One fee, one fair rate, shown before you confirm.",
+        "rows": [
+          {
+            "label": "You send",
+            "value": "₦250,000"
+          },
+          {
+            "label": "Fee",
+            "value": "Shown upfront"
+          },
+          {
+            "label": "They receive",
+            "value": "108,340 XOF"
+          }
+        ]
       },
-      {
+      "payout": {
         "title": "Every payout method",
-        "body": "Bank, mobile wallet, or cash, on both sides of the corridor."
+        "body": "Bank, mobile wallet, or cash, on both sides of the corridor.",
+        "methods": [
+          "Bank account",
+          "Mobile wallet",
+          "Cash"
+        ]
       },
-      {
+      "security": {
         "title": "Unmatched security",
         "body": "Encrypted, monitored, and backed by regulated partners."
       }
-    ]
+    }
   },
   "ratesPage": {
     "metaTitle": "Live NGN to XOF Exchange Rate",

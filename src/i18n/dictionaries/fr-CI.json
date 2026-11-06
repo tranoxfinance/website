@@ -94,7 +94,24 @@
       "width": 900,
       "height": 1606,
       "alt": "L'application Tranox affichant un envoi en francs CFA (XOF)"
-    }
+    },
+    "activity": [
+      {
+        "title": "Transfert envoyé",
+        "meta": "Lagos, il y a 2 min",
+        "amount": "-250 000 ₦"
+      },
+      {
+        "title": "Argent reçu",
+        "meta": "Abidjan, à l'instant",
+        "amount": "+108 340 XOF"
+      },
+      {
+        "title": "Taux bloqué",
+        "meta": "À la confirmation",
+        "amount": "1 NGN = 0,43 XOF"
+      }
+    ]
   },
   "storeBadges": {
     "development": "En cours de développement",
@@ -116,26 +133,49 @@
     "tag": "Sans frontières par conception",
     "heading": "Conçu pour faire circuler l'argent, dans les deux sens.",
     "sub": "Une passerelle financière pour le Nigéria et la Côte d'Ivoire, pensée pour la façon dont les gens envoient et reçoivent réellement de l'argent.",
-    "image": {
-      "src": "/images/features-hero-fr.webp",
-      "alt": "Une cliente Tranox souriante montrant du doigt l'application Tranox ouverte sur son téléphone",
-      "width": 1100,
-      "height": 733
-    },
-    "items": [
-      {
+    "cards": {
+      "corridor": {
+        "title": "Dans les deux sens, un seul compte",
+        "body": "Envoyez du Nigéria vers la Côte d'Ivoire, ou de la Côte d'Ivoire vers le Nigéria. Votre bénéficiaire est payé en quelques minutes."
+      },
+      "rates": {
+        "title": "Taux en direct",
+        "body": "Consultez le taux NGN vers XOF du jour avant d'envoyer.",
+        "cta": "Voir les taux",
+        "pair": "1 NGN en XOF"
+      },
+      "fees": {
         "title": "Des frais fixes et réduits",
-        "body": "Un frais, un taux équitable, affichés avant confirmation."
+        "body": "Un frais, un taux équitable, affichés avant confirmation.",
+        "rows": [
+          {
+            "label": "Vous envoyez",
+            "value": "250 000 ₦"
+          },
+          {
+            "label": "Frais",
+            "value": "Affichés d'avance"
+          },
+          {
+            "label": "Ils reçoivent",
+            "value": "108 340 XOF"
+          }
+        ]
       },
-      {
+      "payout": {
         "title": "Tous les modes de versement",
-        "body": "Banque, portefeuille mobile ou espèces, des deux côtés du corridor."
+        "body": "Banque, portefeuille mobile ou espèces, des deux côtés du corridor.",
+        "methods": [
+          "Compte bancaire",
+          "Portefeuille mobile",
+          "Espèces"
+        ]
       },
-      {
+      "security": {
         "title": "Une sécurité inégalée",
         "body": "Chiffré, surveillé, et soutenu par des partenaires régulés."
       }
-    ]
+    }
   },
   "ratesPage": {
     "metaTitle": "Taux de change NGN vers XOF en direct",
