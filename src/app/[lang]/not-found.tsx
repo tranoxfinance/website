@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
+import { Pill } from "@/components/ui/Pill";
 import { defaultLocale, hasLocale, type Locale } from "@/i18n/config";
 
 const copy: Record<Locale, { heading: string; message: string; cta: string }> = {
@@ -25,26 +26,20 @@ export default function NotFound() {
   const t = copy[locale];
 
   return (
-    <section className="relative flex flex-1 items-center justify-center overflow-hidden py-24">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-soft/70 via-background to-background" />
-        <div className="absolute inset-0 grid-bg mask-fade-y opacity-50" />
-      </div>
+    <section className="flex flex-1 items-center justify-center py-24">
 
       <div className="flex flex-col items-center px-5 text-center">
         <Logo href={`/${locale}`} />
-        <span className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-brand">
-          404
-        </span>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+        <Pill className="mt-10">404</Pill>
+        <h1 className="mt-6 text-4xl font-bold tracking-tight text-ink sm:text-6xl">
           {t.heading}
         </h1>
-        <p className="mt-3 max-w-md text-md leading-relaxed text-ink-soft">
+        <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
           {t.message}
         </p>
         <Link
           href={`/${locale}`}
-          className="mt-8 inline-flex items-center justify-center rounded-xl bg-brand px-6 py-3 text-sm font-bold text-white shadow-soft transition active:translate-y-px"
+          className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-navy px-6 text-md font-semibold text-white transition hover:brightness-125"
         >
           {t.cta}
         </Link>

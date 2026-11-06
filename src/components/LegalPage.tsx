@@ -1,9 +1,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/PageHero";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export type LegalBlock = string | { list: string[] };
 
@@ -35,59 +35,76 @@ function slugify(heading: string) {
 }
 
 export function LegalPage({ lang, dict, page }: LegalPageProps) {
+  const sections = page.sections.map((section) => ({
+    ...section,
+    id: slugify(section.heading),
+  }));
+
   return (
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-16 sm:py-20">
-          <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow={dict.legalPage.tag}
-              title={page.title}
-              as="h1"
-            />
-            <p className="mt-3 text-sm text-muted">
-              {dict.legalPage.lastUpdated.replace("{date}", page.lastUpdated)}
-            </p>
-          </Container>
-        </section>
+        <PageHero
+          tag={dict.legalPage.tag}
+          title={page.title}
+          sub={dict.legalPage.lastUpdated.replace("{date}", page.lastUpdated)}
+        />
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-3xl">
-            <p className="text-lg leading-relaxed text-ink-soft">{page.intro}</p>
+        <section className="pb-20 pt-12 sm:pb-28 sm:pt-16">
+          <Container className="grid max-w-6xl gap-10 lg:grid-cols-[15rem_1fr] lg:gap-16">
+            <aside className="hidden lg:block">
+              <nav
+                aria-label={dict.legalPage.onThisPage}
+                className="sticky top-24 rounded-3xl bg-surface p-6"
+              >
+                <p className="text-xs font-medium uppercase tracking-[0.08em] text-ink-soft">
+                  {dict.legalPage.onThisPage}
+                </p>
+                <ol className="mt-4 space-y-2.5">
+                  {sections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className="block text-sm leading-snug text-ink-soft transition hover:text-ink"
+                      >
+                        {section.heading}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            </aside>
 
-            <div className="mt-12 space-y-10">
-              {page.sections.map((section) => (
-                <div key={section.heading} id={slugify(section.heading)}>
-                  <h2 className="text-xl font-bold tracking-tight text-ink">
-                    {section.heading}
-                  </h2>
-                  <div className="mt-3 space-y-3">
-                    {section.blocks.map((block, index) =>
-                      typeof block === "string" ? (
-                        <p
-                          key={index}
-                          className="text-md leading-relaxed text-ink-soft"
-                        >
-                          {block}
-                        </p>
-                      ) : (
-                        <ul
-                          key={index}
-                          className="space-y-2 pl-1 text-md leading-relaxed text-ink-soft"
-                        >
-                          {block.list.map((item) => (
-                            <li key={item} className="flex gap-3">
-                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      ),
-                    )}
+            <div className="min-w-0 max-w-3xl">
+              <p className="text-xl leading-relaxed text-ink">{page.intro}</p>
+
+              <div className="mt-12 divide-y divide-border">
+                {sections.map((section) => (
+                  <div key={section.id} id={section.id} className="py-10 first:pt-0">
+                    <h2 className="text-2xl font-bold tracking-tight text-ink">
+                      {section.heading}
+                    </h2>
+                    <div className="mt-4 space-y-4">
+                      {section.blocks.map((block, index) =>
+                        typeof block === "string" ? (
+                          <p key={index} className="text-lg leading-relaxed text-ink-soft">
+                            {block}
+                          </p>
+                        ) : (
+                          <ul
+                            key={index}
+                            className="list-disc space-y-2 pl-5 text-lg leading-relaxed text-ink-soft marker:text-brand"
+                          >
+                            {block.list.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        ),
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </Container>
         </section>
