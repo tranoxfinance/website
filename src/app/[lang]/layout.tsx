@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Anton, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SplashScreen } from "@/components/SplashScreen";
@@ -13,6 +13,13 @@ const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const anton = Anton({
+  variable: "--font-anton",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -93,7 +100,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${plexSans.variable} ${plexMono.variable} dark h-full`}
+      className={`${plexSans.variable} ${plexMono.variable} ${anton.variable} dark h-full`}
     >
       <body
         suppressHydrationWarning

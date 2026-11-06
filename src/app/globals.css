@@ -37,6 +37,7 @@
 
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
 
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
@@ -49,6 +50,7 @@
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-marquee-rev: marquee-rev 40s linear infinite;
+  --animate-marquee-fast: marquee 26s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-blob: blob 18s ease-in-out infinite;
