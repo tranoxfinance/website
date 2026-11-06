@@ -6,7 +6,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
-import { PageCta } from "@/components/PageCta";
 import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getArticleBySlug } from "@/lib/articles";
@@ -131,7 +130,6 @@ export default async function ArticlePage({
           </Container>
         </article>
 
-        <PageCta lang={lang} dict={dict.pageCta} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>

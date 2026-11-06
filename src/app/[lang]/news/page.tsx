@@ -10,7 +10,6 @@ import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedArticles } from "@/lib/articles";
 import { PageHero } from "@/components/PageHero";
-import { PageCta } from "@/components/PageCta";
 import { Pill } from "@/components/ui/Pill";
 
 const PAGE_SIZE = 9;
@@ -155,7 +154,6 @@ export default async function NewsPage({
           </Container>
         </section>
 
-        <PageCta lang={lang} dict={dict.pageCta} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>
