@@ -62,7 +62,7 @@ export default async function NewsPage({
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <PageHero tag={t.tag} title={t.heading} sub={t.sub} />
+        <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo} />
 
         <section className="pb-16 pt-12 sm:pb-24 sm:pt-16">
           <Container>

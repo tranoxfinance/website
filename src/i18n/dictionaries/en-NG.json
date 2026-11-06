@@ -847,7 +847,13 @@
     "pagerPrevious": "Previous",
     "pagerNext": "Next",
     "pagerPage": "Page {page} of {pageCount}",
-    "latest": "Latest"
+    "latest": "Latest",
+    "photo": {
+      "src": "/images/people-news.webp",
+      "width": 1200,
+      "height": 1490,
+      "alt": "A woman smiling at her phone beside a newspaper stand on a Lagos street in the morning"
+    }
   },
   "factBand": [
     "Wave · Orange · MTN · Moov",
