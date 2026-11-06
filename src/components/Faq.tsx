@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 
 interface FaqItem {
   q: string;
@@ -28,11 +28,7 @@ export function Faq({
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="lg:col-span-2">
             <div className="lg:sticky lg:top-28">
-              <SectionHeading
-                eyebrow={dict.tag}
-                title={dict.heading}
-                description={dict.sub}
-              />
+              <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} />
 
               <div className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-soft">
                 <p className="text-sm font-bold text-ink">{dict.stillTitle}</p>

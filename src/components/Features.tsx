@@ -1,66 +1,50 @@
 import Image from "next/image";
-import { Wallet, Layers, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const ICONS = [Wallet, Layers, ShieldCheck];
+const STAGGER_MS = 80;
 
 export function Features({ dict }: { dict: Dictionary["features"] }) {
   return (
-    <section id="features" className="relative py-16 sm:py-20">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <section id="features" className="py-20 sm:py-28">
+      <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <Reveal className="relative order-last flex items-end justify-center overflow-hidden rounded-[2rem] bg-brand pt-8 lg:order-first">
+          <Image
+            src={dict.image.src}
+            alt={dict.image.alt}
+            width={dict.image.width}
+            height={dict.image.height}
+            sizes="(min-width: 1024px) 560px, 100vw"
+            className="h-auto w-[112%] max-w-none"
+          />
+        </Reveal>
+
+        <div>
           <Reveal>
-            <div>
-              <SectionHeading
-                eyebrow={dict.tag}
-                title={dict.heading}
-                description={dict.sub}
-              />
-
-              <div className="mt-10 space-y-7">
-                {dict.items.map((feature, index) => {
-                  const Icon = ICONS[index];
-                  return (
-                    <div key={feature.title} className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                        <Icon className="h-5 w-5" strokeWidth={1.75} />
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-bold text-ink">
-                          {feature.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                          {feature.body}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} />
           </Reveal>
-
-          <Reveal delay={120}>
-            <div className="flex justify-center lg:justify-end">
-              <Image
-                src={dict.image.src}
-                alt={dict.image.alt}
-                width={dict.image.width}
-                height={dict.image.height}
-                sizes="(min-width: 512px) 512px, 100vw"
-                className="h-auto w-full max-w-lg drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)]"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                  maskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                }}
-              />
-            </div>
-          </Reveal>
+          <ol className="mt-10 border-t border-ink">
+            {dict.items.map((feature, index) => (
+              <Reveal
+                as="li"
+                key={feature.title}
+                delay={index * STAGGER_MS}
+                className="grid grid-cols-[4.5rem_1fr] items-baseline gap-x-4 border-b border-border-strong py-6 sm:grid-cols-[6rem_1fr]"
+              >
+                <span className="font-display text-5xl leading-none text-brand sm:text-6xl">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-1.5 leading-relaxed text-ink-soft">{feature.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </Container>
     </section>

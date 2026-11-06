@@ -1,63 +1,75 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { Stamp } from "@/components/ui/Stamp";
 import { StoreBadges } from "@/components/StoreBadges";
-import { TypewriterHeadline } from "@/components/TypewriterHeadline";
+import { LiveRateCard } from "@/components/LiveRateCard";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 interface HeroProps {
+  lang: Locale;
   dict: Dictionary["hero"];
   badges: Dictionary["storeBadges"];
+  rate: string | null;
+  rateLabel: string;
 }
 
-export function Hero({ dict, badges }: HeroProps) {
+export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
   return (
-    <section className="relative -mt-16 overflow-hidden">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-soft/70 via-background to-background" />
-        <div className="absolute inset-0 grid-bg mask-fade-y opacity-50" />
-        <div className="absolute -right-20 top-0 hidden h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,var(--color-brand)_0%,transparent_60%)] opacity-[0.12] blur-2xl sm:block" />
-        <div className="absolute -left-32 top-40 hidden h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,var(--color-gold)_0%,transparent_60%)] opacity-[0.10] blur-2xl sm:block" />
-      </div>
-
-      <Container className="grid items-center gap-12 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pb-24 lg:pt-36">
-        <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both] max-lg:text-center">
-          <TypewriterHeadline
-            segments={dict.headlineSegments}
-            className="text-[2.7rem] font-bold leading-[1.03] tracking-tight text-ink sm:text-[3.4rem]"
-          />
-
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft max-lg:mx-auto">
+    <section className="relative isolate -mt-16 overflow-hidden bg-navy">
+      <Container className="grid items-center gap-16 pb-28 pt-32 sm:pb-32 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8 lg:pt-40">
+        <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both]">
+          <Stamp>{dict.tagline}</Stamp>
+          <h1 className="mt-6 font-display text-[3.4rem] uppercase leading-[1.04] text-white sm:text-7xl lg:text-8xl">
+            {dict.headlineSegments.map((segment) =>
+              "style" in segment && segment.style ? (
+                <span
+                  key={segment.text}
+                  className="inline-block -rotate-2 bg-green px-2 text-navy sm:px-3"
+                >
+                  {segment.text}
+                </span>
+              ) : (
+                <span key={segment.text}>{segment.text}</span>
+              ),
+            )}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
             {dict.subtitle}
           </p>
-
-          <div className="mt-8">
-            <StoreBadges dict={badges} className="max-lg:justify-center" />
-          </div>
-
-          <p className="mt-6 text-sm font-medium text-ink-soft max-lg:text-center">
-            {dict.tagline}
-          </p>
+          <StoreBadges dict={badges} invert className="mt-8" />
         </div>
 
-        <div className="animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] -mt-6 flex justify-center [animation-delay:120ms] sm:-mt-10 lg:justify-end">
-          <Image
-            src={dict.image.src}
-            alt={dict.image.alt}
-            width={dict.image.width}
-            height={dict.image.height}
-            sizes="(min-width: 640px) 384px, 304px"
-            priority
-            className="h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:hidden"
-          />
-          <Image
-            src={dict.image.darkSrc}
-            alt={dict.image.alt}
-            width={dict.image.width}
-            height={dict.image.height}
-            sizes="(min-width: 640px) 384px, 304px"
-            priority
-            className="hidden h-auto w-full max-w-[19rem] animate-float-slow drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)] sm:max-w-sm dark:block"
-          />
+        <div className="relative mx-auto w-full max-w-sm animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:120ms] lg:mr-0">
+          <div className="animate-float-slow">
+            <Image
+              src={dict.image.src}
+              alt={dict.image.alt}
+              width={dict.image.width}
+              height={dict.image.height}
+              sizes="(min-width: 640px) 384px, 90vw"
+              priority
+              className="h-auto w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.45)] dark:hidden"
+            />
+            <Image
+              src={dict.image.darkSrc}
+              alt={dict.image.alt}
+              width={dict.image.width}
+              height={dict.image.height}
+              sizes="(min-width: 640px) 384px, 90vw"
+              priority
+              className="hidden h-auto w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.45)] dark:block"
+            />
+          </div>
+          {rate ? (
+            <LiveRateCard
+              label={rateLabel}
+              rate={rate}
+              locale={lang}
+              size="md"
+              className="absolute -bottom-14 -left-2 sm:-left-28"
+            />
+          ) : null}
         </div>
       </Container>
     </section>

@@ -1,44 +1,41 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+
+const STAGGER_MS = 80;
 
 export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <Container>
         <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <SectionHeading
-              eyebrow={dict.tag}
-              title={dict.heading}
-              description={dict.sub}
-            />
-          </div>
+          <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} />
         </Reveal>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {dict.items.map((persona, index) => (
-            <Reveal key={persona.title} delay={index * 80}>
-              <div className="flex flex-col items-start">
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl">
-                  <Image
-                    src={persona.image.src}
-                    alt={persona.image.alt}
-                    width={400}
-                    height={300}
-                    sizes="(min-width: 1024px) 240px, (min-width: 640px) 300px, 90vw"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-ink">
-                  {persona.title}
-                </h3>
-                <p className="mt-2 text-md leading-relaxed text-ink-soft">
-                  {persona.body}
-                </p>
-              </div>
+            <Reveal
+              key={persona.title}
+              delay={index * STAGGER_MS}
+              className="group relative isolate flex min-h-[30rem] flex-col justify-end overflow-hidden rounded-3xl bg-navy p-6"
+            >
+              <Image
+                src={persona.image.src}
+                alt={persona.image.alt}
+                fill
+                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                className="-z-20 object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/50 via-50% to-transparent"
+              />
+              <h3 className="font-display text-3xl uppercase leading-[1.05] text-white">
+                {persona.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/85">{persona.body}</p>
             </Reveal>
           ))}
         </div>
