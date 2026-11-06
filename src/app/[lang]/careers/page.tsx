@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Briefcase, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +9,8 @@ import { Pager } from "@/components/Pager";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getOpenJobs } from "@/lib/careers";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 
 const PAGE_SIZE = 9;
 
@@ -50,50 +51,54 @@ export default async function CareersPage({
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-16 sm:py-20">
-          <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow={t.tag}
-              title={t.heading}
-              as="h1"
-              description={t.sub}
-            />
-          </Container>
-        </section>
+        <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
+          <p className="mt-10 flex items-baseline gap-3">
+            <span className="tabular text-7xl font-bold leading-none tracking-[-0.04em] sm:text-8xl">
+              {total}
+            </span>
+            <span className="text-lg font-semibold text-white/80">{t.openRolesCount}</span>
+          </p>
+        </PageHero>
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-3xl">
+        <section className="py-16 sm:py-24">
+          <Container>
+            <Reveal className="flex flex-wrap items-end justify-between gap-4">
+              <h2 className="text-4xl font-bold tracking-[-0.03em] text-ink sm:text-6xl">
+                {t.openRoles}
+              </h2>
+            </Reveal>
             {jobs.length === 0 ? (
-              <p className="rounded-3xl border border-border bg-card p-9 text-center text-ink-soft">
+              <p className="mt-10 rounded-3xl bg-surface p-10 text-center text-lg text-ink-soft">
                 {t.empty}
               </p>
             ) : (
-              <ul className="flex flex-col gap-4">
+              <ul className="mt-10 border-t border-ink">
                 {jobs.map((job) => (
-                  <li key={job.id}>
+                  <li key={job.id} className="border-b border-border-strong">
                     <Link
                       href={`/${lang}/careers/${job.slug}`}
-                      className="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition hover:border-brand sm:flex-row sm:items-center sm:justify-between"
+                      className="group -mx-4 flex items-center justify-between gap-6 rounded-3xl px-4 py-8 transition-colors duration-300 hover:bg-navy sm:-mx-8 sm:px-8"
                     >
-                      <div>
-                        <h2 className="text-lg font-bold text-ink group-hover:text-brand">
+                      <div className="min-w-0">
+                        <h3 className="text-2xl font-bold tracking-tight text-ink transition-colors group-hover:text-white sm:text-4xl">
                           {job.title}
-                        </h2>
-                        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
-                          <span className="flex items-center gap-1.5">
-                            <Briefcase className="h-4 w-4" />
-                            {job.department} ·{" "}
-                            {t.employmentTypes[job.employmentType]}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <MapPin className="h-4 w-4" />
-                            {job.location}
-                          </span>
-                        </div>
+                        </h3>
+                        <ul className="mt-4 flex flex-wrap gap-2">
+                          {[job.department, t.employmentTypes[job.employmentType], job.location].map((meta) => (
+                            <li
+                              key={meta}
+                              className="rounded-full border border-border-strong px-3 py-1 text-sm font-medium text-ink-soft transition-colors group-hover:border-white/30 group-hover:text-white/85"
+                            >
+                              {meta}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <span className="flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand">
-                        {t.viewRole}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      <span
+                        aria-label={t.viewRole}
+                        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-transform duration-300 group-hover:rotate-45 sm:h-16 sm:w-16"
+                      >
+                        <ArrowUpRight className="h-6 w-6" strokeWidth={2.25} />
                       </span>
                     </Link>
                   </li>
@@ -108,6 +113,27 @@ export default async function CareersPage({
               labelNext={t.pagerNext}
               labelPageTemplate={t.pagerPage}
             />
+          </Container>
+        </section>
+
+        <section className="pb-16 sm:pb-24">
+          <Container>
+            <Reveal className="grid gap-8 rounded-[2rem] bg-brand p-8 text-white sm:p-12 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:p-16">
+              <div>
+                <h2 className="text-5xl font-bold leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+                  {t.openApplication.heading}
+                </h2>
+                <p className="mt-6 max-w-lg text-xl font-bold leading-relaxed">
+                  {t.openApplication.body}
+                </p>
+              </div>
+              <a
+                href={`mailto:${t.openApplication.email}`}
+                className="inline-flex h-14 items-center justify-center rounded-full bg-card px-7 text-lg font-bold text-ink transition hover:bg-surface lg:justify-self-end"
+              >
+                {t.openApplication.email}
+              </a>
+            </Reveal>
           </Container>
         </section>
       </main>
