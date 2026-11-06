@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { AboutUs } from "@/components/AboutUs";
 import { PageHero } from "@/components/PageHero";
+import { FactBand } from "@/components/FactBand";
 import { PageCta } from "@/components/PageCta";
 import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
@@ -42,6 +43,7 @@ export default async function AboutPage({
           sub={dict.about.p1}
           photo={dict.about.photo}
         />
+        <FactBand items={dict.factBand} label={dict.about.tag} />
         <AboutUs dict={dict.about} />
         <PageCta lang={lang} dict={dict.pageCta} />
       </main>

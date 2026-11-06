@@ -17,7 +17,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             {dict.facts.map((fact, index) => (
               <Reveal key={fact.label} delay={index * STAGGER_MS} className="pr-6">
                 <dt className="sr-only">{fact.label}</dt>
-                <dd className="tabular text-6xl font-bold leading-none tracking-[-0.04em] text-brand sm:text-7xl lg:text-8xl">
+                <dd className="font-display text-7xl leading-none text-brand sm:text-8xl lg:text-9xl">
                   {fact.value}
                 </dd>
                 <dd className="mt-4 max-w-[13rem] text-md leading-snug text-ink-soft">
@@ -35,7 +35,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             <div>
               <Pill>{dict.storyTag}</Pill>
             </div>
-            <p className="max-w-5xl text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-ink sm:text-5xl">
+            <p className="max-w-5xl text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-ink sm:text-5xl lg:text-6xl">
               {dict.p2}
             </p>
           </Reveal>
@@ -55,7 +55,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
                 delay={index * STAGGER_MS}
                 className="flex flex-col gap-16 rounded-3xl bg-surface p-8 sm:gap-24 sm:p-10"
               >
-                <span className="tabular text-7xl font-bold leading-none tracking-[-0.04em] text-brand sm:text-8xl">
+                <span className="font-display text-8xl leading-none text-brand sm:text-9xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -74,7 +74,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
         <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <Pill>{registry.tag}</Pill>
-            <h2 className="mt-6 text-5xl font-bold leading-[0.98] tracking-[-0.035em] text-ink sm:text-6xl">
+            <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] text-ink sm:text-7xl">
               {registry.heading}
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft">{registry.sub}</p>

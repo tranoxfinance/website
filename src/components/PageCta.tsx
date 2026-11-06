@@ -29,7 +29,7 @@ export function PageCta({ lang, dict }: PageCtaProps) {
             className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-30% via-navy/70 to-transparent lg:bg-gradient-to-r lg:from-navy lg:from-38% lg:via-navy/40 lg:via-48% lg:to-transparent lg:to-60%"
           />
           <div className="flex min-h-[30rem] flex-col justify-end p-8 text-white sm:p-12 lg:min-h-[36rem] lg:max-w-2xl lg:p-16">
-            <h2 className="text-5xl font-bold leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            <h2 className="font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
               {dict.heading}
             </h2>
             <p className="mt-6 max-w-md text-lg font-semibold leading-relaxed text-white/90">

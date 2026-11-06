@@ -60,7 +60,7 @@ export default async function JobPage({
     <>
       <Navbar lang={lang} dict={dict.nav} />
       <main className="flex-1">
-        <Container className="pt-6">
+        <Container className="py-4">
           <Link
             href={`/${lang}/careers`}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft transition hover:text-ink"

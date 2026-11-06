@@ -16,6 +16,7 @@ import {
 } from "@/lib/fx-rates";
 import { cn } from "@/lib/utils";
 import { PageHero } from "@/components/PageHero";
+import { FactBand } from "@/components/FactBand";
 import { Reveal } from "@/components/Reveal";
 import { PageCta } from "@/components/PageCta";
 
@@ -90,7 +91,7 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
           {history.changePercent ?? "0.00"}%
         </div>
       </div>
-      <p className="tabular mt-4 text-5xl font-bold tracking-[-0.04em] text-ink sm:text-7xl">
+      <p className="tabular mt-4 font-display text-6xl leading-none text-ink sm:text-8xl">
         {numberFormat.format(Number(history.current) * scale)}
       </p>
 
@@ -136,21 +137,22 @@ export default async function RatesPage({
       <main className="flex-1">
         <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
           {ngnToXof ? (
-            <div className="mt-10 rounded-3xl bg-white/10 p-6 sm:p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white/70">
+            <div className="mt-8 inline-block rotate-1 bg-card p-6 text-ink shadow-lift sm:p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.08em] text-ink-soft">
                 {t.liveLabel}
               </p>
-              <p className="tabular mt-2 text-4xl font-bold tracking-[-0.03em] sm:text-5xl">
+              <p className="tabular mt-2 font-display text-5xl leading-none text-navy sm:text-6xl">
                 1 NGN = {liveFormat.format(Number(ngnToXof.current))} XOF
               </p>
             </div>
           ) : null}
         </PageHero>
+        <FactBand items={dict.factBand} label={t.tag} />
 
         <section className="py-16 sm:py-24">
           <Container>
             <div className="flex flex-wrap items-end justify-between gap-6">
-              <h2 className="text-4xl font-bold tracking-[-0.03em] text-ink sm:text-6xl">
+              <h2 className="font-display text-5xl uppercase leading-none text-ink sm:text-7xl">
                 {t.tag}
               </h2>
               <nav
@@ -209,7 +211,7 @@ export default async function RatesPage({
                   delay={index * FACT_STAGGER_MS}
                   className="flex flex-col gap-16 rounded-3xl bg-surface p-8 sm:gap-24 sm:p-10"
                 >
-                  <span className="tabular text-7xl font-bold leading-none tracking-[-0.04em] text-brand sm:text-8xl">
+                  <span className="font-display text-8xl leading-none text-brand sm:text-9xl">
                     {fact.value}
                   </span>
                   <div>

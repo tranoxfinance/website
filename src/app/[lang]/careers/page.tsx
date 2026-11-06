@@ -10,6 +10,7 @@ import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getOpenJobs } from "@/lib/careers";
 import { PageHero } from "@/components/PageHero";
+import { FactBand } from "@/components/FactBand";
 import { Reveal } from "@/components/Reveal";
 
 const PAGE_SIZE = 9;
@@ -53,17 +54,18 @@ export default async function CareersPage({
       <main className="flex-1">
         <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
           <p className="mt-10 flex items-baseline gap-3">
-            <span className="tabular text-7xl font-bold leading-none tracking-[-0.04em] sm:text-8xl">
+            <span className="font-display text-8xl leading-none text-green sm:text-9xl">
               {total}
             </span>
-            <span className="text-lg font-semibold text-white/80">{t.openRolesCount}</span>
+            <span className="bg-navy px-2 py-1 font-display text-2xl uppercase text-white sm:text-3xl">{t.openRolesCount}</span>
           </p>
         </PageHero>
+        <FactBand items={dict.factBand} label={t.tag} />
 
         <section className="py-16 sm:py-24">
           <Container>
             <Reveal className="flex flex-wrap items-end justify-between gap-4">
-              <h2 className="text-4xl font-bold tracking-[-0.03em] text-ink sm:text-6xl">
+              <h2 className="font-display text-5xl uppercase leading-none text-ink sm:text-7xl">
                 {t.openRoles}
               </h2>
             </Reveal>
@@ -120,7 +122,7 @@ export default async function CareersPage({
           <Container>
             <Reveal className="grid gap-8 rounded-[2rem] bg-brand p-8 text-white sm:p-12 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:p-16">
               <div>
-                <h2 className="text-5xl font-bold leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+                <h2 className="font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
                   {t.openApplication.heading}
                 </h2>
                 <p className="mt-6 max-w-lg text-xl font-bold leading-relaxed">
