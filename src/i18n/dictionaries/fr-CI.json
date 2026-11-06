@@ -83,10 +83,10 @@
         "style": "gradient"
       },
       {
-        "text": " au moment où ça compte."
+        "text": " au moment où ça compte"
       }
     ],
-    "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire. Rapide. Sûr. Mondial.",
+    "subtitle": "Tranox transfère de l'argent dans les deux sens entre le Nigéria (NGN) et la Côte d'Ivoire (XOF) en quelques minutes. Taux transparents, frais réduits, sécurité de niveau bancaire.",
     "tagline": "Des paiements transfrontaliers conçus pour l'Afrique de l'Ouest",
     "image": {
       "src": "/images/hero-app-preview-fr.webp",
@@ -113,8 +113,7 @@
     }
   },
   "features": {
-    "tag": "Sans frontières par conception",
-    "heading": "Conçu pour faire circuler l'argent, dans les deux sens.",
+    "heading": "Conçu pour faire circuler l'argent, dans les deux sens",
     "sub": "Une passerelle financière pour le Nigéria et la Côte d'Ivoire, pensée pour la façon dont les gens envoient et reçoivent réellement de l'argent.",
     "image": {
       "src": "/images/features-hero-fr.webp",
@@ -187,7 +186,6 @@
     "liveLabel": "En ce moment"
   },
   "whoFor": {
-    "tag": "Pour qui",
     "heading": "Conçu pour celles et ceux qui font circuler l'argent sur ce corridor",
     "sub": "Quelle que soit la raison qui vous amène sur le corridor NGN–XOF, Tranox est conçu pour que votre argent arrive vite.",
     "items": [
@@ -254,8 +252,6 @@
         "body": "Derrière chaque transfert, il y a une famille, une entreprise, un projet. Nous construisons pour celles et ceux qui comptent sur un argent qui arrive à temps."
       }
     ],
-    "storyTag": "Notre histoire",
-    "valuesTag": "Nos engagements",
     "photo": {
       "src": "/images/people-market.webp",
       "width": 1200,
@@ -281,8 +277,7 @@
       }
     ],
     "registry": {
-      "tag": "Confiance",
-      "heading": "Une vraie société, avec de vrais documents.",
+      "heading": "Une vraie société, avec de vrais documents",
       "cardTitle": "Immatriculation de la société",
       "rows": [
         {
@@ -316,7 +311,6 @@
     }
   },
   "showcase": {
-    "tag": "Corridor en direct",
     "heading": "Chaque transfert, suivi en temps réel",
     "sub": "Regardez l'argent circuler entre le Nigéria et la Côte d'Ivoire en direct, puis envoyez, suivez et gérez tout depuis une application claire, conçue pour le corridor.",
     "points": [
@@ -339,9 +333,7 @@
     "ivoryCoast": "Côte d'Ivoire"
   },
   "why": {
-    "tag": "Pourquoi nous",
     "heading": "Pourquoi les expéditeurs font confiance à Tranox",
-    "sub": "Nous construisons Tranox pour faire circuler l'argent entre le Nigéria et la Côte d'Ivoire rapidement, en toute transparence et en toute sécurité, à chaque envoi.",
     "items": [
       {
         "title": "Instantané, dans les deux sens",
@@ -362,8 +354,7 @@
     ]
   },
   "how": {
-    "tag": "Comment ça marche",
-    "heading": "Envoyez à travers les frontières en trois étapes simples.",
+    "heading": "Envoyez à travers les frontières en trois étapes simples",
     "steps": [
       {
         "title": "Créez votre compte",
@@ -398,7 +389,6 @@
     ]
   },
   "faq": {
-    "tag": "FAQ",
     "heading": "Vos questions, nos réponses",
     "sub": "Tout ce que vous devez savoir avant votre premier transfert.",
     "stillTitle": "Encore des questions ?",
@@ -432,8 +422,7 @@
     ]
   },
   "cta": {
-    "tag": "Bientôt disponible",
-    "heading": "Envoyez de l'argent en quelques minutes.",
+    "heading": "Envoyez de l'argent en quelques minutes",
     "body": "Tranox est en cours de développement. Téléchargez l'appli sur iOS et Android dès son lancement.",
     "photo": {
       "src": "/images/people-family.webp",
@@ -443,7 +432,7 @@
     }
   },
   "pageCta": {
-    "heading": "Votre argent, chez vous en quelques minutes.",
+    "heading": "Votre argent, chez vous en quelques minutes",
     "sub": "Tranox est en cours de développement. Téléchargez l'appli sur iOS et Android dès son lancement.",
     "button": "Obtenir l'appli",
     "photo": {
@@ -805,7 +794,7 @@
     "metaDescription": "Rejoignez l'équipe qui construit des transferts d'argent rapides et justes entre le Nigeria et la Côte d'Ivoire. Découvrez nos postes ouverts et postulez en ligne.",
     "tag": "Carrières",
     "heading": "Construisez l'avenir des transferts transfrontaliers avec nous",
-    "sub": "Nous sommes une petite équipe avec une grande mission : des transferts rapides et justes entre le Nigeria et la Côte d'Ivoire. Trouvez votre poste ci-dessous.",
+    "sub": "Nous sommes une petite équipe avec une grande mission : des transferts rapides et justes entre le Nigeria et la Côte d'Ivoire.",
     "empty": "Aucun poste ouvert pour le moment. Revenez bientôt ou suivez-nous sur les réseaux sociaux.",
     "viewRole": "Voir le poste",
     "employmentTypes": {
@@ -848,7 +837,6 @@
     "type": "Type",
     "location": "Lieu",
     "openApplication": {
-      "tag": "Candidature spontanée",
       "heading": "Vous ne trouvez pas votre poste ?",
       "body": "Envoyez-nous votre CV et dites-nous comment vous aideriez Tranox à grandir.",
       "button": "Envoyer mon CV",
@@ -895,7 +883,6 @@
     "pagerPrevious": "Précédent",
     "pagerNext": "Suivant",
     "pagerPage": "Page {page} sur {pageCount}",
-    "latest": "À la une",
     "photo": {
       "src": "/images/people-news.webp",
       "width": 1200,

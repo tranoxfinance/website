@@ -83,10 +83,10 @@
         "style": "gradient"
       },
       {
-        "text": " the moment it matters."
+        "text": " the moment it matters"
       }
     ],
-    "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security. Fast. Secure. Global.",
+    "subtitle": "Tranox moves money both ways between Nigeria (NGN) and Ivory Coast (XOF) in minutes. Transparent rates, low fees, bank-grade security.",
     "tagline": "Cross-border payments built for West Africa",
     "image": {
       "src": "/images/hero-app-preview.webp",
@@ -113,8 +113,7 @@
     }
   },
   "features": {
-    "tag": "Borderless by design",
-    "heading": "Built to move money, both ways.",
+    "heading": "Built to move money, both ways",
     "sub": "A financial bridge for Nigeria and Ivory Coast, built around how people actually send and receive.",
     "image": {
       "src": "/images/features-hero.webp",
@@ -187,7 +186,6 @@
     "liveLabel": "Right now"
   },
   "whoFor": {
-    "tag": "Who it's for",
     "heading": "Built for the people who move money across this corridor",
     "sub": "Whatever's bringing you to the NGN–XOF corridor, Tranox is built to get it there fast.",
     "items": [
@@ -254,8 +252,6 @@
         "body": "Behind every transfer is a family, a business, a plan. We build for the people who depend on money arriving on time."
       }
     ],
-    "storyTag": "Our story",
-    "valuesTag": "What we stand for",
     "photo": {
       "src": "/images/people-market.webp",
       "width": 1200,
@@ -281,8 +277,7 @@
       }
     ],
     "registry": {
-      "tag": "Trust",
-      "heading": "A real company, with real paperwork.",
+      "heading": "A real company, with real paperwork",
       "cardTitle": "Company registration",
       "rows": [
         {
@@ -316,7 +311,6 @@
     }
   },
   "showcase": {
-    "tag": "Live corridor",
     "heading": "Every transfer, tracked in real time",
     "sub": "Watch money move between Nigeria and Ivory Coast as it happens, then send, track, and manage it all from one clean app built for the corridor.",
     "points": [
@@ -339,9 +333,7 @@
     "ivoryCoast": "Ivory Coast"
   },
   "why": {
-    "tag": "Why us",
     "heading": "Why senders trust Tranox",
-    "sub": "We're building Tranox to move money between Nigeria and Ivory Coast quickly, transparently, and safely, every time you send.",
     "items": [
       {
         "title": "Instant, either direction",
@@ -362,8 +354,7 @@
     ]
   },
   "how": {
-    "tag": "How it works",
-    "heading": "Send across borders in three simple steps.",
+    "heading": "Send across borders in three simple steps",
     "steps": [
       {
         "title": "Create your account",
@@ -398,7 +389,6 @@
     ]
   },
   "faq": {
-    "tag": "FAQ",
     "heading": "Questions, answered",
     "sub": "Everything you need to know before your first transfer.",
     "stillTitle": "Still have questions?",
@@ -432,8 +422,7 @@
     ]
   },
   "cta": {
-    "tag": "Coming soon",
-    "heading": "Send money home in minutes.",
+    "heading": "Send money home in minutes",
     "body": "Tranox is in development. Get it on iOS and Android as soon as it launches.",
     "photo": {
       "src": "/images/people-family.webp",
@@ -443,7 +432,7 @@
     }
   },
   "pageCta": {
-    "heading": "Your money, home in minutes.",
+    "heading": "Your money, home in minutes",
     "sub": "Tranox is in development. Get the app on iOS and Android as soon as it launches.",
     "button": "Get the app",
     "photo": {
@@ -805,7 +794,7 @@
     "metaDescription": "Join the team building fast, fair money transfers between Nigeria and Ivory Coast. See open roles and apply online.",
     "tag": "Careers",
     "heading": "Build the future of cross-border money with us",
-    "sub": "We are a small team with a big mission: fast, fair transfers between Nigeria and Ivory Coast. Find your role below.",
+    "sub": "We are a small team with a big mission: fast, fair transfers between Nigeria and Ivory Coast.",
     "empty": "There are no open roles right now. Check back soon or follow us on social media for updates.",
     "viewRole": "View role",
     "employmentTypes": {
@@ -848,7 +837,6 @@
     "type": "Type",
     "location": "Location",
     "openApplication": {
-      "tag": "Open application",
       "heading": "Don't see your role?",
       "body": "Send us your CV and tell us how you would help Tranox grow.",
       "button": "Send your CV",
@@ -895,7 +883,6 @@
     "pagerPrevious": "Previous",
     "pagerNext": "Next",
     "pagerPage": "Page {page} of {pageCount}",
-    "latest": "Latest",
     "photo": {
       "src": "/images/people-news.webp",
       "width": 1200,
