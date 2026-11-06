@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Stamp } from "@/components/ui/Stamp";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { BigNumber } from "@/components/ui/BigNumber";
+import { ArrowLink } from "@/components/ui/ArrowButton";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Clock, Mail, MapPin, Users } from "lucide-react";
@@ -56,20 +58,20 @@ export default async function CareersPage({
       <main className="flex-1">
         <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
           <p className="mt-10 flex items-baseline gap-3">
-            <span className="font-display text-8xl leading-none text-green sm:text-9xl">
+            <BigNumber size="xl" tone="green">
               {total}
+            </BigNumber>
+            <span className="bg-navy px-2 py-1 font-display text-2xl uppercase text-white sm:text-3xl">
+              {t.openRolesCount}
             </span>
-            <span className="bg-navy px-2 py-1 font-display text-2xl uppercase text-white sm:text-3xl">{t.openRolesCount}</span>
           </p>
         </PageHero>
         <FactBand items={dict.factBand} label={t.tag} />
 
         <section className="py-16 sm:py-24">
           <Container>
-            <Reveal className="flex flex-wrap items-end justify-between gap-4">
-              <h2 className="font-display text-5xl uppercase leading-none text-ink sm:text-7xl">
-                {t.openRoles}
-              </h2>
+            <Reveal>
+              <DisplayHeading title={t.openRoles} />
             </Reveal>
             {jobs.length === 0 ? (
               <p className="mt-10 rounded-3xl bg-surface p-10 text-center text-lg text-ink-soft">
@@ -79,7 +81,7 @@ export default async function CareersPage({
               <div className="mt-10">
                 <div
                   aria-hidden
-                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 border-b border-ink pb-3 text-xs font-bold uppercase tracking-[0.1em] text-ink-soft lg:grid"
+                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 border-b border-ink pb-3 text-xs font-bold uppercase tracking-label text-ink-soft lg:grid"
                 >
                   <span>{t.columnRole}</span>
                   <span>{t.department}</span>
@@ -149,29 +151,24 @@ export default async function CareersPage({
 
         <section className="pb-16 sm:pb-24">
           <Container>
-            <Reveal className="grid gap-10 overflow-hidden rounded-[2rem] bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
-              <div>
-                <Stamp>{t.openApplication.tag}</Stamp>
-                <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
-                  {t.openApplication.heading}
-                </h2>
-                <p className="mt-6 max-w-md text-lg leading-relaxed text-white/85 sm:text-xl">
-                  {t.openApplication.body}
-                </p>
-              </div>
+            <Reveal className="grid gap-10 overflow-hidden rounded-panel bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
+              <DisplayHeading
+                tag={t.openApplication.tag}
+                title={t.openApplication.heading}
+                sub={t.openApplication.body}
+                size="xl"
+                invert
+              />
               <div className="flex flex-col gap-4 lg:items-end">
-                <a
+                <ArrowLink
                   href={`mailto:${t.openApplication.email}?subject=${encodeURIComponent(t.openApplication.subject)}`}
-                  className="group inline-flex h-16 w-full items-center justify-between gap-4 whitespace-nowrap rounded-full bg-green pl-6 pr-2 text-lg font-bold text-navy transition hover:brightness-105 sm:w-80 sm:pl-7"
+                  leading={Mail}
+                  icon={ArrowUpRight}
+                  motion="turn"
+                  className="w-full sm:w-80"
                 >
-                  <span className="flex items-center gap-3">
-                    <Mail className="h-5 w-5" strokeWidth={2.25} />
-                    {t.openApplication.button}
-                  </span>
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white transition-transform duration-300 group-hover:rotate-45">
-                    <ArrowUpRight className="h-5 w-5" strokeWidth={2.25} />
-                  </span>
-                </a>
+                  {t.openApplication.button}
+                </ArrowLink>
                 <p className="w-full text-center text-sm text-white/70 sm:w-80">
                   {t.openApplication.email}
                 </p>

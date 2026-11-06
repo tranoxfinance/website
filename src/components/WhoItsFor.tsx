@@ -1,10 +1,9 @@
 import Image from "next/image";
+import { STAGGER_MS } from "@/lib/motion";
 import { Container } from "@/components/ui/Container";
 import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const STAGGER_MS = 80;
 
 export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
   return (
@@ -32,9 +31,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
                 aria-hidden
                 className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/50 via-50% to-transparent"
               />
-              <h3 className="font-display text-3xl uppercase leading-[1.05] text-white">
-                {persona.title}
-              </h3>
+              <DisplayHeading as="h3" title={persona.title} size="sm" invert />
               <p className="mt-3 text-sm leading-relaxed text-white/85">{persona.body}</p>
             </Reveal>
           ))}

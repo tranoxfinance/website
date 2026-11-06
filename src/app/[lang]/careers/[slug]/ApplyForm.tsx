@@ -1,7 +1,10 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { ArrowRight, CheckCircle2, FileText, UploadCloud } from "lucide-react";
+import { CheckCircle2, FileText, UploadCloud } from "lucide-react";
+import { ArrowSubmit } from "@/components/ui/ArrowButton";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { NumberBadge } from "@/components/ui/BigNumber";
 import { Field, Input, Textarea } from "@/components/ui/Field";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { submitApplication, type ApplyState } from "@/lib/apply";
@@ -12,9 +15,7 @@ const initialState: ApplyState = { status: "idle" };
 function GroupTitle({ index, children }: { index: number; children: React.ReactNode }) {
   return (
     <legend className="mb-5 flex items-center gap-3 text-lg font-bold text-ink">
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy font-display text-md text-white">
-        {index}
-      </span>
+      <NumberBadge size="sm">{index}</NumberBadge>
       {children}
     </legend>
   );
@@ -39,9 +40,7 @@ export function ApplyForm({
         <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-soft">
           <CheckCircle2 className="h-10 w-10 text-success" strokeWidth={2} />
         </span>
-        <h3 className="mt-6 font-display text-4xl uppercase leading-none text-ink sm:text-5xl">
-          {dict.successTitle}
-        </h3>
+        <DisplayHeading as="h3" title={dict.successTitle} size="md" className="mt-6" />
         <p className="mx-auto mt-4 max-w-sm leading-relaxed text-ink-soft">
           {dict.successBody}
         </p>
@@ -174,16 +173,9 @@ export function ApplyForm({
         </p>
       ) : null}
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="group inline-flex h-16 w-full cursor-pointer items-center justify-between rounded-full bg-green pl-7 pr-2 text-lg font-bold text-navy transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
-      >
+      <ArrowSubmit type="submit" disabled={pending} className="w-full">
         {pending ? dict.submitting : dict.submit}
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white transition-transform duration-300 group-hover:translate-x-0.5">
-          <ArrowRight className="h-5 w-5" strokeWidth={2.25} />
-        </span>
-      </button>
+      </ArrowSubmit>
     </form>
   );
 }

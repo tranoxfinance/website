@@ -20,7 +20,7 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
       <Container className="grid items-center gap-16 pb-28 pt-32 sm:pb-32 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8 lg:pt-40">
         <div className="animate-[rise_0.7s_cubic-bezier(0.22,1,0.36,1)_both]">
           <Stamp>{dict.tagline}</Stamp>
-          <h1 className="mt-6 font-display text-[3.4rem] uppercase leading-[1.04] text-white sm:text-7xl lg:text-8xl">
+          <h1 className="mt-6 font-display text-display-xs uppercase leading-headline text-white sm:text-7xl lg:text-8xl">
             {dict.headlineSegments.map((segment) =>
               "style" in segment && segment.style ? (
                 <span
@@ -49,7 +49,7 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
               height={dict.image.height}
               sizes="(min-width: 640px) 384px, 90vw"
               priority
-              className="h-auto w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.45)] dark:hidden"
+              className="h-auto w-full drop-shadow-phone dark:hidden"
             />
             <Image
               src={dict.image.darkSrc}
@@ -58,7 +58,7 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
               height={dict.image.height}
               sizes="(min-width: 640px) 384px, 90vw"
               priority
-              className="hidden h-auto w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.45)] dark:block"
+              className="hidden h-auto w-full drop-shadow-phone dark:block"
             />
           </div>
           {rate ? (

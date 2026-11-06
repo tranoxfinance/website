@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber } from "@/components/ui/BigNumber";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
@@ -22,7 +25,6 @@ import { Flag } from "@/components/Flag";
 import { LiveRateCard } from "@/components/LiveRateCard";
 
 const RANGES: RateRange[] = ["1d", "1w", "1m", "3m", "1y"];
-const FACT_STAGGER_MS = 80;
 const COUNTRY: Record<RateHistory["from"], "NG" | "CI"> = { NGN: "NG", XOF: "CI" };
 
 export async function generateMetadata({
@@ -98,9 +100,9 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
           {history.changePercent ?? "0.00"}%
         </div>
       </div>
-      <p className="tabular mt-4 font-display text-6xl leading-none text-ink sm:text-8xl">
+      <BigNumber size="lg" tone="ink" className="tabular mt-4">
         {numberFormat.format(Number(history.current) * scale)}
-      </p>
+      </BigNumber>
 
       <div className="mt-8 h-[200px] w-full sm:h-[240px]">
         {data.length > 1 ? (
@@ -153,9 +155,7 @@ export default async function RatesPage({
         <section className="py-16 sm:py-24">
           <Container>
             <div className="flex flex-wrap items-end justify-between gap-6">
-              <h2 className="font-display text-5xl uppercase leading-none text-ink sm:text-7xl">
-                {t.tag}
-              </h2>
+              <DisplayHeading title={t.tag} />
               <nav
                 aria-label={t.tag}
                 className="grid w-full grid-cols-5 gap-1 rounded-full bg-surface p-1 sm:inline-flex sm:w-auto"
@@ -209,12 +209,10 @@ export default async function RatesPage({
                 <Reveal
                   as="li"
                   key={fact.title}
-                  delay={index * FACT_STAGGER_MS}
+                  delay={index * STAGGER_MS}
                   className="flex flex-col gap-16 rounded-3xl bg-surface p-8 sm:gap-24 sm:p-10"
                 >
-                  <span className="font-display text-8xl leading-none text-brand sm:text-9xl">
-                    {fact.value}
-                  </span>
+                  <BigNumber size="xl">{fact.value}</BigNumber>
                   <div>
                     <h3 className="text-2xl font-bold tracking-tight text-ink">{fact.title}</h3>
                     <p className="mt-2 text-md leading-relaxed text-ink-soft">{fact.body}</p>

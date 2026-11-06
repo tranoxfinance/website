@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Stamp } from "@/components/ui/Stamp";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { NumberBadge } from "@/components/ui/BigNumber";
+import { ArrowLink } from "@/components/ui/ArrowButton";
 import { notFound } from "next/navigation";
 import { ArrowDown, CalendarDays, Clock, MapPin, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -95,31 +97,21 @@ export default async function JobPage({
               </li>
             ) : null}
           </ul>
-          <a
-            href="#apply"
-            className="group mt-8 inline-flex h-14 items-center gap-4 rounded-full bg-green pl-6 pr-2 text-lg font-bold text-navy transition hover:brightness-105"
-          >
+          <ArrowLink href="#apply" icon={ArrowDown} motion="down" className="mt-8">
             {t.applyNow}
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white transition-transform duration-300 group-hover:translate-y-0.5">
-              <ArrowDown className="h-5 w-5" strokeWidth={2.25} />
-            </span>
-          </a>
+          </ArrowLink>
         </PageHero>
 
         <section className="py-16 sm:py-24">
           <Container className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-20">
             <div className="min-w-0 max-w-3xl">
-              <h2 className="font-display text-4xl uppercase leading-none text-ink sm:text-5xl">
-                {t.aboutRole}
-              </h2>
+              <DisplayHeading title={t.aboutRole} size="md" />
               <div
                 className={cn("mt-6", richTextClass)}
                 dangerouslySetInnerHTML={{ __html: plainTextToHtml(job.description) }}
               />
 
-              <h2 className="mt-14 font-display text-4xl uppercase leading-none text-ink sm:text-5xl">
-                {t.requirements}
-              </h2>
+              <DisplayHeading title={t.requirements} size="md" className="mt-14" />
               <div
                 className={cn("mt-6", richTextClass)}
                 dangerouslySetInnerHTML={{ __html: plainTextToHtml(job.requirements) }}
@@ -128,7 +120,7 @@ export default async function JobPage({
 
             <aside className="order-first lg:order-none">
               <div className="overflow-hidden rounded-3xl bg-surface lg:sticky lg:top-24">
-                <h2 className="bg-navy px-6 py-4 text-xs font-bold uppercase tracking-[0.1em] text-white">
+                <h2 className="bg-navy px-6 py-4 text-xs font-bold uppercase tracking-label text-white">
                   {t.roleDetails}
                 </h2>
                 <dl className="divide-y divide-border px-6">
@@ -158,16 +150,11 @@ export default async function JobPage({
         <section id="apply" className="scroll-mt-20 bg-surface py-16 sm:py-24">
           <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
             <Reveal>
-              <Stamp>{job.title}</Stamp>
-              <h2 className="mt-6 font-display text-5xl uppercase leading-[0.95] text-ink sm:text-7xl">
-                {t.applyHeading}
-              </h2>
+              <DisplayHeading tag={job.title} title={t.applyHeading} />
               <ol className="mt-10 space-y-5">
                 {t.applySteps.map((step, index) => (
                   <li key={step} className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy font-display text-2xl text-white">
-                      {index + 1}
-                    </span>
+                    <NumberBadge>{index + 1}</NumberBadge>
                     <span className="text-lg font-semibold text-ink">{step}</span>
                   </li>
                 ))}

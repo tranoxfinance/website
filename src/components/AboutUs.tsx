@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Stamp } from "@/components/ui/Stamp";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber, padIndex } from "@/components/ui/BigNumber";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { BadgeCheck, Check } from "lucide-react";
 import { Flag } from "@/components/Flag";
 import { Container } from "@/components/ui/Container";
@@ -7,8 +9,6 @@ import { Pill } from "@/components/ui/Pill";
 import { Reveal } from "@/components/Reveal";
 import { TranoxMark } from "@/components/TranoxMark";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const STAGGER_MS = 80;
 
 export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
   const { registry } = dict;
@@ -20,8 +20,8 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             {dict.facts.map((fact, index) => (
               <Reveal key={fact.label} delay={index * STAGGER_MS} className="pr-6">
                 <dt className="sr-only">{fact.label}</dt>
-                <dd className="font-display text-7xl leading-none text-brand sm:text-8xl lg:text-9xl">
-                  {fact.value}
+                <dd>
+                  <BigNumber size="xl">{fact.value}</BigNumber>
                 </dd>
                 <dd className="mt-4 max-w-[13rem] text-md leading-snug text-ink-soft">
                   {fact.label}
@@ -38,7 +38,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             <div>
               <Pill>{dict.storyTag}</Pill>
             </div>
-            <p className="max-w-5xl text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-ink sm:text-5xl lg:text-6xl">
+            <p className="max-w-5xl text-3xl font-semibold leading-boxed tracking-tight text-ink sm:text-5xl lg:text-6xl">
               {dict.p2}
             </p>
           </Reveal>
@@ -58,9 +58,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
                 delay={index * STAGGER_MS}
                 className="flex flex-col gap-16 rounded-3xl bg-surface p-8 sm:gap-24 sm:p-10"
               >
-                <span className="font-display text-8xl leading-none text-brand sm:text-9xl">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <BigNumber size="xl">{padIndex(index)}</BigNumber>
                 <div>
                   <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
                     {value.title}
@@ -76,10 +74,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
       <section className="overflow-hidden bg-navy py-20 text-white sm:py-28">
         <Container className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
           <Reveal className="min-w-0">
-            <Stamp>{registry.tag}</Stamp>
-            <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
-              {registry.heading}
-            </h2>
+            <DisplayHeading tag={registry.tag} title={registry.heading} size="xl" invert />
             <ul className="mt-10 divide-y divide-white/15 border-y border-white/15">
               {registry.points.map((point) => (
                 <li key={point} className="flex items-center gap-4 py-5">
@@ -107,7 +102,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
               />
               <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-9">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-white/80">
+                  <span className="flex items-center gap-3 text-xs font-bold uppercase tracking-label text-white/80">
                     <TranoxMark className="h-9 w-9" />
                     {registry.cardTitle}
                   </span>
@@ -119,7 +114,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
                 <dl className="mt-6 space-y-4">
                   {registry.rows.map((row) => (
                     <div key={row.label}>
-                      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
+                      <dt className="text-xs font-semibold uppercase tracking-label text-white/60">
                         {row.label}
                       </dt>
                       <dd className="mt-1 flex items-center gap-2 break-all font-display text-2xl uppercase leading-tight text-white sm:text-3xl">

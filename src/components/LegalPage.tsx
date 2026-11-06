@@ -57,7 +57,7 @@ export function LegalPage({ lang, dict, page }: LegalPageProps) {
                 aria-label={dict.legalPage.onThisPage}
                 className="sticky top-24 rounded-3xl bg-surface p-6"
               >
-                <p className="text-xs font-medium uppercase tracking-[0.08em] text-ink-soft">
+                <p className="text-xs font-medium uppercase tracking-label text-ink-soft">
                   {dict.legalPage.onThisPage}
                 </p>
                 <ol className="mt-4 space-y-2.5">

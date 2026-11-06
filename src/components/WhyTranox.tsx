@@ -1,9 +1,9 @@
 import { Container } from "@/components/ui/Container";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber, padIndex } from "@/components/ui/BigNumber";
 import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const STAGGER_MS = 80;
 
 export function WhyTranox({ dict }: { dict: Dictionary["why"] }) {
   return (
@@ -21,9 +21,7 @@ export function WhyTranox({ dict }: { dict: Dictionary["why"] }) {
               delay={index * STAGGER_MS}
               className="border-b border-white/20 py-10 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
             >
-              <span className="font-display text-7xl leading-none text-green sm:text-8xl">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <BigNumber tone="green">{padIndex(index)}</BigNumber>
               <h3 className="mt-6 text-2xl font-bold tracking-tight sm:text-3xl">
                 {benefit.title}
               </h3>

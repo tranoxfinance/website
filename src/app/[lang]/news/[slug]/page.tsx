@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { formatLongDate } from "@/lib/dates";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -6,7 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
 import { Pill } from "@/components/ui/Pill";
-import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
+import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getArticleBySlug } from "@/lib/articles";
 import { cn } from "@/lib/utils";
@@ -32,14 +33,6 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(value: string | null, lang: Locale): string {
-  if (!value) return "";
-  return new Intl.DateTimeFormat(lang, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(value));
-}
 
 export default async function ArticlePage({
   params,
@@ -70,9 +63,9 @@ export default async function ArticlePage({
             </Link>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Pill>{t.categories[article.category]}</Pill>
-              <span className="text-sm text-ink-soft">{formatDate(article.publishedAt, lang)}</span>
+              <span className="text-sm text-ink-soft">{formatLongDate(article.publishedAt, lang)}</span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+            <h1 className="mt-5 text-4xl font-bold leading-headline tracking-tight text-ink sm:text-5xl">
               {article.title}
             </h1>
             {article.excerpt ? (

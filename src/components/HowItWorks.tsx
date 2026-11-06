@@ -1,10 +1,10 @@
 import Image from "next/image";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber } from "@/components/ui/BigNumber";
 import { Container } from "@/components/ui/Container";
 import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const STAGGER_MS = 90;
 
 export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
   return (
@@ -32,9 +32,7 @@ export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
                 />
               </div>
               <div className="flex items-start gap-5 p-7 sm:p-8">
-                <span className="font-display text-7xl leading-none text-brand">
-                  {index + 1}
-                </span>
+                <BigNumber>{index + 1}</BigNumber>
                 <div>
                   <h3 className="text-xl font-bold tracking-tight text-ink sm:text-2xl">
                     {step.title}

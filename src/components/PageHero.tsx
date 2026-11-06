@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { PhotoBackdrop } from "@/components/PhotoBackdrop";
 import { Stamp } from "@/components/ui/Stamp";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -24,28 +24,7 @@ interface PageHeroProps {
 export function PageHero({ tag, title, sub, photo, back, children }: PageHeroProps) {
   return (
     <section className="relative isolate -mt-16 overflow-hidden bg-navy">
-      {photo ? (
-        <>
-          <div className="absolute inset-0 -z-20 lg:left-[36%]">
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 64vw, 100vw"
-              className="object-cover object-[center_30%]"
-            />
-          </div>
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/60 to-navy/5 lg:bg-gradient-to-r lg:from-navy lg:from-36% lg:via-navy/30 lg:via-46% lg:to-transparent lg:to-60%"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-navy/80 to-transparent"
-          />
-        </>
-      ) : null}
+      {photo ? <PhotoBackdrop src={photo.src} alt={photo.alt} priority topFade /> : null}
 
       <Container
         className={cn(
@@ -64,7 +43,7 @@ export function PageHero({ tag, title, sub, photo, back, children }: PageHeroPro
             </Link>
           ) : null}
           <Stamp>{tag}</Stamp>
-          <h1 className="mt-6 max-w-4xl font-display text-[3.4rem] uppercase leading-[1.16] text-white sm:text-7xl sm:leading-[1.14] lg:text-8xl lg:leading-[1.12]">
+          <h1 className="mt-6 max-w-4xl font-display text-display-xs uppercase leading-boxed text-white sm:text-7xl lg:text-8xl">
             <span className="box-decoration-clone bg-navy px-3 sm:px-5">{title}</span>
           </h1>
           {sub ? (

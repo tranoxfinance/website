@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { formatLongDate } from "@/lib/dates";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -6,7 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
 import { Pager } from "@/components/Pager";
-import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
+import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedArticles } from "@/lib/articles";
 import { PageHero } from "@/components/PageHero";
@@ -31,14 +32,6 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(value: string | null, lang: Locale): string {
-  if (!value) return "";
-  return new Intl.DateTimeFormat(lang, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(value));
-}
 
 export default async function NewsPage({
   params,
@@ -89,7 +82,7 @@ export default async function NewsPage({
                       <div className="flex flex-wrap items-center gap-3">
                         <Pill>{t.latest}</Pill>
                         <span className="text-sm text-ink-soft">
-                          {t.categories[featured.category]} · {formatDate(featured.publishedAt, lang)}
+                          {t.categories[featured.category]} · {formatLongDate(featured.publishedAt, lang)}
                         </span>
                       </div>
                       <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
@@ -127,7 +120,7 @@ export default async function NewsPage({
                           ) : null}
                         </div>
                         <span className="mt-5 text-sm text-ink-soft">
-                          {t.categories[article.category]} · {formatDate(article.publishedAt, lang)}
+                          {t.categories[article.category]} · {formatLongDate(article.publishedAt, lang)}
                         </span>
                         <h2 className="mt-2 text-xl font-bold leading-snug tracking-tight text-ink group-hover:underline">
                           {article.title}

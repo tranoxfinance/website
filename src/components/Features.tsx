@@ -1,11 +1,11 @@
 import Image from "next/image";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber, padIndex } from "@/components/ui/BigNumber";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Container } from "@/components/ui/Container";
-import { Stamp } from "@/components/ui/Stamp";
 import { Reveal } from "@/components/Reveal";
 import { PayoutLogos } from "@/components/PayoutLogos";
 import type { Dictionary } from "@/i18n/dictionaries";
-
-const STAGGER_MS = 80;
 
 interface FeaturesProps {
   dict: Dictionary["features"];
@@ -24,9 +24,7 @@ function Point({
 }) {
   return (
     <Reveal as="li" delay={delay} className="border-t-2 border-ink pt-6">
-      <span className="font-display text-7xl leading-none text-brand">
-        {String(index + 1).padStart(2, "0")}
-      </span>
+      <BigNumber>{padIndex(index)}</BigNumber>
       <h3 className="mt-4 text-2xl font-bold tracking-tight text-ink">{title}</h3>
       <p className="mt-2 text-lg leading-relaxed text-ink-soft">{body}</p>
     </Reveal>
@@ -40,10 +38,7 @@ export function Features({ dict }: FeaturesProps) {
       <Container>
         <Reveal className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16">
           <div>
-            <Stamp>{dict.tag}</Stamp>
-            <h2 className="mt-6 font-display text-5xl uppercase leading-[0.95] text-ink sm:text-6xl lg:text-7xl">
-              {dict.heading}
-            </h2>
+            <DisplayHeading tag={dict.tag} title={dict.heading} />
           </div>
           <p className="max-w-md text-lg leading-relaxed text-ink-soft lg:pb-2">{dict.sub}</p>
         </Reveal>
@@ -56,7 +51,7 @@ export function Features({ dict }: FeaturesProps) {
 
           <Reveal
             delay={STAGGER_MS}
-            className="relative order-1 aspect-[4/5] overflow-hidden rounded-[2rem] bg-brand lg:order-2"
+            className="relative order-1 aspect-[4/5] overflow-hidden rounded-panel bg-brand lg:order-2"
           >
             <Image
               src={dict.image.src}
@@ -70,7 +65,7 @@ export function Features({ dict }: FeaturesProps) {
           <ol start={3} className="order-3 flex flex-col gap-10 lg:justify-between">
             <Point index={2} title={third.title} body={third.body} delay={STAGGER_MS * 2} />
             <Reveal as="li" delay={STAGGER_MS * 3} className="list-none rounded-3xl bg-navy p-7 text-white">
-              <p className="font-display text-3xl uppercase leading-none">{dict.payout.title}</p>
+              <DisplayHeading as="p" title={dict.payout.title} size="sm" invert />
               <PayoutLogos bankLabel={dict.payout.bank} className="mt-5" />
             </Reveal>
           </ol>
