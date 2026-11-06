@@ -1,34 +1,48 @@
 import { Stamp } from "@/components/ui/Stamp";
 import { cn } from "@/lib/utils";
 
+type Size = "sm" | "md" | "lg" | "xl";
+
+const sizes: Record<Size, string> = {
+  sm: "text-3xl",
+  md: "text-4xl sm:text-5xl",
+  lg: "text-5xl sm:text-6xl lg:text-7xl",
+  xl: "text-6xl sm:text-7xl lg:text-8xl",
+};
+
 interface DisplayHeadingProps {
-  tag: string;
   title: string;
+  tag?: string;
   sub?: string;
+  as?: "h1" | "h2" | "h3" | "p";
+  size?: Size;
   align?: "left" | "center";
   invert?: boolean;
   className?: string;
 }
 
 export function DisplayHeading({
-  tag,
   title,
+  tag,
   sub,
+  as: Heading = "h2",
+  size = "lg",
   align = "left",
   invert = false,
   className,
 }: DisplayHeadingProps) {
   return (
     <div className={cn(align === "center" && "mx-auto max-w-4xl text-center", className)}>
-      <Stamp>{tag}</Stamp>
-      <h2
+      {tag ? <Stamp className="mb-6">{tag}</Stamp> : null}
+      <Heading
         className={cn(
-          "mt-6 font-display text-5xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl",
+          "font-display uppercase leading-display",
+          sizes[size],
           invert ? "text-white" : "text-ink",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {sub ? (
         <p
           className={cn(
