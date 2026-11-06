@@ -18,11 +18,12 @@ import { cn } from "@/lib/utils";
 import { PageHero } from "@/components/PageHero";
 import { FactBand } from "@/components/FactBand";
 import { Reveal } from "@/components/Reveal";
-import { PageCta } from "@/components/PageCta";
+import { Flag } from "@/components/Flag";
 
 const RANGES: RateRange[] = ["1d", "1w", "1m", "3m", "1y"];
 const FACT_STAGGER_MS = 80;
 const LIVE_DECIMALS = 4;
+const COUNTRY: Record<RateHistory["from"], "NG" | "CI"> = { NGN: "NG", XOF: "CI" };
 
 export async function generateMetadata({
   params,
@@ -79,7 +80,13 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
   return (
     <div className="overflow-hidden rounded-3xl bg-surface p-7 sm:p-10">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm font-medium text-ink-soft">{label}</p>
+        <div className="flex items-center gap-3">
+          <span className="flex items-center gap-1.5">
+            <Flag country={COUNTRY[history.from]} className="h-8 w-8" />
+            <Flag country={COUNTRY[history.to]} className="h-8 w-8" />
+          </span>
+          <p className="text-sm font-semibold text-ink-soft">{label}</p>
+        </div>
         <div
           className={cn(
             "flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-sm font-semibold",
@@ -141,8 +148,11 @@ export default async function RatesPage({
               <p className="text-sm font-bold uppercase tracking-[0.08em] text-ink-soft">
                 {t.liveLabel}
               </p>
-              <p className="tabular mt-2 font-display text-5xl leading-none text-navy sm:text-6xl">
-                1 NGN = {liveFormat.format(Number(ngnToXof.current))} XOF
+              <p className="tabular mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-5xl leading-none text-navy sm:text-6xl">
+                <Flag country="NG" className="h-10 w-10 sm:h-12 sm:w-12" />
+                <span>1 NGN =</span>
+                <Flag country="CI" className="h-10 w-10 sm:h-12 sm:w-12" />
+                <span>{liveFormat.format(Number(ngnToXof.current))} XOF</span>
               </p>
             </div>
           ) : null}
@@ -224,7 +234,6 @@ export default async function RatesPage({
           </Container>
         </section>
 
-        <PageCta lang={lang} dict={dict.pageCta} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>

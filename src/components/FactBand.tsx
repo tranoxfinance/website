@@ -1,3 +1,5 @@
+import { Flag } from "@/components/Flag";
+
 interface FactBandProps {
   items: string[];
   label: string;
@@ -14,6 +16,16 @@ export function FactBand({ items, label }: FactBandProps) {
               aria-hidden={copy === 1}
               className="flex shrink-0 items-center whitespace-nowrap font-display text-3xl uppercase leading-none text-navy sm:text-5xl"
             >
+              <li className="flex items-center">
+                <span className="flex items-center gap-3 px-6 sm:gap-4 sm:px-10">
+                  <Flag country="NG" className="h-9 w-9 ring-2 ring-navy sm:h-12 sm:w-12" />
+                  NGN ⇄ XOF
+                  <Flag country="CI" className="h-9 w-9 ring-2 ring-navy sm:h-12 sm:w-12" />
+                </span>
+                <span aria-hidden className="text-navy/40">
+                  ●
+                </span>
+              </li>
               {items.map((item) => (
                 <li key={item} className="flex items-center">
                   <span className="px-6 sm:px-10">{item}</span>
