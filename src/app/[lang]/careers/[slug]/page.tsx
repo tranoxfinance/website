@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Stamp } from "@/components/ui/Stamp";
 import { notFound } from "next/navigation";
 import { ArrowDown, CalendarDays, Clock, MapPin, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -157,9 +158,7 @@ export default async function JobPage({
         <section id="apply" className="scroll-mt-20 bg-surface py-16 sm:py-24">
           <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
             <Reveal>
-              <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
-                {job.title}
-              </span>
+              <Stamp>{job.title}</Stamp>
               <h2 className="mt-6 font-display text-5xl uppercase leading-[0.95] text-ink sm:text-7xl">
                 {t.applyHeading}
               </h2>

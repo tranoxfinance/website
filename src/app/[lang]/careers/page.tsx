@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Stamp } from "@/components/ui/Stamp";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Clock, Mail, MapPin, Users } from "lucide-react";
@@ -150,9 +151,7 @@ export default async function CareersPage({
           <Container>
             <Reveal className="grid gap-10 overflow-hidden rounded-[2rem] bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
               <div>
-                <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
-                  {t.openApplication.tag}
-                </span>
+                <Stamp>{t.openApplication.tag}</Stamp>
                 <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
                   {t.openApplication.heading}
                 </h2>

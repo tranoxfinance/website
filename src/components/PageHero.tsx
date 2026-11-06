@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Stamp } from "@/components/ui/Stamp";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -62,9 +63,7 @@ export function PageHero({ tag, title, sub, photo, back, children }: PageHeroPro
               {back.label}
             </Link>
           ) : null}
-          <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
-            {tag}
-          </span>
+          <Stamp>{tag}</Stamp>
           <h1 className="mt-6 max-w-4xl font-display text-[3.4rem] uppercase leading-[1.16] text-white sm:text-7xl sm:leading-[1.14] lg:text-8xl lg:leading-[1.12]">
             <span className="box-decoration-clone bg-navy px-3 sm:px-5">{title}</span>
           </h1>

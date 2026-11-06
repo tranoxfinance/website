@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Stamp } from "@/components/ui/Stamp";
 import { BadgeCheck, Check } from "lucide-react";
 import { Flag } from "@/components/Flag";
 import { Container } from "@/components/ui/Container";
@@ -75,9 +76,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
       <section className="overflow-hidden bg-navy py-20 text-white sm:py-28">
         <Container className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
           <Reveal className="min-w-0">
-            <span className="inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl">
-              {registry.tag}
-            </span>
+            <Stamp>{registry.tag}</Stamp>
             <h2 className="mt-6 font-display text-6xl uppercase leading-[0.95] sm:text-7xl lg:text-8xl">
               {registry.heading}
             </h2>
