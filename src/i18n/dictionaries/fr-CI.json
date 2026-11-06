@@ -135,7 +135,17 @@
         "title": "Une sécurité inégalée",
         "body": "Chiffré, surveillé, et soutenu par des partenaires régulés."
       }
-    ]
+    ],
+    "payout": {
+      "title": "Versez vers",
+      "methods": [
+        "Wave",
+        "Orange Money",
+        "MTN MoMo",
+        "Moov Money",
+        "Toutes les banques du Nigéria"
+      ]
+    }
   },
   "ratesPage": {
     "metaTitle": "Taux de change NGN vers XOF en direct",

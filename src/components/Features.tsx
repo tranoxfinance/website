@@ -1,49 +1,88 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { Stamp } from "@/components/ui/Stamp";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const STAGGER_MS = 80;
 
-export function Features({ dict }: { dict: Dictionary["features"] }) {
+interface FeaturesProps {
+  dict: Dictionary["features"];
+}
+
+function Point({
+  index,
+  title,
+  body,
+  delay,
+}: {
+  index: number;
+  title: string;
+  body: string;
+  delay: number;
+}) {
+  return (
+    <Reveal as="li" delay={delay} className="border-t-2 border-ink pt-6">
+      <span className="font-display text-7xl leading-none text-brand">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <h3 className="mt-4 text-2xl font-bold tracking-tight text-ink">{title}</h3>
+      <p className="mt-2 text-lg leading-relaxed text-ink-soft">{body}</p>
+    </Reveal>
+  );
+}
+
+export function Features({ dict }: FeaturesProps) {
+  const [first, second, third] = dict.items;
   return (
     <section id="features" className="py-20 sm:py-28">
       <Container>
-        <Reveal>
-          <DisplayHeading tag={dict.tag} title={dict.heading} sub={dict.sub} align="center" />
+        <Reveal className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16">
+          <div>
+            <Stamp>{dict.tag}</Stamp>
+            <h2 className="mt-6 font-display text-5xl uppercase leading-[0.95] text-ink sm:text-6xl lg:text-7xl">
+              {dict.heading}
+            </h2>
+          </div>
+          <p className="max-w-md text-lg leading-relaxed text-ink-soft lg:pb-2">{dict.sub}</p>
         </Reveal>
 
-        <Reveal
-          delay={STAGGER_MS}
-          className="mx-auto mt-12 flex max-w-2xl items-end justify-center overflow-hidden rounded-[2rem] bg-brand pt-8 sm:mt-14"
-        >
-          <Image
-            src={dict.image.src}
-            alt={dict.image.alt}
-            width={dict.image.width}
-            height={dict.image.height}
-            sizes="(min-width: 768px) 672px, 100vw"
-            className="h-auto w-full"
-          />
-        </Reveal>
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.15fr_1fr] lg:gap-12">
+          <ol className="order-2 flex flex-col gap-10 lg:order-1 lg:justify-between">
+            <Point index={0} title={first.title} body={first.body} delay={0} />
+            <Point index={1} title={second.title} body={second.body} delay={STAGGER_MS} />
+          </ol>
 
-        <ol className="mt-12 grid border-t border-ink sm:mt-16 lg:grid-cols-3">
-          {dict.items.map((feature, index) => (
-            <Reveal
-              as="li"
-              key={feature.title}
-              delay={index * STAGGER_MS}
-              className="border-b border-border-strong py-8 lg:border-b-0 lg:border-r lg:px-10 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
-            >
-              <span className="font-display text-6xl leading-none text-brand sm:text-7xl">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-5 text-2xl font-bold tracking-tight text-ink">{feature.title}</h3>
-              <p className="mt-2 text-lg leading-relaxed text-ink-soft">{feature.body}</p>
+          <Reveal
+            delay={STAGGER_MS}
+            className="relative order-1 aspect-[4/5] overflow-hidden rounded-[2rem] bg-brand lg:order-2"
+          >
+            <Image
+              src={dict.image.src}
+              alt={dict.image.alt}
+              fill
+              sizes="(min-width: 1024px) 460px, 100vw"
+              className="object-cover object-bottom"
+            />
+          </Reveal>
+
+          <ol start={3} className="order-3 flex flex-col gap-10 lg:justify-between">
+            <Point index={2} title={third.title} body={third.body} delay={STAGGER_MS * 2} />
+            <Reveal as="li" delay={STAGGER_MS * 3} className="list-none rounded-3xl bg-navy p-7 text-white">
+              <p className="font-display text-3xl uppercase leading-none">{dict.payout.title}</p>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {dict.payout.methods.map((method) => (
+                  <li
+                    key={method}
+                    className="rounded-full border border-white/30 px-3.5 py-1.5 text-sm font-semibold"
+                  >
+                    {method}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
-          ))}
-        </ol>
+          </ol>
+        </div>
       </Container>
     </section>
   );

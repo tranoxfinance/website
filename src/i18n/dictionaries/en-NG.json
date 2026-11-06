@@ -135,7 +135,17 @@
         "title": "Unmatched security",
         "body": "Encrypted, monitored, and backed by regulated partners."
       }
-    ]
+    ],
+    "payout": {
+      "title": "Pay out to",
+      "methods": [
+        "Wave",
+        "Orange Money",
+        "MTN MoMo",
+        "Moov Money",
+        "Any Nigerian bank"
+      ]
+    }
   },
   "ratesPage": {
     "metaTitle": "Live NGN to XOF Exchange Rate",
