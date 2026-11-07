@@ -10,7 +10,7 @@ interface StoreBadgesProps {
 
 export function StoreBadges({ dict, className, invert = false }: StoreBadgesProps) {
   return (
-    <div className={cn("flex flex-col gap-3", className)}>
+    <div className={cn("flex flex-col gap-2", className)}>
       <span className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-gold">
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
         {dict.development}
