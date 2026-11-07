@@ -3,6 +3,7 @@ import { Anton, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SplashScreen } from "@/components/SplashScreen";
+import { SPLASH_SEEN_KEY } from "@/lib/splash";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { defaultLocale, hasLocale, locales } from "@/i18n/config";
@@ -107,6 +108,11 @@ export default async function RootLayout({
         className="min-h-full flex flex-col bg-background text-ink pb-[4.75rem] lg:pb-0"
       >
         <script src="/theme-init.js" async />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem("${SPLASH_SEEN_KEY}"))document.documentElement.dataset.splash="seen"}catch(e){}`,
+          }}
+        />
         <SplashScreen />
         <ScrollToTop />
         {children}

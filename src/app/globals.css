@@ -328,6 +328,10 @@ body {
   }
 }
 
+html[data-splash="seen"] .splash-screen {
+  display: none;
+}
+
 .gradient-text {
   background-image: linear-gradient(
     100deg,
