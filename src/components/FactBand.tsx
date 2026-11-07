@@ -17,7 +17,7 @@ export function FactBand({ items, label }: FactBandProps) {
             <ul
               key={copy}
               aria-hidden={copy === 1}
-              className="flex shrink-0 items-center whitespace-nowrap font-display text-2xl leading-none text-navy sm:text-3xl"
+              className="flex shrink-0 items-center whitespace-nowrap font-display text-2xl leading-none text-brand-ink sm:text-3xl"
             >
               <li className="flex items-center">
                 <span className="flex items-center gap-3 px-6 sm:gap-4 sm:px-10">
