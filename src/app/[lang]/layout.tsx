@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Anton, IBM_Plex_Sans } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { SplashScreen } from "@/components/SplashScreen";
@@ -24,12 +24,6 @@ const anton = Anton({
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
 
 const siteUrl = "https://tranoxfinance.com";
 
@@ -101,7 +95,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${plexSans.variable} ${plexMono.variable} ${anton.variable} dark h-full`}
+      className={`${plexSans.variable} ${anton.variable} dark h-full`}
     >
       <body
         suppressHydrationWarning
