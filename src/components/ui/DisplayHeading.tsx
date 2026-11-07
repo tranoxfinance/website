@@ -5,9 +5,9 @@ type Size = "sm" | "md" | "lg" | "xl";
 
 const sizes: Record<Size, string> = {
   sm: "text-3xl",
-  md: "text-4xl sm:text-5xl",
-  lg: "text-5xl sm:text-6xl lg:text-7xl",
-  xl: "text-6xl sm:text-7xl lg:text-8xl",
+  md: "text-3xl sm:text-4xl",
+  lg: "text-4xl sm:text-5xl",
+  xl: "text-5xl sm:text-6xl",
 };
 
 interface DisplayHeadingProps {

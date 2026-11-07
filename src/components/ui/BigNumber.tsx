@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
 
 type Size = "md" | "lg" | "xl";
-type Tone = "brand" | "green" | "navy" | "ink";
+type Tone = "brand" | "light" | "navy" | "ink";
 
 const sizes: Record<Size, string> = {
-  md: "text-5xl sm:text-6xl",
-  lg: "text-7xl sm:text-8xl",
-  xl: "text-7xl sm:text-8xl lg:text-9xl",
+  md: "text-4xl sm:text-5xl",
+  lg: "text-5xl sm:text-6xl",
+  xl: "text-6xl sm:text-7xl",
 };
 
 const tones: Record<Tone, string> = {
   brand: "text-brand",
-  green: "text-green",
+  light: "text-white",
   navy: "text-navy",
   ink: "text-ink",
 };

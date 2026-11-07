@@ -31,7 +31,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-25% via-navy/65 via-50% to-transparent"
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-navy/90 from-15% via-navy/40 via-40% to-transparent"
               />
               <DisplayHeading as="h3" title={persona.title} size="sm" invert />
               <p className="mt-3 text-sm leading-relaxed text-on-dark">{persona.body}</p>

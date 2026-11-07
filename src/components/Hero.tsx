@@ -25,7 +25,7 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
               "style" in segment && segment.style ? (
                 <span
                   key={segment.text}
-                  className="inline-block -rotate-2 bg-green px-2 text-navy sm:px-3"
+                  className="text-brand-bright"
                 >
                   {segment.text}
                 </span>
@@ -34,10 +34,10 @@ export function Hero({ lang, dict, badges, rate, rateLabel }: HeroProps) {
               ),
             )}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-on-dark sm:text-xl">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-on-dark sm:text-xl">
             {dict.subtitle}
           </p>
-          <StoreBadges dict={badges} invert className="mt-8" />
+          <StoreBadges dict={badges} invert className="mt-6" />
         </div>
 
         <div className="relative mx-auto w-full max-w-sm animate-[rise_0.8s_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:120ms] lg:mr-0">

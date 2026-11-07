@@ -43,7 +43,7 @@
   --text-md--line-height: 1.5rem;
 
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
 
   --radius-xl: 1.25rem;

@@ -58,7 +58,7 @@ export default async function CareersPage({
       <main className="flex-1">
         <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
           <p className="mt-10 flex items-baseline gap-3">
-            <BigNumber size="xl" tone="green">
+            <BigNumber size="xl" tone="light">
               {total}
             </BigNumber>
             <span className="bg-navy px-2 py-1 font-display text-2xl text-white sm:text-3xl">

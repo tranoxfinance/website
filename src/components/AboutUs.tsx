@@ -67,7 +67,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             <ul className="mt-10 space-y-5">
               {registry.points.map((point) => (
                 <li key={point} className="flex items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green text-navy">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-on-dark-fill text-white">
                     <Check className="h-5 w-5" strokeWidth={3} />
                   </span>
                   <span className="text-lg font-semibold leading-snug sm:text-xl">{point}</span>
