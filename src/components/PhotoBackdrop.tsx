@@ -24,12 +24,12 @@ export function PhotoBackdrop({ src, alt, priority = false, topFade = false }: P
       </div>
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-30% via-navy/65 to-navy/5 lg:bg-gradient-to-r lg:from-navy lg:from-38% lg:via-navy/35 lg:via-48% lg:to-transparent lg:to-60%"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-navy from-20% via-navy/45 to-transparent lg:bg-gradient-to-r lg:from-navy lg:from-38% lg:via-navy/20 lg:via-44% lg:to-transparent lg:to-52%"
       />
       {topFade ? (
         <div
           aria-hidden
-          className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-navy/80 to-transparent"
+          className="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-navy/55 to-transparent"
         />
       ) : null}
     </>
