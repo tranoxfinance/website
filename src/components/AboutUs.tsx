@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurProps } from "@/lib/blurData";
 import { STAGGER_MS } from "@/lib/motion";
 import { BigNumber } from "@/components/ui/BigNumber";
 import { DisplayHeading } from "@/components/ui/DisplayHeading";
@@ -79,6 +80,7 @@ export function AboutUs({ dict }: { dict: Dictionary["about"] }) {
             <figure className="relative isolate mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-panel lg:mr-0">
               <Image
                 src={registry.photo.src}
+                {...blurProps(registry.photo.src)}
                 alt={registry.photo.alt}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

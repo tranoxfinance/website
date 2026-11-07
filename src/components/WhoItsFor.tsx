@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurProps } from "@/lib/blurData";
 import { STAGGER_MS } from "@/lib/motion";
 import { Container } from "@/components/ui/Container";
 import { DisplayHeading } from "@/components/ui/DisplayHeading";
@@ -22,6 +23,7 @@ export function WhoItsFor({ dict }: { dict: Dictionary["whoFor"] }) {
             >
               <Image
                 src={persona.image.src}
+                {...blurProps(persona.image.src)}
                 alt={persona.image.alt}
                 fill
                 sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"

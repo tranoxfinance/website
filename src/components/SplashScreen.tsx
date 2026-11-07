@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { SPLASH_SEEN_KEY } from "@/lib/splash";
 
-const HOLD_MS = 700;
+const HOLD_MS = 300;
 const FADE_MS = 450;
 
 export function SplashScreen() {
@@ -11,6 +12,10 @@ export function SplashScreen() {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
+    if (document.documentElement.dataset.splash === "seen") return;
+    try {
+      sessionStorage.setItem(SPLASH_SEEN_KEY, "1");
+    } catch {}
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
@@ -35,7 +40,7 @@ export function SplashScreen() {
     <div
       aria-hidden
       className={cn(
-        "fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-[450ms] ease-out motion-reduce:hidden",
+        "splash-screen fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-[450ms] ease-out motion-reduce:hidden",
         fading ? "opacity-0" : "opacity-100",
       )}
     >

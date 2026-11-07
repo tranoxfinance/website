@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { blurProps } from "@/lib/blurData";
 
 interface PhotoBackdropProps {
   src: string;
@@ -13,6 +14,7 @@ export function PhotoBackdrop({ src, alt, priority = false, topFade = false }: P
       <div className="absolute inset-0 -z-20 lg:left-[38%]">
         <Image
           src={src}
+          {...blurProps(src)}
           alt={alt}
           fill
           priority={priority}
