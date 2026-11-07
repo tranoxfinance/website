@@ -23,7 +23,7 @@ export function LiveRateCard({ label, rate, locale, size = "lg", className }: Li
       <p className="text-sm font-bold text-ink-soft">{label}</p>
       <p
         className={cn(
-          "tabular mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display leading-none text-navy",
+          "tabular mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display leading-none text-ink",
           size === "lg" ? "text-5xl sm:text-6xl" : "text-4xl sm:text-5xl",
         )}
       >
