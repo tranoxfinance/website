@@ -16,7 +16,7 @@ export function LiveRateCard({ label, rate, locale, size = "lg", className }: Li
     minimumFractionDigits: RATE_DECIMALS,
     maximumFractionDigits: RATE_DECIMALS,
   }).format(Number(rate));
-  const flagClass = size === "lg" ? "h-10 w-10 sm:h-12 sm:w-12" : "h-8 w-8 sm:h-9 sm:w-9";
+  const flagClass = size === "lg" ? "h-9 w-9 sm:h-10 sm:w-10" : "h-7 w-7 sm:h-8 sm:w-8";
 
   return (
     <div className={cn("inline-block rotate-1 bg-card text-ink shadow-lift", size === "lg" ? "p-6 sm:p-7" : "p-5", className)}>
@@ -24,7 +24,7 @@ export function LiveRateCard({ label, rate, locale, size = "lg", className }: Li
       <p
         className={cn(
           "tabular mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-display leading-none text-ink",
-          size === "lg" ? "text-5xl sm:text-6xl" : "text-4xl sm:text-5xl",
+          size === "lg" ? "text-4xl sm:text-5xl" : "text-3xl sm:text-4xl",
         )}
       >
         <Flag country="NG" className={flagClass} />
