@@ -46,8 +46,7 @@
     }
   },
   "nav": {
-    "howItWorks": "How it works",
-    "faq": "FAQ",
+    "home": "Home",
     "liveRates": "Live rates",
     "downloadApp": "Download app",
     "openMenu": "Open menu",
