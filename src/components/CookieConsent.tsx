@@ -46,7 +46,7 @@ export function CookieConsent({ lang, dict }: CookieConsentProps) {
       aria-label={dict.ariaLabel}
       className="fixed inset-x-0 bottom-[4.75rem] z-50 px-4 pb-4 lg:bottom-0 lg:px-6 lg:pb-6"
     >
-      <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-surface/95 p-5 shadow-soft backdrop-blur-lg">
+      <div className="mx-auto max-w-3xl rounded-panel border border-border bg-surface/95 p-5 shadow-soft backdrop-blur-lg">
         {managing ? (
           <div className="flex flex-col gap-4">
             <h2 className="text-sm font-bold text-ink">

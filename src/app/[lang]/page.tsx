@@ -13,6 +13,8 @@ import { Footer } from "@/components/Footer";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedFaqs } from "@/lib/faqs";
+import { getPublicRateHistory } from "@/lib/fx-rates";
+import { FactBand } from "@/components/FactBand";
 
 export async function generateMetadata({
   params,
@@ -30,9 +32,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const publishedFaqs = await getPublishedFaqs(
-    lang.startsWith("fr") ? "fr" : "en",
-  );
+  const [publishedFaqs, rate] = await Promise.all([
+    getPublishedFaqs(lang.startsWith("fr") ? "fr" : "en"),
+    getPublicRateHistory("NGN", "XOF", "1d"),
+  ]);
   const faqItems =
     publishedFaqs.length > 0
       ? publishedFaqs.map((item) => ({ q: item.question, a: item.answer }))
@@ -73,9 +76,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
-        <Hero dict={dict.hero} badges={dict.storeBadges} />
+        <Hero
+          lang={lang}
+          dict={dict.hero}
+          badges={dict.storeBadges}
+          rate={rate?.current ?? null}
+          rateLabel={dict.ratesPage.liveLabel}
+        />
+        <FactBand items={dict.factBand} label={dict.hero.tagline} />
         <Features dict={dict.features} />
         <WhoItsFor dict={dict.whoFor} />
         <AppShowcase dict={dict.showcase} />

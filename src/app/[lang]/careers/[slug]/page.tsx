@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { NumberBadge } from "@/components/ui/BigNumber";
+import { ArrowLink } from "@/components/ui/ArrowButton";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Briefcase, MapPin } from "lucide-react";
+import { ArrowDown, CalendarDays, Clock, MapPin, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getJobBySlug } from "@/lib/careers";
+import { formatLongDate } from "@/lib/dates";
+import { plainTextToHtml } from "@/lib/richText";
 import { cn } from "@/lib/utils";
 import { ApplyForm } from "./ApplyForm";
 
 const richTextClass = cn(
-  "text-md leading-relaxed text-ink-soft",
-  "[&_h1]:mb-3 [&_h1]:mt-6 [&_h1]:text-xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:first:mt-0",
-  "[&_h2]:mb-3 [&_h2]:mt-5 [&_h2]:text-lg [&_h2]:font-bold [&_h2]:text-ink [&_h2]:first:mt-0",
-  "[&_p]:mb-4 [&_p]:last:mb-0",
+  "text-lg leading-relaxed text-ink-soft",
+  "[&_ul]:my-5 [&_ul]:space-y-3 [&_ul]:pl-0",
+  "[&_li]:relative [&_li]:pl-7 [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.6em] [&_li]:before:h-2.5 [&_li]:before:w-2.5 [&_li]:before:rounded-full [&_li]:before:bg-green",
+  "[&_h1]:mb-3 [&_h1]:mt-8 [&_h1]:text-2xl [&_h1]:font-bold [&_h1]:text-ink [&_h1]:first:mt-0",
+  "[&_h2]:mb-3 [&_h2]:mt-6 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink [&_h2]:first:mt-0",
+  "[&_p]:mb-5 [&_p]:last:mb-0",
   "[&_strong]:font-semibold [&_strong]:text-ink",
 );
 
@@ -53,56 +61,109 @@ export default async function JobPage({
     notFound();
   }
 
+  const details = [
+    { icon: Users, label: t.department, value: job.department },
+    { icon: Clock, label: t.type, value: t.employmentTypes[job.employmentType] },
+    { icon: MapPin, label: t.location, value: job.location },
+    {
+      icon: CalendarDays,
+      label: t.posted,
+      value: formatLongDate(job.publishedAt, lang),
+    },
+  ];
+
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-14 sm:py-16">
-          <Container className="max-w-3xl">
-            <Link
-              href={`/${lang}/careers`}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {t.backToCareers}
-            </Link>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              {job.title}
-            </h1>
-            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
-              <span className="flex items-center gap-1.5">
-                <Briefcase className="h-4 w-4" />
-                {job.department} · {t.employmentTypes[job.employmentType]}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <MapPin className="h-4 w-4" />
-                {job.location}
-              </span>
+        <PageHero
+          tag={job.department}
+          title={job.title}
+          photo={t.photo}
+          back={{ href: `/${lang}/careers`, label: t.backToCareers }}
+        >
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-lg font-semibold text-on-dark">
+            <li className="flex items-center gap-2">
+              <Clock className="h-5 w-5" strokeWidth={2} />
+              {t.employmentTypes[job.employmentType]}
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="h-5 w-5" strokeWidth={2} />
+              {job.location}
+            </li>
+            {job.closesAt ? (
+              <li className="flex items-center gap-2 text-gold">
+                <CalendarDays className="h-5 w-5" strokeWidth={2} />
+                {t.closesOn.replace("{date}", formatLongDate(job.closesAt, lang))}
+              </li>
+            ) : null}
+          </ul>
+          <ArrowLink href="#apply" icon={ArrowDown} motion="down" className="mt-8">
+            {t.applyNow}
+          </ArrowLink>
+        </PageHero>
+
+        <section className="py-16 sm:py-24">
+          <Container className="grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-20">
+            <div className="min-w-0 max-w-3xl">
+              <DisplayHeading title={t.aboutRole} size="md" />
+              <div
+                className={cn("mt-6", richTextClass)}
+                dangerouslySetInnerHTML={{ __html: plainTextToHtml(job.description) }}
+              />
+
+              <DisplayHeading title={t.requirements} size="md" className="mt-14" />
+              <div
+                className={cn("mt-6", richTextClass)}
+                dangerouslySetInnerHTML={{ __html: plainTextToHtml(job.requirements) }}
+              />
             </div>
+
+            <aside className="order-first lg:order-none">
+              <div className="overflow-hidden rounded-panel bg-surface lg:sticky lg:top-24">
+                <h2 className="bg-navy px-6 py-4 text-xs font-bold text-white">
+                  {t.roleDetails}
+                </h2>
+                <dl className="divide-y divide-border px-6">
+                  {details.map((row) => (
+                    <div key={row.label} className="flex items-start gap-3 py-4">
+                      <row.icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" strokeWidth={2} />
+                      <div>
+                        <dt className="text-xs text-muted">{row.label}</dt>
+                        <dd className="mt-0.5 font-semibold text-ink">{row.value}</dd>
+                      </div>
+                    </div>
+                  ))}
+                </dl>
+                <div className="p-6 pt-2">
+                  <a
+                    href="#apply"
+                    className="flex h-12 w-full items-center justify-center rounded-full bg-navy text-md font-bold text-white transition hover:brightness-125"
+                  >
+                    {t.applyNow}
+                  </a>
+                </div>
+              </div>
+            </aside>
           </Container>
         </section>
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-3xl">
-            <h2 className="text-xl font-bold text-ink">{t.aboutRole}</h2>
-            <div
-              className={cn("mt-4", richTextClass)}
-              dangerouslySetInnerHTML={{ __html: job.description }}
-            />
+        <section id="apply" className="scroll-mt-20 bg-surface py-16 sm:py-24">
+          <Container className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+            <Reveal>
+              <DisplayHeading title={t.applyHeading} />
+              <ol className="mt-10 space-y-5">
+                {t.applySteps.map((step, index) => (
+                  <li key={step} className="flex items-center gap-4">
+                    <NumberBadge>{index + 1}</NumberBadge>
+                    <span className="text-lg font-semibold text-ink">{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-8 max-w-sm leading-relaxed text-ink-soft">{t.applySub}</p>
+            </Reveal>
 
-            <h2 className="mt-10 text-xl font-bold text-ink">
-              {t.requirements}
-            </h2>
-            <div
-              className={cn("mt-4", richTextClass)}
-              dangerouslySetInnerHTML={{ __html: job.requirements }}
-            />
-
-            <div id="apply" className="mt-12 rounded-3xl border border-border bg-card p-7 sm:p-9">
-              <h2 className="text-xl font-bold text-ink">{t.applyHeading}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {t.applySub}
-              </p>
+            <div className="min-w-0 rounded-panel bg-card p-6 shadow-lift sm:p-10">
               <ApplyForm jobId={job.id} dict={t} />
             </div>
           </Container>

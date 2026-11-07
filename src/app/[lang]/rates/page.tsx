@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber } from "@/components/ui/BigNumber";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { AreaChart } from "@/components/AreaChart";
 import { hasLocale, localeAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -16,9 +18,14 @@ import {
   type RateRange,
 } from "@/lib/fx-rates";
 import { cn } from "@/lib/utils";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import { FactBand } from "@/components/FactBand";
+import { Reveal } from "@/components/Reveal";
+import { Flag } from "@/components/Flag";
+import { LiveRateCard } from "@/components/LiveRateCard";
 
 const RANGES: RateRange[] = ["1d", "1w", "1m", "3m", "1y"];
+const COUNTRY: Record<RateHistory["from"], "NG" | "CI"> = { NGN: "NG", XOF: "CI" };
 
 export async function generateMetadata({
   params,
@@ -73,17 +80,18 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
   );
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-border bg-card p-7 sm:p-9">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <div>
-          <p className="text-sm font-medium text-ink-soft">{label}</p>
-          <p className="mt-1 text-3xl font-bold tracking-tight text-ink">
-            {numberFormat.format(Number(history.current) * scale)}
-          </p>
+    <div className="overflow-hidden rounded-panel bg-surface p-7 sm:p-10">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span className="flex items-center gap-1.5">
+            <Flag country={COUNTRY[history.from]} className="h-8 w-8" />
+            <Flag country={COUNTRY[history.to]} className="h-8 w-8" />
+          </span>
+          <p className="text-sm font-semibold text-ink-soft">{label}</p>
         </div>
         <div
           className={cn(
-            "flex w-fit shrink-0 items-center gap-1.5 rounded-full bg-surface px-3 py-1.5 text-sm font-semibold",
+            "flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-sm font-semibold",
             trendClass,
           )}
         >
@@ -92,6 +100,9 @@ function RateCard({ lang, label, history, chartAria, scale }: RateCardProps) {
           {history.changePercent ?? "0.00"}%
         </div>
       </div>
+      <BigNumber size="lg" tone="ink" className="tabular mt-4">
+        {numberFormat.format(Number(history.current) * scale)}
+      </BigNumber>
 
       <div className="mt-8 h-[200px] w-full sm:h-[240px]">
         {data.length > 1 ? (
@@ -119,6 +130,7 @@ export default async function RatesPage({
     ? (resolvedSearchParams.range as RateRange)
     : "1d";
 
+  const t = dict.ratesPage;
   const [ngnToXof, xofToNgn] = await Promise.all([
     getPublicRateHistory("NGN", "XOF", range),
     getPublicRateHistory("XOF", "NGN", range),
@@ -126,72 +138,91 @@ export default async function RatesPage({
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-16 sm:py-20">
-          <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow={dict.ratesPage.tag}
-              title={dict.ratesPage.heading}
-              as="h1"
-              description={dict.ratesPage.sub}
+        <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
+          {ngnToXof ? (
+            <LiveRateCard
+              label={t.liveLabel}
+              rate={ngnToXof.current}
+              locale={lang}
+              className="mt-8"
             />
-          </Container>
-        </section>
+          ) : null}
+        </PageHero>
+        <FactBand items={dict.factBand} label={t.tag} />
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-4xl">
-            <div className="flex flex-wrap gap-2">
-              {RANGES.map((r) => (
-                <Link
-                  key={r}
-                  href={r === "1d" ? `/${lang}/rates` : `/${lang}/rates?range=${r}`}
-                  className={cn(
-                    "rounded-full px-4 py-2 text-sm font-semibold transition",
-                    r === range
-                      ? "bg-brand text-white"
-                      : "bg-surface text-ink-soft hover:text-ink",
-                  )}
-                >
-                  {dict.ratesPage.rangeLabels[r]}
-                </Link>
-              ))}
+        <section className="py-16 sm:py-24">
+          <Container>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <DisplayHeading title={t.tag} />
+              <nav
+                aria-label={t.tag}
+                className="grid w-full grid-cols-5 gap-1 rounded-full bg-surface p-1 sm:inline-flex sm:w-auto"
+              >
+                {RANGES.map((r) => (
+                  <Link
+                    key={r}
+                    href={r === "1d" ? `/${lang}/rates` : `/${lang}/rates?range=${r}`}
+                    aria-current={r === range ? "page" : undefined}
+                    className={cn(
+                      "rounded-full px-3 py-2.5 text-center text-sm font-bold transition sm:px-5",
+                      r === range ? "bg-navy text-white" : "text-ink-soft hover:text-ink",
+                    )}
+                  >
+                    {t.rangeLabels[r]}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
             {ngnToXof && xofToNgn ? (
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <div className="mt-10 grid gap-4 lg:grid-cols-2">
                 <RateCard
                   lang={lang}
-                  label={dict.ratesPage.ngnToXofLabel}
+                  label={t.ngnToXofLabel}
                   history={ngnToXof}
-                  chartAria={dict.ratesPage.chartAriaNgn}
+                  chartAria={t.chartAriaNgn}
                   scale={1000}
                 />
                 <RateCard
                   lang={lang}
-                  label={dict.ratesPage.xofToNgnLabel}
+                  label={t.xofToNgnLabel}
                   history={xofToNgn}
-                  chartAria={dict.ratesPage.chartAriaXof}
+                  chartAria={t.chartAriaXof}
                   scale={1000}
                 />
               </div>
             ) : (
-              <p className="mt-8 rounded-3xl border border-border bg-card p-9 text-center text-ink-soft">
-                {dict.ratesPage.unavailable}
+              <p className="mt-10 rounded-panel bg-surface p-10 text-center text-lg text-ink-soft">
+                {t.unavailable}
               </p>
             )}
-
-            <p className="mt-6 text-xs leading-relaxed text-muted">
-              {dict.ratesPage.disclaimer}
-            </p>
-
-            <div className="mt-10">
-              <Button href={`/${lang}#get-started`} size="lg">
-                {dict.ratesPage.cta}
-              </Button>
-            </div>
+            <p className="mt-5 text-xs leading-relaxed text-muted">{t.disclaimer}</p>
           </Container>
         </section>
+
+        <section className="pb-4">
+          <Container>
+            <ul className="grid gap-4 lg:grid-cols-3">
+              {t.facts.map((fact, index) => (
+                <Reveal
+                  as="li"
+                  key={fact.title}
+                  delay={index * STAGGER_MS}
+                  className="flex flex-col gap-16 rounded-panel bg-surface p-8 sm:gap-24 sm:p-10"
+                >
+                  <BigNumber size="xl">{fact.value}</BigNumber>
+                  <div>
+                    <h3 className="text-2xl font-bold text-ink">{fact.title}</h3>
+                    <p className="mt-2 text-md leading-relaxed text-ink-soft">{fact.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ul>
+          </Container>
+        </section>
+
       </main>
       <Footer lang={lang} dict={dict} />
     </>

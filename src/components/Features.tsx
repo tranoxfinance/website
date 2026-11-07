@@ -1,66 +1,70 @@
 import Image from "next/image";
-import { Wallet, Layers, ShieldCheck } from "lucide-react";
+import { STAGGER_MS } from "@/lib/motion";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
+import { PayoutLogos } from "@/components/PayoutLogos";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const ICONS = [Wallet, Layers, ShieldCheck];
+interface FeaturesProps {
+  dict: Dictionary["features"];
+}
 
-export function Features({ dict }: { dict: Dictionary["features"] }) {
+function Point({
+  title,
+  body,
+  delay,
+}: {
+  title: string;
+  body: string;
+  delay: number;
+}) {
   return (
-    <section id="features" className="relative py-16 sm:py-20">
+    <Reveal as="li" delay={delay}>
+      <h3 className=" text-2xl font-bold text-ink">{title}</h3>
+      <p className="mt-2 text-lg leading-relaxed text-ink-soft">{body}</p>
+    </Reveal>
+  );
+}
+
+export function Features({ dict }: FeaturesProps) {
+  const [first, second, third] = dict.items;
+  return (
+    <section id="features" className="py-20 sm:py-28">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Reveal>
-            <div>
-              <SectionHeading
-                eyebrow={dict.tag}
-                title={dict.heading}
-                description={dict.sub}
-              />
+        <Reveal className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16">
+          <div>
+            <DisplayHeading title={dict.heading} />
+          </div>
+          <p className="max-w-md text-lg leading-relaxed text-ink-soft lg:pb-2">{dict.sub}</p>
+        </Reveal>
 
-              <div className="mt-10 space-y-7">
-                {dict.items.map((feature, index) => {
-                  const Icon = ICONS[index];
-                  return (
-                    <div key={feature.title} className="flex items-start gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                        <Icon className="h-5 w-5" strokeWidth={1.75} />
-                      </span>
-                      <div>
-                        <h3 className="text-lg font-bold text-ink">
-                          {feature.title}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                          {feature.body}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.15fr_1fr] lg:gap-12">
+          <ol className="order-2 flex flex-col gap-10 lg:order-1 lg:justify-between">
+            <Point title={first.title} body={first.body} delay={0} />
+            <Point title={second.title} body={second.body} delay={STAGGER_MS} />
+          </ol>
+
+          <Reveal
+            delay={STAGGER_MS}
+            className="relative order-1 aspect-[4/5] overflow-hidden rounded-panel bg-brand lg:order-2"
+          >
+            <Image
+              src={dict.image.src}
+              alt={dict.image.alt}
+              fill
+              sizes="(min-width: 1024px) 460px, 100vw"
+              className="object-cover object-bottom"
+            />
           </Reveal>
 
-          <Reveal delay={120}>
-            <div className="flex justify-center lg:justify-end">
-              <Image
-                src={dict.image.src}
-                alt={dict.image.alt}
-                width={dict.image.width}
-                height={dict.image.height}
-                sizes="(min-width: 512px) 512px, 100vw"
-                className="h-auto w-full max-w-lg drop-shadow-[0_40px_60px_rgba(10,22,38,0.25)]"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                  maskImage:
-                    "linear-gradient(to bottom, black 55%, transparent 97%)",
-                }}
-              />
-            </div>
-          </Reveal>
+          <ol start={3} className="order-3 flex flex-col gap-10 lg:justify-between">
+            <Point title={third.title} body={third.body} delay={STAGGER_MS * 2} />
+            <Reveal as="li" delay={STAGGER_MS * 3} className="list-none rounded-panel bg-navy p-7 text-white">
+              <DisplayHeading as="p" title={dict.payout.title} size="sm" invert />
+              <PayoutLogos bankLabel={dict.payout.bank} className="mt-5" />
+            </Reveal>
+          </ol>
         </div>
       </Container>
     </section>

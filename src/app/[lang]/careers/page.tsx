@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
+import { BigNumber } from "@/components/ui/BigNumber";
+import { ArrowLink } from "@/components/ui/ArrowButton";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Briefcase, MapPin } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Users } from "lucide-react";
+import { formatLongDate } from "@/lib/dates";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +13,9 @@ import { Pager } from "@/components/Pager";
 import { hasLocale, localeAlternates } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getOpenJobs } from "@/lib/careers";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import { FactBand } from "@/components/FactBand";
+import { Reveal } from "@/components/Reveal";
 
 const PAGE_SIZE = 9;
 
@@ -48,57 +54,89 @@ export default async function CareersPage({
 
   return (
     <>
-      <Navbar lang={lang} dict={dict.nav} />
+      <Navbar lang={lang} dict={dict.nav} overlay />
       <main className="flex-1">
-        <section className="border-b border-border bg-surface py-16 sm:py-20">
-          <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow={t.tag}
-              title={t.heading}
-              as="h1"
-              description={t.sub}
-            />
-          </Container>
-        </section>
+        <PageHero tag={t.tag} title={t.heading} sub={t.sub} photo={t.photo}>
+          <p className="mt-10 flex items-baseline gap-3">
+            <BigNumber size="xl" tone="green">
+              {total}
+            </BigNumber>
+            <span className="bg-navy px-2 py-1 font-display text-2xl text-white sm:text-3xl">
+              {t.openRolesCount}
+            </span>
+          </p>
+        </PageHero>
+        <FactBand items={dict.factBand} label={t.tag} />
 
-        <section className="py-14 sm:py-16">
-          <Container className="max-w-3xl">
+        <section className="py-16 sm:py-24">
+          <Container>
+            <Reveal>
+              <DisplayHeading title={t.openRoles} />
+            </Reveal>
             {jobs.length === 0 ? (
-              <p className="rounded-3xl border border-border bg-card p-9 text-center text-ink-soft">
+              <p className="mt-10 rounded-panel bg-surface p-10 text-center text-lg text-ink-soft">
                 {t.empty}
               </p>
             ) : (
-              <ul className="flex flex-col gap-4">
-                {jobs.map((job) => (
-                  <li key={job.id}>
-                    <Link
-                      href={`/${lang}/careers/${job.slug}`}
-                      className="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition hover:border-brand sm:flex-row sm:items-center sm:justify-between"
-                    >
-                      <div>
-                        <h2 className="text-lg font-bold text-ink group-hover:text-brand">
-                          {job.title}
-                        </h2>
-                        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
-                          <span className="flex items-center gap-1.5">
-                            <Briefcase className="h-4 w-4" />
-                            {job.department} ·{" "}
-                            {t.employmentTypes[job.employmentType]}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <MapPin className="h-4 w-4" />
-                            {job.location}
-                          </span>
+              <div className="mt-10">
+                <div
+                  aria-hidden
+                  className="hidden grid-cols-[1fr_11rem_9rem_13rem_3.5rem] gap-6 pb-3 text-sm font-semibold text-muted lg:grid"
+                >
+                  <span>{t.columnRole}</span>
+                  <span>{t.department}</span>
+                  <span>{t.type}</span>
+                  <span>{t.location}</span>
+                  <span />
+                </div>
+                <ul>
+                  {jobs.map((job) => (
+                    <li key={job.id} className="border-b border-border">
+                      <Link
+                        href={`/${lang}/careers/${job.slug}`}
+                        className="group -mx-4 grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-4 rounded-panel px-4 py-6 transition-colors duration-300 hover:bg-navy sm:-mx-6 sm:px-6 lg:grid-cols-[1fr_11rem_9rem_13rem_3.5rem] lg:py-7"
+                      >
+                        <div className="min-w-0">
+                          <h3 className="text-xl font-bold text-ink transition-colors group-hover:text-white sm:text-2xl">
+                            {job.title}
+                          </h3>
+                          <p className="mt-1.5 text-sm text-muted transition-colors group-hover:text-on-dark-muted">
+                            {t.postedOn.replace("{date}", formatLongDate(job.publishedAt, lang))}
+                            {job.closesAt ? (
+                              <>
+                                {" · "}
+                                <span className="font-semibold text-ink-soft group-hover:text-on-dark">
+                                  {t.closesOn.replace("{date}", formatLongDate(job.closesAt, lang))}
+                                </span>
+                              </>
+                            ) : null}
+                          </p>
                         </div>
-                      </div>
-                      <span className="flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand">
-                        {t.viewRole}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                        <span
+                          aria-label={t.viewRole}
+                          className="col-start-2 row-start-1 flex h-12 w-12 items-center justify-center justify-self-end rounded-full bg-brand text-white transition-transform duration-300 group-hover:rotate-45 lg:col-start-5"
+                        >
+                          <ArrowUpRight className="h-5 w-5" strokeWidth={2.25} />
+                        </span>
+                        <ul className="col-span-2 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft transition-colors group-hover:text-on-dark lg:contents">
+                          <li className="flex items-center gap-1.5 lg:col-start-2 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <Users className="h-4 w-4 lg:hidden" />
+                            {job.department}
+                          </li>
+                          <li className="flex items-center gap-1.5 lg:col-start-3 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <Clock className="h-4 w-4 lg:hidden" />
+                            {t.employmentTypes[job.employmentType]}
+                          </li>
+                          <li className="flex items-center gap-1.5 lg:col-start-4 lg:row-start-1 lg:text-md lg:font-medium lg:text-ink lg:group-hover:text-white">
+                            <MapPin className="h-4 w-4 shrink-0" />
+                            {job.location}
+                          </li>
+                        </ul>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
             <Pager
               page={page}
@@ -108,6 +146,33 @@ export default async function CareersPage({
               labelNext={t.pagerNext}
               labelPageTemplate={t.pagerPage}
             />
+          </Container>
+        </section>
+
+        <section className="pb-16 sm:pb-24">
+          <Container>
+            <Reveal className="grid gap-10 overflow-hidden rounded-panel bg-navy p-8 text-white sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16 lg:p-16">
+              <DisplayHeading
+                title={t.openApplication.heading}
+                sub={t.openApplication.body}
+                size="xl"
+                invert
+              />
+              <div className="flex flex-col gap-4 lg:items-end">
+                <ArrowLink
+                  href={`mailto:${t.openApplication.email}?subject=${encodeURIComponent(t.openApplication.subject)}`}
+                  leading={Mail}
+                  icon={ArrowUpRight}
+                  motion="turn"
+                  className="w-full sm:w-80"
+                >
+                  {t.openApplication.button}
+                </ArrowLink>
+                <p className="w-full text-center text-sm text-on-dark-muted sm:w-80">
+                  {t.openApplication.email}
+                </p>
+              </div>
+            </Reveal>
           </Container>
         </section>
       </main>

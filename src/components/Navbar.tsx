@@ -16,9 +16,10 @@ import { cn } from "@/lib/utils";
 interface NavbarProps {
   lang: Locale;
   dict: Dictionary["nav"];
+  overlay?: boolean;
 }
 
-export function Navbar({ lang, dict }: NavbarProps) {
+export function Navbar({ lang, dict, overlay = false }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -32,6 +33,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
     { href: `/${lang}/careers`, label: dict.careers },
     { href: `/${lang}/news`, label: dict.news },
   ];
+  const onDark = overlay && !scrolled;
   const isActivePage = (href: string) =>
     pathname === href ||
     (href !== homeHref && pathname.startsWith(`${href}/`));
@@ -62,7 +64,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
       >
         <Container>
           <nav className="flex h-16 items-center justify-between gap-4">
-            <Logo href={`/${lang}`} ariaLabel={dict.homeAria} />
+            <Logo href={`/${lang}`} ariaLabel={dict.homeAria} light={onDark} />
 
             <div className="hidden items-center gap-2 lg:flex">
               {pageLinks.map((page) => {
@@ -73,15 +75,22 @@ export function Navbar({ lang, dict }: NavbarProps) {
                     href={page.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-brand",
-                      isActive ? "text-brand" : "text-ink-soft",
+                      "group relative px-3 py-2 text-sm font-medium transition-colors",
+                      onDark
+                        ? isActive
+                          ? "text-white"
+                          : "text-on-dark hover:text-white"
+                        : isActive
+                          ? "text-brand hover:text-brand"
+                          : "text-ink-soft hover:text-brand",
                     )}
                   >
                     {page.label}
                     <span
                       aria-hidden
                       className={cn(
-                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-out",
+                        "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full transition-transform duration-300 ease-out",
+                        onDark ? "bg-green" : "bg-brand",
                         isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                       )}
                     />
@@ -91,8 +100,15 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </div>
 
             <div className="hidden items-center gap-2 lg:flex">
-              <LocaleSwitcher lang={lang} ariaLabel={dict.languageAria} />
-              <ThemeToggle ariaLabel={dict.toggleTheme} />
+              <LocaleSwitcher
+                lang={lang}
+                ariaLabel={dict.languageAria}
+                className={cn(onDark && "ring-on-dark-line")}
+              />
+              <ThemeToggle
+                ariaLabel={dict.toggleTheme}
+                className={cn(onDark && "text-white ring-on-dark-line hover:text-white hover:ring-on-dark")}
+              />
               <Button href={hrefFor("#get-started")} size="sm">
                 {dict.downloadApp}
               </Button>
@@ -104,7 +120,12 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 aria-label={dict.openMenu}
                 aria-expanded={open}
                 onClick={() => setOpen(true)}
-                className="flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-border transition hover:bg-surface cursor-pointer"
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full ring-1 transition cursor-pointer",
+                  onDark
+                    ? "text-white ring-on-dark-line hover:bg-on-dark-fill"
+                    : "text-ink ring-border hover:bg-surface",
+                )}
               >
                 <Menu className="h-6 w-6" />
               </button>

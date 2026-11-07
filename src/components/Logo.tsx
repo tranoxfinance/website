@@ -10,6 +10,7 @@ interface LogoProps {
   href?: string;
   ariaLabel?: string;
   onClick?: () => void;
+  light?: boolean;
 }
 
 export function Logo({
@@ -17,6 +18,7 @@ export function Logo({
   href = "/",
   ariaLabel = "Tranox",
   onClick,
+  light = false,
 }: LogoProps) {
   const pathname = usePathname();
 
@@ -41,7 +43,10 @@ export function Logo({
       <img
         src="/tranox-logo.svg"
         alt="Tranox"
-        className="h-8 w-auto sm:h-9"
+        className={cn(
+          "h-8 w-auto transition-[filter] duration-300 sm:h-9",
+          light && "brightness-0 invert",
+        )}
       />
     </Link>
   );

@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/Reveal";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/utils";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 
 interface FaqItem {
   q: string;
@@ -28,13 +28,9 @@ export function Faq({
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="lg:col-span-2">
             <div className="lg:sticky lg:top-28">
-              <SectionHeading
-                eyebrow={dict.tag}
-                title={dict.heading}
-                description={dict.sub}
-              />
+              <DisplayHeading title={dict.heading} sub={dict.sub} />
 
-              <div className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div className="mt-8 rounded-panel bg-card p-6">
                 <p className="text-sm font-bold text-ink">{dict.stillTitle}</p>
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">
                   {dict.stillBody}
@@ -57,7 +53,7 @@ export function Faq({
                 <Reveal key={item.q} delay={index * 60}>
                   <div
                     className={cn(
-                      "rounded-2xl border bg-card transition-colors duration-300",
+                      "rounded-panel border bg-card transition-colors duration-300",
                       isOpen
                         ? "border-brand/40 shadow-soft"
                         : "border-border hover:border-border-strong",

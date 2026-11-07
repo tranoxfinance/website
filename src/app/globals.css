@@ -28,6 +28,13 @@
   --color-success: #95c015;
   --color-danger: #f0524b;
 
+  --color-partner-mtn: #ffcb05;
+
+  --color-on-dark: rgb(255 255 255 / 0.85);
+  --color-on-dark-muted: rgb(255 255 255 / 0.65);
+  --color-on-dark-line: rgb(255 255 255 / 0.2);
+  --color-on-dark-fill: rgb(255 255 255 / 0.1);
+
   --text-3xs: 0.5625rem;
   --text-3xs--line-height: 0.875rem;
   --text-2xs: 0.6875rem;
@@ -37,10 +44,19 @@
 
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
 
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
   --radius-3xl: 2.25rem;
+  --radius-panel: 1.25rem;
+
+  --text-display-xs: 3.4rem;
+  --leading-display: 0.95;
+  --leading-headline: 1.06;
+  --leading-boxed: 1.14;
+  --tracking-label: 0.1em;
+  --drop-shadow-phone: 0 40px 60px rgba(0, 0, 0, 0.45);
 
   --shadow-soft: var(--sh-soft);
   --shadow-lift: var(--sh-lift);
@@ -49,6 +65,7 @@
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-marquee-rev: marquee-rev 40s linear infinite;
+  --animate-marquee-fast: marquee 26s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-blob: blob 18s ease-in-out infinite;

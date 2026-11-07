@@ -1,64 +1,48 @@
 import Image from "next/image";
+import { STAGGER_MS } from "@/lib/motion";
+import { BigNumber } from "@/components/ui/BigNumber";
 import { Container } from "@/components/ui/Container";
+import { DisplayHeading } from "@/components/ui/DisplayHeading";
 import { Reveal } from "@/components/Reveal";
-import { WorldDotMap } from "@/components/WorldDotMap";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function HowItWorks({ dict }: { dict: Dictionary["how"] }) {
   return (
-    <section id="how-it-works" className="py-14 sm:py-20">
+    <section id="how-it-works" className="py-20 sm:py-28">
       <Container>
-        <div className="relative overflow-hidden rounded-3xl bg-navy px-6 py-12 text-white sm:px-12 sm:py-16">
-          <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute inset-0 grid-bg opacity-30" />
-            <div className="absolute inset-x-0 top-1/2 h-72 -translate-y-1/2 overflow-hidden sm:h-96">
-              <WorldDotMap className="mask-fade-x absolute left-1/2 top-1/2 h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 opacity-40" />
-            </div>
-            <div className="absolute -right-16 -top-16 hidden h-64 w-64 rounded-full bg-gold/25 blur-3xl sm:block" />
-            <div className="absolute -bottom-20 left-10 hidden h-64 w-64 rounded-full bg-brand/20 blur-3xl sm:block" />
-          </div>
+        <Reveal>
+          <DisplayHeading title={dict.heading} />
+        </Reveal>
 
-          <div className="relative">
-            <Reveal>
-              <div className="mx-auto max-w-2xl text-center">
-                <SectionHeading
-                  eyebrow={dict.tag}
-                  title={dict.heading}
-                  invert
+        <ol className="mt-14 grid gap-4 lg:grid-cols-3">
+          {dict.steps.map((step, index) => (
+            <Reveal
+              as="li"
+              key={step.title}
+              delay={index * STAGGER_MS}
+              className="flex flex-col overflow-hidden rounded-panel bg-surface"
+            >
+              <div className="relative aspect-[590/493] w-full bg-brand-soft">
+                <Image
+                  src={step.image.src}
+                  alt={step.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 400px, 100vw"
+                  className="object-contain p-6"
                 />
               </div>
+              <div className="flex items-start gap-5 p-7 sm:p-8">
+                <BigNumber>{index + 1}</BigNumber>
+                <div>
+                  <h3 className="text-xl font-bold text-ink sm:text-2xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-ink-soft">{step.body}</p>
+                </div>
+              </div>
             </Reveal>
-
-            <div className="mx-auto mt-14 grid max-w-5xl gap-x-10 gap-y-14 sm:grid-cols-3">
-              {dict.steps.map((step, i) => (
-                <Reveal key={step.title} delay={i * 90}>
-                  <div className="flex flex-col items-start">
-                    <div className="relative aspect-[590/493] w-full">
-                      <Image
-                        src={step.image.src}
-                        alt={step.image.alt}
-                        fill
-                        sizes="(min-width: 640px) 300px, 80vw"
-                        className="object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.4)]"
-                      />
-                    </div>
-
-                    <div className="mt-6 flex items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                        {i + 1}
-                      </span>
-                      <h3 className="text-lg font-bold">{step.title}</h3>
-                    </div>
-                    <p className="mt-3 text-sm leading-relaxed text-white/60">
-                      {step.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
+          ))}
+        </ol>
       </Container>
     </section>
   );
