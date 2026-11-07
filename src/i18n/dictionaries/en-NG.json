@@ -895,5 +895,11 @@
     "One fee, shown first",
     "Registered in Abidjan",
     "Any Nigerian bank"
-  ]
+  ],
+  "errorPage": {
+    "heading": "Something went wrong",
+    "body": "This page did not load properly. Please try again in a moment.",
+    "retry": "Try again",
+    "home": "Back to home"
+  }
 }

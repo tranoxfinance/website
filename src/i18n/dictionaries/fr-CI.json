@@ -895,5 +895,11 @@
     "Un seul frais, affiché d'abord",
     "Immatriculée à Abidjan",
     "Toutes les banques du Nigéria"
-  ]
+  ],
+  "errorPage": {
+    "heading": "Un problème est survenu",
+    "body": "Cette page ne s'est pas chargée correctement. Veuillez réessayer dans un instant.",
+    "retry": "Réessayer",
+    "home": "Retour à l'accueil"
+  }
 }
