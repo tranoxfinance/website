@@ -9,7 +9,7 @@ export function Stamp({ children, className }: StampProps) {
   return (
     <span
       className={cn(
-        "inline-block -rotate-3 bg-green px-4 py-2 font-display text-xl uppercase leading-none text-navy sm:text-2xl",
+        "inline-block -rotate-3 bg-white px-3 py-1.5 font-display text-lg uppercase leading-none text-navy sm:text-xl",
         className,
       )}
     >

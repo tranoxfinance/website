@@ -90,7 +90,7 @@ export function Navbar({ lang, dict, overlay = false }: NavbarProps) {
                       aria-hidden
                       className={cn(
                         "absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full transition-transform duration-300 ease-out",
-                        onDark ? "bg-green" : "bg-brand",
+                        onDark ? "bg-white" : "bg-brand",
                         isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                       )}
                     />
