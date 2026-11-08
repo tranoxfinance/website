@@ -67,7 +67,7 @@ export default async function NewsPage({
                     href={`/${lang}/news/${featured.slug}`}
                     className="group grid overflow-hidden rounded-panel bg-surface lg:grid-cols-[1.25fr_1fr]"
                   >
-                    <div className="aspect-[16/9] self-center overflow-hidden bg-surface-strong">
+                    <div className="aspect-cover self-center overflow-hidden bg-surface-strong">
                       {featured.coverImageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
@@ -107,7 +107,7 @@ export default async function NewsPage({
                         href={`/${lang}/news/${article.slug}`}
                         className="group flex flex-col"
                       >
-                        <div className="aspect-[16/10] overflow-hidden rounded-panel bg-surface">
+                        <div className="aspect-cover overflow-hidden rounded-panel bg-surface">
                           {article.coverImageUrl ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img
