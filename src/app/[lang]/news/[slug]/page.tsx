@@ -78,7 +78,7 @@ export default async function ArticlePage({
               <img
                 src={article.coverImageUrl}
                 alt=""
-                className="aspect-[16/9] w-full rounded-panel object-cover"
+                className="aspect-cover w-full rounded-panel object-cover"
               />
             </Container>
           ) : null}
