@@ -471,7 +471,7 @@
     "metaTitle": "Privacy Policy",
     "metaDescription": "How Tranox collects, uses, shares, and protects your personal and financial information.",
     "title": "Privacy Policy",
-    "lastUpdated": "October 16, 2026",
+    "lastUpdated": "November 20, 2026",
     "intro": "This Privacy Policy explains what information Tranox collects, how we use and share it, and the choices and rights you have. It applies to your use of the Tranox app, website, and related services, and we handle your information in line with the Nigeria Data Protection Act 2023 (NDPA) and directives issued by the Nigeria Data Protection Commission (NDPC).",
     "sections": [
       {
@@ -486,7 +486,8 @@
               "Financial information: bank account, mobile wallet, or card details used to fund or receive transfers.",
               "Device and usage data: IP address, device identifiers, and app interactions used to keep your account secure."
             ]
-          }
+          },
+          "When you sign in on a new device, we use your IP address to estimate your city and country, so the security email we send you can show where the sign-in came from. IP geolocation by DB-IP (db-ip.com)."
         ]
       },
       {

@@ -471,7 +471,7 @@
     "metaTitle": "Politique de confidentialité",
     "metaDescription": "Comment Tranox collecte, utilise, partage et protège vos informations personnelles et financières.",
     "title": "Politique de confidentialité",
-    "lastUpdated": "16 octobre 2026",
+    "lastUpdated": "20 novembre 2026",
     "intro": "Cette Politique de confidentialité explique quelles informations Tranox collecte, comment nous les utilisons et les partageons, ainsi que les choix et droits dont vous disposez. Elle s'applique à votre utilisation de l'application Tranox, du site web et des services associés, et nous traitons vos informations conformément à la loi nigériane sur la protection des données de 2023 (NDPA) et aux directives émises par la Nigeria Data Protection Commission (NDPC).",
     "sections": [
       {
@@ -486,7 +486,8 @@
               "Informations financières : compte bancaire, portefeuille mobile ou coordonnées de carte utilisés pour financer ou recevoir des transferts.",
               "Données d'appareil et d'utilisation : adresse IP, identifiants d'appareil et interactions avec l'application, utilisés pour sécuriser votre compte."
             ]
-          }
+          },
+          "Lorsque vous vous connectez sur un nouvel appareil, nous utilisons votre adresse IP pour estimer votre ville et votre pays, afin que l'e-mail de sécurité que nous vous envoyons indique d'où vient la connexion. Géolocalisation IP par DB-IP (db-ip.com)."
         ]
       },
       {
